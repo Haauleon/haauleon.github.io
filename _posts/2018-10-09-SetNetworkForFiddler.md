@@ -143,5 +143,3 @@ Step6:
 重启浏览器和fiddler，浏览器进行百度搜索，即可以抓取https数据包。      
 
 ![](\img\in-post\2018-10-09-SetNetworkForFiddler\24.jpg)         
-
-<font face="STCAIYUN">以上就是填坑的全部过程啦，自己挖的坑最终还是要自己填滴，年轻人。如对以上说明存有疑惑，请点击下方的邮箱联系我吧。</font>
