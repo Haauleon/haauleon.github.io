@@ -9,7 +9,7 @@ tags:
 ---
 
 &emsp;&emsp;在装完了全部的环境之后，终于在今天用上了台式机，然而抓包工具fiddler在设置代理的时候踩了不少坑，现在来总结一下。下面放一张图来冷静冷静。
-![](https://wx4.sinaimg.cn/mw1024/9c1edeb6gy1fw26mogygej20kb0bp0us.jpg)
+![](\img\in-post\2018-10-09-SetNetworkForFiddler\1.jpg)
 
 
 ## 背景
