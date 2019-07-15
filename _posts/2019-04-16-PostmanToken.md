@@ -74,7 +74,7 @@ tags:
 #### 第一步 编辑Tests脚本
 在登录接口的测试脚本内加入两行代码，就这么简单搞定。      
 
-```python
+```
 /*定义一个响应体res，获取body中所有的参数并以json格式返回*/
 var res = JSON.parse(responseBody);
 
