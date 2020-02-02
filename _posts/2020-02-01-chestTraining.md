@@ -102,7 +102,6 @@ tags:
 ## 三、胸部周训练计划
 ![](\img\in-post\2020-02-01-chestTraining\7.png)          
 
-<br>
 
 ### 平板杠铃卧推
 ![](\img\in-post\2020-02-01-chestTraining\8.png)           
