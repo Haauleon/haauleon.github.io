@@ -9,6 +9,10 @@ tags:
 ---
 
 
+## 实现效果
+![](\img\in-post\2020-11-06-baidu-map-api\1.jpg) 
+<br>
+
 ## 完整的 html 代码
 ```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
