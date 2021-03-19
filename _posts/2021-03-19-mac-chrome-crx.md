@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "chrome crx 插件 | Mac 下安装 crx 插件的解决方法"
+title: "chrome 插件 | Mac 安装 crx 插件"
 subtitle: '解决 mac 下安装 crx 插件的解决方法'
 author: "Haauleon"
 header-style: text
