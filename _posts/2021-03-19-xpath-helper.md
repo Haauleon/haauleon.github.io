@@ -19,7 +19,7 @@ tags:
 <br>
 
 ### 插件安装     
-链接: https://pan.baidu.com/s/1PjTe6tK_XJJ2MjGbqgs7Iw  密码: qiku      
+链接: https://pan.baidu.com/s/1F5mGxS46epkmvkci4GqZ6Q  密码: hao6        
 
 &emsp;&emsp;下载至本地后，在 chrome 浏览器地址栏输入 `chrome://extensions/` 打开扩展程序页面，启用右上角的**开发者模式**，再点击**加载已解压的扩展程序**，然后选择此`.zip`文件即可。
 <br>
