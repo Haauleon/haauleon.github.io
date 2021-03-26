@@ -18,8 +18,8 @@ tags:
 如果我们要查找某一个、或者某一块元素的 xpath 路径，可以按住 shift，并移动到这一块中，上面的框就会显示这个元素的 xpath 路径，右边则会显示解析出的文本内容。还可以编辑 xpath 路径，程序也会自动的显示对应的位置，可用于协助判断我们的 xpath 语句是否书写正确。     
 <br>
 
-### 插件安装     
-链接: https://pan.baidu.com/s/1F5mGxS46epkmvkci4GqZ6Q  密码: hao6        
+### 插件安装      
+链接：[https://pan.baidu.com/s/1Fk_nYik75LKkagIT1hxWZQ](https://pan.baidu.com/s/1Fk_nYik75LKkagIT1hxWZQ) &emsp;&emsp;提取码：lj06        
 
 &emsp;&emsp;下载至本地后，在 chrome 浏览器地址栏输入 `chrome://extensions/` 打开扩展程序页面，启用右上角的**开发者模式**，再点击**加载已解压的扩展程序**，然后选择此`.zip`文件即可。
 <br>
