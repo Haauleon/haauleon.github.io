@@ -16,7 +16,9 @@ tags:
 : not foundram Files/nodejs/npm: 5: /mnt/c/Program Files/nodejs/npm:
 /mnt/c/Program Files/nodejs/npm: 6: /mnt/c/Program Files/nodejs/npm: Syntax error: word unexpected (expecting "in")
 ```     
+<br><br>
 
+**解决方法：**
 &emsp;&emsp;查了一下解决方案。[https://www.reddit.com/r/node/duplicates/650g4i/running_node_on_wsl/](https://www.reddit.com/r/node/duplicates/650g4i/running_node_on_wsl/)        
 
 ![](\img\in-post\others\2021-03-26-wsl-node-error-1.png)
