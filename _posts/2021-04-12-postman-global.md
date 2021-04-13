@@ -18,16 +18,22 @@ tags:
 
 ## 使用技巧
 ###### 设置全局变量
-![](\img\in-post\post-postman\2021-04-12-postman-global-1.png)      
+![](\img\in-post\post-postman\2021-04-12-postman-global-1.png)         
 
-![](\img\in-post\post-postman\2021-04-12-postman-global-2.png)      
+<br>
+
+![](\img\in-post\post-postman\2021-04-12-postman-global-2.png)        
+
+<br>
 
 ![](\img\in-post\post-postman\2021-04-12-postman-global-3.png)     
 
 <br><br>
 
 ###### 使用全局变量
-![](\img\in-post\post-postman\2021-04-12-postman-global-4.png)       
+![](\img\in-post\post-postman\2021-04-12-postman-global-4.png)         
+
+<br>
 
 ![](\img\in-post\post-postman\2021-04-12-postman-global-5.png)     
 

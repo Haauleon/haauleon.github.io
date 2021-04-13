@@ -18,24 +18,38 @@ tags:
 
 ## 使用技巧
 ###### 设置环境变量
-![](\img\in-post\post-postman\2021-04-12-postman-env-1.png)        
+![](\img\in-post\post-postman\2021-04-12-postman-env-1.png)          
+
+<br>
 
 ![](\img\in-post\post-postman\2021-04-12-postman-env-2.png)       
 
-![](\img\in-post\post-postman\2021-04-12-postman-env-3.png)     
+<br>
 
-![](\img\in-post\post-postman\2021-04-12-postman-env-4.png)       
+![](\img\in-post\post-postman\2021-04-12-postman-env-3.png)       
 
-![](\img\in-post\post-postman\2021-04-12-postman-env-5.png)       
+<br>
+
+![](\img\in-post\post-postman\2021-04-12-postman-env-4.png)         
+
+<br>
+
+![](\img\in-post\post-postman\2021-04-12-postman-env-5.png)         
+
+<br>
 
 ![](\img\in-post\post-postman\2021-04-12-postman-env-6.png)       
 
 <br><br>
 
 ###### 使用环境变量
-![](\img\in-post\post-postman\2021-04-12-postman-env-7.png)      
+![](\img\in-post\post-postman\2021-04-12-postman-env-7.png)         
+
+<br>
 
 ![](\img\in-post\post-postman\2021-04-12-postman-env-8.png)         
+
+<br>
 
 ![](\img\in-post\post-postman\2021-04-12-postman-env-9.png)      
 

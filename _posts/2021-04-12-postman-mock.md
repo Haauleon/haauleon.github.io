@@ -32,18 +32,24 @@ tags:
 ###### 创建 Mock Server 服务
 1.在标题工具栏中，单击`NEW`按钮后，在新窗口选择 mock server。         
 
-![](\img\in-post\post-postman\2021-04-12-postman-mock-1.jpg)
+![](\img\in-post\post-postman\2021-04-12-postman-mock-1.jpg)      
+
+<br>
 
 2.在编辑窗口的左侧选择`New API`，在右侧依次输入`Request Path`、`Status Code`、`Response Body`，输入完成后点击`Next`。          
 `Request Path`：要请求的路径名           
 `Status Code`：响应状态码，比如 200、500、504 等等                   
 `Response Body`：返回结果     
 
-![](\img\in-post\post-postman\2021-04-12-postman-mock-2.jpg)
+![](\img\in-post\post-postman\2021-04-12-postman-mock-2.jpg)       
+
+<br>
 
 3.在配置 mock server 时，默认创建公有的 mock server。输入`Name`后点击`Create`。           
 
-![](\img\in-post\post-postman\2021-04-12-postman-mock-3.jpg)
+![](\img\in-post\post-postman\2021-04-12-postman-mock-3.jpg)        
+
+<br>
 
 4.在最后一步时点击左半框内的`Host`，便可生成要请求的`Host`。          
 
@@ -54,7 +60,9 @@ tags:
 ###### 发送 Mock 请求
 1.把生成的 Host 拼接到 API 前（建议使用环境变量），并发送请求，可成功获取返回结果。        
 
-![](\img\in-post\post-postman\2021-04-12-postman-mock-5.jpg)       
+![](\img\in-post\post-postman\2021-04-12-postman-mock-5.jpg)           
+
+<br>
 
 ![](\img\in-post\post-postman\2021-04-12-postman-mock-6.jpg)       
 
@@ -65,11 +73,17 @@ tags:
 
 ![](\img\in-post\post-postman\2021-04-12-postman-mock-7.jpg)             
 
-![](\img\in-post\post-postman\2021-04-12-postman-mock-8.jpg)           
+<br>
+
+![](\img\in-post\post-postman\2021-04-12-postman-mock-8.jpg)              
+
+<br>
 
 2.修改完成后返回至请求页面，重新发送请求。在不改变原请求的情况下，请求后返回了 404。这是因为刚刚修改了请求方式，说明修改生效了。        
 
-![](\img\in-post\post-postman\2021-04-12-postman-mock-9.jpg)         
+![](\img\in-post\post-postman\2021-04-12-postman-mock-9.jpg)           
+
+<br>
 
 3.修改请求方式和正确填写参数后，再次发送请求，请求成功。         
 

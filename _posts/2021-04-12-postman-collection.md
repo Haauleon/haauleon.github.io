@@ -19,9 +19,15 @@ tags:
 ## 使用技巧
 ![](\img\in-post\post-postman\2021-04-12-postman-collection-1.png)      
 
+<br>
+
 ![](\img\in-post\post-postman\2021-04-12-postman-collection-2.png)       
 
+<br>
+
 ![](\img\in-post\post-postman\2021-04-12-postman-collection-3.png)        
+
+<br>
 
 ![](\img\in-post\post-postman\2021-04-12-postman-collection-4.png)     
 
