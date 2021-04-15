@@ -12,12 +12,12 @@ tags:
 ---
 
 ## 前言
-&emsp;&emsp;Postman 提供丰富的接口测试断言，使用 Postman 结合 Newman 来完成 API 自动测试可以大大降低时间成本。本文是基于 MacOs 系统来操作且截图的，Windows 系统需要替换命令行。                
+&emsp;&emsp;Postman 提供丰富的接口测试断言，使用 Postman 结合 Newman 来完成 API 自动测试可以大大降低时间成本，生成的测试报告非常可观且测试报告模板可以按需修改。本文是基于 MacOs 系统来操作且截图的，Windows 系统需要替换命令行。                
 
 <br><br>
 
 ## 使用技巧
-###### 环境准备
+###### 一、环境准备
 1.安装 nodejs     
 下载地址：[node官网](https://nodejs.org/zh-cn/)，使用默认安装即可，安装成功后进行验证。      
 ```
@@ -44,7 +44,7 @@ $ sudo npm install -g newman-reporter-html
 ```
 <br><br>
 
-###### 自定义测试报告
+###### 二、自定义测试报告
 1.组合键 `command + space(空格键)` 打开搜索框，输入 newman 并点击进入访达        
 
 ![](\img\in-post\post-postman\2021-04-12-postman-newman-3.png)       
@@ -69,7 +69,7 @@ $ sudo npm install -g newman-reporter-html
 
 <br><br>
 
-###### 执行自动化测试
+###### 三、执行自动化测试
 1.导出 postman 自动化测试集       
 
 ![](\img\in-post\post-postman\2021-04-12-postman-newman-7.png)      
@@ -116,7 +116,7 @@ $ newman run 测试集文件.json -e 环境变量文件.json -g 全局变量.jso
 
 <br><br>
 
-###### 填坑      
+###### 四、填坑      
 &emsp;&emsp;在导出环境变量文件和全局变量文件时，需要将变量列表的当前值全部赋给初始值，否则导出的文件中环境变量的值均为空字符串。       
 
 ![](\img\in-post\post-postman\2021-04-12-postman-newman-15.png)     

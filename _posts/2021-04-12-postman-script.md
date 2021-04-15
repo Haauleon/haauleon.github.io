@@ -12,12 +12,12 @@ tags:
 ---
 
 ## 前言
-&emsp;&emsp;Postman 提供了丰富的断言，通过也提供了发送请求的前置脚本功能。前置脚本功能，我目前用得最多的是添加或者更新当前时间戳，然后在发送请求时带过去，而后置的请求断言则用于检查接口响应是否符合我的预期要求。脚本语言使用的是 JavaScript。
+&emsp;&emsp;Postman 提供了丰富的断言，同时也提供了发送请求的前置脚本功能。前置脚本功能，我目前用得最多的是添加或者更新当前时间戳，然后在发送请求时带过去，而后置的请求断言则用于检查接口响应是否符合我的预期要求。脚本语言使用的是 JavaScript。
 
 <br><br>
 
 ## 使用技巧      
-###### Pre-request Script
+###### 一、Pre-request Script
 &emsp;&emsp;此脚本在发送请求前运行，示例脚本如下：        
 ```js
 var moment = require('moment');                        
@@ -47,7 +47,7 @@ pm.globals.set("time", data);
 
 <br><br>
 
-###### Tests
+###### 二、Tests
 &emsp;&emsp;测试脚本是在发送请求之后才执行，一般用于检查接口返回的字段值是否符合预期，或者检查接口的数据是否完整等等主要测试断言。Postman 提供了 API，可直接调用。       
 
 ![](\img\in-post\post-postman\2021-04-12-postman-script-5.png)      

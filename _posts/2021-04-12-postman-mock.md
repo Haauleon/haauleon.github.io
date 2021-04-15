@@ -29,7 +29,7 @@ tags:
 <br><br>
 
 ## 使用技巧
-###### 创建 Mock Server 服务
+###### 一、创建 Mock Server 服务
 1.在标题工具栏中，单击`NEW`按钮后，在新窗口选择 mock server。         
 
 ![](\img\in-post\post-postman\2021-04-12-postman-mock-1.jpg)      
@@ -57,7 +57,7 @@ tags:
 
 <br><br>
 
-###### 发送 Mock 请求
+###### 二、发送 Mock 请求
 1.把生成的 Host 拼接到 API 前（建议使用环境变量），并发送请求，可成功获取返回结果。        
 
 ![](\img\in-post\post-postman\2021-04-12-postman-mock-5.jpg)           
@@ -68,7 +68,7 @@ tags:
 
 <br><br>
 
-###### 篡改 Mock 请求    
+###### 三、篡改 Mock 请求    
 1.在页面右上角点击`Examples`，在下拉列表中选择`Default`。在`Default`编辑页面编辑要修改的信息，修改完成后点击`Save Examples`。          
 
 ![](\img\in-post\post-postman\2021-04-12-postman-mock-7.jpg)             

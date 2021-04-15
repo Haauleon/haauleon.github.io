@@ -19,21 +19,21 @@ tags:
 <br><br>
 
 ## 使用技巧
-###### 安装 Postman 拦截器        
+###### 一、安装 Postman 拦截器        
 &emsp;&emsp;提供 Postman 拦截器离线安装包的百度网盘下载链接。          
 
 链接：https://pan.baidu.com/s/1bPuCem3nN_-Rd0keCBATzw 提取码：sx8t 
 
 <br><br>
 
-###### 安装 Postman Chrome 版本
+###### 二、安装 Postman Chrome 版本
 &emsp;&emsp;提供 Postman Chrome 版本离线安装包的百度网盘下载链接。              
 
 链接：https://pan.baidu.com/s/1nVCUFB1_AF_xigLr2Cx06g 提取码：8ym9 
 
 <br><br>
 
-###### 启动并设置 Postman Chrome
+###### 三、启动并设置 Postman Chrome
 ![](\img\in-post\post-postman\2021-04-13-postman-chrome-1.png)        
 
 <br>
@@ -54,7 +54,7 @@ tags:
 
 <br><br>
 
-###### 使用 Postman 拦截器     
+###### 四、使用 Postman 拦截器     
 ![](\img\in-post\post-postman\2021-04-13-postman-chrome-6.png)       
 
 <br>     
