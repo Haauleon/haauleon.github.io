@@ -5,7 +5,6 @@ subtitle:      "终于找到了适合自己的颜色"
 date:          2021-04-19
 author:        "Haauleon"
 header-style:  text
-catalog:       true
 tags:
     - 好物分享
 ---
