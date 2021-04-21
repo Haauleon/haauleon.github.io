@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Nginx | 部署静态页面"
-subtitle:      "使用本脚本可进行安装、配置 nginx"
+subtitle:      "使用本教程可进行安装和配置 nginx 用于部署静态资源"
 date:          2021-04-19
 author:        "Haauleon"
 header-style:  text
@@ -32,7 +32,7 @@ $ apt-get install nginx
 <br><br>
 
 ###### 三、检查 nginx 配置
-&emsp;&emsp;检查 `/etc/nginx/conf.d` 目录，列表为空就没配置过。    
+&emsp;&emsp;检查 `/etc/nginx/conf.d` 目录，列表为空就代表没有配置过。    
 
 ```
 $ cd /etc/nginx/conf.d/
