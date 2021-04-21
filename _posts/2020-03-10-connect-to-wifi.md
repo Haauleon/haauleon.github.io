@@ -19,23 +19,23 @@ tags:
 ## 解决方法
 ###### Step1：检查有无安装网卡        
 &emsp;&emsp;检查台式机有无安装无线网卡（我这台是已经安装好了的）。大部分的台式机都没有安装无线网卡，都是需要后期自己手动安装的，无线网卡的功能在这里体现为 wifi 的接收。            
-![](haauleon\img\in-post\post-other\2020-03-10-connect-to-wifi-1.png)           
+![](\img\in-post\post-other\2020-03-10-connect-to-wifi-1.png)           
 
 <br><br>
 
 ###### Step2：根据需求购买网卡    
 &emsp;&emsp;购买无线网卡（我这里安装的是USB无线网卡）。这还是我跟公司的前台妹妹拿的，拿回来的时候只有一个USB接口的无线网卡，没有驱动。建议可以从某宝上买一个无线网卡，里面会有配套的无线网卡和光盘驱动。某宝好多产品都说是免驱安装，没试过，我用的是下面这款。            
-![](haauleon\img\in-post\post-other\2020-03-10-connect-to-wifi-2.png)       
+![](\img\in-post\post-other\2020-03-10-connect-to-wifi-2.png)       
 
 <br><br>
 
 ###### Step3：安装网卡配套驱动            
 &emsp;&emsp;安装驱动。根据无线网卡的型号，百度搜索对应的驱动并下载安装，安装成功后如Step1的图片显示。           
-![](haauleon\img\in-post\post-other\2020-03-10-connect-to-wifi-3.png)               
+![](\img\in-post\post-other\2020-03-10-connect-to-wifi-3.png)               
 
 <br><br>
 
 ###### Step4：检查网卡安装情况      
 &emsp;&emsp;插上USB无线网卡。插上无线网卡后，点击电脑右下角-连接到网络，将会显示无线网络供选择。              
-![](haauleon\img\in-post\post-other\2020-03-10-connect-to-wifi-4.png)
+![](\img\in-post\post-other\2020-03-10-connect-to-wifi-4.png)
     
