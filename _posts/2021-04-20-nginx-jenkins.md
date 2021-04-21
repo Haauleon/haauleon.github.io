@@ -16,7 +16,7 @@ tags:
     - API 测试
 ---
 
-## 前言
+## Ⅰ 前言
 目前已实现的 jenkins 持续集成如下：       
 * 使用 jenkins 定时构建自动化测试      
 * 使用 postman + newman 执行自动化测试并生成测试报告       
@@ -25,19 +25,24 @@ tags:
 
 <br><br>
 
-## 待测目录结构分析
+## Ⅱ 测试目录结构分析
 ![](\haauleon\img\in-post\post-jenkins\2021-04-20-nginx-jenkins-1.png)
 
 <br><br>
 
-## Jenkins 配置信息     
+## Ⅲ Jenkins 配置信息     
 ###### 一、定时构建
+&emsp;&emsp;当前定时构建的日程表为 `H/10 * * * *`，即为每十分钟执行一次。          
+
 ![](\haauleon\img\in-post\post-jenkins\2021-04-20-nginx-jenkins-2.jpg)
 
 <br><br>
 
 ###### 二、构建内容
-&emsp;&emsp;解释器、工具包均需要指定环境路径。    
+&emsp;&emsp;Jenkins 的构建内容的填写：由于是使用本地的解释器、工具包，因此均需要指定环境路径。若不想使用环境路径，则需要在 Jenkins 服务器中安装环境即可。         
+
+![](\haauleon\img\in-post\post-jenkins\2021-04-20-nginx-jenkins-3.png)                    
+<br>
 
 ```
 # newman 自动化测试并生成测试报告
@@ -55,12 +60,12 @@ cd /Users/haauleon/PythonTest/jsonRequest/report
 
 <br><br>
 
-## Jenkins 构建解析
+## Ⅳ Jenkins 构建内容分析
 ###### 一、Newman 自动化测试
-&emsp;&emsp;在 Postman 上调试通过之后，下载环境变量文件、全局变量文件、测试集合文件至本地，通过 Newman 命令行执行自动化测试并生成测试报告。可指定测试报告生成的路径。       
-
+&emsp;&emsp;在 Postman 上调试通过之后，下载 **环境变量文件**、**全局变量文件**、**测试集合文件** 至本地，通过 Newman 命令行执行自动化测试并生成测试报告。可指定测试报告生成的路径。         
+&emsp;&emsp;下面通过 json 格式来描述我从 Postman 导出的文件路径和自定义的测试报告路径。         
 ```json
-newman 测试目录 {
+{
     "测试集合文件": "/Users/haauleon/PythonTest/jsonRequest/saas/saas-collection.json",
     "环境变量文件": "/Users/haauleon/PythonTest/jsonRequest/saas/saas-env-online.json",
     "全局变量文件": "/Users/haauleon/PythonTest/jsonRequest/saas/saas-globals.json",
@@ -69,7 +74,15 @@ newman 测试目录 {
 ```
 <br>
 
-&emsp;&emsp;下载完成后，使用命令行进行自动化测试：     
+&emsp;&emsp;然后使用 newman 命令行进行自动化测试（具体使用，需要参考：[newman 的安装与基本使用教程](./2021-04-12-postman-newman.md)）。         
+**格式**：      
+```
+$ newman run "测试集合文件" -e "环境变量文件" -g "全局变量文件" -reportershtml --reporter-html-export "测试报告路径"
+```    
+<br>
+
+**实例**：
+&emsp;&emsp;在 Jenkins 服务器上使用本地的解释器或者 nodejs 工具，需要指定环境路径，我这里的路径是 `/usr/local/lib/node_modules/newman/bin/newman.js`。                  
 ```
 /usr/local/lib/node_modules/newman/bin/newman.js run /Users/haauleon/PythonTest/jsonRequest/saas/saas-collection.json -e /Users/haauleon/PythonTest/jsonRequest/saas/saas-env-online.json -g /Users/haauleon/PythonTest/jsonRequest/saas/saas-globals.json --reporters html --reporter-html-export /Users/haauleon/PythonTest/jsonRequest/report/saas_online_report.html
 ```
@@ -77,9 +90,11 @@ newman 测试目录 {
 <br><br>
 
 ###### 二、Python3 解析测试报告
-&emsp;&emsp;写 python3 脚本解析 html 测试报告，若接口数量数量不为 0 则使用 outgoing 向钉钉群组发送消息。      
+&emsp;&emsp;写 python3 脚本解析 html 测试报告，若接口数量数量不为 0 则使用 outgoing 向钉钉群组发送消息。            
+&emsp;&emsp;由 newman 生成的测试报告样式如下：       
+![](\haauleon\img\in-post\post-jenkins\2021-04-20-nginx-jenkins-4.png)
 
-消息模板如下:        
+**消息模板如下**:                   
 ```
 项目运行环境: saas生产环境
 接口异常数量: 4
@@ -87,7 +102,7 @@ newman 测试目录 {
 ```
 <br><br>
 
-脚本如下:        
+**具体脚本如下**:        
 ```python
 #!/usr/local/bin/python3 python3
 # -*- coding:utf-8 -*-
@@ -149,7 +164,7 @@ if __name__ == '__main__':
         with open (report_name, 'r', encoding="utf-8") as htmlf:
             htmlt = htmlf.read()
         html = etree.HTML(htmlt)
-        fail_count = int(html.xpath("/html/body/div/div[1]/div[35]/strong/text()")[0])
+        fail_count = int(html.xpath("/html/body/div/div[1]/div[35]/strong/text()")[0])  # 提取测试报告中断言失败数量字段的值。
         if fail_count:
             content = "项目运行环境: saas生产环境 \n"      \
                       "接口异常数量: %s \n"               \
@@ -167,7 +182,7 @@ if __name__ == '__main__':
 <br><br>
 
 ###### 三、上传文件至服务器
-&emsp;&emsp;使用 nodejs 工具包 publish-sftp 将本地文件自动上传至阿里云服务器。sftp.json 文件配置如下：      
+&emsp;&emsp;使用 nodejs 工具包 sftp-publish 将本地文件自动上传至阿里云服务器。sftp.json 文件配置如下：      
 
 ```json
 {
@@ -185,13 +200,13 @@ if __name__ == '__main__':
 
 <br>
 
-&emsp;&emsp;cd 进入到 report 目录后使用命令行进行文件上传。        
+&emsp;&emsp;使用该工具时，需要 cd 进入到配置文件 sftp.json 所在的 report 目录，然后使用命令行进行文件上传。若不指定配置文件所在的目录，则命令执行失败且会提示在 xxxxx 目录下找不到 sftp.json 文件。        
 
 ```
-# 进入报告所在目录 (新建的 sftp.json 配置文件在一定此 report 目录，否则会报错，提示此配置文件在 report 目录找不到)
+# 进入报告所在目录（由于我将配置文件放在 report 目录下，所以需要先进入 sftp.json 配置文件所在的目录。否则会报错，提示此配置文件在 report 目录找不到）
 cd /Users/haauleon/PythonTest/jsonRequest/report
 
-# 上传文件至服务器
+# 使用命令行上传文件至服务器（在 Jenkins 服务器使用本地环境的 nodejs 包，需要指定环境路径）
 /usr/local/lib/node_modules/publish-sftp/index.js -c
 ```
 
