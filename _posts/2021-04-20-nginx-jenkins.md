@@ -74,7 +74,7 @@ cd /Users/haauleon/PythonTest/jsonRequest/report
 ```
 <br>
 
-&emsp;&emsp;然后使用 newman 命令行进行自动化测试（具体使用，需要参考：[newman 的安装与基本使用教程](../2021-04-12-postman-newman.md)）。         
+&emsp;&emsp;然后使用 newman 命令行进行自动化测试。         
 **格式**：      
 ```
 $ newman run "测试集合文件" -e "环境变量文件" -g "全局变量文件" -reportershtml --reporter-html-export "测试报告路径"
@@ -200,7 +200,7 @@ if __name__ == '__main__':
 
 <br>
 
-&emsp;&emsp;使用该工具时，需要 cd 进入到配置文件 sftp.json 所在的 report 目录，然后使用命令行进行文件上传。若不指定配置文件所在的目录，则命令执行失败且会提示在 xxxxx 目录下找不到 sftp.json 文件（具体使用，需要参考：[sftp-publish 工具的安装与基本使用教程](haauleon\_posts\2021-04-20-node-sftp-publish.md)）。        
+&emsp;&emsp;使用该工具时，需要 cd 进入到配置文件 sftp.json 所在的 report 目录，然后使用命令行进行文件上传。若不指定配置文件所在的目录，则命令执行失败且会提示在 xxxxx 目录下找不到 sftp.json 文件。        
 
 ```
 # 进入报告所在目录（由于我将配置文件放在 report 目录下，所以需要先进入 sftp.json 配置文件所在的目录。否则会报错，提示此配置文件在 report 目录找不到）
