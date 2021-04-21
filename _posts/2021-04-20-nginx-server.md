@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Nginx | 部署静态页面"
-subtitle:      "使用本教程可进行安装和配置 nginx 用于部署静态资源"
+subtitle:      "使用本教程可进行安装和配置 nginx"
 date:          2021-04-19
 author:        "Haauleon"
 header-style:  text
