@@ -199,4 +199,4 @@ https://www.csdn.net/
 <br><br>
 
 ## 结束语
-&emsp;&emsp;pyppeteer 本身就支持异步，不过我还不熟练，总感觉坑很多。
+&emsp;&emsp;pyppeteer 本身就支持异步，不过我还不熟练，总感觉坑很多。参考：[高性能的异步爬虫](https://www.cnblogs.com/pythonz/p/10933838.html)
