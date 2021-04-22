@@ -1,7 +1,7 @@
 ---
 layout:        post
-title:         "Python3 | 多任务异步协程"
-subtitle:      "asyncio + pyppeteer 实现多任务异步爬虫"
+title:         "Python3 | 单线程异步协程"
+subtitle:      "asyncio + pyppeteer 实现单线程多任务异步爬虫"
 date:          2021-04-22
 author:        "Haauleon"
 header-style:  text
@@ -12,9 +12,9 @@ tags:
 ---
 
 
-## 前言
-&emsp;&emsp;接盘了个异步爬虫代码，可是我执行后发现没有异步的效果。看了下资料，在被 async 修饰的协程 main() 中增加了 `time.sleep(30)` 这样的非异步操作代码，因此导致 asyncio 协程在事件循环注册那一步时都是以阻塞式执行，总耗时太长了。然后我看了别人的协程示例，把代码改了，用 `await asyncio.sleep(30)` 去代替原来的 `time.sleep(30)`，然后在主程序中定义了一个任务列表 tasks， 用来放置多个任务对象，然后执行 `loop.run_until_complete(asyncio.wait(tasks))` 将多个任务对象对应的列表注册到事件循环中。以此来实现异步。        
-&emsp;&emsp;但是我发现了 pyppeteer 有个问题，不知道是不是 bug，就是如果我的 urls 列表的长度超过 2，那么程序在并发打开 3 个浏览器窗口时，偶尔会有一个或两个窗口的标签页未加载 url，真的很奇怪，我试了很多种方式。
+## 背景
+&emsp;&emsp;接盘了其中一个异步爬虫项目，可是我执行后发现没有异步的效果。看了下，在被 async 修饰的协程 main() 中加了一行 `time.sleep(30)` 这样的非异步操作代码，因此导致 asyncio 协程在事件循环注册那一步时都是阻塞，总耗时太长了。我看了别人的高性能协程示例，把代码改了，用 `await asyncio.sleep(30)` 去代替原来的 `time.sleep(30)`，然后在主程序中定义了一个任务列表 tasks， 用来放置多个任务对象，然后执行 `loop.run_until_complete(asyncio.wait(tasks))` 将多个任务对象对应的列表 tasks 注册到事件循环中，解决了异步失效的问题。另外，还增加了自动关闭浏览器时删除 tmp 文件的参数。                                
+&emsp;&emsp;但是我发现了 pyppeteer 有个问题，不知道是不是 bug，就是如果我的 urls 列表的长度超过 2，那么程序在同时打开 3 个浏览器窗口时，偶尔会有一个或两个窗口的标签页未加载 url，真的很奇怪，我试了很多种办法都无法解决，打算优化成单个窗口打开多个标签页试试能不能解决。        
 
 <br><br>
 
