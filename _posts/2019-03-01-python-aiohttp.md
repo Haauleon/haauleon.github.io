@@ -8,11 +8,12 @@ header-style:  text
 catalog:       true
 tags:
     - Python
+    - 异常库
 ---
 
 
-## 前言
-执行以下代码出错：         
+## 背景
+执行以下代码：         
 ```python
 import aiohttp
 
@@ -23,7 +24,7 @@ async with aiohttp.ClientSession() as session:
             return await response.text()
 ```
 
-执行结果：          
+执行结果：提示 `aiohttp.client_exceptions.ClientConnectorCertificateError` 异常            
 ```
 aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host movie.douban.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1091)')]
 ```

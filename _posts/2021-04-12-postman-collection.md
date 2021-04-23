@@ -11,7 +11,7 @@ tags:
     - Postman
 ---
 
-## 前言
+## 背景
 &emsp;&emsp;Postman 的集合 Collections 相当于目录，可以有层级，最终运行时按指定目录批量运行。      
 
 <br><br>
@@ -33,5 +33,5 @@ tags:
 
 <br><br>
 
-## 结束语
+## 结论
 &emsp;&emsp;可以临时用来批量跑一下接口集合，快速验证。

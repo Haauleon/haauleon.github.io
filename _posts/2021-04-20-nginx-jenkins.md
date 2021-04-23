@@ -16,7 +16,7 @@ tags:
     - API 测试
 ---
 
-## Ⅰ 前言
+## Ⅰ 背景
 目前已实现的 jenkins 持续集成如下：       
 * 使用 jenkins 定时构建自动化测试      
 * 使用 postman + newman 执行自动化测试并生成测试报告       
@@ -212,5 +212,5 @@ cd /Users/haauleon/PythonTest/jsonRequest/report
 
 <br><br>
 
-## 结束语
+## 结论
 &emsp;&emsp;愉快的构建，省了很多麻烦。

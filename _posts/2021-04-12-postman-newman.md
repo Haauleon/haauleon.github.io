@@ -11,7 +11,7 @@ tags:
     - Postman
 ---
 
-## 前言
+## 背景
 &emsp;&emsp;Postman 提供丰富的接口测试断言，使用 Postman 结合 Newman 来完成 API 自动测试可以大大降低时间成本，生成的测试报告非常可观且测试报告模板可以按需修改。本文是基于 MacOs 系统来操作且截图的，Windows 系统需要替换命令行。                
 
 <br><br>
@@ -127,5 +127,5 @@ $ newman run 测试集文件.json -e 环境变量文件.json -g 全局变量.jso
 
 <br><br>
 
-## 结束语
+## 结论
 &emsp;&emsp;Newman 生成的测试报告模板可按需修改。

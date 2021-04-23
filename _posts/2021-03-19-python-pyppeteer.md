@@ -8,10 +8,11 @@ header-style:  text
 catalog:       true
 tags:
     - Python
+    - 异常库
 ---
 
 
-## 前言
+## 背景
 &emsp;&emsp;pyppeteer 安装完成后执行以下 `百度截图脚本` 代码：                                               
 ```python
 #!/usr/bin/env python3

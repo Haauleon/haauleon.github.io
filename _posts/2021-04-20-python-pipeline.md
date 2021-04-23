@@ -10,7 +10,7 @@ tags:
     - Python
 ---
 
-## 前言
+## 背景
 &emsp;&emsp;在 python 脚本内执行 shell 命令，可以解放双手。     
 
 <br><br>
