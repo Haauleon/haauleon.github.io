@@ -10,7 +10,7 @@ tags:
     - Python
 ---
 
-## numba.jit 加速函数
+## numba.jit 加速函数                  
 ###### 背景
 &emsp;&emsp;python 一直被病垢运行速度太慢，但是实际上 python 的执行效率并不慢，慢的是 python 用的解释器 Cpython 运行效率太差。        
 &emsp;&emsp;numba 所完成的工作就是：解析 Python 函数的 ast 语法树并加以改造，添加类型信息；将带类型信息的 ast 语法树通过 llvmpy 动态地转换为机器码函数，然后再通过和 ctypes 类似的技术为机器码函数创建包装函数供 Python 调用。（说实话我看不懂）        
