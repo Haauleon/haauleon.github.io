@@ -11,14 +11,14 @@ tags:
 ---
 
 ## numba.jit 加速函数                  
-###### 背景
+###### 一、背景
 &emsp;&emsp;python 一直被病垢运行速度太慢，但是实际上 python 的执行效率并不慢，慢的是 python 用的解释器 Cpython 运行效率太差。        
 &emsp;&emsp;numba 所完成的工作就是：解析 Python 函数的 ast 语法树并加以改造，添加类型信息；将带类型信息的 ast 语法树通过 llvmpy 动态地转换为机器码函数，然后再通过和 ctypes 类似的技术为机器码函数创建包装函数供 Python 调用。（说实话我看不懂）        
 &emsp;&emsp;看网上说得很牛掰的样子，我自己也来试试。              
 
 <br><br>
 
-###### 未使用 jit 
+###### 二、未使用 jit 
 ```python
 %%time
 
@@ -44,7 +44,7 @@ Wall time: 383 ms
 
 <br><br>
 
-###### 使用 jit 后的
+###### 三、使用 jit
 ```python
 %%time
 from numba import jit
@@ -79,15 +79,15 @@ Wall time: 113 ms
 
 <br><br>
 
-## collections.Counter 加速列表计数
-###### 背景
+## Counter 加速列表计数
+###### 一、背景
 定义一个列表：       
 ```python
 data = [x**2%1989 for x in range(2000000)]
 ```
 <br><br>
 
-###### 未使用 Counter 计数
+###### 二、使用 for 循环计数
 ```python
 %%time
 values_count = {}
@@ -106,7 +106,7 @@ Wall time: 510 ms
 
 <br><br>
 
-###### 使用 Counter 计数后
+###### 三、使用 Counter 计数
 ```python
 %%time
 from collections import Counter
@@ -125,8 +125,8 @@ Wall time: 153 ms
 
 <br><br>
 
-## collections.ChainMap 加速字典合并
-###### 背景
+## ChainMap 加速字典合并
+###### 一、背景
 定义四个字典：       
 ```python
 dict_a = {i:i+1 for i in range(1,1000000,2)}
@@ -136,7 +136,7 @@ dict_d = {i:4*i+1 for i in range(1,1000000,7)}
 ```
 <br><br>
 
-###### 未使用 ChainMap
+###### 二、使用 dict.update 进行合并
 ```python
 %%time
 result = dict_a.copy()
@@ -156,7 +156,7 @@ Wall time: 89.5 ms
 
 <br><br>
 
-###### 使用 ChainMap 后
+###### 三、使用 ChainMap 进行合并
 ```python
 %%time
 from collections import ChainMap
@@ -176,11 +176,11 @@ Wall time: 1.14 ms
 <br><br>
 
 ## Map 加速列表生成
-###### 背景
+###### 一、背景
 &emsp;&emsp;用于生成一个没有 if 判断语句的列表。    
 <br><br>
 
-###### 未使用 map 
+###### 二、使用列表推导式 
 ```python
 %%time
 result = [x**2 for x in range(1,1000000,3)]
@@ -195,7 +195,7 @@ Wall time: 97.7 ms
 
 <br><br>
 
-###### 使用 map 后
+###### 三、使用 map 生成列表
 ```python
 %%time
 result = map(lambda x:x**2, range(1,1000000,3))
@@ -211,12 +211,12 @@ Wall time: 8.11 µs
 <br><br>
 
 ## Filter 加速列表生成
-###### 背景
+###### 一、背景
 &emsp;&emsp;用于生成一个有 if 语句的列表。    
 
 <br><br>
 
-###### 未使用 filter
+###### 二、使用列表推导式
 ```python
 %%time
 result = [x for x in range(1,1000000,3) if x%7 == 0]
@@ -231,7 +231,7 @@ Wall time: 21.5 ms
 
 <br><br>
 
-###### 使用 filter 后
+###### 三、使用 filter 生成列表
 ```python
 %%time
 result = filter(lambda x:x%7==0,range(1,1000000,3))
