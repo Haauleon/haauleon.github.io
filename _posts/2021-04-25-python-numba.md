@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Python3 | 加速的方法"
-subtitle:      "列举了一些让程序加速的方法"
+subtitle:      "列举了一些让程序运行加速的方法"
 date:          2021-04-25
 author:        "Haauleon"
 header-style:  text
