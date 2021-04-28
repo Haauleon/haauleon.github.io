@@ -19,7 +19,7 @@ tags:
 <br><br>
 
 ## 代码
-###### 一、协程无效的代码（旧代码）
+###### 一、旧代码
 ```python
 # -*- coding: utf-8 -*-#
 # Description:  
@@ -123,6 +123,13 @@ import asyncio
 import pyppeteer
 import requests
 
+urls = [
+    'https://www.cnblogs.com/',
+    'https://www.csdn.net/',
+]
+
+tasks = [] # 任务列表，放置多个任务对象
+
 
 class SpiderGoogle(object):
     """
@@ -156,7 +163,7 @@ class SpiderGoogle(object):
         # 设置浏览器头部
         await self.page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ')
         # 设置浏览器大小(如果设置了无头浏览器就把这里屏蔽掉)
-        await self.page.setViewport({'width': 1366, 'height': 768})
+        # await self.page.setViewport({'width': 1366, 'height': 768})
     
     async def main(self, url):
         await self._init()
@@ -166,24 +173,21 @@ class SpiderGoogle(object):
     async def close_page(self):
         await self.page.close()
 
-urls = [
-    'https://www.cnblogs.com/',
-    'https://www.csdn.net/',
-]
+
+def run():
+    for url in urls:
+        print(url)
+        task = asyncio.ensure_future(google.main(url))
+        tasks.append(task)
+
 
 if __name__ == '__main__':
     start = time.time()
     google = SpiderGoogle()
     loop = asyncio.get_event_loop()
-    tasks = [] # 任务列表，放置多个任务对象
-    for url in urls:
-        print(url)
-        task = asyncio.ensure_future(google.main(url))
-        tasks.append(task)
-    #将多个任务对象对应的列表注册到事件循环中
-    loop.run_until_complete(asyncio.wait(tasks))
+    run()
+    loop.run_until_complete(asyncio.wait(tasks))   #将多个任务对象对应的列表注册到事件循环中
     print('总耗时：', time.time()-start)
-
 ```
 
 <br>
