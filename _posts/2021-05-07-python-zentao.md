@@ -18,7 +18,7 @@ tags:
 
 ## 问题
 &emsp;&emsp;目前使用的禅道专业版本 10.4。看了禅道的登录接口，找到它的接口参数如下：          
-```json
+```
 Request URL: http://localhost:8080/zentao/user-login.html      
 Request Method: POST
 
@@ -35,7 +35,7 @@ form-data
 <br>
 
 &emsp;&emsp;`form-data` 里的 `password` 和 `verifyRand` ，可以看到前端在请求前均进行了加密。检查登录页面 `http://localhost:8080/zentao/user-login.html` 的源代码：          
-```html
+```
 $(document).ready(function()
 {
     $('#verifyPassword').closest('form').find('#submit').click(function()
