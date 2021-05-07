@@ -90,7 +90,7 @@ class ZentaoLogin:
         '''获取加密后的 password'''
         #方式一
         hash = hashlib.md5()
-        hash.update(pw.encode('utf-8'))
+        hash.update(pw.encode('utf-8'))        # 不添加.encode('utf-8')会报错
         f = hash.hexdigest() + self.rand
         print("f = %s" %f)
         #方式二
