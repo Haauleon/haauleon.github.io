@@ -202,14 +202,91 @@ def get_product_list_test(self):
 
 ## 代码实现
 ```python
-def get_product_list(self, product_name):
-    '''获取产品列表'''
-    res_product = user.get("%s/zentao/product-index-no.json" %base).json()
-    # print(res_product)
-    products_str = res_product["data"].encode('utf-8').decode('unicode_escape') # python3 取消了decode，要想str中的unicode转中文需要先编码再解码
-    # print(products_str)
-    products_dict = json.loads(products_str)["products"]
-    return list(filter(lambda k:products_dict[k] == product_name, products_dict))[0]
+#! /usr/bin/env python
+
+import requests
+import re
+import hashlib
+import json
+
+username = "username"
+pw = "password"
+base = "http://localhost:8080"
+
+user = requests.Session()
+headers = {
+    "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36"
+}
+
+
+class Zentao:
+
+    def __init__(self):
+        self.login_url = "%s/zentao/user-login.html" %base
+
+    def get_rand(self):
+        '''获取 rand 值'''
+        while True:
+            res_rand = user.get(self.login_url, headers=headers)
+            res_rand.encoding = 'utf-8'
+            # print("res_rand.text = %s" %res_rand.text)
+            rand = re.findall(r"'verifyRand' value='(.+?)'", res_rand.text)
+            # print("rand[0] = {}".format(rand[0]))
+            if len(rand[0]) == 10:   # rand 的长度不固定可为9或10，判断长度为10时就不再请求登录页面接口
+                self.rand = rand[0]
+                break
+        print(self.rand)
+
+    def get_password(self):
+        '''获取 password'''
+        # 方式一
+        hash = hashlib.md5()
+        hash.update(pw.encode('utf-8'))
+        f = hash.hexdigest() + self.rand
+        print("f = %s" %f)
+        # 方式二
+        hash2 = hashlib.md5(f.encode('utf-8'))
+        self.pwd = hash2.hexdigest()
+        print("pwd = %s" %self.pwd)
+
+    def user_login(self):
+        '''用户登录'''
+        data = {
+            "account": username,
+            "password": self.pwd,
+            "referer": "%s/zentao/bug-browse-14-0-openedbyme.html" %base,
+            "verifyRand": self.rand
+        }
+        res_login = user.post(self.login_url, headers=headers, data=data)
+        res_login.encoding = 'utf-8'
+        # print("res_login.text = %s" %res_login.text)
+
+    def check_login(self):
+        '''检查登录'''
+        res_check = user.get("%s/zentao/bug-browse-14-0-openedbyme.html" %base, headers=headers)
+        res_check.encoding = 'utf-8'
+        # print("res_check.text = %s" %res_check.text)
+        result = re.findall(r"\<a href=\'\/zentao\/user-logout.html' \>(.+?)\<\/a\>", res_check.text)
+        print("result = {}".format(result))
+        if result[0] == "退出":
+            print("登录成功")
+
+    def login_union_option(self):
+        '''登录统一操作'''
+        self.get_rand()
+        self.get_password()
+        self.user_login()
+        self.check_login()
+
+    def get_product_list(self, product_name):
+        '''获取产品列表'''
+        res_product = user.get("%s/zentao/product-index-no.json" %base).json()
+        # print(res_product)
+        products_str = res_product["data"].encode('utf-8').decode('unicode_escape') # python3 取消了decode，要想str中的unicode转中文需要先编码再解码
+        # print(products_str)
+        products_dict = json.loads(products_str)["products"]  # str 转 dict
+        return list(filter(lambda k:products_dict[k] == product_name, products_dict))[0]
+
 
 if __name__ == '__main__':
     zentao = Zentao()
