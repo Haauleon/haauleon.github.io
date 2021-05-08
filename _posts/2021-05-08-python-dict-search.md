@@ -228,7 +228,7 @@ class Zentao:
         '''获取 rand 值'''
         while True:
             res_rand = user.get(self.login_url, headers=headers)
-            res_rand.encoding = 'utf-8'
+            # res_rand.encoding = 'utf-8'
             # print("res_rand.text = %s" %res_rand.text)
             rand = re.findall(r"'verifyRand' value='(.+?)'", res_rand.text)
             # print("rand[0] = {}".format(rand[0]))
@@ -258,13 +258,13 @@ class Zentao:
             "verifyRand": self.rand
         }
         res_login = user.post(self.login_url, headers=headers, data=data)
-        res_login.encoding = 'utf-8'
+        # res_login.encoding = 'utf-8'
         # print("res_login.text = %s" %res_login.text)
 
     def check_login(self):
         '''检查登录'''
         res_check = user.get("%s/zentao/bug-browse-14-0-openedbyme.html" %base, headers=headers)
-        res_check.encoding = 'utf-8'
+        # res_check.encoding = 'utf-8'
         # print("res_check.text = %s" %res_check.text)
         result = re.findall(r"\<a href=\'\/zentao\/user-logout.html' \>(.+?)\<\/a\>", res_check.text)
         print("result = {}".format(result))
