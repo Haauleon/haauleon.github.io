@@ -209,9 +209,9 @@ import re
 import hashlib
 import json
 
-username = "username"
-pw = "password"
-base = "http://localhost:8080"
+username = "username"             # 登录用户
+pw = "password"                   # 登录密码
+base = "http://localhost:8080"    # 服务地址
 
 user = requests.Session()
 headers = {
