@@ -223,6 +223,17 @@ class Zentao:
 
     def __init__(self):
         self.login_url = "%s/zentao/user-login.html" %base
+        self.product_url = "%s/zentao/product-index-no.json" %base
+        self.rand = None
+        self.pwd = None
+        self.product_id = None
+
+    def union_option(self):
+        self.get_rand()
+        self.get_password()
+        self.user_login()
+        self.check_login()
+        self.get_product_list("saas")
 
     def get_rand(self):
         '''获取 rand 值'''
@@ -243,7 +254,7 @@ class Zentao:
         hash = hashlib.md5()
         hash.update(pw.encode('utf-8'))
         f = hash.hexdigest() + self.rand
-        print("f = %s" %f)
+        # print("f = %s" %f)
         # 方式二
         hash2 = hashlib.md5(f.encode('utf-8'))
         self.pwd = hash2.hexdigest()
@@ -267,35 +278,31 @@ class Zentao:
         # res_check.encoding = 'utf-8'
         # print("res_check.text = %s" %res_check.text)
         result = re.findall(r"\<a href=\'\/zentao\/user-logout.html' \>(.+?)\<\/a\>", res_check.text)
-        print("result = {}".format(result))
+        # print("result = {}".format(result))
         if result[0] == "退出":
             print("登录成功")
 
-    def login_union_option(self):
-        '''登录统一操作'''
-        self.get_rand()
-        self.get_password()
-        self.user_login()
-        self.check_login()
-
     def get_product_list(self, product_name):
         '''获取产品列表'''
-        res_product = user.get("%s/zentao/product-index-no.json" %base).json()
+        res_product = user.get(self.product_url).json()
         # print(res_product)
         products_str = res_product["data"].encode('utf-8').decode('unicode_escape') # python3 取消了decode，要想str中的unicode转中文需要先编码再解码
         # print(products_str)
         products_dict = json.loads(products_str)["products"]  # str 转 dict
-        return list(filter(lambda k:products_dict[k] == product_name, products_dict))[0]
+        self.product_id = list(filter(lambda k:products_dict[k] == product_name, products_dict))[0]
+        print(self.product_id)
 
 
 if __name__ == '__main__':
     zentao = Zentao()
-    zentao.login_union_option()
-    print(zentao.get_product_list("saas"))
+    zentao.union_option()
 ```
 <br><br>
 
 运行结果：        
 ```
+1490976266
+pwd = f6bddcc70263e1d26f946ca8e6f38970
+登录成功
 14
 ```   

@@ -68,16 +68,27 @@ headers = {
 }
 
 
-class ZentaoLogin:
+class Zentao:
 
     def __init__(self):
         self.login_url = "%s/zentao/user-login.html" %base
+        self.product_url = "%s/zentao/product-index-no.json" %base
+        self.rand = None
+        self.pwd = None
+        self.product_id = None
+
+    def union_option(self):
+        self.get_rand()
+        self.get_password()
+        self.user_login()
+        self.check_login()
+        self.get_product_list("saas")
 
     def get_rand(self):
-        '''获取加密后的 rand 值'''
+        '''获取 rand 值'''
         while True:
             res_rand = user.get(self.login_url, headers=headers)
-            res_rand.encoding = 'utf-8'
+            # res_rand.encoding = 'utf-8'
             # print("res_rand.text = %s" %res_rand.text)
             rand = re.findall(r"'verifyRand' value='(.+?)'", res_rand.text)
             # print("rand[0] = {}".format(rand[0]))
@@ -87,13 +98,13 @@ class ZentaoLogin:
         print(self.rand)
 
     def get_password(self):
-        '''获取加密后的 password'''
-        #方式一
+        '''获取 password'''
+        # 方式一
         hash = hashlib.md5()
-        hash.update(pw.encode('utf-8'))        # 不添加.encode('utf-8')会报错
+        hash.update(pw.encode('utf-8'))
         f = hash.hexdigest() + self.rand
-        print("f = %s" %f)
-        #方式二
+        # print("f = %s" %f)
+        # 方式二
         hash2 = hashlib.md5(f.encode('utf-8'))
         self.pwd = hash2.hexdigest()
         print("pwd = %s" %self.pwd)
@@ -107,28 +118,22 @@ class ZentaoLogin:
             "verifyRand": self.rand
         }
         res_login = user.post(self.login_url, headers=headers, data=data)
-        res_login.encoding = 'utf-8'
-        print("res_login.text = %s" %res_login.text)
+        # res_login.encoding = 'utf-8'
+        # print("res_login.text = %s" %res_login.text)
 
     def check_login(self):
         '''检查登录'''
         res_check = user.get("%s/zentao/bug-browse-14-0-openedbyme.html" %base, headers=headers)
-        res_check.encoding = 'utf-8'
+        # res_check.encoding = 'utf-8'
         # print("res_check.text = %s" %res_check.text)
         result = re.findall(r"\<a href=\'\/zentao\/user-logout.html' \>(.+?)\<\/a\>", res_check.text)
-        print("result = {}".format(result))
+        # print("result = {}".format(result))
         if result[0] == "退出":
             print("登录成功")
 
-    def union_option(self):
-        self.get_rand()
-        self.get_password()
-        self.user_login()
-        self.check_login()
-
 
 if __name__ == '__main__':
-    zentao = ZentaoLogin()
+    zentao = Zentao()
     zentao.union_option()
     
 ```
@@ -137,13 +142,7 @@ if __name__ == '__main__':
 
 运行结果：    
 ```
-2107043470
-f = 5410549c189a667c73a9d8876b8a3df22107043470
-pwd = abd2638a18c45d9d51ba64a7d49a1137
-res_login.text = <html><meta charset='utf-8'/><style>body{background:white}</style><script>parent.location='http://manage.bringbuys.com/zentao/bug-browse-14-0-openedbyme.html';
-
-</script>
-
-result = ['退出']
+1490976266
+pwd = f6bddcc70263e1d26f946ca8e6f38970
 登录成功
 ```
