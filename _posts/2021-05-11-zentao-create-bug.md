@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "禅道 | Python3 脚本创建 bug"
-subtitle:      "写了一个脚本创建 bug 的 demo"
+subtitle:      "写了一个创建 bug 的 python3 脚本 demo"
 date:          2021-05-11
 author:        "Haauleon"
 header-style:  text
