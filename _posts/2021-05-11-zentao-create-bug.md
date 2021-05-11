@@ -11,14 +11,14 @@ tags:
     - Python
 ---
  
- ## 背景
- &emsp;&emsp;写了一个简单的脚本去禅道上创建 Bug，具体到时候怎么使用这个脚本还待研究。     
+## 背景
+&emsp;&emsp;写了一个简单的脚本去禅道上创建 Bug，具体到时候怎么使用这个脚本还待研究。     
 
- <br><br>
+<br><br>
 
- ## 代码实现
- ```python
- #! /usr/bin/env python
+## 代码实现
+```python
+#! /usr/bin/env python
 # -*- coding: UTF-8 -*-
 import requests
 import re
@@ -167,4 +167,4 @@ class Zentao:
 if __name__ == '__main__':
     zentao = Zentao()
     zentao.union_option()
- ```
+```
