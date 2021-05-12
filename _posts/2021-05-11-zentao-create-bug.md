@@ -49,8 +49,8 @@ class Zentao:
         self.get_rand()
         self.get_password()
         self.user_login()
-        self.check_login()
         self.get_product_list("saas")
+        self.check_login()
         self.get_module_list()
         self.create_bug()
 
@@ -88,7 +88,7 @@ class Zentao:
         data = {
             "account": username,
             "password": self.pwd,
-            "referer": "%s/zentao/bug-browse-14-0-openedbyme.html" %base,
+            "referer": "",
             "verifyRand": self.rand
         }
         res_login = user.post(self.login_url, headers=headers, data=data)
@@ -97,7 +97,7 @@ class Zentao:
 
     def check_login(self):
         '''检查登录'''
-        res_check = user.get("%s/zentao/bug-browse-14-0-openedbyme.html" %base, headers=headers)
+        res_check = user.get("%s/zentao/bug-browse-%s-0-openedbyme.html" %(base, self.product_id), headers=headers)
         # res_check.encoding = 'utf-8'
         # print("res_check.text = %s" %res_check.text)
         result = re.findall(r"\<a href=\'\/zentao\/user-logout.html' \>(.+?)\<\/a\>", res_check.text)
