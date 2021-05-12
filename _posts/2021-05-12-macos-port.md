@@ -19,6 +19,6 @@ tags:
 如果已有其他进程占用此端口，可通过以下操作解决：         
 
 ```
-$ lsof -i tcp:port    # 查看占用 port 的进行
+$ lsof -i tcp:port    # 查看占用 port 的进程
 $ kill -9 PID         # 干掉进程
 ```
