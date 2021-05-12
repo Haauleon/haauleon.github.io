@@ -11,7 +11,7 @@ tags:
 ---
 
 ## 背景
-&emsp;&emsp;之前玩了一个 mitmproxy，使用 mitmdump 命令启动监听，该命令会占用本地 8080 端口。由于之前启动 jenkins 服务时默认用的是 8080 端口，所以冲突了。          
+&emsp;&emsp;之前在玩 mitmproxy 的时候，使用 mitmdump 命令启动监听，该命令会占用本地 8080 端口。由于启动 jenkins 服务时默认用的是 8080 端口，所以冲突了。          
 
 <br><br>
 
