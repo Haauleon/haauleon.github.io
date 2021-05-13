@@ -86,7 +86,7 @@ f = lambda x, y : x * y #定义了函数f(x, y) = x * y
 
 其非匿名函数表达如下：         
 ```python
-def f(x, y)：
+def f(x, y):
     return x * y
 ```
 
