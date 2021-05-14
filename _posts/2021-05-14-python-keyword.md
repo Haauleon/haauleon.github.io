@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Python3 | 关键字"
-subtitle:      "列举了 3.7 版本所有的关键字及其用法"
+subtitle:      "列举了 3.7 版本所有的关键字及其定义"
 date:          2021-05-14
 author:        "Haauleon"
 header-style:  text
