@@ -53,3 +53,8 @@ tags:
 &emsp;&emsp;IronPython 和 Jython 类似，只不过 IronPython 是运行在微软 .Net 平台上的 Python 解释器，可以直接把 Python 代码编译成 .Net 的字节码。没用过，不评价。        
 
 &emsp;&emsp;IronPython 解释器的官方下载地址：[https://ironpython.net/](https://ironpython.net/)。
+
+<br><br>
+
+## 结论
+&emsp;&emsp;Python 的解释器很多，但使用最广泛的还是 CPython。如果要和 Java 或 .Net 平台交互，最好的办法不是用 Jython 或 IronPython，而是通过网络调用来交互，确保各程序之间的独立性。
