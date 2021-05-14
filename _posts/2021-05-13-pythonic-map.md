@@ -68,12 +68,12 @@ Wall time: 15 ms
 
 
 ## python 函数式编程
-&emsp;&emsp;python 中的 map() 和 filter() 函数均是应用于序列的内置函数，分别对序列进行遍历和过滤操作，这两个内置函数在实际使用过程中经常跟 lambda 函数联合使用。        
+&emsp;&emsp;python 中的 map() 和 filter() 函数均是应用于序列的内置函数，分别对序列进行遍历和过滤操作，这两个内置函数在实际使用过程中经常跟 lambda 关键字联合使用。        
 
 <br>
 
 ###### 一、lambda 函数
-lambda 函数的 Python3.x API文档       
+lambda 的 Python3.x API文档       
 > lambda       
 > An anonymous inline function consisting of a single expression which is evaluated when the function is called. The syntax to create a lambda function is lambda [arguments]: expression
 
