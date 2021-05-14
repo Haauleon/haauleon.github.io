@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Python3 | 鸭子类型"
-subtitle:      ""
+subtitle:      "鸭子类型的含义与其在 python 中的表现形式"
 date:          2021-05-14
 author:        "Haauleon"
 header-style:  text
