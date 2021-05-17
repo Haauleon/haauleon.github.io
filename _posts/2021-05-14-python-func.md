@@ -2,7 +2,7 @@
 layout:        post
 title:         "Python3 | 绑定与未绑定方法"
 subtitle:      "类的绑定方法与未绑定方法的区别"
-date:          2021-05-15
+date:          2021-05-17
 author:        "Haauleon"
 header-style:  text
 catalog:       true
