@@ -156,7 +156,7 @@ TypeError: class_method() takes 0 positional arguments but 1 was given
 
 <br><br>
 
-## 非绑定方法
+## 二、非绑定方法
 &emsp;&emsp;python 给我们提供了 @staticmethod，可以解除绑定关系，将一个类中的方法，变为一个普通函数。即既不绑定类同时也不绑定对象。              
 ```python
 # coding:utf-8
