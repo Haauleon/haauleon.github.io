@@ -241,7 +241,7 @@ Time: 0.00039696693420410156
 
 <br>
 
-普通串行花费 7 秒:          
+（1）普通串行花费 7 秒:          
 ```python
 import time
 
@@ -266,7 +266,7 @@ print(time.time()-start)
 
 <br>
 
-使用协程并发执行只花费 4 秒:             
+（2）使用协程并发执行只花费 4 秒:             
 ```python
 import asyncio
 import time
