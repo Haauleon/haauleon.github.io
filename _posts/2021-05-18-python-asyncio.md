@@ -316,7 +316,7 @@ Time: 4.0017218589782715
 
 <br>
 
-协程嵌套 -- 普通写法:           
+（1）协程嵌套 -- 普通写法:           
 ```python
 import asyncio
 import time
@@ -366,7 +366,7 @@ Time: 4.003580093383789
 
 <br>
 
-协程嵌套 -- 使用 asyncio.wait 方式挂起协程:            
+（2）协程嵌套 -- 使用 asyncio.wait 方式挂起协程:            
 ```python
 import asyncio
 import time
@@ -410,7 +410,7 @@ Time: 4.0029308795928955
 
 <br>
 
-协程嵌套 -- 使用列表推导式简写:          
+（3）协程嵌套 -- 使用列表推导式简写:          
 ```python
 import time
 import asyncio
