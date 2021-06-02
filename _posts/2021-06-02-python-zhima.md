@@ -17,6 +17,9 @@ tags:
 <br><br>
 
 ## 代码
+获取芝麻的城市代码接口：http://wapi.http.linkudp.com/index/api/get_city_code?key=&export_type=1                 
+
+
 ```python
 # -*- coding: utf-8 -*-#
 # Description: 
