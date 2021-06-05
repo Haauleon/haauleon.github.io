@@ -17,14 +17,23 @@ tags:
 <br><br>
 
 ## 代码
-获取芝麻的城市代码接口：http://wapi.http.linkudp.com/index/api/get_city_code?key=&export_type=1                 
+###### 一、项目结构
+![](\img\in-post\post-python\2021-06-02-python-zhima-1.png)             
+
+<br><br>
+
+###### 二、代码 demo
+&emsp;&emsp;目前用的代理服务商是芝麻，新用户注册可以获得 10000 个免费的 ip，也就是可以给我刷 10000 个国内各城市（数了一下，将近 200 个城市路线，可能有虚报，目前是我找到的最多线路的代理）不同运营商的 ip。获取芝麻代理的城市代码接口：[http://wapi.http.linkudp.com/index/api/get_city_code?key=&export_type=1](http://wapi.http.linkudp.com/index/api/get_city_code?key=&export_type=1) 。                              
 
 
 ```python
-# -*- coding: utf-8 -*-#
-# Description: 
-# Author:       haauleon
-# Date:         2020/6/2
+# -*- coding:utf-8 -*-
+"""
+@Author  :   haauleon
+@Contact :   753494552@qq.com
+@File    :   zhima_city_run.py
+"""
+
 import time
 
 import asyncio
@@ -37,9 +46,7 @@ ip_url = 'http://webapi.http.zhimacangku.com/getip?num=1&type=1&pro=%s&city=%s&y
 
 
 class ZhimaCity:
-    """
-    异步类
-    """
+    
     pyppeteer.DEBUG = True
     page = None
     item_list = list()
@@ -50,7 +57,7 @@ class ZhimaCity:
 
     async def _init(self):
         """
-        初始化浏览器,获取代理ip
+        初始化浏览器，获取代理ip
         :return:
         """
         browser = await pyppeteer.launch(
@@ -80,7 +87,7 @@ class ZhimaCity:
     async def main(self, url, pic_name):
         await self._init()
         await self.page.goto(url, timeout=0)
-        # await asyncio.sleep(6)
+        # await asyncio.sleep(15)
         await self.page.screenshot(path='zhima\city_pic\%s.png' %(pic_name))
         
     async def close_page(self):
@@ -92,17 +99,17 @@ def run():
     sheet1_content1 = workBook.sheet_by_index(0)  # 第一个 sheet
 
     for i in range(1, sheet1_content1.nrows):
-        rows = sheet1_content1.row_values(i) # 返回值是一行的数据，数据类型是列表
+        rows = sheet1_content1.row_values(i)      # 返回 sheet 一行数据，数据类型是列表
         pro = str(int(rows[1]))
         city = str(int(rows[3]))
         city_name = rows[2]
         resp = requests.get(ip_url %(pro, city))
         # resp = requests.get(ip_url %('130000', '130200'))
-        print(resp.text[:resp.text.index(":")])  # 截取 ：之前的字符串，即 ip
+        print(resp.text[:resp.text.index(":")])   # 截取 : 之前的字符串，即 ip
         if resp.status_code == 200:
             zhima = ZhimaCity(resp.text)
             loop = asyncio.get_event_loop()
-            tasks = [] # 任务列表，放置多个任务对象
+            tasks = []                            # 任务列表，放置多个任务对象
             for url in urls:
                 print(city_name)
                 task = asyncio.ensure_future(zhima.main(url, city_name))
