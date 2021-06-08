@@ -48,8 +48,8 @@ regions_list = [
 # 芝麻代理IP地址（国内）
 ip_url = 'http://webapi.http.zhimacangku.com/getip?num=1&type=1&pro=0&city=0&yys=0&port=1&pack=153381&ts=0&ys=0&cs=0&lb=1&sb=0&pb=4&mr=1&regions=440000'
 # 芝麻账户
-username = "13976062467"
-password = "13976062467AAA"
+username = "username"
+password = "password"
 
 
 class ZhimaGetIp:
