@@ -162,7 +162,8 @@ def run():
                 try:
                     loop.run_until_complete(task)
                 except:
-                    print("此ip请求异常，正在重跑......")
+                    print("此ip请求异常，10秒后重跑......")
+                    time.sleep(10)
                 finally:
                     if time.time()-start >= 1500.0:        # 免费ip最多可使用25分钟
                         print("此ip已失效！5秒后自动切换新ip......")
