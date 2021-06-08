@@ -45,11 +45,11 @@ regions_list = [
 # 流量查询接口
 # flow_api = 'https://api.ipidea.net/index/index/get_my_balance?neek=210208&appkey=a85c3bcc4a83fdc63b4d0f1a231c95fc'
 
-# 芝麻代理IP地址（请求前需要登录官网添加ip白名单）
+# 芝麻代理IP地址（国内）
 ip_url = 'http://webapi.http.zhimacangku.com/getip?num=1&type=1&pro=0&city=0&yys=0&port=1&pack=153381&ts=0&ys=0&cs=0&lb=1&sb=0&pb=4&mr=1&regions=440000'
 # 芝麻账户
-username = "username"
-password = "password"
+username = "13976062467"
+password = "13976062467AAA"
 
 
 class ZhimaGetIp:
@@ -78,8 +78,8 @@ class ZhimaGetIp:
         '''获取每日免费 ip'''
         res = self.user.post(self.get_ip_url)
         print(res.text)
-
         
+
 class SpiderGoogle(object):
     """
     异步类
@@ -131,7 +131,7 @@ class SpiderGoogle(object):
         await self._init()
         await self._insert_js()
         i = 0
-        while i < 4:    # 一个标签页循环4次，计20个pv（纯属瞎写，暂时没思路）
+        while i < 4:    # 一个标签页循环4次，计20个pv
             await self.page.goto('https://macaoideas.ipim.gov.mo/home', timeout=0) # 3.1MB
             time.sleep(30)
             await self.page.goto('https://macaoideas.ipim.gov.mo/category', timeout=0) # 1.8MB
@@ -150,24 +150,29 @@ def run():
     zhima = ZhimaGetIp()
     zhima.union_get_free_ip()
     i = 0
-    while i < 5:       # （芝麻）每日最多可使用20个免费ip
+    while i <= 20:   # （芝麻）官网说每日最多可使用20个免费ip，不过我前几天试过可以领21个
         start = time.time()
-        resp = requests.get(ip_url)
-        print(resp.text)
-        while True:
-            google = SpiderGoogle(resp.text)
-            loop = asyncio.get_event_loop()
-            task = asyncio.ensure_future(google.main())
-            try:
-                loop.run_until_complete(task)
-            except:
-                print("此ip请求异常，正在重跑......")
-            finally:
-                if time.time()-start >= 1500.0:        # 免费ip最多可使用25分钟
-                    print("此ip已失效！5秒后自动切换新ip......")
-                    break
+        resp = requests.get(ip_url)    # 响应格式是 text
+        if 'success' not in resp.text:
+            print(resp.text)
+            while True:
+                google = SpiderGoogle(resp.text)
+                loop = asyncio.get_event_loop()
+                task = asyncio.ensure_future(google.main())
+                try:
+                    loop.run_until_complete(task)
+                except:
+                    print("此ip请求异常，正在重跑......")
+                finally:
+                    if time.time()-start >= 1500.0:        # 免费ip最多可使用25分钟
+                        print("此ip已失效！5秒后自动切换新ip......")
+                        break
+        else:
+            print(resp.text)
+            break
         time.sleep(5)
         i += 1
+    print("每日免费ip已用完......")
 
 
 if __name__ == '__main__':
