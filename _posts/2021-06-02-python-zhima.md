@@ -1,7 +1,7 @@
 ---
 layout:        post
-title:         "Python3 | 芝麻城市代理刷网页"
-subtitle:      "xlrd + pyppeteer 实现读取 excel 刷网页"
+title:         "Python3 | 国内 ip 代理池访问网页"
+subtitle:      "xlrd + pyppeteer 实现读取 excel 刷网页并截图"
 date:          2021-06-02
 author:        "Haauleon"
 header-style:  text

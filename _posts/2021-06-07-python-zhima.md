@@ -1,7 +1,7 @@
 ---
 layout:        post
-title:         "Python3 | 芝麻城市代理刷网页"
-subtitle:      "pyppeteer 实现刷网页浏览量 pv"
+title:         "Python3 | 刷网页浏览量脚本"
+subtitle:      "基于 pyppeteer + 免费芝麻代理池"
 date:          2021-06-07
 author:        "Haauleon"
 header-style:  text
