@@ -137,7 +137,7 @@ class dingding_notice():
         # self.token = 'cbb3b771657ef' if ding_token==None else ding_token
         # 是否@所有人
         self.isAtAll = True if isAtAll==None else isAtAll
-        self.token = '3433c13a652fe25fd6ae796bffd00eab47ab8b9a26cd734c20d34fdfec641d97'
+        self.token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxfd00eab47ab8b9a26cd734c20d34fdfec641d97'
         self.api = 'https://oapi.dingtalk.com/robot/send?access_token={}'.format(self.token)
         self.headers = {'Content-Type': 'application/json;charset=utf-8'}
 
