@@ -182,7 +182,7 @@ if __name__ == '__main__':
 <br><br>
 
 ###### 三、上传文件至服务器
-&emsp;&emsp;使用 nodejs 工具包 sftp-publish 将本地文件自动上传至阿里云服务器。sftp.json 文件配置如下：      
+&emsp;&emsp;使用 nodejs 工具包 sftp-publish 将本地文件自动上传至阿里云服务器，需要新建一个自定义命名的配置文件，当前 sftp.json 文件配置如下：      
 
 ```json
 {
