@@ -307,7 +307,7 @@ $ adb shell screenrecord sdcard/record.mp4      # 录制视频并保存至 sdcar
 ```
 
 <br>
-　　
+
 20.获取设备分辨率：              
 ```
 $ adb shell wm size
