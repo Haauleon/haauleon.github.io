@@ -39,7 +39,7 @@ tags:
 <br><br>
 
 ###### 二、构建内容
-&emsp;&emsp;Jenkins 的构建内容的填写：由于是使用本地的解释器、工具包，因此均需要指定环境路径。若不想使用环境路径，则需要在 Jenkins 服务器中安装环境即可。         
+&emsp;&emsp;Jenkins 的构建内容的填写：由于是使用本地的解释器、工具包，因此均需要指定环境路径。若不想使用环境路径，则需要在 Jenkins 服务器中安装环境。         
 
 ![](\haauleon\img\in-post\post-jenkins\2021-04-20-nginx-jenkins-3.png)                    
 <br>
