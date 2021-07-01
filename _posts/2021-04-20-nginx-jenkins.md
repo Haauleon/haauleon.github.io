@@ -74,7 +74,7 @@ cd /Users/haauleon/PythonTest/jsonRequest/report
 ```
 <br>
 
-&emsp;&emsp;然后使用 newman 命令行进行自动化测试。         
+&emsp;&emsp;在本地终端使用 newman 命令行进行自动化测试。         
 **格式**：      
 ```
 $ newman run "测试集合文件" -e "环境变量文件" -g "全局变量文件" -reportershtml --reporter-html-export "测试报告路径"
