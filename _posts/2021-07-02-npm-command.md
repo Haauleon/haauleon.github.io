@@ -219,6 +219,28 @@ added 1 package from 1 contributor in 1.997s
 ```
 haauleon@LAPTOP-EA7BF21I:~$ npm root -g
 /usr/local/lib/node_modules
+haauleon@LAPTOP-EA7BF21I:~$ ls /usr/local/lib/node_modules -al
+total 0
+drwxr-xr-x 1 root root 4096 Jul  2 15:01 .
+drwxr-xr-x 1 root root 4096 Mar 31 09:32 ..
+drwxr-xr-x 1 root root 4096 Mar 31 09:33 newman
+drwxr-xr-x 1 root root 4096 Mar 31 10:33 newman-reporter-html
+drwxr-xr-x 1 root root 4096 Jul  1 17:56 publish-sftp
+drwxr-xr-x 1 root root 4096 Jul  1 17:55 sftp-publish
+haauleon@LAPTOP-EA7BF21I:~$ ls /usr/local/lib/node_modules/newman -al
+total 92
+drwxr-xr-x 1 root root  4096 Mar 31 09:33 .
+drwxr-xr-x 1 root root  4096 Jul  2 15:01 ..
+-rw-r--r-- 1 root root 16070 Oct 26  1985 CHANGELOG.yaml
+-rw-r--r-- 1 root root 11357 Oct 26  1985 LICENSE.md
+-rw-r--r-- 1 root root 15670 Oct 26  1985 MIGRATION.md
+-rw-r--r-- 1 root root 40581 Oct 26  1985 README.md
+drwxr-xr-x 1 root root  4096 Mar 31 09:32 bin
+drwxr-xr-x 1 root root  4096 Mar 31 09:32 docker
+-rw-r--r-- 1 root root   649 Oct 26  1985 index.js
+drwxr-xr-x 1 root root  4096 Mar 31 09:32 lib
+drwxr-xr-x 1 root root  4096 Mar 31 09:33 node_modules
+-rw-r--r-- 1 root root  3495 Mar 31 09:33 package.json
 ```
 
 <br><br>
