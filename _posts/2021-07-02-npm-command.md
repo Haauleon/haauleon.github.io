@@ -286,6 +286,8 @@ haauleon@LAPTOP-EA7BF21I:~$ npm ls -g dayjs
 └── dayjs@1.10.4
 ```
 
+<br><br>
+
 ###### 更新 npm 全局安装包
 格式：`$ npm update -g <包名>`     
 
