@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Android | adb 安装和配置"
-subtitle:      "如何安装、配置和使用 adb 命令行工具"
+subtitle:      "如何安装、配置 adb 命令行工具"
 date:          2021-07-02
 author:        "Haauleon"
 header-style:  text
