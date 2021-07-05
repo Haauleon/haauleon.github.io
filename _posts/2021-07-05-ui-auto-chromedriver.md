@@ -34,3 +34,13 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 ```
+
+<br>
+
+实现效果：            
+```
+====== WebDriver manager ======
+Current google-chrome version is 91.0.4472
+Get LATEST driver version for 91.0.4472
+Driver [C:\Users\Haauleon\.wdm\drivers\chromedriver\win32\91.0.4472.101\chromedriver.exe] found in cache
+```
