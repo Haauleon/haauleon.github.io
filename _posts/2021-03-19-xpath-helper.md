@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "xpath helper | Mac 下的离线安装与使用"
+title: "元素定位 | xpath helper"
 subtitle: '快速生成或解析 xpath 路径'
 author: "Haauleon"
 header-style: text
 tags:
   - Chrome 扩展
+  - UI 测试
 ---  
 
 
