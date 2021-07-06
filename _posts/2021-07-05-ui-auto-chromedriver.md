@@ -39,16 +39,19 @@ driver = webdriver.Chrome(ChromeDriverManager().install())
 
 ###### 3.使用实例
 ```python
+# -*- coding:utf-8 -*-
 """
-@File   driver.py
+@Author  :   haauleon
+@Contact :   753494552@qq.com
+@File    :   driver.py
+@Function:   配置浏览器驱动
 """
 
-import sys
 import io
-import os
-from selenium.webdriver import Remote
+import sys
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+# from selenium.webdriver import Remote
 
 # 改变标准输出的默认编码，cmd对utf-8不是很好支持会导致中文乱码
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='gb18030')
@@ -56,12 +59,12 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='gb18030')
 
 def browser():
 	'''启动浏览器驱动'''
-	# 消除“Chrome正受到自动测试软件的控制”提示
-	options = webdriver.ChromeOptions() 
-	options.add_argument("disable-infobars")
-	
-	# driver = webdriver.Chrome(chrome_options = options)
-	driver = webdriver.Chrome(ChromeDriverManager().install())
+	# 消除 Chrome正受到自动测试软件的控制 提示
+	chrome_options = webdriver.ChromeOptions()
+	chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])
+
+    # 启动浏览器驱动
+	driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 	driver.maximize_window()
 	return driver
 
