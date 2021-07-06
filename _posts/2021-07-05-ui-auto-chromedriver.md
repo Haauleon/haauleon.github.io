@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "selenium | 自动下载浏览器驱动"
+title:         "selenium | 自动下载 chromedriver"
 subtitle:      "使用 webdriver-manager 自动配置 chromedriver"
 date:          2021-07-05
 author:        "Haauleon"
@@ -10,8 +10,12 @@ tags:
     - UI 测试
 ---
 
-## 一、背景
-&emsp;&emsp;目前市面仍需要结合 chromedriver 浏览器驱动来完成 UI 自动化测试，但是不同的 chrome 浏览器版本对应不同版本的 chromedriver.exe 二进制文件。以往都需要翻墙然后手动去到 [https://sites.google.com/chromium.org/driver/downloads](https://sites.google.com/chromium.org/driver/downloads) 此页面找到对应 chrome 版本的驱动进行下载，然后加入环境变量（windows 系统）。现在可通过 `webdriver-manager` 进行自动下载并自动加入环境变量，整个过程不需要人工参与。同样可用于设置 Firefox、Edge 和 ie 二进制文件。             
+## 一、背景       
+[官网介绍](https://chromedriver.chromium.org/)        
+
+> WebDriver 是一个开源工具，用于跨多种浏览器自动测试 web 应用程序。它提供导航到网页、用户输入、JavaScript 执行等功能。ChromeDriver 是一个独立的服务器，它实现了W3C WebDriver 标准。ChromeDriver 适用于 Android 上的 Chrome 和桌面上的 Chrome（Mac、Linux、Windows 和 ChromeOS）。        
+
+&emsp;&emsp;目前市面仍需要结合浏览器驱动来完成 UI 自动化测试，但是不同的 chrome 浏览器版本对应不同版本的 chromedriver.exe 二进制文件。以往都需要翻墙然后手动去到 [https://sites.google.com/chromium.org/driver/downloads](https://sites.google.com/chromium.org/driver/downloads) 此页面找到对应 chrome 版本的驱动进行下载，然后加入环境变量（windows 系统）。现在可通过 `webdriver-manager` 进行自动下载并自动加入环境变量，整个过程不需要人工参与。同样可用于设置 Firefox、Edge 和 ie 二进制文件。           
 
 <br><br>
 
