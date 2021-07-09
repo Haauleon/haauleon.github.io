@@ -8,6 +8,7 @@ header-style:  text
 catalog:       true
 tags:
     - UI 测试
+	- Python
 ---
 
 ## 一、背景       
