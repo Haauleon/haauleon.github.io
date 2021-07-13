@@ -16,7 +16,7 @@ tags:
     - API 测试
 ---
 
-## Ⅰ 背景
+## 一、背景
 目前已实现的 jenkins 持续集成如下：       
 * 使用 jenkins 定时构建自动化测试      
 * 使用 postman + newman 执行自动化测试并生成测试报告       
@@ -25,20 +25,20 @@ tags:
 
 <br><br>
 
-## Ⅱ 测试目录结构分析
+## 二、测试目录结构分析
 ![](\haauleon\img\in-post\post-jenkins\2021-04-20-nginx-jenkins-1.png)
 
 <br><br>
 
-## Ⅲ Jenkins 配置信息     
-###### 一、定时构建
+## 三、Jenkins 配置     
+###### 1.配置定时构建
 &emsp;&emsp;当前定时构建的日程表为 `H/10 * * * *`，即为每十分钟执行一次。          
 
 ![](\haauleon\img\in-post\post-jenkins\2021-04-20-nginx-jenkins-2.jpg)
 
 <br><br>
 
-###### 二、构建内容
+###### 2.配置构建内容
 &emsp;&emsp;Jenkins 的构建内容的填写：由于是使用本地的解释器、工具包，因此均需要指定环境路径。若不想使用环境路径，则需要在 Jenkins 服务器中安装环境。         
 
 ![](\haauleon\img\in-post\post-jenkins\2021-04-20-nginx-jenkins-3.png)                    
@@ -60,8 +60,8 @@ cd /Users/haauleon/PythonTest/jsonRequest/report
 
 <br><br>
 
-## Ⅳ Jenkins 构建内容分析
-###### 一、Newman 自动化测试
+## 四、Jenkins 构建内容分析
+###### 1.Newman 自动化测试
 &emsp;&emsp;在 Postman 上调试通过之后，下载 **环境变量文件**、**全局变量文件**、**测试集合文件** 至本地，通过 Newman 命令行执行自动化测试并生成测试报告。可指定测试报告生成的路径。         
 &emsp;&emsp;下面通过 json 格式来描述我从 Postman 导出的文件路径和自定义的测试报告路径。         
 ```json
@@ -89,7 +89,7 @@ $ newman run "测试集合文件" -e "环境变量文件" -g "全局变量文件
 
 <br><br>
 
-###### 二、Python3 解析测试报告
+###### 2.Python3 解析测试报告
 &emsp;&emsp;写 python3 脚本解析 html 测试报告，若接口数量数量不为 0 则使用 outgoing 向钉钉群组发送消息。            
 &emsp;&emsp;由 newman 生成的测试报告样式如下：       
 ![](\haauleon\img\in-post\post-jenkins\2021-04-20-nginx-jenkins-4.png)
@@ -181,7 +181,7 @@ if __name__ == '__main__':
 
 <br><br>
 
-###### 三、上传文件至服务器
+###### 3.上传文件至服务器
 &emsp;&emsp;使用 nodejs 工具包 sftp-publish 将本地文件自动上传至阿里云服务器，需要新建一个自定义命名的配置文件，当前 sftp.json 文件配置如下：      
 
 ```json
@@ -212,5 +212,5 @@ cd /Users/haauleon/PythonTest/jsonRequest/report
 
 <br><br>
 
-## 结论
+## 五、结论
 &emsp;&emsp;愉快的构建，省了很多麻烦。
