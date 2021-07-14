@@ -13,7 +13,7 @@ tags:
 ## 一、背景
 &emsp;&emsp;Android 的相关测试是要重新签名的，在没有拿到开发人员签名文件时，只能自己对 apk 进行重新签名。市面上有相关插件可以辅助进行 debug 签名，如 re-sign 工具。       
 
-&emsp;&emsp;获取 apk 文件的包名 `package name` 和 `main activity` 的目的，是为了对 apk 也就是被测试应用使用 adb 命令行进行调试，比如获取应用的启动时间和应用日志等等。     
+&emsp;&emsp;获取 apk 文件的包名 `package name` 和 `main activity` 的目的，是为了对 apk 也就是被测试应用使用 adb 命令行进行调试，比如监控应用的启动时间和获取日志等等。     
 
 <br>
 
