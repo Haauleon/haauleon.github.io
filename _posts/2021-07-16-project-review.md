@@ -12,7 +12,7 @@ tags:
 
 ## 一、项目概况
 
-<table border="2" style="border-collapse: collapse;">
+<table border="1" style="border-collapse: collapse;">
     <tr>
        <th>复盘项目名称</th>
        <td>农村电商一村一品小程序</td>
