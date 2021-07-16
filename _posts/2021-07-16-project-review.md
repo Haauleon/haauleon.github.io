@@ -12,8 +12,6 @@ tags:
 
 ## 一、项目概况
 
-<br>
-
 <table border="2" style="border-collapse: collapse;">
     <tr>
        <th>复盘项目名称</th>
