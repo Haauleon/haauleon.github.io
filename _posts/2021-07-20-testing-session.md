@@ -9,7 +9,6 @@ catalog:       true
 tags:
     - UI 测试
     - API 测试
-    - 软件测试基础
 ---
 
 ## 一、背景
