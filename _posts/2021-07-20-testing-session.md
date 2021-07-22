@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "session | 如何测试 session？"
+title:         "认证机制 | 如何测试 session？"
 subtitle:      "关于 session 测试的场景设计"
 date:          2021-07-20
 author:        "Haauleon"
