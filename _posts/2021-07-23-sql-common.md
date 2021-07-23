@@ -7,7 +7,7 @@ author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - SQL
+    - 数据库
 ---
 
 ## select 条件查询
