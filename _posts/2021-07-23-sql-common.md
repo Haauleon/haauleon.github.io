@@ -52,7 +52,9 @@ LIMIT 35
 ```sql
 /*操作结果：更新 user 中记录为 1463201≤id≤1463236 的用户密码为 123456*/
 
-UPDATE user set password = "e10adc3949ba59abbe56e057f20f883e" , salt = "" WHERE id>=1463201 and id <=1463236
+UPDATE user 
+set password = "e10adc3949ba59abbe56e057f20f883e" , salt = "" 
+WHERE id>=1463201 and id <=1463236
 ```
 
 <br>
