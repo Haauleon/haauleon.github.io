@@ -118,6 +118,8 @@ INNER JOIN coupon_product b
 on a.id = 358 and a.id = b.coupon_id
 ```
 
+<br>
+
 10.使用 LIKE 进行模糊查询     
 ```sql
 /*查询结果：user 表中 phone 字段值中包含 1397606 的记录*/
