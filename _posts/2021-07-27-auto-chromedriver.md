@@ -2,12 +2,13 @@
 layout:        post
 title:         "selenium | 自动下载 chromedriver"
 subtitle:      "使用 webdriver-manager 自动配置 chromedriver"
+date:          2021-07-27
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - UI 测试
-	- Python
+    - Python
 ---
 
 ## 一、背景       
