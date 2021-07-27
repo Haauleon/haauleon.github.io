@@ -2,7 +2,7 @@
 layout:        post
 title:         "selenium | 自动下载 chromedriver"
 subtitle:      "使用 webdriver-manager 自动配置 chromedriver"
-date:          2021-07-05
+date:          2021-07-06
 author:        "Haauleon"
 header-style:  text
 catalog:       true
