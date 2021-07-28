@@ -11,7 +11,7 @@ tags:
 ---
 
 
-1.关联表查询（左外连接）                 
+###### 1.关联表查询（左外连接）                 
 ```sql
 /*查询结果：分销申请表 rs_user_examine 中已审核通过的 user 记录*/
 
@@ -24,7 +24,7 @@ WHERE b.pass = 2               // 筛选的条件
 
 <br>
 
-2.有条件删除表中的记录                
+###### 2.有条件删除表中的记录                
 ```sql
 /*操作结果：删除 user 表中 nickname = "Haauleon" 的记录*/
 
@@ -33,7 +33,7 @@ DELETE FROM user WHERE nickname = "Haauleon"
 
 <br>
 
-3.使用 is null 查询字段值为空的记录       
+###### 3.使用 is null 查询字段值为空的记录       
 ```sql
 /*查询结果：存在于分销申请表 rs_user_examine 但不存在于 user 表中的 user 记录*/
 
@@ -48,7 +48,7 @@ LIMIT 35
 
 <br>
 
-4.有条件更新表中的记录      
+###### 4.有条件更新表中的记录      
 ```sql
 /*操作结果：更新 user 中记录为 1463201≤id≤1463236 的用户密码为 123456*/
 
@@ -59,7 +59,7 @@ WHERE id>=1463201 and id <=1463236
 
 <br>
 
-5.有条件统计表中字段值的和       
+###### 5.有条件统计表中字段值的和       
 ```sql
 /*统计结果：rs_user_commission_record 表中 shop_no = 293491245 的记录的 commission 字段值的总和*/
 
@@ -70,7 +70,7 @@ WHERE shop_no = 293491245 AND commission_bill in ("PREDICT","INVALID")
 
 <br>
 
-6.过滤重复的记录       
+###### 6.过滤重复的记录       
 ```sql
 /*过滤 share_content_order_user_record 表总重复的订单号 order_no*/
 
@@ -82,7 +82,7 @@ GROUP BY `order_no` HAVING count(*)>1
 
 <br>
 
-7.多表连接查询（左外连接）         
+###### 7.多表连接查询（左外连接）         
 ```sql
 /*多表连接查询店铺员工关联的权限*/
 
@@ -97,7 +97,7 @@ ORDER BY rpms.permission_id ASC
 
 <br>
 
-8.替换表中的字段值     
+###### 8.替换表中的字段值     
 ```sql    
 /*操作结果：将 user_address 表中记录为 user_id = 1458580 的 status 值由 0 替换为 1*/
 
@@ -108,7 +108,7 @@ WHERE user_id = 1458580;
 
 <br>
 
-9.关联表查询（内连接）       
+###### 9.关联表查询（内连接）       
 ```sql
 /*查询结果：优惠券关联的优惠券商品*/
 
@@ -120,7 +120,7 @@ on a.id = 358 and a.id = b.coupon_id
 
 <br>
 
-10.使用 LIKE 进行模糊查询     
+###### 10.使用 LIKE 进行模糊查询     
 ```sql
 /*查询结果：user 表中 phone 字段值中包含 1397606 的记录*/
 
