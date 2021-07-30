@@ -39,6 +39,17 @@ var cur = Date.parse(new Date());
 
 <br><br>
 
+###### 基本语法
+```js
+// 定义一个响应体res，获取body中所有的参数并以json格式返回
+var res = JSON.parse(responseBody);
+
+// 获取字段res.key的值并存在全局变量中
+postman.setGlobalVariable("全局变量名", res.key)
+```
+
+<br><br>
+
 ###### 常用断言
 ```js
 var res = pm.response.json();
