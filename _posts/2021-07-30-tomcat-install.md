@@ -125,8 +125,12 @@ tags:
 （1）进入 conf 目录，编辑 `logging.properties` 文件      
 ![](\img\in-post\post-java\2021-07-30-tomcat-install-23.png)     
 
+<br>
+
 （2）编辑 `java.util.logging.ConsoleHandler.encoding = UTF-8` 的值为 `GBK`     
 ![](\img\in-post\post-java\2021-07-30-tomcat-install-24.png)      
+
+<br>
 
 （3）重启 tomcat      
 ![](\img\in-post\post-java\2021-07-30-tomcat-install-25.png)  
