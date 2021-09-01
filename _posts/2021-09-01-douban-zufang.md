@@ -78,7 +78,7 @@ class DoubanGroup:
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36',
             'cache-control': "no-cache",
-            'Cookie': '[{"key":"Cookie","value":"bid=oj1DgjfoN2s; douban-fav-remind=1; __yadk_uid=Or0xPNkK4YvkOGPG4WuBYBNe4hIeoYL1; ll=\"118283\"; __utmz=30149280.1629877286.3.3.utmcsr=baidu|utmccn=(organic)|utmcmd=organic; __utmc=30149280; push_doumail_num=0; push_noty_num=0; __utmv=30149280.20888; __gads=ID=b6b6fceb360492c9-229543851ecb00b1:T=1617809763:RT=1629884539:S=ALNI_MbUZ0YEMuewlt60UiCZQisDYGn7iA; ct=y; ap_v=0,6.0; _pk_ref.100001.8cb4=%5B%22%22%2C%22%22%2C1629948842%2C%22https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3D88pvww_F65BJeuaO4hDEetlGQPgW356dNGSFMl722dEUwLZIvdL-rOmlSBHVy2cy%26wd%3D%26eqid%3D8744468a000096840000000661261069%22%5D; _pk_ses.100001.8cb4=*; __utma=30149280.29972110.1617809765.1629945621.1629948843.6; __utmt=1; dbcl2=\"208883778:2eE/oCUfwIU\"; ck=K0y9; _pk_id.100001.8cb4=4b6238307887085a.1617809763.6.1629948958.1629945693.; __utmb=30149280.32.0.1629948958617","description":"","type":"text","enabled":true}]',
+            'Cookie': 'xxxxx',
         }
 
     def get_group_titles(self, search_key):
