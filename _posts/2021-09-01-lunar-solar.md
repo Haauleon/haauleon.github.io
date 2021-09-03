@@ -59,11 +59,8 @@ class GetDay:
         '''新历转旧历'''
         year, month, day = lunar_date
         solar_date = lunar.getDayBySolar(year, month, day)
-        if solar_date.Lleap:
-            '''判断是否润年'''
-            return "%s月%s日" %(YMC[solar_date.Lmc], RMC[solar_date.Ldi])
-        else:
-            return "%s月%s日" %(YMC[solar_date.Lmc], RMC[solar_date.Ldi])
+        # bool(solar_date.Lleap) 为True即润年，反之则不是润年
+        return "%s月%s日" %(YMC[solar_date.Lmc], RMC[solar_date.Ldi])
 
 
 if __name__ == '__main__':
