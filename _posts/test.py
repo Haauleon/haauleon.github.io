@@ -1,22 +1,3 @@
----
-layout:        post
-title:         "python3 | 获取广东新冠疫情"
-subtitle:      ""
-date:          2021-09-01
-author:        "Haauleon"
-header-style:  text
-catalog:       true
-tags:
-  - 小而美脚本
-  - Python
----
-
-&emsp;&emsp;我本人是没办法接种新冠疫苗的，因为过敏体质担心烂脸烂全身，所以很需要有珠海地区疫情的获取的需求。下面放一下自己写的 demo，可以根据实际需求进行优化改造。     
-
-<br>
-
-
-```python
 # -*- coding:utf-8 -*-
 """
 @Author  :   haauleon
@@ -56,4 +37,3 @@ if __name__ == '__main__':
 
     print(ONS.get_ons(['广东', '湖南', '福建'], ['珠海', '深圳', '中山', '广州', '长沙', '福州']))  
     # {'长沙': 0, '中山': 0, '深圳': 0, '广州': 0, '珠海': 0, '福州': 0}
-```
