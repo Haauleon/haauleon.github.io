@@ -14,7 +14,7 @@ tags:
 目前的思路如下：        
 1. 把 postman 的请求集合文件、环境变量文件、全局变量文件全部下载到本地，分别存为 `xxx.collection.json`、`xxx.env.json` 和 `xxx.globals.json`     
 2. 写脚本解析 `xxx.collection.json` 文件的请求，并使用 requests 发送请求。解析 `xxx.env.json` 文件的环境变量，读写并解析 `xxx.globals.json` 文件的全局变量            
-
+3. 脚本放到 linux 服务器上去执行，我的是 ubuntu      
 
 <br>
 
