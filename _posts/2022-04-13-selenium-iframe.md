@@ -27,7 +27,7 @@ webdriver中提供的对 iframe/frame 操作 API 常用到有：
 <br>
 
 ### 一、driver.switch_to.frame()
-###### 从外部页面切入 frame 框架中
+###### 1、从外部页面切入 frame 框架中
 方法：`driver.switch_to.frame()`    
 
 说明：从外部页面切入 frame 框架中，参数可以为 id/name/index 及页面元素对象，默认是可以给 ID、name 的。       
@@ -36,7 +36,7 @@ webdriver中提供的对 iframe/frame 操作 API 常用到有：
 
 <br>
 
-###### 根据同层 frame 的顺序定位
+###### 2、根据同层 frame 的顺序定位
 方法：`driver.switch_to.frame()`         
 
 说明：给出页面的 iframe 的索引 index，根据同层 frame 的顺序定位。      
@@ -45,7 +45,7 @@ webdriver中提供的对 iframe/frame 操作 API 常用到有：
 
 <br>
  
-###### 传参 iframe 的元素对象
+###### 3、传参 iframe 的元素对象
 方法：`driver.switch_to.frame(iframeObj)`     
 
 说明：传参 iframe 的元素对象。    
@@ -58,73 +58,52 @@ driver.switch_to.frame(iframeObj)
 
 <br><br>
 
-### 示例
-###### 1、创建浏览器对象, 打开qq首页
+###### 示例
 ```python
 from selenium import webdriver
 import time
 
 driver = webdriver.Chrome()
 
-# 1.打开腾讯首页；http://www.qq.com
+# 1. 创建浏览器对象, 打开腾讯首页；http://www.qq.com
 driver.get("https://www.qq.com")
-```
 
-<br>
-
-###### 2、点击邮箱图标；
-```python
+# 2. 点击邮箱图标；
 driver.find_element_by_link_text("Qmail").click()
-```
 
-<br>
-
-###### 3、跳转到邮箱登录界面
-```python
+# 3. 跳转到邮箱登录界面
 # 跳转到邮箱登录界面(窗口)，涉及到多窗口的处理
 handles = driver.window_handles
 driver.switch_to.window(handles[1])
 
-#现在先验证窗口跳转是否成功
+# 现在先验证窗口跳转是否成功
 # driver.find_element_by_link_text("基本版").click()
 
 # 3.输入用户名
-#webdriver中提供API：driver.switch_to.frame()实现frame的切换
+# webdriver中提供API：driver.switch_to.frame()实现frame的切换
 
-#第一种方式,默认是可以给ID或者name的
+# 第一种方式,默认是可以给ID或者name的
 # driver.switch_to.frame("login_frame")
 
-#第二种方式,可以传参iframe的元素对象
+# 第二种方式,可以传参iframe的元素对象
 # iframeObj = driver.find_element_by_xpath('//*[@id="login_frame"]')
 # driver.switch_to.frame(iframeObj)
 
-#第三种方式,可以给索引号
+# 第三种方式,可以给索引号
 driver.switch_to.frame(1)
 driver.find_element_by_link_text('帐号密码登录').click()
 driver.find_element_by_xpath('//*[@id="u"]').send_keys("2572612580")
 time.sleep(2)
-```
 
-<br>
-
-###### 4、输入密码
-```python
+# 4、输入密码
 driver.find_element_by_xpath('//*[@id="p"]').send_keys("123456789")
 time.sleep(2)
-```
 
-<br>
-
-###### 5、点击登录
-```python
+# 5、点击登录
 driver.find_element_by_xpath('//*[@id="login_button"]').click()
 time.sleep(2)
-```
 
-<br>
-
-###### 6、关闭浏览器
-```python
+# 6、关闭浏览器
 driver.quit()
 ```
 
@@ -144,8 +123,8 @@ driver.switch_to.default_content() # 直接从内层frame页面切换回到主�
 &emsp;&emsp;相对 driver.switch_to.default_content() 方法，是一层层退回，而不是直接退回主页面。     
 
 ```python
-driver.switch_to.frame(“frame1”) #从主页面切入到frame1，相当于前进
-driver.switch_to.frame(“frame2”) #从frame1再切入到frame2，相当于前进
-driver.switch_to.parent_frame() #返回到上级frame1，相当于后退
-driver.switch_to.parent_frame() #返回到主页面
+driver.switch_to.frame(“frame1”)   # 从主页面切入到frame1，相当于前进
+driver.switch_to.frame(“frame2”)   # 从frame1再切入到frame2，相当于前进
+driver.switch_to.parent_frame()    # 返回到上级frame1，相当于后退
+driver.switch_to.parent_frame()    # 返回到主页面
 ```
