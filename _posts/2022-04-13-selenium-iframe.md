@@ -113,7 +113,7 @@ driver.quit()
 &emsp;&emsp;切到 frame 中之后，我们便不能继续操作主文档的元素，这时如果想操作主文档内容，则需切回主文档。        
 
 ```python
-driver.switch_to.default_content() # 直接从内层frame页面切换回到主文档中。
+driver.switch_to.default_content() # 直接从内层 frame 页面切换回到主文档中。
 ```
 
 <br><br>
@@ -123,8 +123,8 @@ driver.switch_to.default_content() # 直接从内层frame页面切换回到主�
 &emsp;&emsp;相对 driver.switch_to.default_content() 方法，是一层层退回，而不是直接退回主页面。     
 
 ```python
-driver.switch_to.frame(“frame1”)   # 从主页面切入到frame1，相当于前进
-driver.switch_to.frame(“frame2”)   # 从frame1再切入到frame2，相当于前进
-driver.switch_to.parent_frame()    # 返回到上级frame1，相当于后退
+driver.switch_to.frame(“frame1”)   # 从主页面切入到 frame1，相当于前进
+driver.switch_to.frame(“frame2”)   # 从 frame1 再切入到 frame2，相当于前进
+driver.switch_to.parent_frame()    # 返回到上级 frame1，相当于后退
 driver.switch_to.parent_frame()    # 返回到主页面
 ```
