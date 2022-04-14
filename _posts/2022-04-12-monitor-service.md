@@ -31,14 +31,33 @@ tags:
 4、脚本支持周末自动同步资讯
 """
 
+"""
+@Author  :   haauleon
+@Contact :   753494552@qq.com
+@File    :   run_hengqing_service_v2.py
+@Date    :   2022-04-14 15:56:00
+@Function:   
+1. 同步成功的资讯判断当前日期和横琴官网资讯日期, 如果日期一致则更新资讯状态显示至澳门办事处网站前台
+2. 爬取澳门政府防疫最新消息, 增加钉钉消息通知
+"""
+
 import requests
 import time
 import json
 import logging
 import sys
 from colorama import Fore, Style
+import sys
+from functools import wraps
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+# from selenium.webdriver import Remote
 
-COOKIE = 'xxxxxxxx'
+# 改变标准输出的默认编码，cmd对utf-8不是很好支持会导致中文乱码
+# sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='gb18030')
+
+
+COOKIE = 'xxxxxx'
 
 
 # 日志配置
@@ -60,7 +79,6 @@ def error(msg):
 def _print(msg):
     now = time.strftime("%Y-%m-%d %H:%M:%S")
     _logger.debug(Fore.BLUE + now + " [PRINT] " + str(msg) + Style.RESET_ALL)
-
 
 
 class RestClient:
@@ -133,6 +151,43 @@ class MacauOfficeInfo(RestClient):
             info('最新资讯更新成功: %s' %info_title)
 
 
+def traceback_error(func):
+    @wraps(func)
+    def wraper(self, *args, **kwargs):
+        try:
+            result = func(self, *args, **kwargs)
+        except Exception as e:
+            import traceback
+            ex_msg = '{exception}'.format(exception=traceback.format_exc())
+            print(ex_msg)
+            result = ex_msg
+        return result
+    return wraper
+
+class DingDingNotice:
+    '''钉钉发送类'''
+
+    def __init__(self, ding_token=None, atMobiles=None, isAtAll=None):
+        # 根据电话@用户
+        self.atMobiles = ['13976062467',] if atMobiles==None else atMobiles
+        # self.token = 'cbb3b771657ef' if ding_token==None else ding_token
+        # 是否@所有人
+        self.isAtAll = True if isAtAll==None else isAtAll
+        self.token = 'b2ceb739c43a05da7806406124b568860ef1946a91ca5362435a459d6c67c682'
+        self.api = 'https://oapi.dingtalk.com/robot/send?access_token={}'.format(self.token)
+        self.headers = {'Content-Type': 'application/json;charset=utf-8'}
+
+    @traceback_error
+    def send_msg(self, content):
+        msg = {
+            'msgtype': 'text',
+            'text': {'content': content},
+            'at': {'atMobiles': self.atMobiles, 'isAtAll': self.isAtAll}
+        }
+        data = requests.post(self.api, data=json.dumps(msg), headers=self.headers).json()
+        return json.dumps(data)
+
+
 def run_info():
     '''同步官网资讯且更新资讯'''
     macau = MacauOfficeInfo()
@@ -148,9 +203,146 @@ def run_info():
             break
 
 
+class SsmGovCovid:
+    '''webdriver 隐式爬取澳门政府防疫最新消息'''
+
+    def __init__(self):
+        '''Ubuntu 系统下使用 selenium webdriver 脚本执行步骤: 
+        1. 检查是否成功安装 chrome 浏览器 
+        $ google-chrome --version
+
+        2.未安装则执行如下命令安装最新版本的 Google Chrome 
+        $ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        $ apt --fix-broken install (某种修复)
+        $ sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb
+        '''
+        # 消除 Chrome正受到自动测试软件的控制 提示
+        self.chrome_options = webdriver.ChromeOptions()
+        self.chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])
+        # 设置无头浏览器隐式访问
+        self.chrome_options.add_argument('--headless')
+        # "–no - sandbox" 参数是让 Chrome 在 root 权限下跑
+        self.chrome_options.add_argument('--no-sandbox') 
+
+    def driver_start(self):
+        '''启动浏览器驱动
+        若系统未安装 chromedriver 则进行自动安装, 无需手动判断浏览器版本进行安装
+        '''
+        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=self.chrome_options)
+        self.driver.maximize_window()
+        time.sleep(5)
+
+    def driver_quit(self):
+        '''关闭浏览器驱动'''
+        self.driver.quit()
+
+    def driver_get_url(self, url):
+        '''访问 url 链接'''
+        self.driver.get(url)
+        self.driver.implicitly_wait(200)
+
+    def driver_xpath(self, xpath):
+        '''定位 xpath 元素'''
+        return self.driver.find_element_by_xpath(xpath)
+
+    def driver_iframe(self, xpath):
+        '''切换至 iframe'''
+        iframe_obj = self.driver_xpath(xpath)
+        self.driver.switch_to.frame(iframe_obj)
+        self.driver.implicitly_wait(200)
+
+    def driver_run(self):
+        '''执行数据的爬取'''
+        # 启动浏览器驱动
+        self.driver_start()
+        # 访问爬取的页面
+        self.driver_get_url('https://www.ssm.gov.mo/apps1/PreventCOVID-19/ch.aspx#clg17044')  
+        # 关闭页面的弹窗  
+        self.driver_xpath('//*[@id="reminderbox"]/div/div/div[1]/button').click()
+        self.driver.implicitly_wait(200)
+        # 切换至 iframe
+        self.driver_iframe('//*[@id="cont_detail"]/div/iframe')
+        # 最新消息的日期
+        cms_date = self.driver_xpath('/html/body/div[2]/div/div[5]/div/div[2]/div').text
+        # 最新消息的标题
+        cms_title = self.driver_xpath('/html/body/div[2]/div/div[5]/div/span/b/a').text
+        time.sleep(2)
+        # 关闭浏览器驱动
+        self.driver_quit()
+        # 构造推送的消息
+        latest_msg = '~~最新公告有料到~~\n\n' + cms_date + '\n' + cms_title + '\n\n' + '详情 : https://www.ssm.gov.mo/apps1/PreventCOVID-19/ch.aspx#clg17044\n\n'
+        
+        return latest_msg
+
+    def dingding_push_msg(self):
+        dingding_msg = self.driver_run()
+        info(dingding_msg)
+        dingding = DingDingNotice()
+        with open("/Users/haauleon/陈巧伦-工作交接/macau_notice.json", "r") as load_f:
+            load_dict = json.load(load_f)
+            # print(load_dict)
+        # 判断当前 dingding_msg 是否存在于文件中，如果没有就追加并发送钉钉消息
+        if dingding_msg not in load_dict["notice"]:
+            load_dict["notice"].append(dingding_msg)
+            with open("/Users/haauleon/陈巧伦-工作交接/macau_notice.json", "w") as dump_f:
+                json.dump(load_dict, dump_f, ensure_ascii=False)
+                dingding.send_msg(dingding_msg)
+                info("钉钉消息发送成")
+        else:
+            info("当前公告无更新")
+
+
+def browser():
+    '''启动浏览器驱动'''
+    # 消除 Chrome正受到自动测试软件的控制 提示
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])
+    # 设置无头浏览器隐式访问
+    chrome_options.add_argument('--headless')
+    # “–no - sandbox”参数是让Chrome在root权限下跑
+    chrome_options.add_argument('--no-sandbox')  
+
+    # 启动浏览器驱动
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+    driver.maximize_window()
+    driver.get('https://www.ssm.gov.mo/apps1/PreventCOVID-19/ch.aspx#clg17044')
+    time.sleep(5)
+    driver.implicitly_wait(10)
+    driver.find_element_by_xpath('//*[@id="reminderbox"]/div/div/div[1]/button').click()
+    time.sleep(100)
+    iframe_obj = driver.find_element_by_xpath('//*[@id="cont_detail"]/div/iframe')
+    driver.switch_to.frame(iframe_obj)
+    driver.implicitly_wait(10)
+    # 日期
+    cms_date = driver.find_element_by_xpath('/html/body/div[2]/div/div[5]/div/div[2]/div').text
+    # 标题
+    cms_title = driver.find_element_by_xpath('/html/body/div[2]/div/div[5]/div/span/b/a').text
+    time.sleep(2)
+    driver.quit()
+    
+    dingding_msg = '~~最新公告有料到~~\n\n' + cms_date + '\n' + cms_title + '\n\n' + '详情 : https://www.ssm.gov.mo/apps1/PreventCOVID-19/ch.aspx#clg17044\n\n'
+    dingding = DingDingNotice()
+    with open("/Users/haauleon/陈巧伦-工作交接/macau_notice.json", "r") as load_f:
+        load_dict = json.load(load_f)
+        # print(load_dict)
+    # 判断当前 dingding_msg 是否存在于文件中，如果没有就追加并发送钉钉消息
+    if dingding_msg not in load_dict["notice"]:
+        load_dict["notice"].append(dingding_msg)
+        with open("/Users/haauleon/陈巧伦-工作交接/macau_notice.json", "w") as dump_f:
+            json.dump(load_dict, dump_f, ensure_ascii=False)
+            dingding.send_msg(dingding_msg)
+            info("钉钉消息发送成")
+    else:
+        info("当前公告无更新")
+
+
 if __name__ == "__main__":
-    # 同步官网资讯且更新资讯
     _print("脚本开始执行")
-    run_info()
+    # 同步官网资讯且更新资讯
+    # run_info()
+    # 隐式爬取澳门防疫最新消息
+    # browser()
+    macau = SsmGovCovid()
+    macau.dingding_push_msg()
     _print("脚本执行完成")
 ```
