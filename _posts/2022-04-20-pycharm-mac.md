@@ -18,13 +18,13 @@ tags:
 ### 二、安装配置
 ###### 1、下载软件
 pycharm2017 专业版   
-链接: https://pan.baidu.com/s/1ZjT3HC6kHGWSPYcyItgvWg 提取码: 5jr3 
+链接: https://pan.baidu.com/s/1nYiUjm1Lc8zDPo-w93eU8w?pwd=ess2 提取码: ess2 
 
 <br>
 
 ###### 2、下载补丁
 补丁下载后放到一个安全的地方，我这里就是把补丁文件误删了，现在又重新破解的。           
-链接: https://pan.baidu.com/s/1CCDsKf6xb7al-fk7553-JA 提取码: i4di 
+链接: https://pan.baidu.com/s/1DjYZ-TGT1W9GKcIp7SXZ8Q?pwd=kiwt 提取码: kiwt 
 
 <br>
 
