@@ -19,13 +19,11 @@ tags:
 ### 二、发送请求
 &emsp;&emsp;在遇到有依赖的接口时,比如需要登录或者需要从前一个接口的结果中获取参数时,我们往往需要在该请求前先发送一下所依赖的请求, 我们可以在 Pre-request script 中使用 pm.sendRequest 实现。       
 
-![]()
+![](\img\in-post\post-postman\2022-04-28-postman-script-1.png)
 
-![]()
+![](\img\in-post\post-postman\2022-04-28-postman-script-2.png)
 
-![]()
-
-<br>
+![](\img\in-post\post-postman\2022-04-28-postman-script-3.png)
 
 ###### 1、发送GET请求
 ```javascript
@@ -39,7 +37,7 @@ pm.sendRequest(url, function (err, res) {
 &emsp;&emsp;可以配合 `pm.environment.set(key:value)` 来将响应中的数据保存到环境变量中以供本次请求使用
 示例: 使用请求前脚本获取 token 并使用。      
 
-![]()
+![](\img\in-post\post-postman\2022-04-28-postman-script-4.png)
 
 <br>
 
@@ -63,7 +61,7 @@ pm.sendRequest(loginRequest, function (err, res) {
 
 &emsp;&emsp;输出信息可以通过点击 Postman菜单栏 -> view -> Show Postman Console, 打开控制台查看(先打开控制台,再发送请求)。     
 
-![]()
+![](\img\in-post\post-postman\2022-04-28-postman-script-5.png)
 
 <br>
 
@@ -86,7 +84,7 @@ pm.sendRequest(regRequest, function (err, res) {
 });
 ```
 
-![]()
+![](\img\in-post\post-postman\2022-04-28-postman-script-6.png)
 
 <br>
 
