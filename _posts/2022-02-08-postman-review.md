@@ -43,7 +43,7 @@ tags:
 ###### 步骤一：拿到接口文档    
 &emsp;&emsp;一般是开发同事提供，或者使用现成 apifox 接口文档搬过来。      
 
-![](images/screenshot_1644462730544.png)
+![](\img\in-post\post-postman\2022-02-08-postman-review-1.png)
 
 <br>
 
@@ -51,29 +51,29 @@ tags:
 &emsp;&emsp;使用环境变量的好处在于，仅需同一个变量名即可实现接口可以在不同的域名下运行，比如接口可以在测试环境域名和生产环境域名之间切换运行。         
 &emsp;&emsp;我一般是创建两个环境，环境名分别是`测试环境`和`生产环境`。而两个环境的`环境变量名`均使用 `baseUrl` ，然后写入各自环境的变量值。这样即可实现在 postman 主页面切换环境来达到修改域名的效果，避免了手动挨个去更改接口的前缀 `host` 。    
 
-![](images/screenshot_1644464709016.png)    
+![](\img\in-post\post-postman\2022-02-08-postman-review-2.png)   
 
-![](images/screenshot_1644462904841.png)
+![](\img\in-post\post-postman\2022-02-08-postman-review-3.png)
 
 <br>
 
 ###### 步骤三：根据文档的模块创建集合
 &emsp;&emsp;一种是导入 OpenAPI 格式的 json 文档自动创建集合，一种是手动创建。       
 
-![](images/screenshot_1644480821998.png)
+![](\img\in-post\post-postman\2022-02-08-postman-review-4.png)
 
 <br>
 
 ###### 步骤四：根据文档创建请求
 &emsp;&emsp;用的最多的是 GET、POST 请求，其中GET 请求的参数都是在地址栏的，POST 请求是包在请求体 body 里面的。       
 
-![](images/screenshot_1644481465024.png)      
+![](\img\in-post\post-postman\2022-02-08-postman-review-5.png)      
 
-![](images/screenshot_1644481834395.png)     
+![](\img\in-post\post-postman\2022-02-08-postman-review-6.png)    
 
-![](images/screenshot_1644482455507.png)     
+![](\img\in-post\post-postman\2022-02-08-postman-review-7.png)     
 
-![](images/screenshot_1644482586233.png)
+![](\img\in-post\post-postman\2022-02-08-postman-review-8.png)
 
 <br>
 
@@ -198,9 +198,9 @@ tags:
 ###### 1. Collection Runner
 **方式一：以集合为维度，使用 Collection Runner 执行批量请求并输出报告**          
 
-![](images/screenshot_1644484474162.png)          
+![](\img\in-post\post-postman\2022-02-08-postman-review-9.png)          
 
-![](images/screenshot_1644484623603.png)         
+![](\img\in-post\post-postman\2022-02-08-postman-review-10.png)         
 
 <br>
 
@@ -214,13 +214,13 @@ tags:
 ### 四、稳定性测试
 &emsp;&emsp;以集合为维度，使用 Collection Runner 设置 iterations （循环执行次数）和 Delay （延迟时间）来完成单接口或者流程的稳定性测试。          
 
-![](images/screenshot_1644647114407.png)        
+![](\img\in-post\post-postman\2022-02-08-postman-review-11.png)        
 
 <br><br>
 
 ### 五、其他自用功能
 ###### 1. 获取 python 代码       
-![](images/screenshot_1644647332978.png)        
+![](\img\in-post\post-postman\2022-02-08-postman-review-12.png)       
 
 <br>
 
