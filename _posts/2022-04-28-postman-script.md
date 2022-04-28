@@ -9,6 +9,8 @@ tags:
     - Postman
 ---
 
+> 原文：https://www.cnblogs.com/superhin/
+
 ### 一、背景
 &emsp;&emsp;Postman 的 Collection (集合)/Folder (集合的子文件夹)/Request (请求)都有 Pre-request script 和 Tests 两个脚本区域, 分别可以在发送请求前和请求后使用脚本(基于 Javascript 实现各种操作)。
 
