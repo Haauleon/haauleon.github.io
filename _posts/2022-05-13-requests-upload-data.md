@@ -32,6 +32,7 @@ tags:
 2. 保存商品数据至壹壹车后台商品管理列表
 3.注意:
 """
+import os
 import requests
 import json
 import xlrd
@@ -70,6 +71,18 @@ def error(msg):
 def _print(msg):
     now = time.strftime("%Y-%m-%d %H:%M:%S")
     _logger.debug(Fore.BLUE + now + " [PRINT] " + str(msg) + Style.RESET_ALL)
+
+
+class ConfigHandler:
+    _SLASH = os.sep
+
+    # 项目路径
+    root_path = os.path.dirname(os.path.abspath(__file__))
+    # 图片路径
+    img_path = os.path.join(root_path, 'upload' + _SLASH + 'upload' + _SLASH + '201704' + _SLASH
+                            + '0d453758ca6d71c7ab13e943bd4c3b98.jpg')
+    # 文件路径
+    excel_path = os.path.join(root_path, 'productTemplate.xlsx')
 
 
 class ExcelHandler:
@@ -203,7 +216,7 @@ class YiYiCarRun:
     @staticmethod
     def run_to_create_products():
         """从excel提取商品信息并创建商品"""
-        excel = ExcelHandler('/Users/haauleon/陈巧伦-工作交接/code/bringbuys-python/壹壹车/productTemplate.xlsx')
+        excel = ExcelHandler(ConfigHandler.excel_path)
         e = excel.get_row_value()
         yyc = YiYiCar()
         while True:
@@ -213,7 +226,7 @@ class YiYiCarRun:
                 new_slider_images = list()
                 for file_path in slider_image.split('|'):
                     # 上传图片至服务器
-                    img_path = yyc.upload_file('/Users/haauleon/陈巧伦-工作交接/code/bringbuys-python/壹壹车' + file_path)
+                    img_path = yyc.upload_file(ConfigHandler.root_path + file_path)
                     # 组装商品轮播图
                     new_slider_images.append(img_path)
                 # 设置商品封面图
@@ -226,5 +239,8 @@ class YiYiCarRun:
 
 
 if __name__ == '__main__':
+    # print(ConfigHandler.root_path)
+    # print(ConfigHandler.img_path)
+    # print(ConfigHandler.excel_path)
     YiYiCarRun.run_to_create_products()
 ```
