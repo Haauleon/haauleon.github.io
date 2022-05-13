@@ -13,7 +13,9 @@ tags:
 ### 项目背景
 项目实现：   
 1. 提取 excel 中的数据    
-2. 使用 requests 模块将数据上传至后台
+2. 使用 requests 模块将数据上传至后台      
+
+![](\img\in-post\post-other\2022-05-13-requests-upload-data-1.png)
 
 <br><br>
 
