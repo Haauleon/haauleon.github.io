@@ -11,6 +11,8 @@ tags:
     - API 测试
 ---
 
+参考：[https://www.cnblogs.com/caoyinshan/p/12072847.html](https://www.cnblogs.com/caoyinshan/p/12072847.html)
+
 ### 代码设计
 ```python
 import requests
