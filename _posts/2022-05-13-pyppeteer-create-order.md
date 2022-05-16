@@ -110,13 +110,13 @@ class XinYi:
         """前往目标网页"""
         await self.page.goto(page_url, timeout=0)
         # 等待页面完全加载
-        await asyncio.sleep(2)
+        await asyncio.sleep(10)
 
     async def ele_click(self, selector):
         """点击操作"""
-        await self.page.waitForSelector(selector, {'timeout': 9000})
+        await self.page.waitForSelector(selector, {'timeout': 20000})
         await self.page.click(selector)
-        await asyncio.sleep(2)
+        await asyncio.sleep(5)
 
     async def run_to_create_order(self, product_url):
         """出海易前台执行刷单"""
@@ -165,8 +165,7 @@ class XinYi:
 
     async def run_to_handle_order(self, boss_url, username, password):
         """出海易后台订单处理"""
-        await self.page.goto(boss_url)
-        await asyncio.sleep(2)
+        await self.goto_page(boss_url)
         # 输入账号
         await self.page.type('#UserName', username)
         # 输入密码
@@ -224,5 +223,4 @@ if __name__ == '__main__':
             loop.run_until_complete(task)    # 完成事件循环，直到最后一个任务结束
         except StopIteration:
             break
-
 ```

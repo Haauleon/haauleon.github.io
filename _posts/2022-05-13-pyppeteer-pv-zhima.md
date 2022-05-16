@@ -96,6 +96,14 @@ class ZhimaGetIp:
 
     def union_get_free_ip(self, username: str, password: str):
         self.zhima_login(username, password)
+        self.coupon_snapped()
+        self.active_num()
+        self.get_coupon_pic()
+        self.start_captcha_servlet()
+        self.bidding_domain_url()
+        self.get_regnum_ip()
+        self.user_info()
+        self.agio_info()
         self.get_ip()
 
     def zhima_login(self, username, password):
@@ -114,6 +122,31 @@ class ZhimaGetIp:
             info("{username}登录成功".format(username=username))
         else:
             error("{username}登录失败, 提示: {msg}".format(username=username, msg=r["msg"]))
+
+    def coupon_snapped(self):
+        self.user.post(self.zhima_base + '/coupon/snapped_up')
+
+    def active_num(self):
+        self.user.post(self.zhima_base + '/index/activenum')
+
+    def get_coupon_pic(self):
+        self.user.post(self.zhima_base + '/coupon/get_coupon_pic')
+
+    def start_captcha_servlet(self):
+        current_milli_time = lambda: int(round(time.time() * 1000))
+        self.user.post(self.zhima_base + '/users/start_captcha_servlet?t=%s' % current_milli_time)
+
+    def bidding_domain_url(self):
+        self.user.post(self.zhima_base + '/index/bidding_domain_url')
+
+    def get_regnum_ip(self):
+        self.user.post(self.zhima_base + '/users/get_regnum_ip')
+
+    def user_info(self):
+        self.user.post(self.zhima_base + '/users/user_info')
+
+    def agio_info(self):
+        self.user.post(self.zhima_base + '/index/agio_info')
 
     def get_ip(self):
         """领取终身免费VIP套餐的每日20个免费 ip"""
