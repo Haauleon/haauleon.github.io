@@ -189,7 +189,19 @@ class ZhimaGetIp:
         """
         res = self.user.get(self.get_package_link(pack_id))
         r = res.json()
+        _print(res.text)
         if r['data']['package_balance']:
+            return True
+        else:
+            return False
+
+    def get_pack_use_history_list(self):
+        """当日使用IP量
+        @return: 当日使用IP量是否大于20，每日限20个免费
+        """
+        res = self.user.post(self.zhima_base + '/users/get_pack_use_history_list')
+        r = res.json()
+        if r['ret_data']['lastUseNum'] <= 20:
             return True
         else:
             return False
@@ -224,7 +236,6 @@ async def main(proxy):
     for url in urls:
         await page.goto(url, timeout=0)
         time.sleep(15)
-    await page.click()
     await page.close()
     await browser.close()
 
@@ -254,14 +265,15 @@ def run():
         zhima = ZhimaGetIp()
         zhima.union_get_free_ip(username, password)
         # i = 0
-        while zhima.get_package_balance(pack_id):
+        while zhima.get_pack_use_history_list() or zhima.get_package_balance(pack_id):
+            # _print(zhima.get_package_balance(pack_id))
             # 套餐余量不为0
             # while i <= 20:  # （芝麻）官网说每日最多可使用20个免费ip，不过我前几天试过可以领21个
             # start = time.time()
             resp = requests.get(getip_base % pack_id)  # 获取芝麻代理ip, 响应格式是 text
             if 'success' not in resp.text:
                 _print("获取ip成功 >>> %s" % resp.text)
-                start = time.time()
+                start_time = time.time()
                 while True:
                     loop = asyncio.get_event_loop()  # 创建一个事件循环对象loop
                     task = asyncio.ensure_future(main(resp.text))
@@ -274,7 +286,7 @@ def run():
                         # error("此ip请求异常!5秒后自动切换新ip......")
                         # break
                     finally:
-                        if time.time() - start >= 1.0:  # 免费ip最多可使用25分钟即1500.0
+                        if time.time() - start_time >= 1.0:  # 免费ip最多可使用25分钟即1500.0
                             error("此ip已失效！5秒后自动切换新ip......")
                             break
 
@@ -348,5 +360,5 @@ def run():
 if __name__ == '__main__':
     start = time.time()
     run()
-    print('总耗时： %f 秒' % (time.time() - start))
+    _print('总耗时： %f 秒' % (time.time() - start))
 ```
