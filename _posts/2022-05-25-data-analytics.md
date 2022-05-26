@@ -177,7 +177,7 @@ class DataAnalytics:
 
 
 if __name__ == '__main__':
-    # DataAnalytics.lollipop_illustration('Python分析', [3, 12, 5, 18, 45], ('Python', 'B', 'C', 'D', 'E'))
+    # DataAnalytics.lollipop_illustration('Python分析', [3, 12, 5, 18, 45], ['Python', 'B', 'C', 'D', 'E'])
     # DataAnalytics.connect_scatter_plot('Python分析', [3, 12, 5, 18, 45], ['Python', 'B', 'C', 'D', 'E'])
     # DataAnalytics.bar_chart('Python分析', [3, 12, 5, 18, 45], ('Python', 'B', 'C', 'D', 'E'))
     # DataAnalytics.donut_chart('Python分析', [3, 12, 5, 18, 45])
