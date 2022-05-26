@@ -42,18 +42,20 @@ class DataAnalytics:
         @param title: 图表标题
         @param data: 分别接收纵轴和横轴的数据
         """
-        # 图表样式
-        plt.style.use('fivethirtyeight')
-        # 图表标题
-        plt.title(title, color='black')
+        import pandas as pd
         # 获取纵轴和横轴的数据
         height, bars = data
-        # 创建条形图
-        y_pos = np.arange(len(bars))
-        plt.bar(y_pos, height)
-        # 横轴标签
-        plt.xticks(y_pos, bars)
-        # 窗口显示
+        # 图表标题
+        plt.title(title, color='black')
+        # 创建数据
+        df = pd.DataFrame({'group':  bars, 'values': height})
+        # 排序取值
+        ordered_df = df.sort_values(by='values')
+        my_range = range(len(df.index))
+        # 创建图表
+        plt.stem(ordered_df['values'])
+        plt.xticks(my_range, ordered_df['group'])
+        # 显示
         plt.show()
 
     @staticmethod
