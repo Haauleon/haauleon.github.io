@@ -11,6 +11,40 @@ tags:
     - 数据分析
 ---
 
+### 代码简介
+0. 日志配置     
+    (1) 使用 logging 日志模块     
+    (2) 使用 colorama 模块可以修饰日志的输出, 着色    
+1. 爬取数据     
+    (1) 通过 requests 模块爬取 BOSS 直聘小程序的数据      
+    (2) 配置请求头需要获取接口 hearders 中 `wt2` 和 `wt2` 的参数值       
+    (3) 翻页无限制, 直至最后一页没有数据时停止爬取    
+    (4) 设置公司小黑屋(拉黑名单)
+2. 处理数据     
+    (1) 处理的指标: 
+    ```
+    self.skills          工作技能     
+    self.businesses      工作地区      
+    self.brandnames      公司名称     
+    self.jobexperience   工作经验     
+    self.jobnames        岗位名称    
+    self.salarydescs     工作薪酬     
+    self.performance     岗位职责    
+    ```
+    (2) 处理规则:    
+    ```
+    第一步: 计算列表类型的指标出现频率并构造一个新的字典 `{指标1: 频率1, 指标2: 频率2...}`     
+    第二步: 然后根据新字典中的值进行由大到小进行排序        
+    第三步: 最终返回一个元素为元组的列表 `[(指标1: 频率1), (指标2: 频率2)...]`  
+    ```    
+3. 生成图表     
+    (1) 获取数据分析图表的纵轴和横轴数据      
+    (2) 通过调用数据分析图表类 DataAnalytics 中的方法生成对应图表
+    (3) 
+
+
+<br><br>
+
 ### 代码设计
 ```python
 # -*- coding: utf-8 -*-#
@@ -329,7 +363,7 @@ class DingDingNotice:
         # self.token = 'cbb3b771657ef' if ding_token==None else ding_token
         # 是否@所有人
         self.isAtAll = True if isAtAll is None else isAtAll
-        self.token = '1bf33b1503399d9610fce6c5488782b127ea89f820909e2582830646278809b1'
+        self.token = 'xxx'
         self.api = 'https://oapi.dingtalk.com/robot/send?access_token={}'.format(self.token)
         self.headers = {'Content-Type': 'application/json;charset=utf-8'}
 
