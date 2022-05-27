@@ -50,8 +50,8 @@ print(r.headers['Set-Cookie'])   # 通过 r.headers 获得响应头字典里面�
 <br><br>
 
 ### 向服务器发送 cookie
-###### Session()
-&emsp;&emsp;会话对象可以让你多次请求一个网站的时候，保持一些数据，包括自动带上 cookie。
+###### Session() 对象
+&emsp;&emsp;会话对象可以让你多次请求一个网站的时候，保持一些数据，包括自动带上 cookie。但是，手动通过 cookies 参数设置的 cookie 没有被 session 对象保持。       
 ```python
 import requests
 
