@@ -7,6 +7,7 @@ header-style:  text
 catalog:       true
 tags:
     - Python
+    - 小而美脚本
 ---
 
 ### 代码设计

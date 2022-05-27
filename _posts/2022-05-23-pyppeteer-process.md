@@ -8,6 +8,7 @@ catalog:       true
 tags:
     - 爬虫
     - Python
+    - 小而美脚本
 ---
 
 ### 代码设计
