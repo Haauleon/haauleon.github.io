@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "数据库 | Windows 安装 MySQL"
-subtitle:      "下载、安装和使用命令"
+subtitle:      "参考 https://blog.csdn.net/Baron_007/article/details/107969033"
 author:        "Haauleon"
 header-style:  text
 catalog:       true
