@@ -86,6 +86,11 @@ tags:
 
 <br>
 
+###### 反向面试技巧
+[https://haauleon.gitee.io/2021/08/16/reverse-interview/](https://haauleon.gitee.io/2021/08/16/reverse-interview/)
+
+<br>
+
 ###### 扩大简历曝光
 1. 编辑突出个人优势的打招呼语       
 2. 对目标岗位逐个发送打招呼语     
