@@ -16,6 +16,21 @@ tags:
 <br>
 <br>
 
-### 二、JDBC 连接池设置
+### 二、驱动配置
 ###### 1、下载 JDBC 驱动
-进入 MySql 下载专区 [https://dev.mysql.com/downloads/](https://dev.mysql.com/downloads/)，选择 `Connector/J` 进入驱动下载页面 [https://dev.mysql.com/downloads/connector/j/](https://dev.mysql.com/downloads/connector/j/)。       
+&emsp;&emsp;进入 MySql 下载专区 [https://dev.mysql.com/downloads/](https://dev.mysql.com/downloads/)，选择 `Connector/J` 进入驱动下载页面 [https://dev.mysql.com/downloads/connector/j/](https://dev.mysql.com/downloads/connector/j/)。   
+
+![](\img\in-post\post-jmeter\2022-07-18-jmeter-database-1.png) 
+
+<br>
+
+###### 2、解压和配置
+&emsp;&emsp;将下载成功的 zip 包进行解压，然后将 mysql-connector-java-8.0.29.jar 文件放在 Jmeter 安装目录的 lib 目录下。重启 Jmeter，即可使用 JDBC 驱动。    
+
+<br>
+<br>
+
+### 三、JDBC 连接池设置
+###### 1、添加配置元件
+&emsp;&emsp;在测试计划下添加配置元件，选择 JDBC Connection Configuration，即可将 JDBC Connection Configuration 加入测试计划，整个测试计划中的所有 JDBC 请求都可以使用该 JDBC Connection Configuration 配置的连接池。     
+![](\img\in-post\post-jmeter\2022-07-18-jmeter-database-2.png) 
