@@ -34,7 +34,8 @@ http://www.webxml.com.cn/WebServices/WeatherWebService.asmx?wsdl
 <br>
 
 ###### 操作步骤
-1.添加线程组;
+1.添加线程组;      
+![](\img\in-post\post-python\2022-07-18-jmeter-webservice-1.png) 
 
 2.添加HTTP请求取样器并配置;
 
