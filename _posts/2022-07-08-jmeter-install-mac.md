@@ -7,6 +7,7 @@ header-style:  text
 catalog:       true
 tags:
     - Jmeter
+    - API 测试
 ---
 
 ### 一、安装 jdk
