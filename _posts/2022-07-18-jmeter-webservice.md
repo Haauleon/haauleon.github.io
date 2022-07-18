@@ -34,16 +34,43 @@ http://www.webxml.com.cn/WebServices/WeatherWebService.asmx?wsdl
 <br>
 
 ###### 操作步骤
-1.添加线程组;      
-![](\img\in-post\post-python\2022-07-18-jmeter-webservice-1.png) 
+1.添加线程组           
+![](\img\in-post\post-jmeter\2022-07-18-jmeter-webservice-1.png)     
+![](\img\in-post\post-jmeter\2022-07-18-jmeter-webservice-2.png)          
 
-2.添加HTTP请求取样器并配置;
+2.添加 HTTP请求取样器 并配置      
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <getSupportCity xmlns="http://WebXml.com.cn/">
+            <byProvinceName>ALL</byProvinceName>
+        </getSupportCity>
+    </soap:Body>
+</soap:Envelope>
+```    
 
-3.在取样器节点下添加“HTTP Header Manager”并配置;
+![](\img\in-post\post-jmeter\2022-07-18-jmeter-webservice-3.png)     
+![](\img\in-post\post-jmeter\2022-07-18-jmeter-webservice-4.png)
 
-4.在取样器节点下添加查看结果树;
+3.在取样器节点下添加“HTTP Header Manager”并配置        
+&emsp;&emsp;POST 请求传递数据为 SOAP 消息，格式为 XML。需要将 SOAP 消息放入 Body Data 中发送给服务器，并且需要告诉服务器对应的Content-Type。故需要添加一个“HTTP Header Manager”配置元件，在其中添加两个首部“Content-Type”与“SOAPAction”，其中“SOAPAction”用来标识 SOAP HTTP 请求的目的地，其值是个 URI 地址。在 SOAP1.1 中这个首部若其值为空串("")，表示 SOAP 消息的目的地由 HTTP 请求的 URI 标识;无值则表示没有指定这条消息的目的地。       
+```
+Content-Type: text/xml; charset=utf-8
+SOAPAction: http://WebXml.com.cn/getSupportCity
+```   
 
-5.执行看结果。
+![](\img\in-post\post-jmeter\2022-07-18-jmeter-webservice-5.png)     
+![](\img\in-post\post-jmeter\2022-07-18-jmeter-webservice-6.png)    
+
+4.在取样器节点下添加查看结果树       
+![](\img\in-post\post-jmeter\2022-07-18-jmeter-webservice-7.png)      
+
+5.执行看结果         
+![](\img\in-post\post-jmeter\2022-07-18-jmeter-webservice-8.png) 
+
+---
+参考自 [https://zhuanlan.zhihu.com/p/522421631](https://zhuanlan.zhihu.com/p/522421631)
 
 <br>
 <br>
