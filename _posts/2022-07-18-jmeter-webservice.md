@@ -9,9 +9,10 @@ tags:
     - Jmeter
 ---
 
-### 应用案例
-###### 案例说明
-这里以天气预报服务为例         
+### 一、应用案例
+###### 1、案例说明
+这里以天气预报服务为例     
+
 Endpoint       
 http://www.webxml.com.cn/WebServices/WeatherWebService.asmx          
 Disco     
@@ -20,25 +21,20 @@ WSDL
 http://www.webxml.com.cn/WebServices/WeatherWebService.asmx?wsdl   
 
 ● 操作： getSupportCity      
-
 ● 功能： 查询本天气预报 Web Services 支持的国内外城市或地区信息      
-
 ● 请求方式： HTTP/POST     
-
 ● 接口地址： http://ws.webxml.com.cn/WebServices/WeatherWebService.asmx     
-
 ● 输入参数： byProvinceName = 指定的洲或国内的省份，若为 ALL 或空则表示返回全部城市     
-
 ● 返回数据： 一个一维字符串数组 String()，结构为：城市名称(城市代码)      
 
 <br>
 
-###### 操作步骤
-1.添加线程组           
+###### 2、操作步骤
+1.添加线程组（相当于 postman 中的接口集合）           
 ![](\img\in-post\post-jmeter\2022-07-18-jmeter-webservice-1.png)     
 ![](\img\in-post\post-jmeter\2022-07-18-jmeter-webservice-2.png)          
 
-2.添加 HTTP请求取样器 并配置      
+2.添加 HTTP请求取样器 并配置 （取样器相当于 postman 中的请求）     
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
@@ -66,7 +62,7 @@ SOAPAction: http://WebXml.com.cn/getSupportCity
 4.在取样器节点下添加查看结果树       
 ![](\img\in-post\post-jmeter\2022-07-18-jmeter-webservice-7.png)      
 
-5.执行看结果         
+5.执行查看结果         
 ![](\img\in-post\post-jmeter\2022-07-18-jmeter-webservice-8.png) 
 
 ---
@@ -75,7 +71,7 @@ SOAPAction: http://WebXml.com.cn/getSupportCity
 <br>
 <br>
 
-### 免费 webservice 接口
+### 二、免费 webservice 接口
 ###### 天气预报
 天气预报Web服务，数据来源于中国气象局      
 Endpoint        
