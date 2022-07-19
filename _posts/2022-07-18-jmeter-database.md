@@ -20,7 +20,11 @@ tags:
 ###### 1、下载 JDBC 驱动
 &emsp;&emsp;进入 MySql 下载专区 [https://dev.mysql.com/downloads/](https://dev.mysql.com/downloads/)，选择 `Connector/J` 进入驱动下载页面 [https://dev.mysql.com/downloads/connector/j/](https://dev.mysql.com/downloads/connector/j/)。   
 
-![](\img\in-post\post-jmeter\2022-07-18-jmeter-database-1.png) 
+![](\img\in-post\post-jmeter\2022-07-18-jmeter-database-1.png)     
+
+如果无法下载，备用：     
+链接: https://pan.baidu.com/s/13FI_rMMvrYi_KAyXGgKlWw?pwd=oejr    
+提取码: oejr 
 
 <br>
 
