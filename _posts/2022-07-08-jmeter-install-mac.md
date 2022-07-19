@@ -15,7 +15,7 @@ jmeter 安装需要依赖 jdk，jdk 版本要求 8 以上。安装步骤如下�
 
 ###### 1、下载
 在 [https://www.oracle.com/java/technologies/downloads/](https://www.oracle.com/java/technologies/downloads/) 下载jdk     
-![](\img\in-post\post-jmeter\2022-07-08-jmeter-install-mac-1.png)    
+![](\img\in-post\post-jmeter\2022-07-08-jmeter-install-mac-1.png)      
 
 <br>
 
@@ -48,7 +48,11 @@ MAC OS 系统安装 JDK 不需要配置环境变量即可使用，但是一些�
 ### 二、安装 jmeter
 ###### 1、下载
 jmeter下载： [https://jmeter.apache.org/download_jmeter.cgi](https://jmeter.apache.org/download_jmeter.cgi)        
-![](\img\in-post\post-jmeter\2022-07-08-jmeter-install-mac-4.png)    
+![](\img\in-post\post-jmeter\2022-07-08-jmeter-install-mac-4.png)       
+
+如果无法下载，备用：     
+链接: https://pan.baidu.com/s/1ER5eaknd4nqhIdXnJtr1jQ?pwd=kp7u       
+提取码: kp7u 
 
 <br>
 
