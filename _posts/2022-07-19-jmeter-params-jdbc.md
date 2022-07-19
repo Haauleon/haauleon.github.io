@@ -17,6 +17,12 @@ tags:
 <br>
 
 ### 二、操作步骤
-###### 1、添加用户自定义变量
+###### 1、使用 Parameter
 ![](\img\in-post\post-jmeter\2022-07-19-jmeter-params-jdbc-1.png)    
-   
+
+<br>
+
+###### 2、查看结果树
+![](\img\in-post\post-jmeter\2022-07-19-jmeter-params-jdbc-2.png)     
+
+![](\img\in-post\post-jmeter\2022-07-19-jmeter-params-jdbc-3.png) 
