@@ -11,7 +11,7 @@ tags:
 ---
 
 ### 一、Variable names
-&emsp;&emsp;JDBC 请求中， 查询 SQL 返回结果的数据储存的变量名，返回几列就有几个变量名。所以 select 语句不能用 `select * from ...` 而是用 `select id, title from ...`，然后将 id 和 title 保存为 `Variable names` 响应变量。      
+&emsp;&emsp;JDBC 请求中，查询 SQL 返回结果的数据储存的变量名，返回几列就有几个变量名。所以 select 语句不能用 `select * from ...` 而是用 `select id, title from ...`，然后将 id 和 title 保存为 `Variable names` 响应变量。      
 
 <br>
 <br>
