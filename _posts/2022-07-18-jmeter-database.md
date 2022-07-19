@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Jmeter | 数据库接口测试"
-subtitle:      "使用 Jmeter 进行数据库测试"
+subtitle:      "数据库驱动下载和基本 JDBC 请求"
 author:        "Haauleon"
 header-style:  text
 catalog:       true
