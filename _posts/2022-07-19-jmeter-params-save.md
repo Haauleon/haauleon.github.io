@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Jmeter | JDBC 请求设置响应变量值"
-subtitle:      "请求成功后，通过 Variable names 提取响应中的值并保存作为自定义变量来使用"
+subtitle:      "请求成功后，通过设置 Variable names 提取响应中的值并保存作为自定义变量来使用"
 author:        "Haauleon"
 header-style:  text
 catalog:       true
