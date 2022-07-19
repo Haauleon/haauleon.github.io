@@ -18,3 +18,16 @@ tags:
 
 ### 二、操作步骤
 ###### 1、添加用户自定义变量
+![](\img\in-post\post-jmeter\2022-07-19-jmeter-params-1.png)    
+
+![](\img\in-post\post-jmeter\2022-07-19-jmeter-params-2.png)     
+
+<br>
+
+###### 2、使用用户自定义变量
+![](\img\in-post\post-jmeter\2022-07-19-jmeter-params-3.png)     
+
+<br>
+
+###### 3、查看结果树
+![](\img\in-post\post-jmeter\2022-07-19-jmeter-params-4.png) 
