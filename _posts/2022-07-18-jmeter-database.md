@@ -80,7 +80,9 @@ tags:
 - Password：数据库登录密码
 - Connection Properties：建立连接时要设置的连接属性（可选）
 
+---
 常见数据库的连接 URL和驱动     
+
 |数据库|驱动|URL|
 |---|---|---|
 |MySQL|com.mysql.jdbc.Driver|jdbc:mysql://host:port/{dbname}|
