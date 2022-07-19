@@ -18,4 +18,28 @@ tags:
 
 ### 二、操作步骤
 ###### 1、使用 Variable names
+如下图，将 id 和 title 这两列的值分别用变量 id 和 title 来存储。     
 ![](\img\in-post\post-jmeter\2022-07-19-jmeter-params-save-1.png)    
+
+<br>
+
+###### 2、查看结果树
+从结果树中查看该 JDBC 请求的响应值，分别有 id 和 title 这两列。     
+![](\img\in-post\post-jmeter\2022-07-19-jmeter-params-save-2.png)  
+
+<br>
+
+###### 3、添加 debug sampler
+添加一个 debug sampler 查看变量 id 和 title 的值。变量 id 中存储了返回的总行数，用 `id_#=3` 表示，存储了这个字段在每一行中的值，id 对应的第一个字段第一行就是 `id_1`，后面需要用到这个数据时就可以用 `${id_1}` 引用。              
+![](\img\in-post\post-jmeter\2022-07-19-jmeter-params-save-3.png)       
+
+![](\img\in-post\post-jmeter\2022-07-19-jmeter-params-save-4.png)     
+
+![](\img\in-post\post-jmeter\2022-07-19-jmeter-params-save-5.png)    
+
+<br>
+
+###### 4、引用动态变量值
+![](\img\in-post\post-jmeter\2022-07-19-jmeter-params-save-6.png)       
+
+![](\img\in-post\post-jmeter\2022-07-19-jmeter-params-save-7.png)     
