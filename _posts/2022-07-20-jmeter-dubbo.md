@@ -28,7 +28,7 @@ tags:
 ### 二、操作步骤
 ###### 1、下载扩展插件
 Apache 为 JMeter 提供了 Dubbo 测试的插件，可在其 Github 仓库中下载，地址如下：              
-[https://github.com/thubbo/jmeter-plugins-for-apache-dubbo/releases/tag/2.7.8](https://github.com/thubbo/jmeter-plugins-for-apache-dubbo/releases/tag/2.7.8)      
+[https://github.com/thubbo/jmeter-plugins-for-apache-dubbo/releases](https://github.com/thubbo/jmeter-plugins-for-apache-dubbo/releases)      
 
 备用下载：        
 链接: https://pan.baidu.com/s/1p6WlGz6tU6e9Ck08zeBt4Q?pwd=2nov        
