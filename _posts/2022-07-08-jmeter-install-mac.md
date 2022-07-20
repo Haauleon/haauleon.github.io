@@ -65,7 +65,7 @@ $ tar zxvf apache-jmeter-5.4.3.tgz
 <br>
 
 ###### 3、配置环境变量
-1. 记录解压得到的 apache-jmeter-5.4.3 路径，如下路径为 /Users/shuozhuo/Applications/apache-jmeter-5.4.3        
+1. 输入 `$ pwd` 记录解压得到的 apache-jmeter-5.4.3 路径，如下路径为 /Users/shuozhuo/Applications/apache-jmeter-5.4.3        
     ![](\img\in-post\post-jmeter\2022-07-08-jmeter-install-mac-5.png)   
 2. 终端输入 `$ open -e ~/.bash_profile` 打开文件，在其中加入如下语句保存后关闭           
     ```
