@@ -8,27 +8,33 @@ header-style:  text
 catalog:       true
 tags:
     - Fiddler
+    - API 测试
+    - Windows
 ---
 
-## 背景
+### 一、背景
+主要是针对前端问题：   
 * 已发布线上 APP 出现接口错误，如何调试线上 APP 访问本地请求？       
 * 已发布线上 H5页面，静态资源或 js 调试，如何映射本地 js？            
 
-<br><br>
+<br>
+<br>
 
-## 解决方案
-###### 一般解决方案
+### 二、解决方案
+###### 1、一般解决方案
 &emsp;&emsp;猜测（一般明显问题）。                
-&emsp;&emsp;找到原发布包，修改请求资源url重新打包测试。需要前后端协调配合，耗时费力。                
+&emsp;&emsp;找到原发布包，修改请求资源 url 重新打包测试。需要前后端协调配合，耗时费力。                
 
-<br><br>
+<br>
+<br>
 
-###### Fiddler 解决方案 (映射响应)
+###### 2、Fiddler 解决方案 (映射响应)
 &emsp;&emsp;原理：通过 fidder 拦截，将需要加载的资源映射到本地开发环境，而无需切换测试版 APP。             
 &emsp;&emsp;例如线上资源：[http://online.com/api/page](http://online.com/api/page)                   
 &emsp;&emsp;映射加载本地资源：[http://127.0.0.1/api/page](http://127.0.0.1/api/page)                
 
-<br><br>
+<br>
+<br>
 
 **方法一：使用 Fiddler 自带的 AutoResponder**                                       
 添加正则替换主机名规则：  
@@ -43,7 +49,8 @@ tags:
 &emsp;&emsp;因此，如果要调试生产环境服务器的某个 js 文件，则可以用它将该生产环境的 js 文件拦截并重定向到本地的 js 文件后，修改本地 js 文件来验证程序或者查找问题。在本地修改完 js 脚本之后，再修改服务器端的内容。这可以保证，**尽量在真实的环境下去调试，从而最大限度的减少 bug 发生的可能性。**     
 &emsp;&emsp;此外，为了紧急修复了生产环境的 bug 后可以让测试员配合进行本地测试，即让测试员连上你的代理后，他就可以对你本地的代码文件进行测试了。    
 
-<br><br>
+<br>
+<br>
 
 **方法二：使用 Stave 插件**                           
 添加规则：                      
@@ -87,7 +94,8 @@ tags:
 | `^` | 匹配字符串开始位置。 |
 | `$` | 匹配字符串结束位置。<br>如`regex:.+.(jpg|gif|bmp)$`包含以 jpg 或 gif 或 bmp 字符串结尾的，即可匹配 |         
 
-<br><br>
+<br>
+<br>
 
 五、前缀为`REGEX:(?insx)`  
 &emsp;&emsp;表示匹配方式      
