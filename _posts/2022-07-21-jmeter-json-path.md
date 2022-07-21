@@ -20,7 +20,7 @@ tags:
 ###### 1、分析查看结果树
 &emsp;&emsp;由以下查看结果树中的 HTTP 响应来看，我希望把 totalCount 这个字段作为全局变量，从而在其他接口中引用此 totalCount 的值。     
 
-![](\img\in-post\post-jmeter\2022-07-21-jmeter-json-1.png) 
+![](\img\in-post\post-jmeter\2022-07-21-jmeter-json-path-1.png) 
 
 <br>
 
@@ -38,20 +38,20 @@ tags:
     $.result.data.list[0].title
     ```
 
-![](\img\in-post\post-jmeter\2022-07-21-jmeter-json-2.png)       
+![](\img\in-post\post-jmeter\2022-07-21-jmeter-json-path-2.png)       
 
 <br>
 
 &emsp;&emsp;由以上可知，totalCount 的 JSON 路径为 `$.result.data.totalCount`。    
 
-![](\img\in-post\post-jmeter\2022-07-21-jmeter-json-3.png)
+![](\img\in-post\post-jmeter\2022-07-21-jmeter-json-path-3.png)
 
 
 <br>
 
 ###### 3、添加JSON提取器
 &emsp;&emsp;totalCount 的 JSON 路径为 `$.result.data.totalCount`，经过测试已成功获取到它的值。现在需要在此 HTTP 请求后面添加 JSON 提取器，如下：    
-![](\img\in-post\post-jmeter\2022-07-21-jmeter-json-4.png)
+![](\img\in-post\post-jmeter\2022-07-21-jmeter-json-path-4.png)
 
 <br>
 
@@ -60,18 +60,18 @@ tags:
 - JSON Path expressions：JSON 路径表达式
 - Match No.(0 for Random)：列表下标数字，如果只想匹配结果中的第一个元素就写 0    
 
-![](\img\in-post\post-jmeter\2022-07-21-jmeter-json-5.png)
+![](\img\in-post\post-jmeter\2022-07-21-jmeter-json-path-5.png)
 
 <br>
 
 ###### 4、设置全局变量
 &emsp;&emsp;提取后设为全局变量才能被引用，这里需要添加为该 HTTP 请求添加一个 BeanShell 后置处理程序。脚本格式：`${__setProperty(全局变量名,${JSON提取的变量名},)}`            
-![](\img\in-post\post-jmeter\2022-07-21-jmeter-json-6.png) 
+![](\img\in-post\post-jmeter\2022-07-21-jmeter-json-path-6.png) 
 
 <br>
 
 写入脚本：`${__setProperty(totalCount,${totalCount},)}`         
-![](\img\in-post\post-jmeter\2022-07-21-jmeter-json-7.png)    
+![](\img\in-post\post-jmeter\2022-07-21-jmeter-json-path-7.png)    
 
 <br>
 
