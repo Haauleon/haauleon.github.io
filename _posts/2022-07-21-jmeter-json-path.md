@@ -70,16 +70,16 @@ tags:
 
 <br>
 
-写入脚本：`${__setProperty(totalCount,${totalCount},)}`         
-![](\img\in-post\post-jmeter\2022-07-21-jmeter-json-path-7.png)    
+写入脚本：`${__setProperty(total_count,${totalCount},)}`         
+![](\img\in-post\post-jmeter\2022-07-21-jmeter-json-path-8.png)    
 
 <br>
 
 ###### 5、使用全局变量
 方法(1)：`${__P(全局变量名)}`          
-示例：`${__P(totalCount)}`        
+示例：`${__P(total_count)}`        
 
-方法(2)：`${全局变量名}`           
+方法(2)：`${JSON提取的变量名}`           
 示例：`${totalCount}`
 
 ---
