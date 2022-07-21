@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Fiddler | 部分实用的小功能"
-subtitle:      "列表 Fiddler 其他一些工作中比较实用的小功能"
+subtitle:      "Windows 系统下列出 Fiddler 其他一些工作中比较实用的小功能"
 date:          2018-01-14
 author:        "Haauleon"
 header-style:  text
@@ -21,7 +21,7 @@ tags:
 <br>
 <br>
 
-###### 过滤无用的 Host
+###### 2、过滤无用的 Host
 &emsp;&emsp;虽然成功的连上了代理，但由于代理了浏览器又代理了手机端的应用而导致 Fiddler 可以抓取到来自不同 Host 下的无数接口，这样就增加了排查问题的难度。可以通过 Fiddler 过滤掉无用的域名只保留我们想要看到的 Host，如下：       
 （1）步骤一：选择Use Filters  
 （2）步骤二：选择Show only the following Hosts  
