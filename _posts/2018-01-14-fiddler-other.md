@@ -25,15 +25,16 @@ tags:
 &emsp;&emsp;虽然成功的连上了代理，但由于代理了浏览器又代理了手机端的应用而导致 Fiddler 可以抓取到来自不同 Host 下的无数接口，这样就增加了排查问题的难度。可以通过 Fiddler 过滤掉无用的域名只保留我们想要看到的 Host，如下：       
 （1）步骤一：选择Use Filters  
 （2）步骤二：选择Show only the following Hosts  
-（3）步骤三：填写只想要保留的域名          
+（3）步骤三：填写只想要保留的域名    
+      
 <br>
 
 ![](\img\in-post\post-fiddler\2018-01-14-fiddler-other-2.png)     
 
 <br><br>
 
-###### 多次执行同一请求
-&emsp;&emsp;可以使用 Replay > Reissue Sequentially 实现对同一请求指定执行次数。        
+###### 3、多次执行同一请求
+&emsp;&emsp;可以使用 Replay > Reissue Sequentially 实现对同一请求指定执行次数。            
 
 ![](\img\in-post\post-fiddler\2018-01-14-fiddler-other-3.png)        
 
