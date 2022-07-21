@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Fiddler | URL 映射请求"
-subtitle:      "如何使用 Fiddler 代理映射请求？"
+subtitle:      "如何将一个请求重定向/转发到另外一个请求"
 date:          2018-02-01
 author:        "Haauleon"
 header-style:  text
@@ -13,7 +13,6 @@ tags:
 ---
 
 ### 一、背景
-主要是针对前端问题：   
 * 已发布线上 APP 出现接口错误，如何调试线上 APP 访问本地请求？       
 * 已发布线上 H5页面，静态资源或 js 调试，如何映射本地 js？            
 

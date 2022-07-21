@@ -8,11 +8,12 @@ header-style:  text
 catalog:       true
 tags:
     - Fiddler
+    - API 测试
+    - Windows
 ---
 
 
-
-## 背景
+### 背景
 &emsp;&emsp;Fiddler 其实就是代理服务器。代理是什么呢？代理其实是一种有**转发功能**的应用程序，它扮演了位于服务器和客户端“中间人”的角色，接收由客户端发送的请求并转发给服务器，同时也接收服务器返回的响应并转发给客户端。
 
 ![](\img\in-post\post-fiddler\2018-02-02-fiddler-breakpoint-1.png)     
