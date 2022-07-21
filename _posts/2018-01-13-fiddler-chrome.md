@@ -20,13 +20,19 @@ tags:
 
 ## 二、解决方法
 ###### 1、下载安装证书生成器         
-&emsp;&emsp;无法生成证书时，需要下载证书生成器，下载完成后进行安装，我是直接安装到桌面。[fiddlercertmaker证书生成器地址](http://www.telerik.com/docs/default-source/fiddler/addons/fiddlercertmaker.exe?sfvrsn=2)         
+&emsp;&emsp;无法生成证书时，需要下载证书生成器，下载完成后双击进行安装，我这里直接下载安装到桌面。[fiddlercertmaker证书生成器地址](http://www.telerik.com/docs/default-source/fiddler/addons/fiddlercertmaker.exe?sfvrsn=2)       
+
+<br>
+
+若无法下载，使用以下备用下载：    
+链接: https://pan.baidu.com/s/1mp3Uhk9tuElED1BwaREMwQ?pwd=1n4f      
+提取码: 1n4f    
 
 <br>
 <br>
 
 ###### 2、fiddler 导出证书       
-&emsp;&emsp;再在fiddler重复证书导出步骤。                    
+&emsp;&emsp;再在 fiddler 中重复证书导出步骤。                    
 ![](\img\in-post\post-fiddler\2018-01-13-fiddler-chrome-2.png)          
 
 <br>
@@ -42,7 +48,7 @@ tags:
 <br><br>
 
 ###### 4、Chrome 浏览器导入证书     
-&emsp;&emsp;证书生成后，导入证书至 Chrome 浏览器。                
+&emsp;&emsp;证书生成后，导入证书至 Chrome 浏览器。                  
 ![](\img\in-post\post-fiddler\2018-01-13-fiddler-chrome-5.png)          
 
 <br>
@@ -72,13 +78,13 @@ tags:
 <br><br>
 
 ###### 5、重启 fiddler，重置证书        
-&emsp;&emsp;重启 fiddler，再次打开 fiddler 设置，重置证书。      
+&emsp;&emsp;重启 fiddler，再次打开 fiddler 设置，重置证书。        
 ![](\img\in-post\post-fiddler\2018-01-13-fiddler-chrome-12.png)         
 
 <br><br>  
 
 ###### 6、重启浏览器和 fiddler    
-&emsp;&emsp;重启浏览器和 fiddler，浏览器进行百度搜索，即可以抓取 https 数据包。             
+&emsp;&emsp;重启浏览器和 fiddler，浏览器进行百度搜索，即可以抓取 https 数据包。               
 ![](\img\in-post\post-fiddler\2018-01-13-fiddler-chrome-13.png) 
 
 
