@@ -31,7 +31,7 @@ tags:
 
 &emsp;&emsp;打开 Fiddler，默认情况下 `Rules –> Performances –> Simulate Modem Speeds` 是未勾选状态，网络正常。当选中此选项（模拟光猫网速）后，网速就会变很慢，打开一个网页要加载很久。这样就实现了弱网络效果。         
 
-![](\img\in-post\post-jmeter\2022-05-17-fiddler-network-1.png) 
+![](\img\in-post\post-fiddler\2022-05-17-fiddler-network-1.png) 
 
 <br>
 
@@ -44,7 +44,7 @@ tags:
 &emsp;&emsp;Fiddler 限速是以网络延迟的方式实现的，`网络延迟时间*网速 = 传输字节数`。        
 
 1. 点击 Rules – Customize Rules（快捷键Ctrl + R）打开 Fiddler ScriptEditor，或者直接点开右侧主页签的 FiddlerScript。          
-    ![](\img\in-post\post-jmeter\2022-05-17-fiddler-network-2.png)      
+    ![](\img\in-post\post-fiddler\2022-05-17-fiddler-network-2.png)      
 2. 打开该文件后，Ctrl + F 查找 m_SimulateModem 标志位，可以看到如下代码：        
     ```
     if (m_SimulateModem) {
@@ -103,7 +103,7 @@ oSession["request-trickle-delay"]="3000";  //请求阶段延迟3秒
 oSession["response-trickle-delay"]="3000";  //响应阶段延迟3秒
 ```
 
-![](\img\in-post\post-jmeter\2022-05-17-fiddler-network-2.png)    
+![](\img\in-post\post-fiddler\2022-05-17-fiddler-network-3.png)    
 
 <br>
 
