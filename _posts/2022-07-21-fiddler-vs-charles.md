@@ -12,8 +12,10 @@ tags:
     - API 测试
 ---
 
-### 功能对照表
-|                                |Fiddler|Charles|
+### 抓包工具功能对照表  
+接口抓包工具功能对照表如下：    
+
+| |Fiddler|Charles|
 |---|---|---|
 | 设置手机端代理抓取http/https接口   |   √    |    √   |
 | 设置浏览器代理抓取http/https接口   |   √    |    √   |
