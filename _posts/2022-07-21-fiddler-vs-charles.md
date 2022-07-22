@@ -15,7 +15,7 @@ tags:
 ### 抓包工具功能对照表  
 接口抓包工具功能对照表如下：    
 
-| |Fiddler|Charles|
+| 常用功能列表 |Fiddler|Charles|
 |---|---|---|
 | 设置手机端代理抓取http/https接口   | 有 | 有 |
 | 设置浏览器代理抓取http/https接口   | 有 | 有 |
