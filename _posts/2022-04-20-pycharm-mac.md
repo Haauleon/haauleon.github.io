@@ -8,6 +8,7 @@ catalog:       true
 tags:
     - macOs
     - Python
+    - Pycharm
 ---
 
 ### 一、背景
