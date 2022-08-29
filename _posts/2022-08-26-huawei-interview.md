@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "招聘职位分析 | 华为测试开发"
+title:         "招聘职位分析 | 华为测试开发（上）"
 subtitle:      "这是一份 14k 以上的工作，对标测试架构师级别，感觉有点水分，扒不到是做什么产品的，可能是外包给别人"
 author:        "Haauleon"
 header-style:  text
