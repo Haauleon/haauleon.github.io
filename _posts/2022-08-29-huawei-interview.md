@@ -12,21 +12,28 @@ tags:
 
 ### 华为测试开发技术栈
 ###### Web 自动化测试   
-python3 + selenium + pytest/unittest + nodejs     
-
+1. python3 + selenium + unittest      
+    已有项目地址：[https://gitee.com/haauleon/kjs-python/tree/dev/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E9%A1%B9%E7%9B%AE/unittest_saas_web_v2](https://gitee.com/haauleon/kjs-python/tree/dev/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E9%A1%B9%E7%9B%AE/unittest_saas_web_v2) 
 
 <br>
 <br>
 
 ###### Api 自动化测试     
-python3 + requests + pytest/unittest + nodejs     
+1. python3 + requests + pytest       
+    已有项目地址：[https://gitee.com/haauleon/bringbuys-service-platform](https://gitee.com/haauleon/bringbuys-service-platform)
+2. python3 + requests + unittest     
+    已有项目地址：[https://gitee.com/haauleon/kjs-python/tree/dev/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E9%A1%B9%E7%9B%AE/unittest_saas_api](https://gitee.com/haauleon/kjs-python/tree/dev/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E9%A1%B9%E7%9B%AE/unittest_saas_api)
+3. python3 + newman + nodejs     
+    已有项目地址：[https://gitee.com/haauleon/kjs-python/tree/dev/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E9%A1%B9%E7%9B%AE/newman_saas_api](https://gitee.com/haauleon/kjs-python/tree/dev/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E9%A1%B9%E7%9B%AE/newman_saas_api)
 
 
 <br>
 <br>
 
-###### 接口测试
-jmeter/k6/postman      
+###### 接口测试工具
+1. jmeter   
+2. k6    
+3. postman      
 
 
 <br>
