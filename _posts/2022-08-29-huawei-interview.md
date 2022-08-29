@@ -49,7 +49,7 @@ tags:
 1. 抓包工具    
     - fiddler
     - charles
-2. 测试策略
+2. 测试点分析
 
 <br>
 <br>
