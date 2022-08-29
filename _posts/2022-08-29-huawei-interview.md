@@ -46,7 +46,10 @@ tags:
 <br>
 
 ###### app、web 功能测试    
-
+1. 抓包工具    
+    - fiddler
+    - charles
+2. 测试策略
 
 <br>
 <br>
