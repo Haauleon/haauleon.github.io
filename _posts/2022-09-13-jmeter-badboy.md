@@ -91,7 +91,27 @@ tags:
 
 
 ### 二、Badboy 工具录制
+###### 1、下载安装
+链接：https://pan.baidu.com/s/16MyKDp5S2uv4jBVrT2MhWA?pwd=yg8v       
+提取码：yg8v     
 
+下载完成后双击 exe 文件进行安装即可。    
+
+<br>
+
+###### 2、运行Badboy
+在地址栏内输入要访问的页面地址，然后直接进行页面操作即可进行脚本录制。      
+![](\img\in-post\post-jmeter\2022-09-13-jmeter-badboy-21.jpg) 
+
+<br>
+
+###### 3、导出为Jmeter脚本
+![](\img\in-post\post-jmeter\2022-09-13-jmeter-badboy-22.jpg)
+
+<br>
+
+###### 4、在Jmeter中导入
+![](\img\in-post\post-jmeter\2022-09-13-jmeter-badboy-23.jpg)   
 
 <br>
 <br>
