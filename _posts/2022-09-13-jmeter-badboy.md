@@ -110,5 +110,5 @@ tags:
 
 <br>
 
-###### 4、在Jmeter中导入
+###### 4、在Jmeter中打开脚本
 ![](\img\in-post\post-jmeter\2022-09-13-jmeter-badboy-23.jpg)   
