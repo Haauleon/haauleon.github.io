@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Jmeter | CSV Data Set Config"
+title:         "Jmeter | CSV Data Set Config 参数化"
 subtitle:      "使用多个不用账号真实模拟用户行为，实现性能测试并发多个用户"
 author:        "Haauleon"
 header-style:  text
