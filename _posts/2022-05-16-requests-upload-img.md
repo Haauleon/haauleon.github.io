@@ -86,73 +86,14 @@ print(response.status_code)  # 获取返回code码
 
 <br>
 
-###### 获取响应
-当一个请求被发送后，会有一个 response 响应。requests 同样为这个 response 赋予了相关方法：         
+###### 获取响应   
 
 ![](\img\in-post\post-other\2022-05-16-requests-2.jpg)   
 
 
 <br><br>
+
 ### 示例代码
-###### 获取天极网的图片
-&emsp;&emsp;获取天极网的图片，保存图片时有多级文件夹，可以使用循环内部套循环获取二级页面的图片,并分两级文件夹保存，代码如下。       
-```python
-'''
-http://pic.yesky.com/c/6_3655_5.shtml
-需求：
-将图片上的文件按页面的分类保存，一共两级文件夹，保存的格式如下
-               'tianji'                # 一级文件夹
-                  '赵薇图片'            # 二级文件夹
-                      '赵薇图片111'     # 具体图片文件
-                      '赵薇图片222'
-                      '赵薇图片333'
-                  '林心如图片'
-                  '李沁图片'
-'''
-import os
-import requests
-from bs4 import BeautifulSoup
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-# 1、向指定连接发请求
-response = requests.get(url='http://pic.yesky.com/c/6_3655_5.shtml')
-
-# 2、使用bs4解析requests请求的响应文本
-soup = BeautifulSoup(response.text, 'html.parser')   # 延伸可搜索lxml，学习python3解析库lxml
-div_obj = soup.find(name='div', attrs={"class": "lb_box"})
-dd_list = div_obj.find_all(name='dd')
-
-for dd in dd_list:
-    # 获取div中所有图片所在a标签的url
-    a_url = dd.find(name='a').get('href')
-    # 要先创建好'tianji'文件夹，再在此文件夹下创建N个二级文件夹用来存放图片
-    path = os.path.join(BASE_DIR, 'tianji', dd.find(name='a').text)
-    if not os.path.isdir(path):  # 如果不存在这个二级文件夹，则创建，不加这一步可能会报错
-        os.mkdir(path)
-    
-    # 向url发请求
-    a_response = requests.get(url=a_url)
-    a_response.encoding = 'gbk'
-
-    # 拿到url中的text文本
-    a_text = a_response.text
-    son_soup = BeautifulSoup(a_text, 'html.parser')  # lxml
-    son_div_obj = son_soup.find(name='div', attrs={"id": "scroll"})
-    
-    for img in son_div_obj.find_all(name='img'):
-        # 获取图片链接，并发请求
-        son_src = img.get('src').replace('113x113', '740x-')  # 使用大图的像素替换图片链接中的小图像素，达到获取大图的目的
-        son_response = requests.get(url=son_src)
-        
-        # 打开文件写入
-        img_path = os.path.join(path, son_src.rsplit("/", 1)[-1])
-        with open(img_path, 'wb') as f:
-            f.write(son_response.content)
-        break
-    break
-```
-
-<br>
 
 ###### 获取汽车之家图片
 &emsp;&emsp;获取汽车之家图片，顺序获取前 20 页，将获取图片的代码封装成了函数，需要获取多少页只需简单修改参数就行，代码如下。       
