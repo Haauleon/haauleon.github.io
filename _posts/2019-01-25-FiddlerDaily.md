@@ -33,7 +33,7 @@ tags:
 <br>
 
 ###### 4、AutoResponder      
-&emsp;&emsp;用于拦截某一请求，并重定向到本地的资源或者使用 Fiddler 的内置响应。可用于调试 server 端代码而无需修改 server 端的代码和配置
+&emsp;&emsp;用于拦截某一请求，并重定向到本地的资源或者使用 Fiddler 的内置响应。可用于调试 server 端代码而无需修改 server 端的代码和配置，因为拦截和重定向后，实际上访问的是本地的文件，或者说得到的是 Fiddler 的内置响应。         
 
 &emsp;&emsp;调试生产环境 js，大概思路就是用 Fiddler 把生产环境的 js 替换为本地的 js，修改本地 js 来验证程序或者查找问题。这个场景多发生在紧急修复生产环境的 bug 后需要先在本地进行测试，此时测试人员只需要连上开发人员的代理，便可以测试和调试了，本地测试通过之后再更新到生产环境。
 ![](\img\in-post\post-fiddler\2019-01-24-FiddlerDaily-5.jpg)         
