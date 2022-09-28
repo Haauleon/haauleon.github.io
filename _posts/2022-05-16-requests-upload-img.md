@@ -80,3 +80,23 @@ print(response.status_code)  # 获取返回code码
 
 <br>
 
+###### requests 类中常用的参数      
+- method：请求方式
+- url：请求URL
+- **kwargs
+    - params：字典或者字节序列，使用这个参数可以把一些键值对以k1=v1&k2=v2的模式增加到url中，get请求中用的较多
+    - data：字典、字节序列或者文件对象，重点作为向服务器提供或提交资源，作为请求的请求体，它也可以接受一个字符串对象
+    - json：json格式的数据，可以向服务器提交json类型的数据
+    - headers：字典，定义请求的请求头，比如可以headers字典定义user agent
+    - cookies：字典或者CookieJar
+    - auth：元组，用来支持HTTP认证功能
+    - files：字典，用来向服务器传输文件
+    - timeout：指定超时时间
+    - proxies：字典，设置代理服务器
+    - allow_redirects：开关，是否允许对URL进行重定向，默认为True
+    - stream：开关，是否对获取内容进行立即下载，默认为False，也就是立即下载。stream一般应用于流式请求，比如说下载大文件，不可能一次请求就把整个文件都下载了，不现实。这种情况下，就要设置stream=True，requests无法将连接释放回连接池，除非下载完了所有数据，或者调用了response.close
+    - verify：开关，用于SSL证书认证，默认为True
+    - cert：用于设置保存本地SSL证书路径
+
+<br>
+
