@@ -87,25 +87,10 @@ print(response.status_code)  # 获取返回code码
 <br>
 
 ###### 获取响应   
-当一个请求被发送后，会有一个 response 响应。requests 同样为这个 response 赋予了相关方法：       
-- response：响应对象
-- response.status_code：请求返回状态码
-- response.text：字符串形式的响应内容
-- response.json()：返回响应的是json类型的数据，如果响应的类型不是json，则抛出ValueError
-- response.content：二进制的响应内容
-- response.iter_content(chunk_size)：生成器，在stream=True的情况下，当遍历生成器时，以块的形式返回，也就是一块一块的遍历要下载的内容。避免了遇到大文件一次性的将内容读取到内存中的弊端，如果stream=False，全部数据作为一个块返回。chunk_size参数指定块大小
-- response.iter_lines()：生成器，当stream=True时，迭代响应数据，每次一行，也就是一行一行的遍历要下载的内容。同样避免了大文件一次性写入到内存中的问题。当然，该方法不安全。至于为啥不安全，咱也不知道，咱也不敢问，主要是官网上没说！经查，如果多次调用该方法，iter_lines不保证重新进入时的安全性，因此可能会导致部分收到的数据丢失
-- response.cookies：响应中的cookie信息
-- response.cookies.get_dict()：以字典的形式返回cookies信息
-- response.cookies.items()：以列表的形式返回cookies信息
-- response.headers：响应头字典。取其中的指定key，response.headers.get('Content-Type', '哎呀，没取到！')
-- response.reqeust：请求类型
-- response.url：请求的URL
-- response.reason：响应HTTP状态的文本原因
-- response.encoding：响应结果的编码方式
-- response.encoding = “gbk”：修该响应编码方式，比如说响应结果的编码是utf-8，通过这么response.encoding = “gbk”指定为gbk
-- response.apparent_encoding：根据响应字节流中去chardet库中匹配，返回编码方式，并不保证100%准确
-- response.history：以列表的形式返回请求记录。列表内的请求以最老到最新排序
+当一个请求被发送后，会有一个 response 响应。requests 同样为这个 response 赋予了相关方法：         
+
+![](\img\in-post\post-other\2022-05-16-requests-2.jpg)   
+
 
 <br><br>
 
