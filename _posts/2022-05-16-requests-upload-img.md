@@ -85,8 +85,3 @@ print(response.status_code)  # 获取返回code码
 ![](\img\in-post\post-other\2022-05-16-requests-1.jpg)     
 
 <br>
-
-###### 获取响应   
-当一个请求被发送后，会有一个 response 响应。requests 同样为这个 response 赋予了相关方法：         
-
-![](\img\in-post\post-other\2022-05-16-requests-2.jpg)   
