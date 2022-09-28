@@ -133,26 +133,5 @@ soup = BeautifulSoup(text, 'html.parser')  # 需要解析的文件是text文本�
 # find方法中此类参数的固定写法
 div_obj = soup.find(name='div', attrs={"class": "news_bom-left"})
 
-# 4. 定位图片位置
-li_list = div_obj.find_all(name="li")  # 从这个盒子中找所有li标签
 
-# 图片要一张一张去处理并保存，所以要循环，
-for li in li_list:
-    # 5. 获取图片链接
-    img = li.find(name='img')  # 查看这一条li中name是img的标签
-    src = img.get("src")  # 从这个标签中获取图片的链接
-    
-    # 6. 使用requests模块向图片链接发请求
-    res = requests.get(url=src)
-    
-    # 7. 保存图片到本地
-    # os.path.join 是拼接路径，BASE_DIR指当前文件的父级目录的绝对路径
-    # src.rsplit('/', 1)[-1] 是切割了图片地址，使用切片后的字符串作为要保存的文件的名字，也可以用其他的字段进行处理作为文件名
-    # 这一步实际就是给即将保存的文件安排一个路径，这个路径就是当前文件所处的父文件夹下的7160这个文件夹
-    # 注意：'7160'这个文件夹要先创建好，不然会报错
-    file_path = os.path.join(BASE_DIR, '7160', src.rsplit('/', 1)[-1])
-    with open(file_path, 'wb') as f:  # 图片信息是二进制形式，所以要用wb写入
-        f.write(res.content)  # 将请求图片获取到的二进制响应内容写入文件中
-    # break  # 调试时候用，只获取第一条信息，调试结束，注释掉break,即可全部获取到文件
 ```
-
