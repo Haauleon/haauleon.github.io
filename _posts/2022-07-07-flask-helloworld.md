@@ -44,9 +44,9 @@ def login():
             else:
                 return jsonify({"code":10001,"message":"密码不正确"})
         else:
-            return  jsonify({"code":10002,"message":"用户不存在"})
+            return jsonify({"code":10002,"message":"用户不存在"})
     else:
-        return   jsonify({"code":10003,"message":"用户名或密码为空"})
+        return jsonify({"code":10003,"message":"用户名或密码为空"})
 
 if __name__ == '__main__':
     # 默认方式启动
