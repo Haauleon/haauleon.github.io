@@ -107,7 +107,7 @@ pip install beautifulsoup4  # 需要先安装此模块
 # 0. 导包
 import os
 import requests
-from bs4 import BeautifulSoup  # 不同于其他模块，BeautifulSoup导入的时候不是直接import BeautifulSoup，直接导入会报错
+from bs4 import BeautifulSoup  # 不能直接import BeautifulSoup导入，会报错
 
 #  在代码之前先定义全局常量
 # os.path.abspath(__file__) 指当前文件的绝对路径
@@ -125,7 +125,7 @@ response.encoding = 'gbk'  # 获取的文件信息是乱码，需要转码，可
 text = response.text
 
 # 3. 使用bs4库解析请求，需要传入需要解析的文件，指定解析器
-soup = BeautifulSoup(text, 'html.parser')  # 需要解析的文件是text, 是文本类型的，所以使用html.parser:解析器，负责解析文本
+soup = BeautifulSoup(text, 'html.parser')  # 需要解析的文件是text文本类型的，所以使用html.parser:解析器负责解析文本
 # print(soup)  # 结果同text相同，拿到解析结果去分析和操作数据
 
 # 从整个文本中进一步缩小定位范围
@@ -147,7 +147,7 @@ for li in li_list:
     
     # 7. 保存图片到本地
     # os.path.join 是拼接路径，BASE_DIR指当前文件的父级目录的绝对路径
-    # src.rsplit('/', 1)[-1] 是切割了图片地址，使用切割后的字符串作为要保存的文件的名字，也可以用其他的字段进行处理作为文件名
+    # src.rsplit('/', 1)[-1] 是切割了图片地址，使用切片后的字符串作为要保存的文件的名字，也可以用其他的字段进行处理作为文件名
     # 这一步实际就是给即将保存的文件安排一个路径，这个路径就是当前文件所处的父文件夹下的7160这个文件夹
     # 注意：'7160'这个文件夹要先创建好，不然会报错
     file_path = os.path.join(BASE_DIR, '7160', src.rsplit('/', 1)[-1])
