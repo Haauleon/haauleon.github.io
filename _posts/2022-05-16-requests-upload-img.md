@@ -156,17 +156,3 @@ for li in li_list:
     # break  # 调试时候用，只获取第一条信息，调试结束，注释掉break,即可全部获取到文件
 ```
 
-&emsp;&emsp;使用此种方法有个弊端，如果文件过大，可能会导致下载到本地之后，导致本地存储空间不足，下载完毕之后会有部分文件丢失。如果是大文件或者多个文件，建议循环下载，如果存储空间不足，之前的文件不会缺失。可以使用 iter_content 方法按字节大小循环下载，代码如下。               
-```python
-# stream默认情况下是false，会立即开始下载文件并存放到内存当中
-# 当把stream的参数设置成True时，它不会立即开始下载，当你使用iter_content遍历内容或访问内容属性时才开始下载
-response = requests.get(url_file, stream=True)
-with open("file_path", "wb") as f:
-# iter_content：一块一块的遍历要下载的内容，chunk_size是每一块的字节数，结合使用可以防止占用过多的内存
-# 循环下载文件，按照chunk_size设置的字节数，每次只下载这一大小的数据
-    for i in response.iter_content(chunk_size=512):
-            f.write(i)
-```
-
-<br>
-
