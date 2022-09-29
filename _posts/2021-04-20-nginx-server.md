@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Nginx | 部署静态页面"
-subtitle:      "使用本教程可进行安装和配置 nginx"
+subtitle:      "安装和配置 nginx"
 date:          2021-04-19
 author:        "Haauleon"
 header-style:  text
@@ -11,7 +11,7 @@ tags:
 ---
 
 ## 背景
-&emsp;&emsp;预期是自动化测试生成的报告可上传至已部署的阿里云服务器，然后便可访问此 html 了，即使离开办公室仍可访问。解决了本地启动 Apache 服务器后其他人需要位于相同网关才可访问的问题。
+&emsp;&emsp;自动化测试生成的报告可上传至已部署的阿里云服务器，便可访问此 html 了，即使离开办公室仍可访问。解决了本地启动 Apache 服务器后其他人需要位于相同网关才可访问的问题。
 
 <br><br>
 
