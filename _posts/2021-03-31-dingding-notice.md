@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "钉钉 | 业务报警脚本"
+title: "钉钉 | 业务预警脚本"
 subtitle: "python + node + newman + dingtalk + crontab"
 author: "Haauleon"
 header-style: text

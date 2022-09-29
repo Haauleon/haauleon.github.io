@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "报警 | 钉钉报警机器人"
+title: "预警 | 钉钉预警机器人"
 subtitle: "我心目中的潮流之选"
 author: "Haauleon"
 header-style: text

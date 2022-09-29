@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "基于脑图高效设计测试用例-笔记"
-subtitle: '线上社群V咖分享'
+subtitle: '线上V咖分享'
 author: "Haauleon"
 header-style: text
 tags:

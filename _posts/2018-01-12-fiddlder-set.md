@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Fiddler | 代理设置"
-subtitle:      "Windows 系统下载、安装、设置手机代理"
+subtitle:      "Windows 系统下载、安装、设置mobile phone代理"
 date:          2018-01-12
 author:        "Haauleon"
 header-style:  text
