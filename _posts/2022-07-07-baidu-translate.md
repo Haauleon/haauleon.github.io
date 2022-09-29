@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "百度 API | 百度翻译"
-subtitle:      "免费的版本每秒只能请求一次"
+subtitle:      "每秒只能请求一次"
 author:        "Haauleon"
 header-style:  text
 catalog:       true
