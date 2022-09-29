@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Charles | 代理设置"
-subtitle:      "设置手机代理"
+subtitle:      "设置远程终端代理"
 date:          2020-09-20
 author:        "Haauleon"
 header-style:  text
