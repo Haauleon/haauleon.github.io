@@ -104,7 +104,7 @@ haauleon@LAPTOP-EA7BF21I:~$ npm list -g --depth 0 dayjs
 
 <br><br>
 
-###### 查看已安装的指定包的当前版本
+###### 查看已安装包的当前版本
 格式：`$ npm ls <包名>`     
 
 示例：（注：-g 表示全局包）           
@@ -114,7 +114,7 @@ haauleon@LAPTOP-EA7BF21I:~$ npm ls -g dayjs
 
 <br><br>
 
-###### 更新 npm 全局安装包
+###### 更新全局安装包
 格式：`$ npm update -g <包名>`     
 
 示例：            
@@ -124,7 +124,7 @@ haauleon@LAPTOP-EA7BF21I:~$ sudo npm update -g dayjs
 
 <br><br>
 
-###### 卸载 npm 全局安装包
+###### 卸载全局安装包
 格式：`$ npm uninstall -g <包名>`       
 
 示例：            
