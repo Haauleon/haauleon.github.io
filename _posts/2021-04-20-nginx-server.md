@@ -1,7 +1,7 @@
 ---
 layout:        post
-title:         "Nginx | 部署静态页面"
-subtitle:      "安装和配置 nginx"
+title:         "Nginx | 安装、配置、部署静态页面"
+subtitle:      ""
 date:          2021-04-19
 author:        "Haauleon"
 header-style:  text
