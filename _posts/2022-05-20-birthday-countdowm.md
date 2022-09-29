@@ -1,7 +1,7 @@
 ---
 layout:        post
-title:         "Python3 | 生日自动发动短信"
-subtitle:      "服务器跑脚本，可以在生日当天凌晨自动发动短信祝福给对方"
+title:         "Python3 | 生日自动发送sms"
+subtitle:      "服务器跑脚本，可以在生日当天凌晨自动发送sms祝福给对方"
 author:        "Haauleon"
 header-style:  text
 catalog:       true
