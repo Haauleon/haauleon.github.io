@@ -44,7 +44,7 @@ tags:
 
 <br>
      
-![](\img\in-post\post-fiddler\2018-02-01-fiddler-autoresponder-3.png)         
+![](\img\in-post\post-fiddler\2018-02-01-fiddler-autoresponder-3.jpg)         
 
 <br>
 <br>
