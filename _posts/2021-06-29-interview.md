@@ -11,10 +11,6 @@ tags:
 ---
 
 ## APP 相关
-&emsp;&emsp;在原文的基础上增加了一些自己的经验和理解。
-
-<br><br>
-
 ###### 一、web 和 APP 的异同点
 ![](\haauleon\img\in-post\post-other\2021-06-29-interview-1.jpg)   
 
