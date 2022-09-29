@@ -42,23 +42,8 @@ $ ls
 <br><br>
 
 ###### 四、新建配置文件
-&emsp;&emsp;新建一个配置文件 `static-me.conf`(自定义文件名，但后缀需为 `.conf`)，并写入以下配置内容并保存。      
+![](\haauleon\img\in-post\post-other\2021-04-20-nginx-server-3.jpg)
 
-```
-$ sudo vi static-naice-me.conf
-```
-<br>
-
-```conf
-server {
-    server_name 112.74.205.108;            // 你的域名或者 ip
-    root /usr/test-haauleon;               // 服务器要部署的项目路径
-    index hello.html;                      // 访问 112.74.205.108 后显示的首页
-    location ~* ^.+\.(jpg|jpeg|gif|png|ico|css|js|pdf|txt) {
-        root /usr/test-haauleon;
-        }// 静态文件访问
-}
-```
 <br>
 
 ![](\haauleon\img\in-post\post-nginx\2021-04-20-nginx-server-1.jpg)
