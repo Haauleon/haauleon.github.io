@@ -65,22 +65,7 @@ $ sudo nginx -s reload
 <br><br>
 
 ## 一些坑
-###### 第一个坑
-操作：执行 `sudo nginx -s reload`                          
-问题：提示 `nginx: [emerg] "server"; directive is not allowed here in /etc/nginx/nginx.conf:87`                        
-解决： `vim /etc/nginx/nginx.conf` 检查 87 行代码， 检查 server 的配置是否少了一个花括号 `}`；或者将 server 的配置全局注释。   
-
-<br><br>
-
-###### 第二个坑
-操作：执行 `sudo nginx -s reload`                          
-问题：提示 `nginx: [error] open() "/run/nginx.pid" failed (2: No such file or directory)`                  
-解决：找到 `nginx.conf` 文件所在的目录，我的是在 `/etc/nginx` 目录下，然后使用以下命令行即可解决。               
-
-```
-$ nginx -c /etc/nginx/nginx.conf
-$ sudo nginx -s reload
-```
+![](\haauleon\img\in-post\post-other\2021-04-20-nginx-server-4.jpg)
 
 <br><br>
 
