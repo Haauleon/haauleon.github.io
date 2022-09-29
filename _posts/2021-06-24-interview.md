@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "面试 | 抖音 APP 面试题"
-subtitle:      "题目答案大部分是自己写的，可能有误"
+subtitle:      ""
 date:          2021-06-24
 author:        "Haauleon"
 header-style:  text
@@ -12,9 +12,6 @@ tags:
 
 
 ## 抖音 APP
-&emsp;&emsp;我大致看了一下，他们比较关心 http 请求和接口测试，可能是致力于做 app 端的，所以很少看到 web UI 自动化方面的内容，多的是 http 请求、adb 和 monkey 命令。
-
-<br><br>
 
 ###### 一、技术一面
 1.简单做一下自我介绍？                 
@@ -224,7 +221,7 @@ pm list packages  显示所有应用包名
 
 <br>
 
-4.手机 app 崩溃闪退的原因/如何测试手机内存/软件使用时的内存/emmagee 可以测吗/怎么判断是这个软件所消耗的内存而不会是其他软甲所耗费的？       
+4.app 崩溃闪退的原因/如何测试内存/软件使用时的内存/emmagee 可以测吗/怎么判断是这个软件所消耗的内存而不会是其他软甲所耗费的？       
 ```
 
 ```
