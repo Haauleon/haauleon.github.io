@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Fiddler | URL 映射请求"
-subtitle:      "如何将一个请求重定向/转发到另外一个请求"
+subtitle:      "如何将请求A转发到请求B"
 date:          2018-02-01
 author:        "Haauleon"
 header-style:  text
@@ -44,9 +44,7 @@ tags:
 
 <br>
      
-&emsp;&emsp;AutoResponder 是 Fiddler 比较重要且比较强大的功能之一。它可以用来调试服务器端代码而无需修改服务器端的代码和配置，因为它拦截某一请求并重定向到本地的资源后，实际上访问的是本地的文件或者得到的是 Fiddler 的内置响应。         
-&emsp;&emsp;因此，如果要调试生产环境服务器的某个 js 文件，则可以用它将该生产环境的 js 文件拦截并重定向到本地的 js 文件后，修改本地 js 文件来验证程序或者查找问题。在本地修改完 js 脚本之后，再修改服务器端的内容。这可以保证，**尽量在真实的环境下去调试，从而最大限度的减少 bug 发生的可能性。**     
-&emsp;&emsp;此外，为了紧急修复了生产环境的 bug 后可以让测试员配合进行本地测试，即让测试员连上你的代理后，他就可以对你本地的代码文件进行测试了。    
+![](\img\in-post\post-fiddler\2018-02-01-fiddler-autoresponder-3.png)         
 
 <br>
 <br>
