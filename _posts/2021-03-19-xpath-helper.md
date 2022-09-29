@@ -15,7 +15,7 @@ tags:
 <br>    
 
 ### 插件介绍  
-![](\img\in-post\post-python\2021-03-19-xpath-1.jpg)
+![](\img\in-post\post-other\2021-03-19-xpath-1.jpg)
 
 <br>
 
