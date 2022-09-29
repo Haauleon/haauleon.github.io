@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "python3 | 腾讯云短信服务"
+title:         "python3 | 腾讯云SMS服务"
 subtitle:      ""
 date:          2021-09-01
 author:        "Haauleon"
