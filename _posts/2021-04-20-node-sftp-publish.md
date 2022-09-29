@@ -11,9 +11,7 @@ tags:
 ---
 
 ## 背景
-&emsp;&emsp;我的想法是在 jenkins 上自动构建自动化测试后，生成的 html 测试报告文件自动上传至我的阿里云服务器（服务器已使用 Nginx 部署完成）进行访问，解决读取邮件、发送邮件效率的问题。看网上很多人集成到 jenkins 后第一反应就是发邮件，但是我觉得发邮件是一种很古老的技术了，加上我真的很不喜欢看邮件，有什么比直接看钉钉消息、微信微信更方便的吗？     
-
-&emsp;&emsp;使用本教程需安装 Nodejs 。
+![](\haauleon\img\in-post\post-other\2021-04-20-node-sftp-publish-5.jpg)
 
 <br><br>
 
@@ -37,29 +35,7 @@ $ sudo npm link publish-sftp
 <br><br>
 
 ###### 三、新建配置文件
-&emsp;&emsp;进入要传输的文件所在的当前目录，创建一个配置文件 `sftp.json`，并写入以下配置内容：       
-
-```
-$ cd 要传输的文件所在的目录
-$ touch sftp.json # 创建文件
-$ vim sftp.json # 编辑文件
-$ cat sftp.json # 显示文件内容
-```
-<br>
-
-```json
-{
-    "localPath": "./",                           # 本地要传输的文件所在的相对路径
-    "remotePath": "/usr/test-haauleon",          # 远程绝对路径
-    "protectedRemotePath": "/usr/test-haauleon", # 远程绝对路径
-    "connect": {
-        "host": "112.74.205.108",                # 远程服务器 ip
-        "port": 22,
-        "username": "root",
-        "password": "服务器root密码"
-    }
-}
-```    
+![](\haauleon\img\in-post\post-other\2021-04-20-node-sftp-publish-6.jpg)  
 
 <br>
 
