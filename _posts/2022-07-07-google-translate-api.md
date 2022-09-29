@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "谷歌 | 免费的 google 翻译 api"
+title:         "谷歌 | 开源 google 翻译 api"
 subtitle:      "有一些异常需要处理"
 author:        "Haauleon"
 header-style:  text
