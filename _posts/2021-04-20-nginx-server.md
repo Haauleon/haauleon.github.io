@@ -70,4 +70,4 @@ $ sudo nginx -s reload
 <br><br>
 
 ## 结论
-&emsp;&emsp;部署完成后即可访问静态资源，接下来出一个部署多域名的教程。
+&emsp;&emsp;部署完成后即可访问静态资源。
