@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Navicat 下载、安装和使用"
+title:         "Navicat下载"
 subtitle:      ""
 author:        "Haauleon"
 header-style:  text
