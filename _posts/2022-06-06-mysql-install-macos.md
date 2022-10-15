@@ -1,7 +1,7 @@
 ---
 layout:        post
-title:         "数据库 | MacOS 安装 MySQL"
-subtitle:      "下载、安装和使用命令"
+title:         "MacOS 安装 MySQL"
+subtitle:      ""
 author:        "Haauleon"
 header-style:  text
 catalog:       true
