@@ -1,7 +1,7 @@
 ---
 layout:        post
-title:         "数据库 | Navicat 连接 MySQL"
-subtitle:      "下载、安装和使用"
+title:         "数据库 | Navicat 下载、安装和使用"
+subtitle:      ""
 author:        "Haauleon"
 header-style:  text
 catalog:       true
