@@ -10,8 +10,7 @@ tags:
     - 数据库
 ---
 
-### 下载
-MacOs 系统百度网盘资源：      
+### 下载    
 链接: https://pan.baidu.com/s/1AEgOEtQOk4NBFX8nsjDfyA?pwd=d47r      
 提取码: d47r 
 
