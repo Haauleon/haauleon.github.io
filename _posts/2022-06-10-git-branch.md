@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Git 删除分支、修改远程仓库地址"
+title:         "删分支、修改远程仓库地址"
 subtitle:      ""
 author:        "Haauleon"
 header-style:  text
@@ -10,10 +10,10 @@ tags:
 ---
 
 ### 删除本地分支
-`$ git branch -d [本地分支名]`     
+`git branch -d [本地分支名]`     
 
 强制删除：      
-`$ git branch -D [本地分支名]`
+`git branch -D [本地分支名]`
 
 <br><br>
 
