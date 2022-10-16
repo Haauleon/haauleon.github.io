@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "数据库安装"
+title:         "mysql安装"
 subtitle:      ""
 author:        "Haauleon"
 header-style:  text
@@ -11,6 +11,6 @@ tags:
 ---
 
 
-![](\img\in-post\post-other\2022-06-06-navicat-1.jpg)        
+![](\img\in-post\post-other\2022-06-06-mysql-1.jpg)        
 
-![](\img\in-post\post-other\2022-06-06-navicat-2.jpg)    
+![](\img\in-post\post-other\2022-06-06-mysql-2.jpg)    
