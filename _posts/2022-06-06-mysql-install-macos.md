@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Mac安装MySQL"
+title:         "Mac安装数据库"
 subtitle:      ""
 author:        "Haauleon"
 header-style:  text
