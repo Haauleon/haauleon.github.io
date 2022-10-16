@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Mac安装数据库"
+title:         "数据库安装"
 subtitle:      ""
 author:        "Haauleon"
 header-style:  text
@@ -40,7 +40,7 @@ tags:
 4. 使用安装过程中设置的 root 用户密码登录本地 mysql 服务端         
     `$ mysql -u root -p`
 
-    
+
 ![](\img\in-post\post-other\2022-06-06-navicat-1.jpg)        
 
 ![](\img\in-post\post-other\2022-06-06-navicat-2.jpg)    
