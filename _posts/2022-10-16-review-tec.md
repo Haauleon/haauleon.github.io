@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "汇总工作中用到的技术及其使用的场景"
+title:         "工作中用到的技术及其使用的场景"
 subtitle:      ""
 author:        "Haauleon"
 header-style:  text
