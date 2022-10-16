@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "删分支、修改远程仓库地址"
+title:         "Git 基本命令"
 subtitle:      ""
 author:        "Haauleon"
 header-style:  text
