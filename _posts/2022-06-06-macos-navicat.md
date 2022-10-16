@@ -11,4 +11,4 @@ tags:
 ---
 
 
-![](\img\in-post\post-other\2022-06-06-mysql-1.jpg)    
+![](\img\in-post\post-other\2022-06-06-navicat-1.jpg)    
