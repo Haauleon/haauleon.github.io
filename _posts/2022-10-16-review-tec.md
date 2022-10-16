@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "面试 | 技术总结"
+title:         "技术总结"
 subtitle:      "汇总一下工作中用到的技术及其使用的场景"
 author:        "Haauleon"
 header-style:  text
