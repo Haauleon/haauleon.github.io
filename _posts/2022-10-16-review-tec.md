@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "总结"
+title:         "技术总结"
 subtitle:      ""
 author:        "Haauleon"
 header-style:  text
