@@ -2,15 +2,15 @@
 layout:        post
 title:         "Python3 | xlrd 运行报错"
 subtitle:      "xlrd.biffh.XLRDError: Excel xlsx file; not supported"
-date:          2021-06-02
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Python
+    - 自动化办公
 ---
 
-## 背景
+### 背景
 &emsp;&emsp;在使用了 `$ pip install xlrd` 安装完成 xlrd 之后，执行以下 demo 代码报错：                       
 ```python
 import xlrd
@@ -58,7 +58,7 @@ xlrd.biffh.XLRDError: Excel xlsx file; not supported
 
 <br><br>
 
-## 解决方法
+### 解决方法
 安装 pyexcel-xls 即可。                
 ```
 $ pip install pyexcel-xls
