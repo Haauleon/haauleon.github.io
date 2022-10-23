@@ -2,20 +2,22 @@
 layout:        post
 title:         "Python3 | 国内 ip 代理池访问网页"
 subtitle:      "xlrd + pyppeteer 实现读取 excel 刷网页并截图"
-date:          2021-06-02
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Python
+    - 爬虫
+    - 自动化办公
+    - ip代理池
 ---
 
-## 背景
+### 背景
 &emsp;&emsp;接到个异地代理访问图片的需求，前几天常州市无法访问阿里云 oss 绑定的图片，然后我上网搜了一下全国城市路线最多的代理服务商，找到了芝麻。提供的城市路线相对较多，我这里用的是通过 api 获取 ip 来实现代理浏览器访问图片，抄了一下大神的代码，然后增加了自动关闭浏览器的时候删除 tmp 文件、读取 excel 和截图的功能。现在放一下 demo，也是刚新鲜出炉的代码，后面有时间再做异常处理。                             
 
 <br><br>
 
-## 代码
+### 代码
 ###### 一、项目结构
 ![](\img\in-post\post-python\2021-06-02-python-zhima-1.png)             
 
