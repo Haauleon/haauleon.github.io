@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Python3 | pymysql 通过字典插入数据"
+title:         "数据库 | pymysql 通过字典插入数据"
 subtitle:      ""
 author:        "Haauleon"
 header-style:  text
