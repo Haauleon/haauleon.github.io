@@ -7,7 +7,6 @@ header-style:  text
 catalog:       true
 tags:
     - Python
-    - Postman
     - 数据监控
 ---
 
