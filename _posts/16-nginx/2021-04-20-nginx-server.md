@@ -2,7 +2,6 @@
 layout:        post
 title:         "Nginx | 安装、配置、部署静态页"
 subtitle:      ""
-date:          2021-04-19
 author:        "Haauleon"
 header-style:  text
 catalog:       true
