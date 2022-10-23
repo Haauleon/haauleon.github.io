@@ -2,14 +2,12 @@
 layout:        post
 title:         "Python3 | pyppeteer 运行报错"
 subtitle:      "urllib3.exceptions.MaxRetryError: HTTPSConnectionPool"
-date:          2021-03-19
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Python
 ---
-
 
 ## 背景
 &emsp;&emsp;pyppeteer 安装完成后执行以下 `百度截图脚本` 代码：                                               
