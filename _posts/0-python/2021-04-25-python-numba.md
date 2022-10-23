@@ -2,7 +2,6 @@
 layout:        post
 title:         "Python3 | 加速的方法"
 subtitle:      "列举了一些让程序运行加速的方法"
-date:          2021-04-25
 author:        "Haauleon"
 header-style:  text
 catalog:       true
@@ -10,7 +9,7 @@ tags:
     - Python
 ---
 
-## numba.jit 加速函数                  
+### numba.jit 加速函数                  
 ###### 一、背景
 &emsp;&emsp;python 一直被病垢运行速度太慢，但是实际上 python 的执行效率并不慢，慢的是 python 用的解释器 Cpython 运行效率太差。        
 &emsp;&emsp;numba 所完成的工作就是：解析 Python 函数的 ast 语法树并加以改造，添加类型信息；将带类型信息的 ast 语法树通过 llvmpy 动态地转换为机器码函数，然后再通过和 ctypes 类似的技术为机器码函数创建包装函数供 Python 调用。（说实话我看不懂）        
@@ -79,7 +78,7 @@ Wall time: 113 ms
 
 <br><br>
 
-## Counter 加速列表计数
+### Counter 加速列表计数
 ###### 一、背景
 定义一个列表：       
 ```python
@@ -125,7 +124,7 @@ Wall time: 153 ms
 
 <br><br>
 
-## ChainMap 加速字典合并
+### ChainMap 加速字典合并
 ###### 一、背景
 定义四个字典：       
 ```python
@@ -175,7 +174,7 @@ Wall time: 1.14 ms
 
 <br><br>
 
-## Map 加速列表生成
+### Map 加速列表生成
 ###### 一、背景
 &emsp;&emsp;用于生成一个没有 if 判断语句的列表。    
 <br><br>
@@ -210,7 +209,7 @@ Wall time: 8.11 µs
 
 <br><br>
 
-## Filter 加速列表生成
+### Filter 加速列表生成
 ###### 一、背景
 &emsp;&emsp;用于生成一个有 if 语句的列表。    
 
