@@ -8,7 +8,6 @@ header-style:  text
 catalog:       true
 tags:
     - K6
-    - 性能测试
     - Jmeter
 ---
 
