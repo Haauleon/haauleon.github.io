@@ -7,6 +7,8 @@ header-style:  text
 catalog:       true
 tags:
     - Python
+    - 禅道脚本
+    - 数据监控
 ---
 
 ### 背景
