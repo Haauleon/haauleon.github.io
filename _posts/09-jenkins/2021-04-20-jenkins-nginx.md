@@ -2,7 +2,6 @@
 layout:        post
 title:         "Jenkins | 多命令行持续集成"
 subtitle:      "Jenkins + Newman + Nodejs + python3 + Nginx 实现自动化测试"
-date:          2021-04-19
 author:        "Haauleon"
 header-style:  text
 catalog:       true
@@ -13,7 +12,6 @@ tags:
     - Python
     - Newman
     - Postman
-    - API 测试
 ---
 
 ## 一、背景
