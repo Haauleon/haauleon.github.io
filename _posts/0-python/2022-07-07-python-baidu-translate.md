@@ -7,6 +7,7 @@ header-style:  text
 catalog:       true
 tags:
     - Python
+    - 百度API
 ---
 
 ### 背景
