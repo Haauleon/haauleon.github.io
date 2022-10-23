@@ -2,7 +2,6 @@
 layout:        post
 title:         "python3 | 合并多个 json 文件"
 subtitle:      ""
-date:          2021-11-17
 author:        "Haauleon"
 header-style:  text
 catalog:       true
