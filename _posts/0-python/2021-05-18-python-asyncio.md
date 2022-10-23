@@ -2,7 +2,6 @@
 layout:        post
 title:         "Python3 | asyncio 的应用"
 subtitle:      "asyncio 的使用方式和使用场景是什么？"
-date:          2021-05-18
 author:        "Haauleon"
 header-style:  text
 catalog:       true
@@ -10,7 +9,7 @@ tags:
     - Python
 ---
 
-## asyncio
+### asyncio
 asyncio 官方文档说明：            
 
 > asyncio is a library to write concurrent code using the async/await syntax.           
@@ -21,7 +20,7 @@ asyncio 官方文档说明：
 
 <br><br>
 
-## 使用场景
+### 使用场景
 ###### 一、分布式任务队列       
 python 的协程:
 1. Python 对协程的支持是通过 generator 实现的。                  
@@ -155,7 +154,7 @@ if __name__ == '__main__':
 
 <br><br>
 
-## 使用方式
+### 使用方式
 ###### 一、定义协程并创建 tasks
 1. 通过 async 关键字定义一个协程（coroutine）,当然协程不能直接运行，需要将协程加入到事件循环 loop 中。            
 2. asyncio.get_event_loop：创建一个事件循环，然后使用 run_until_complete 将协程注册到事件循环，并启动事件循环。             
