@@ -2,7 +2,6 @@
 layout:        post
 title:         "Gitbook | 托管静态资源"
 subtitle:      "如何将 Gitbook 集成到 Github Pages？"
-date:          2018-10-12
 author:        "Haauleon"
 header-style:  text
 catalog:       true

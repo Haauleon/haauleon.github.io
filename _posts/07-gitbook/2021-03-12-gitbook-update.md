@@ -2,7 +2,6 @@
 layout:        post
 title:         "Gitbook | 编辑与发布"
 subtitle:      "如何编辑、发布和远程访问电子书？"
-date:          2018-10-11
 author:        "Haauleon"
 header-style:  text
 catalog:       true

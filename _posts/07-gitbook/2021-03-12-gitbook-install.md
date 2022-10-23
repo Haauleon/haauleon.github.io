@@ -2,7 +2,6 @@
 layout:        post
 title:         "Gitbook | 安装与使用"
 subtitle:      "Gitbook 的使用场景是什么？怎么安装？"
-date:          2018-10-11
 author:        "Haauleon"
 header-style:  text
 catalog:       true
