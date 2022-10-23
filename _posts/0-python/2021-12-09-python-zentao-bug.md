@@ -2,12 +2,12 @@
 layout:        post
 title:         "禅道 | Python3 每日统计 bug"
 subtitle:      "通过设置定时任务完成每日禅道 bug 统计并发送钉钉消息"
-date:          2021-12-09
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Python
+    - 禅道脚本
 ---
  
 ## 背景
