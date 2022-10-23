@@ -2,7 +2,6 @@
 layout:        post
 title:         "Postman | 集合"
 subtitle:      "如何自动化批量运行指定的接口集合？"
-date:          2021-04-12
 author:        "Haauleon"
 header-style:  text
 catalog:       true

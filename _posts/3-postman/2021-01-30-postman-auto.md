@@ -28,7 +28,7 @@ $ sudo npm install -g newman-reporter-html
 ```    
 <br>
 
-## 二、自定义测试报告  
+### 二、自定义测试报告  
 1.组合键 `command + space空格键` 打开搜索框，输入 `newman` 并点击进入访达      
 ![](\img\in-post\post-postman\2021-01-30-postman-auto-3.png)   
 
@@ -43,7 +43,7 @@ $ sudo npm install -g newman-reporter-html
 
 <br>
 
-## 三、自动化测试执行
+### 三、自动化测试执行
 1.导出 postman 自动化测试集  
 ![](\img\in-post\post-postman\2021-01-30-postman-auto-7.png)    
 
