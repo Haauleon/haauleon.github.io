@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "python3 | 豆瓣小组-珠海租房监控器"
+title:         "爬虫 | 豆瓣小组-珠海租房监控器"
 subtitle:      ""
 date:          2021-09-01
 author:        "Haauleon"
@@ -8,6 +8,7 @@ header-style:  text
 catalog:       true
 tags:
   - Python
+  - 爬虫
 ---
 
 &emsp;&emsp;目前有找银石雅园的房子的需求，特地写了一个脚本放在服务器上去定时爬取，然后推送到钉钉群。可以根据关键字查找，我主要找的是银石雅园。          
