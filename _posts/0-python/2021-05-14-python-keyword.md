@@ -2,7 +2,6 @@
 layout:        post
 title:         "Python3 | 关键字"
 subtitle:      "列举了 3.7 版本所有的关键字及其定义"
-date:          2021-05-14
 author:        "Haauleon"
 header-style:  text
 catalog:       true
@@ -10,7 +9,7 @@ tags:
     - Python
 ---
 
-## 背景
+### 背景
 &emsp;&emsp;Python 的关键字也称为保留字，是这个解释器里面已经定义好了的，具有特殊的含义。解释器也是程序，如果用户自定义的变量、函数、类等名称与保留字重名，那么解释器会提醒 `SyntaxError: invalid syntax`。       
 
 &emsp;&emsp;查看当前 Python 版本的保留字，只需要在交互模式下输入以下代码：             
@@ -64,7 +63,7 @@ keyword.kwlist
 
 <br><br>
 
-## 关键字
+### 关键字
 ###### False
 布尔值，表示假。等同于 0，与 True 相对。         
 ```python
