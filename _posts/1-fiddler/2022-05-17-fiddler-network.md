@@ -7,8 +7,6 @@ header-style:  text
 catalog:       true
 tags:
     - Fiddler
-    - 性能测试
-    - API 测试
 ---
 
 
