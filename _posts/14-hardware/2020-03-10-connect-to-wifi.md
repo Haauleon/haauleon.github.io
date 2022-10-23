@@ -1,8 +1,7 @@
 ---
 layout:        post
-title:         "杂篇 | 台式机连接无线网络"
+title:         "硬件 | 台式机连接无线网络"
 subtitle:      "解决台式机无法接收 wifi 的问题"
-date:          2018-10-09
 author:        "Haauleon"
 header-style:  text
 catalog:       true
