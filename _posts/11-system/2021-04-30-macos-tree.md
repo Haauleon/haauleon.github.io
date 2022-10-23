@@ -2,12 +2,11 @@
 layout:        post
 title:         "macOs | 使用 tree 命令"
 subtitle:      "如何安装和使用 tree 命令查看目录结构？"
-date:          2021-04-30
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - macOs
+    - 操作系统
 ---
 
 ## 背景

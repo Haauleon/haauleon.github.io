@@ -2,7 +2,6 @@
 layout:        post
 title:         "国外代理 | 使用 UDP 进行手动连接"
 subtitle:      "解决国内无法使用 surfshark 软件自动连接的问题"
-date:          2021-06-19
 author:        "Haauleon"
 header-style:  text
 catalog:       true

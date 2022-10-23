@@ -2,12 +2,11 @@
 layout:        post
 title:         "macOs | 端口占用查询"
 subtitle:      "解决端口冲突的问题"
-date:          2021-05-12
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - macOs
+    - 操作系统
 ---
 
 ## 背景

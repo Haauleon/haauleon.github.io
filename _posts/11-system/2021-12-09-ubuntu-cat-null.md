@@ -2,12 +2,11 @@
 layout:        post
 title:         "Ubuntu | 清空文件内容的三种方法"
 subtitle:      ""
-date:          2021-12-09
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - Linux
+    - 操作系统
 ---
 
 

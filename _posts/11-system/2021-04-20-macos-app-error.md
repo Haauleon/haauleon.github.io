@@ -2,13 +2,11 @@
 layout:        post
 title:         "macOs | 无法打开软件"
 subtitle:      "无法打开xxx.app，因为Apple无法检查其是否包含恶意软件"
-date:          2021-04-19
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - macOs
-    - 异常库
+    - 操作系统
 ---
 
 ## 问题描述
