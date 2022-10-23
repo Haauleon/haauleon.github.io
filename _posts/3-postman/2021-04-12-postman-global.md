@@ -2,12 +2,10 @@
 layout:        post
 title:         "Postman | 全局变量"
 subtitle:      "全局变量可以解决什么问题？"
-date:          2021-04-12
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - API 测试
     - Postman
 ---
 
