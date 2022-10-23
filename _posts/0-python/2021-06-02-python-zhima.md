@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Python3 | 国内 ip 代理池访问网页"
+title:         "爬虫 | 国内 ip 代理池访问网页"
 subtitle:      "xlrd + pyppeteer 实现读取 excel 刷网页并截图"
 author:        "Haauleon"
 header-style:  text
