@@ -2,7 +2,6 @@
 layout:        post
 title:         "面试 | 反向面试"
 subtitle:      "https://github.com/yifeikong/reverse-interview-zh"
-date:          2021-08-16
 author:        "Haauleon"
 header-style:  text
 catalog:       true

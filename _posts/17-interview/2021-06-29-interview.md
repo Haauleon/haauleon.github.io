@@ -2,7 +2,6 @@
 layout:        post
 title:         "面试 | APP 面试题"
 subtitle:      ""
-date:          2021-06-29
 author:        "Haauleon"
 header-style:  text
 catalog:       true
