@@ -1,13 +1,13 @@
 ---
 layout:        post
-title:         "Python3 | 单线程异步协程"
+title:         "爬虫 | 单线程异步协程"
 subtitle:      "asyncio + pyppeteer 实现单线程多任务异步爬虫"
-date:          2021-04-22
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Python
+    - 爬虫
 ---
 
 
