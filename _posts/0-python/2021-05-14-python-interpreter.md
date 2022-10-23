@@ -2,7 +2,6 @@
 layout:        post
 title:         "Python3 | 常见的解释器"
 subtitle:      "用的最多的是 CPython 和 IPython"
-date:          2021-05-14
 author:        "Haauleon"
 header-style:  text
 catalog:       true
@@ -10,14 +9,14 @@ tags:
     - Python
 ---
 
-## 背景
+### 背景
 &emsp;&emsp;Python 是一门解释性语言，也是就需要依赖解释器去运行。换句话说，一个 `xxx.py` 文件需要 Python 解释器去执行。       
 
 &emsp;&emsp;目前用的最多的是 CPtyhon 和 IPython。CPtyhon 解释器在命令行下执行文件，而 IPython 解释器我是在 VSCode 里面装的一个插件，每次想要在交互式窗口执行文件时就自动启动一个 Jupyter 服务器用来调试代码，Jupyter 还有一个好处就是计算代码运行时间只需要在代码段上方加上 `%%time` 即可。          
 
 <br><br>
 
-## Python 解释器
+### Python 解释器
 ###### 一、CPython（应用最广）
 &emsp;&emsp;其实大部分人开始学习 python 的时候都是用的 CPtyhon 解释器，因为很多课程都会直接告诉你要去 Python 官方网站（[https://www.python.org/](https://www.python.org/)）去下载对应的 Python 版本，也就直接获得了一个官方版本的 CPtyhon 解释器。这个解释器是用 C 语言开发的，所以叫 CPtyhon。使用 CPtyhon 解释器的方式很简单，写好一个 py 文件，直接在终端使用命令行 `$ python3 xxx.py` 即可启动 CPtyhon 解释器。还有一种方式就是打开自带的 IDLE，像这种以 `>>>` 开头的提示符就是 CPtyhon 解释器，我还经常拿来当计算器。                
 
@@ -55,5 +54,5 @@ tags:
 
 <br><br>
 
-## 结论
+### 结论
 &emsp;&emsp;Python 的解释器很多，但使用最广泛的还是 CPython。如果要和 Java 或 .Net 平台交互，最好的办法不是用 Jython 或 IronPython，而是通过网络调用来交互，确保各程序之间的独立性。
