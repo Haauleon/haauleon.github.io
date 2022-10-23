@@ -2,14 +2,11 @@
 layout:        post
 title:         "Fiddler | URL 映射请求"
 subtitle:      "如何将请求A转发到请求B"
-date:          2018-02-01
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Fiddler
-    - API 测试
-    - Windows
 ---
 
 ### 一、背景
