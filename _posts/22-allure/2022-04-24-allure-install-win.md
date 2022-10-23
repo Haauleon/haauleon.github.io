@@ -6,8 +6,7 @@ author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - Windows
-    - API 测试
+    - Allure
 ---
 
 

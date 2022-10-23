@@ -6,8 +6,7 @@ author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - macOs
-    - API 测试
+    - Allure
 ---
 
 
