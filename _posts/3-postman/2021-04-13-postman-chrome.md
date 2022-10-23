@@ -2,14 +2,11 @@
 layout:        post
 title:         "Postman | Chrome 插件版"
 subtitle:      "如何使用插件版拦截并篡改浏览器请求？"
-date:          2021-04-13
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - API 测试
     - Postman
-    - Chrome 扩展
 ---
 
 ## 背景
