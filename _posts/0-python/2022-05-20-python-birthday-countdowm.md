@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Python3 | 生日自动发送 sms"
+title:         "数据监控 | 生日自动发送 sms"
 subtitle:      "服务器跑脚本，生日当天凌晨自动发送 sms 给朋友"
 author:        "Haauleon"
 header-style:  text
