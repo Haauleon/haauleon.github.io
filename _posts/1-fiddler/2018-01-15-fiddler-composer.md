@@ -2,14 +2,11 @@
 layout:        post
 title:         "Fiddler | 创建请求"
 subtitle:      "如何使用 Fiddler 创建一个请求？"
-date:          2018-01-15
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Fiddler
-    - API 测试
-    - Windows
 ---
 
 
