@@ -1,12 +1,11 @@
 ---
 layout:        post
-title:         "MacOS | MySQL下载、安装和配置"
+title:         "数据库 | MySQL下载、安装和配置"
 subtitle:      ""
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - MacOs
     - 数据库
 ---
 

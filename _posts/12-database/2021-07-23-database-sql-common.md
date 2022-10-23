@@ -1,8 +1,7 @@
 ---
 layout:        post
-title:         "SQL | 常用的 sql 语句"
+title:         "数据库 | 常用的 sql 语句"
 subtitle:      "工作中常用的 select 查询语句"
-date:          2021-07-23
 author:        "Haauleon"
 header-style:  text
 catalog:       true

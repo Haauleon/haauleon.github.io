@@ -6,7 +6,6 @@ author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - MacOs
     - 数据库
 ---
 
