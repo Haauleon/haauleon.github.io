@@ -10,17 +10,17 @@ tags:
     - 自动化办公
 ---
 
-## 背景
+### 背景
 &emsp;&emsp;目前接的外包项目需要提供 docx 类型的测试用例文档，但是一般来说测试人员的测试用例都是写在 excel 表里面的，因为方便复制粘贴嘛。       
 
 <br><br>
 
-## 解决方案
+### 解决方案
 &emsp;&emsp;使用 python3 来实现 excel 转 docx 的需求。     
 
 <br><br>
 
-## 具体思路
+### 具体思路
 1.安装 python-docx 和 xlrd  
 
 ```
@@ -34,7 +34,7 @@ $ pip install xlrd
 
 <br><br>
 
-## 数据准备    
+### 数据准备    
 1.excel类型的测试用例      
 
 ![](\img\in-post\post-python\2020-10-21-excel-to-docx-1.jpg)  
@@ -47,7 +47,7 @@ $ pip install xlrd
 
 <br><br>
 
-## 实现代码
+### 实现代码
 ```python
 # -*- coding:utf-8 -*-
 """
@@ -212,6 +212,6 @@ if __name__ == '__main__':
 
 <br><br>
 
-## 完整代码包
+### 完整代码包
 链接：https://pan.baidu.com/s/1ZCW_CiJPhPK6DoiOy9h4FA                  
 提取码：fwgi 
