@@ -2,7 +2,6 @@
 layout:        post
 title:         "python3 | 计算 mp4 文件时长"
 subtitle:      "批量计算指定目录下的 mp4 文件的时长，以秒为单位"
-date:          2021-11-17
 author:        "Haauleon"
 header-style:  text
 catalog:       true
