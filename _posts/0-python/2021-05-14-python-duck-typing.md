@@ -2,7 +2,6 @@
 layout:        post
 title:         "Python3 | 鸭子类型"
 subtitle:      "鸭子类型的含义与其在 python 中的表现形式"
-date:          2021-05-14
 author:        "Haauleon"
 header-style:  text
 catalog:       true
@@ -10,12 +9,12 @@ tags:
     - Python
 ---
 
-## 鸭子类型
+### 鸭子类型
 ![](\haauleon\img\in-post\post-other\2021-05-14-duck-1.jpg)         
 
 <br><br>
 
-## 在 python 中的表现形式
+### 在 python 中的表现形式
 ```python
 class Duck:
     def quack(self): 
