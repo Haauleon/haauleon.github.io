@@ -7,6 +7,7 @@ header-style:  text
 catalog:       true
 tags:
     - Python
+    - 数据分析
 ---
 
 ### 代码设计
