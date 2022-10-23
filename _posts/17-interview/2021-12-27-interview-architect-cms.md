@@ -6,8 +6,7 @@ author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - 我的架构师之路
-    - 软件测试基础
+    - 面试
 ---
 
 ## 一、功能分析

@@ -2,13 +2,11 @@
 layout:        post
 title:         "面试 | 支付功能如何测试？"
 subtitle:      "支付、退款流程和场景设计"
-date:          2021-07-20
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - 面试
-    - 软件测试基础
 ---
 
 

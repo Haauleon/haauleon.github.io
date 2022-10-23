@@ -2,12 +2,11 @@
 layout:        post
 title:         "认证机制 | session 与 token 的区别"
 subtitle:      "token 的优势是什么？session 的劣势是什么？"
-date:          2021-07-22
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - API 测试
+    - 面试
 ---
 
 ## session

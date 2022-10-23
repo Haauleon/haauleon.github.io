@@ -2,12 +2,11 @@
 layout:        post
 title:         "测试设计 | 页面搜索"
 subtitle:      "如何设计页面搜索的测试场景"
-date:          2021-07-01
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - 软件测试基础
+    - 面试
 ---
 
 ## 测试页面

@@ -2,12 +2,11 @@
 layout:        post
 title:         "职业规划 | 很想去拨开这团迷雾"
 subtitle:      "换个角度来思考一下自己的职业生涯"
-date:          2021-11-25
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-  - 我的架构师之路
+  - 面试
 ---
 
 ### 我的现状

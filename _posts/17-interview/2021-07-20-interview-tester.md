@@ -2,7 +2,6 @@
 layout:        post
 title:         "面试 | 如何提升影响力？"
 subtitle:      "测试人员如何在公司提升个人影响力？"
-date:          2021-07-20
 author:        "Haauleon"
 header-style:  text
 catalog:       true

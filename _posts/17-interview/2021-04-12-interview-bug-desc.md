@@ -2,12 +2,11 @@
 layout:        post
 title:         "缺陷报告 | 书写规范"
 subtitle:      "如何编写一份高质量的缺陷报告？"
-date:          2021-04-12
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - 软件测试基础
+    - 面试
 ---
 
 ## 背景
