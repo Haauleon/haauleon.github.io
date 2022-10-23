@@ -7,6 +7,7 @@ header-style:  text
 catalog:       true
 tags:
     - Python
+    - 爬虫
 ---
 
 ### Pyppeteer 优势
