@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Jenkins | Newman 持续集成"
+title:         "数据监控 | Newman 持续集成"
 subtitle:      "基于 Newman + Jenkins 实现定时构建接口自动化测试任务"
 author:        "Haauleon"
 header-style:  text
