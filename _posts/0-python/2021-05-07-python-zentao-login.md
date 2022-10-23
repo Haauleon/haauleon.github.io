@@ -7,7 +7,7 @@ header-style:  text
 catalog:       true
 tags:
     - Python
-    - 禅道
+    - 禅道脚本
 ---
 
 ### 背景
