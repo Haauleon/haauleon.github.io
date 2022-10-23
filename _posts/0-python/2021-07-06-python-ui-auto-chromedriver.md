@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "selenium | 自动下载 chromedriver"
+title:         "爬虫 | 自动下载 chromedriver"
 subtitle:      "使用 webdriver-manager 自动配置 chromedriver"
 author:        "Haauleon"
 header-style:  text
