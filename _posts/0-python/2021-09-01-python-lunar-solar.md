@@ -1,13 +1,13 @@
 ---
 layout:        post
-title:         "python3 | 新历和旧历日期的转换"
+title:         "爬虫 | 新历和旧历日期的转换"
 subtitle:      ""
-date:          2021-09-01
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
   - Python
+  - 爬虫
 ---
 
 &emsp;&emsp;最近有新旧历日期转换的需求，就把别人的写的方法进行了封装改造，我写的比较简单，应该还看得过去。代码如下：       
