@@ -2,7 +2,7 @@
 layout:        post
 title:         "Python3 | 命名空间 locals"
 subtitle:      "如何在全局和局部作用域中使用命名空间？"
-date:          2017-11-07
+date:          2017-11-17
 author:        "Haauleon"
 header-style:  text
 catalog:       true
