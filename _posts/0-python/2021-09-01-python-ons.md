@@ -1,13 +1,13 @@
 ---
 layout:        post
-title:         "python3 | 获取广东新冠数据"
+title:         "爬虫 | 获取广东新冠数据"
 subtitle:      ""
-date:          2021-09-01
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
   - Python
+  - 爬虫
 ---
 
 &emsp;&emsp;我本人是没办法接种新冠疫苗的，因为过敏体质担心烂脸烂全身，所以很需要有珠海地区疫情的获取的需求。下面放一下自己写的 demo，可以根据实际需求进行优化改造。     
