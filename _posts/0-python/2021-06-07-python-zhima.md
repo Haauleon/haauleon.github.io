@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Python3 | 刷网页浏览量脚本"
+title:         "爬虫 | 刷网页浏览量脚本"
 subtitle:      "基于 pyppeteer + 免费芝麻代理池"
 author:        "Haauleon"
 header-style:  text
