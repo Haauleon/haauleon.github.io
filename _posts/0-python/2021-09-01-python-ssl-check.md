@@ -2,12 +2,12 @@
 layout:        post
 title:         "python3 | SSL 证书到期检查"
 subtitle:      ""
-date:          2021-09-01
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
   - Python
+  - 数据监控
 ---
 
 &emsp;&emsp;写了一个简单的类封装用作 SSL 证书到期检查，最近的需求有提到，经常因为证书到期导致网站访问异常或者小程序接口异常等等奇怪的问题。            
