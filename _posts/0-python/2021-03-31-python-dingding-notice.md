@@ -8,6 +8,7 @@ catalog:       true
 tags:
     - Python
     - Postman
+    - Newman
     - 数据监控
 ---
 
@@ -58,6 +59,7 @@ tags:
 <br>
 
 ###### 4、脚本功能       
+**(1) traceback 模块**    
 &emsp;&emsp;使用 traceback 模块来跟踪异常返回信息。    
 ```python
 def traceback_error(func):
@@ -76,6 +78,7 @@ def traceback_error(func):
 
 <br><br>
 
+**（2）自定义钉钉通知类**          
 &emsp;&emsp;自定义一个类，用 outgoing 机器人向钉钉群组发送消息。可发送的数据格式需要查看钉钉开发文档，这里仅定义了一种数据格式及文本。       
 
 ```python
@@ -104,8 +107,10 @@ class dingding_notice():
         data = requests.post(self.api, data=json.dumps(msg), headers=self.headers).json()
         return json.dumps(data)
 ```
+
 <br><br>
 
+**（3）打开管道执行newman命令行**     
 &emsp;&emsp;使用`os.popen()`方法会打开一个管道，返回结果是一个连接管道的文件对象，该文件对象的操作方法同`open()`，可以从该文件对象中读取返回结果。如果执行成功，不会返回状态码，如果执行失败，则会返回错误信息。类似于使用`open()`内置函数返回一个`_io.TextIOWrapper`对象，可对此对象进行读操作。在 Unix，Windows 中有效。       
 ```python
 >>> a = open('demo.txt', 'r')
@@ -113,7 +118,7 @@ class dingding_notice():
 <class '_io.TextIOWrapper'>
 ```
 
-<br><br>
+<br>
 
 ```python
 pipeline = os.popen("newman run 接口测试集合的路径 -e 环境变量文件的路径 --reporters html --reporter-html-export 自定义生成的测试报告路径")
@@ -123,6 +128,7 @@ pipeline.read()
 
 <br><br>
 
+**（4）解析测试报告**    
 &emsp;&emsp;打开测试报告文件，`etree.HTML`构建 DOM 节点后，可使用 xpath 表达式来定位元素并打印。  
 ```python
 with open('测试报告路径', 'r', encoding="utf-8") as htmlf:
