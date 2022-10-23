@@ -7,8 +7,7 @@ header-style:  text
 catalog:       true
 tags:
     - Jmeter
-    - API 测试
-    - 性能测试
+    - 数据分析
 ---
 
 ### 一、准备工作
