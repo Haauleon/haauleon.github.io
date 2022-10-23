@@ -14,19 +14,19 @@ tags:
 
 > 增加 os.system() 上传本地文件至服务器
 
-## 背景
+### 背景
 &emsp;&emsp;Newman 结合 Jenkins 在定时构建接口自动化测试任务方面已经有了良好的表现，目前也已经成功应用到工作中。本文要说到的实现接口自动化的方式，不适用于 crontab 定时任务自动执行。经验证，crontab 任务系统无法执行 newman 命令行，即使我已经加了 newman.js 的绝对路径，还是无法执行。所以，这种方式仅适用于在本地终端手动输入 `$ python3 xxx.py` 来临时指定环境变量来跑一遍脚本，看看自己写的脚本有没有问题这一类不具备定时执行的场景。         
 
 &emsp;&emsp;这个 python 脚本只是一个 demo，优化的空间还很大，在这里简单记录一下脚本实现的功能。              
 
 <br><br>
 
-## 测试目录接口
+### 测试目录接口
 ![](\haauleon\img\in-post\post-postman\2021-04-16-newman-outgoing-1.png)
 
 <br><br>
 
-## demo 代码
+### demo 代码
 ```python
 """
 import subprocess
