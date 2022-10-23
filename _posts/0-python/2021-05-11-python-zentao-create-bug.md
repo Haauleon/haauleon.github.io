@@ -2,20 +2,20 @@
 layout:        post
 title:         "禅道 | Python3 脚本创建 bug"
 subtitle:      "写了一个创建 bug 的 python3 脚本 demo"
-date:          2021-05-11
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Python
+    - 禅道脚本
 ---
  
-## 背景
+### 背景
 &emsp;&emsp;写了一个简单的脚本去禅道上创建 Bug，具体到时候怎么使用这个脚本还待研究。     
 
 <br><br>
 
-## 代码实现
+### 代码实现
 ```python
 #! /usr/bin/env python
 # -*- coding: UTF-8 -*-
