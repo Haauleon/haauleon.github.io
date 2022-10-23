@@ -2,13 +2,12 @@
 layout:        post
 title:         "python3 | 批量执行 postman 请求集合"
 subtitle:      "使用 python 解析 postman 的 json 文件并批量发送请求"
-date:          2021-11-18
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-  - 小而美脚本
   - Python
+  - Postman
 ---
 
 目前的思路如下：        
