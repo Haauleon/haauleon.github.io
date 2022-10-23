@@ -10,10 +10,7 @@ tags:
     - Python
 ---
 
-
-
-
-## random 随机数模块
+### random 随机数模块
 
 |  方法   |  说明   |
 | --- | --- |
@@ -216,9 +213,10 @@ ValueError: empty range for randrange() (20,11, -9)
 >>> daily
 [1, 2, 3, 4, 5]
 ```
+
 <br><br>
 
-## 应用场景
+### 应用场景
 
 ###### 随机整数
 ```
