@@ -2,7 +2,6 @@
 layout:        post
 title:         "Nodejs | npm 常用命令"
 subtitle:      "列出所有日常使用命令集"
-date:          2021-07-02
 author:        "Haauleon"
 header-style:  text
 catalog:       true

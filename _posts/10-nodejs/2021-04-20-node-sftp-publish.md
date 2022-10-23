@@ -2,7 +2,6 @@
 layout:        post
 title:         "Nodejs | 本地文件自动上传"
 subtitle:      "使用 sftp-publish 工具自动上传本地文件至服务器"
-date:          2021-04-19
 author:        "Haauleon"
 header-style:  text
 catalog:       true
