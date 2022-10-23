@@ -2,7 +2,6 @@
 layout:        post
 title:         "python3 | 自定义命令行参数"
 subtitle:      "命令行自定义参数以及处理命令行参数"
-date:          2021-11-17
 author:        "Haauleon"
 header-style:  text
 catalog:       true
