@@ -2,7 +2,6 @@
 layout:        post
 title:         "Python3 | 绑定与未绑定方法"
 subtitle:      "类中的绑定方法与未绑定方法的区别"
-date:          2021-05-17
 author:        "Haauleon"
 header-style:  text
 catalog:       true
@@ -15,7 +14,7 @@ tags:
 
 类中的方法有两类：绑定方法和非绑定方法。             
 
-## 一、绑定方法 
+### 一、绑定方法 
 ###### 1.对象的绑定方法
 &emsp;&emsp;凡是类中的方法或函数，默认情况下都是绑定给对象使用的。以下的结果表明：Foo.instance_method 这个方法是绑定给 Foo object 使用的。                         
 ```python
@@ -155,7 +154,7 @@ TypeError: class_method() takes 0 positional arguments but 1 was given
 
 <br><br>
 
-## 二、非绑定方法
+### 二、非绑定方法
 &emsp;&emsp;python 给我们提供了 @staticmethod，可以解除绑定关系，将一个类中的方法，变为一个普通函数。即既不绑定类同时也不绑定对象。              
 ```python
 # coding:utf-8
