@@ -2,15 +2,15 @@
 layout:        post
 title:         "selenium | 自动下载 chromedriver"
 subtitle:      "使用 webdriver-manager 自动配置 chromedriver"
-date:          2021-07-06
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Python
+	- 爬虫
 ---
 
-## 一、背景       
+### 一、背景       
 [官网介绍](https://chromedriver.chromium.org/)        
 
 > WebDriver 是一个开源工具，用于跨多种浏览器自动测试 web 应用程序。它提供导航到网页、用户输入、JavaScript 执行等功能。ChromeDriver 是一个独立的服务器，它实现了W3C WebDriver 标准。ChromeDriver 适用于 Android 上的 Chrome 和桌面上的 Chrome（Mac、Linux、Windows 和 ChromeOS）。        
@@ -19,7 +19,7 @@ tags:
 
 <br><br>
 
-## 二、使用
+### 二、使用
 ###### 1.安装模块
 ```
 $ pip install webdriver-manager
