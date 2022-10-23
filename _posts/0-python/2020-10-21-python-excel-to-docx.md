@@ -1,13 +1,14 @@
 ---
-layout: post
-title: "python3 | excel 转 docx"
-subtitle: "读取 excel 表的单元格的值，填充 docx 文档的表格"
-author: "Haauleon"
-header-style: text
+layout:        post
+title:         "Python3 | excel 转 docx"
+subtitle:      "读取 excel 表的单元格的值，填充 docx 文档的表格"
+author:        "Haauleon"
+header-style:  text
+catalog:       true
 tags:
-  - Python
+    - Python
+    - 自动化办公
 ---
-
 
 ## 背景
 &emsp;&emsp;目前接的外包项目需要提供 docx 类型的测试用例文档，但是一般来说测试人员的测试用例都是写在 excel 表里面的，因为方便复制粘贴嘛。       
