@@ -2,13 +2,15 @@
 layout:        post
 title:         "Jenkins | Newman 持续集成"
 subtitle:      "基于 Newman + Jenkins 实现定时构建接口自动化测试任务"
-date:          2021-04-16
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Python
     - Jenkins
+    - Nodejs
+    - Newman
+    - 数据监控
 ---
 
 ## 背景
