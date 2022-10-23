@@ -1,8 +1,7 @@
 ---
 layout:        post
-title:         "正则 | 提取指定范围的信息"
-subtitle:      "python3 正则表达式快速提取并返回列表"
-date:          2021-05-11
+title:         "Python3 | 正则提取指定范围的信息"
+subtitle:      "正则表达式快速提取并返回列表"
 author:        "Haauleon"
 header-style:  text
 catalog:       true
@@ -10,7 +9,7 @@ tags:
     - Python
 ---
 
-## 背景
+### 背景
 &emsp;&emsp;禅道很多都是直接返回一个 html ，不是 Json 格式的话提取字符串的信息会比较麻烦。比如下面这个 html 字符串：          
 ```python
 """
@@ -35,7 +34,7 @@ tags:
 
 <br><br>
 
-## 代码实现
+### 代码实现
 1. 使用 re 正则表达式中的 compile 函数，在匹配内容的括号中写 `(.*?)`
     * 其中 `.*?` 代表非贪心算法，表示精准的配对
     * 在 `.*?` 的外面加个括号表示获取括号之间的信息
