@@ -6,7 +6,7 @@ author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - 软件测试基础
+    - 面试
 ---
 
 [测试架构师修炼之道](https://www.jianshu.com/p/9ec2cb022b29)

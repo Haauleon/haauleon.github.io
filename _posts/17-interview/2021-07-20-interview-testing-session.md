@@ -2,13 +2,11 @@
 layout:        post
 title:         "认证机制 | 如何测试 session？"
 subtitle:      "关于 session 测试的场景设计"
-date:          2021-07-20
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - UI 测试
-    - API 测试
+    - 面试
 ---
 
 ## 一、背景

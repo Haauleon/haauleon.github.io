@@ -2,12 +2,11 @@
 layout:        post
 title:         "测试用例 | 设计思路"
 subtitle:      "如何设计出好的测试用例？"
-date:          2021-04-12
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - 软件测试基础
+    - 面试
 ---
 
 ## 背景

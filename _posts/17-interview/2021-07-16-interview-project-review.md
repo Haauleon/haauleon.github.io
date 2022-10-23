@@ -2,12 +2,11 @@
 layout:        post
 title:         "项目复盘 | 农村电商一村一品"
 subtitle:      "微信小程序 + 后台管理系统"
-date:          2021-07-16
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - 项目复盘
+    - 面试
 ---
 
 ## 一、项目概况

@@ -6,9 +6,7 @@ author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - 软件测试基础
-    - 大数据测试
-    - 性能测试
+    - 面试
 ---
 
 
