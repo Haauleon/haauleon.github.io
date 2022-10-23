@@ -2,12 +2,11 @@
 layout:        post
 title:         "Android | adb 基本使用"
 subtitle:      "adb 命令的简单使用"
-date:          2021-07-13
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - APP 测试
+    - Android
 ---
 
 ## 一、adb 命令

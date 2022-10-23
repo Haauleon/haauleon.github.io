@@ -2,7 +2,6 @@
 layout:        post
 title:         "Android | PerfDog 采集性能指标"
 subtitle:      "使用 PerfDog 采集性能指标并上传至云端分析"
-date:          2021-07-27
 author:        "Haauleon"
 header-style:  text
 catalog:       true

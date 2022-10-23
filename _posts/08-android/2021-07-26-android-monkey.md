@@ -2,7 +2,6 @@
 layout:        post
 title:         "Android | monkey 压力测试"
 subtitle:      "使用压力测试工具测试 app 是否会 crash"
-date:          2021-07-26
 author:        "Haauleon"
 header-style:  text
 catalog:       true

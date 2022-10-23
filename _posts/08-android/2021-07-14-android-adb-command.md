@@ -2,12 +2,11 @@
 layout:        post
 title:         "Android | adb 常用命令"
 subtitle:      "列举了一些工作中常用的 adb 命令"
-date:          2021-07-14
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - APP 测试
+    - Android
 ---
 
 

@@ -2,12 +2,11 @@
 layout:        post
 title:         "Android | adb 命令行工具的安装"
 subtitle:      "通过 Android SDK 进行安装"
-date:          2021-07-15
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - APP 测试
+    - Android
 ---
 
 ## 一、背景

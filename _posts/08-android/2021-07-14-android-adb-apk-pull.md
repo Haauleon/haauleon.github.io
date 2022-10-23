@@ -2,12 +2,11 @@
 layout:        post
 title:         "Android | 获取 apk 的包名和主类名"
 subtitle:      "对 apk 进行 debug 签名"
-date:          2021-07-14
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - APP 测试
+    - Android
 ---
 
 ## 一、背景
