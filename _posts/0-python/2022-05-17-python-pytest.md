@@ -1,12 +1,13 @@
 ---
 layout:        post
-title:         "Pytest |  全局用例共用之 conftest.py 详解"
-subtitle:      "收藏了很多小链接，需要时再自取，嘿嘿"
+title:         "单元测试框架 |  pytest 全局用例共用之 conftest.py 详解"
+subtitle:      "收藏了很多小链接，需要时再自取"
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Python
+    - 单元测试框架
 ---
 
 [Pytest 全局用例共用之 conftest.py 详解](https://cloud.tencent.com/developer/article/1536209)           
