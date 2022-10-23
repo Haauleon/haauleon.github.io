@@ -7,7 +7,7 @@ header-style:  text
 catalog:       true
 tags:
     - Jmeter
-    - API 测试
+    - 数据库
 ---
 
 ### 一、Jmeter 数据库测试
