@@ -7,6 +7,7 @@ header-style:  text
 catalog:       true
 tags:
     - Python
+    - 数据监控
 ---
 
 [如何用 Python 脚本来监控服务器(二)——自运化监控方式之 SSH](https://zhuanlan.zhihu.com/p/160815876)        
