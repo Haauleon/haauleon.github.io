@@ -7,7 +7,6 @@ header-style:  text
 catalog:       true
 tags:
     - Python
-    - Postman
     - Newman
     - Nodejs
     - 数据监控
