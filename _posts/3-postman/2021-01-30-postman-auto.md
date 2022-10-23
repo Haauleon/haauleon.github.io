@@ -6,9 +6,11 @@ author: "Haauleon"
 header-style: text
 tags:
   - Postman
+  - Newman
+  - Nodejs
 ---
 
-## 一、环境准备
+### 一、环境准备
 1.安装 **nodejs**，下载地址 [node官网](https://nodejs.org/zh-cn/)，使用默认安装即可，安装成功后进行验证   
 ```
 $ node -v
