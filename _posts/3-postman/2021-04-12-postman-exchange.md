@@ -2,12 +2,10 @@
 layout:        post
 title:         "Postman | 生成 API 测试代码"
 subtitle:      "如何自动生成 Python-requests 测试代码？"
-date:          2021-04-12
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - API 测试
     - Postman
 ---
 
