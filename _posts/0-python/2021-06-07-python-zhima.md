@@ -2,12 +2,13 @@
 layout:        post
 title:         "Python3 | 刷网页浏览量脚本"
 subtitle:      "基于 pyppeteer + 免费芝麻代理池"
-date:          2021-06-07
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Python
+    - 爬虫
+    - ip代理池
 ---
 
 ## 背景
