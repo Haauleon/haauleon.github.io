@@ -2,22 +2,22 @@
 layout:        post
 title:         "禅道 | Python3 脚本获取产品列表"
 subtitle:      "解决获取产品列表接口的编码解码、字典值查键等问题"
-date:          2021-05-08
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Python
+    - 禅道脚本
 ---
 
-## 背景
+### 背景
 &emsp;&emsp;禅道的 API 接口调用可谓是一言难尽，百度了一下，它的接口主要有两种调用方式，一种是直接请求 html，像用户登录这样的请求我就是直接请求 html 页面；还有一种是将要请求的 `http://xxx/zentao/xxx.html` 后缀先改为 `http://xxx/zentao/xxx.json` 然后再去发送请求。      
 &emsp;&emsp;用户登录请求 html 还可以解决，但是获取产品列表如果直接去请求 html 的话，它返回的就是一个 html 页面，要先进行 dom 树解析找元素等手段才能去拿到产品列表的 id 值，实在是太麻烦了，所以想着去发一个 json 后缀的请求。      
 &emsp;&emsp;所以，我打算除了登录请求之外的接口均使用 json 去替换 html 后缀。但是，麻烦又来了，请求完成后，它返回的是一个 str 包起来的 dict，这个 dict 的值还包含 unicode，python3 以上的版本无法直接使用 `str.decode('unicode_escape')` 来进行解码。另外，这里再附上一段在 dict 中快速通过值查找对应键的思路。        
 
 <br><br>
 
-## 问题
+### 问题
 ###### 坑一、直接请求 html
 &emsp;&emsp;一开始是通过抓包的方式抓到的获取产品列表接口，不需要参数，很直接了然。但是，它返回的 html 需要自己进行解析找到对应产品列表的值，很麻烦。          
 
@@ -199,7 +199,7 @@ def get_product_list_test(self):
 
 <br><br>
 
-## 代码实现
+### 代码实现
 ```python
 #! /usr/bin/env python
 
