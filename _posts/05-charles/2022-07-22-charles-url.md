@@ -7,7 +7,6 @@ header-style:  text
 catalog:       true
 tags:
     - Charles
-    - API 测试
 ---
 
 ### 一、为什么要把接口数据配置到本地json文件里？

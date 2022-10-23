@@ -2,7 +2,6 @@
 layout:        post
 title:         "Charles | 代理设置"
 subtitle:      "设置远程终端代理"
-date:          2020-09-20
 author:        "Haauleon"
 header-style:  text
 catalog:       true
@@ -11,12 +10,12 @@ tags:
 ---
 
 
-## 背景
+### 背景
 &emsp;&emsp;换了台 macos 系统的 mac mini，最近抓包工作从 fiddler 转移到了 charles。     
 
 <br><br>
 
-## 使用技巧
+### 使用技巧
 ###### 一、Charles 代理设置
 &emsp;&emsp;首先我们得在 `Proxy--Proxy Setting` 中设置代理端口号，默认 8888，一般用默认的就行，除非和电脑上其他端口有冲突，下面的勾 `√` 也有勾上，这是为了能抓取 HPPTS 数据的。                           
 

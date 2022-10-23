@@ -2,7 +2,6 @@
 layout:        post
 title:         "Charles | https 证书设置"
 subtitle:      "在 win10 系统中导入 Charles CA 证书"
-date:          2021-10-15
 author:        "Others"
 header-style:  text
 catalog:       true
@@ -14,7 +13,7 @@ tags:
 
 <br><br>
 
-## 设置步骤
+### 设置步骤
 ###### 一、PC端安装证书
 1、安装证书：Charles -> Help -> SSL Proxying -> Install Charles Root Certificate，直接点击安装。     
 
