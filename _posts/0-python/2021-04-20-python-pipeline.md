@@ -2,7 +2,6 @@
 layout:        post
 title:         "Python3 | 执行 shell 命令"
 subtitle:      "用于在 python 脚本内通过管道来执行 shell 命令"
-date:          2021-04-20
 author:        "Haauleon"
 header-style:  text
 catalog:       true
@@ -15,7 +14,7 @@ tags:
 
 <br><br>
 
-## 使用技巧
+### 使用技巧
 ###### 一、os.popen("command")
 语法：       
 ```
