@@ -11,7 +11,7 @@ tags:
 ---
 
 
-## 背景
+### 异常代码
 执行以下代码：         
 ```python
 import aiohttp
@@ -27,9 +27,11 @@ async with aiohttp.ClientSession() as session:
 ```
 aiohttp.client_exceptions.ClientConnectorCertificateError: Cannot connect to host movie.douban.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1091)')]
 ```
-<br><br>
 
-## 解决方法
+<br>
+<br>
+
+### 解决方法
 ```python
 import aiohttp
 
