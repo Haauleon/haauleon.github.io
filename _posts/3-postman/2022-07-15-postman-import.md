@@ -7,7 +7,6 @@ header-style:  text
 catalog:       true
 tags:
     - Postman
-    - API 测试
 ---
 
 ### 背景
