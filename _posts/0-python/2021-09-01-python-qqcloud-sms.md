@@ -1,13 +1,13 @@
 ---
 layout:        post
-title:         "python3 | 腾讯云SMS服务"
+title:         "数据监控 | 腾讯云SMS服务"
 subtitle:      ""
-date:          2021-09-01
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
   - Python
+  - 数据监控
 ---
 
 &emsp;&emsp;最近有接短信服务的需求，目前使用的是腾讯云短信服务，新用户可以获得 200 条免费短信，首次购买 1000 条短信才40块钱可以发两年。具体的需要到官网进行查看：[https://console.cloud.tencent.com/smsv2](https://console.cloud.tencent.com/smsv2)。      
