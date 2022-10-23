@@ -2,14 +2,11 @@
 layout:        post
 title:         "Fiddler | 拦截请求"
 subtitle:      "如何使用 Fiddler 拦截请求并篡改数据？"
-date:          2018-02-02
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Fiddler
-    - API 测试
-    - Windows
 ---
 
 
