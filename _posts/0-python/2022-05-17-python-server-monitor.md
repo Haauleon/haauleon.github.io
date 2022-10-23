@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Python3 | SSH 自运化监控服务器性能指标"
+title:         "数据监控 | SSH 自运化监控服务器性能指标"
 subtitle:      "收藏了很多小链接，需要时再自取，嘿嘿"
 author:        "Haauleon"
 header-style:  text
