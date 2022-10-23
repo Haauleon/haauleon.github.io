@@ -2,7 +2,6 @@
 layout:        post
 title:         "python3 | 获取类中除内置方法外的所有方法名"
 subtitle:      ""
-date:          2021-09-16
 author:        "Others"
 header-style:  text
 catalog:       true
