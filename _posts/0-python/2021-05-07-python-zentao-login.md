@@ -2,20 +2,20 @@
 layout:        post
 title:         "禅道 | Python3 脚本登录"
 subtitle:      "解决禅道登录接口的密码加密等问题"
-date:          2021-05-07
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Python
+    - 禅道
 ---
 
-## 背景
+### 背景
 &emsp;&emsp;搞了那么久的自动化测试，灵机一动，可以在自动化项目里面加多一个功能：在自动化测试断言失败后自动向禅道提交 bug。以往都是测试结果直接输出，输出的形式目前暂定钉钉和测试报告，现在想要加多一个 bug 自动提交的功能。可以想象成自己有一个分身，她可以自己完成测试任务，测试过程中遇到 bug 就提交到禅道。岂不美哉~       
 
 <br><br>
 
-## 问题
+### 问题
 &emsp;&emsp;目前使用的禅道专业版本 10.4。看了禅道的登录接口，找到它的接口参数如下：          
 ```
 Request URL: http://localhost:8080/zentao/user-login.html      
@@ -49,7 +49,7 @@ $(document).ready(function()
 
 <br><br>
 
-## 代码实现
+### 代码实现
 ```python
 #! /usr/bin/env python
 # -*- coding: UTF-8 -*-
