@@ -2,14 +2,11 @@
 layout:        post
 title:         "Fiddler | 设置 chrome 浏览器代理"
 subtitle:      "Windows 系统通过在 chrome 浏览器导入 fiddler 证书实现接口抓包"
-date:          2018-01-13
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Fiddler
-    - API 测试
-    - Windows
 ---
 
 
