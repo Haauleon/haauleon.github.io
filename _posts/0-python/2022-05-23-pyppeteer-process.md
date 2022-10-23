@@ -1,12 +1,13 @@
 ---
 layout:        post
-title:         "Python3 | 网站增加谷歌分析指标"
+title:         "爬虫 | 网站增加谷歌分析指标"
 subtitle:      "谷歌分析指标如 pv、uv、跳出率，增加 local 和芝麻代理池两种方式"
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Python
+    - 爬虫
 ---
 
 ### 代码设计
