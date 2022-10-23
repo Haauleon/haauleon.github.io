@@ -2,14 +2,11 @@
 layout:        post
 title:         "Fiddler | 部分实用的小功能"
 subtitle:      "Windows 系统下列出 Fiddler 其他一些工作中比较实用的小功能"
-date:          2018-01-14
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
     - Fiddler
-    - API 测试
-    - Windows
 ---
 
 ### 一、实用功能
