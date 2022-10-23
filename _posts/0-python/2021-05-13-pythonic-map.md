@@ -2,7 +2,6 @@
 layout:        post
 title:         "Python3 | 函数式编程"
 subtitle:      "map、filter 的使用"
-date:          2021-05-13
 author:        "Haauleon"
 header-style:  text
 catalog:       true
@@ -10,7 +9,7 @@ tags:
     - Python
 ---
 
-## 背景
+### 背景
 &emsp;&emsp;在 Python 的函数式编程中的 map() 和 filter() 函数，均可用 for 循环来实现，那么为什么还需要 map() 和 filter() 函数呢？主要是因为 Python 的 for 命令效率不高且复杂，而 map() 和 filter() 更为高效和简洁，map() 和 filter() 的循环速度比 Python 内置的 for 或 while 循环要快得多，其执行速度相当于 C 语言。       
 
 <br>
@@ -66,7 +65,7 @@ Wall time: 15 ms
 <br><br>
 
 
-## python 函数式编程
+### python 函数式编程
 &emsp;&emsp;python 中的 map() 和 filter() 函数均是应用于序列的内置函数，分别对序列进行遍历和过滤操作，这两个内置函数在实际使用过程中经常跟 lambda 关键字联合使用。        
 
 <br>
