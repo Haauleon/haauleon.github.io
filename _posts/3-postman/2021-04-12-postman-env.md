@@ -2,12 +2,10 @@
 layout:        post
 title:         "Postman | 环境变量"
 subtitle:      "如何高效地使用环境变量？"
-date:          2021-04-12
 author:        "Haauleon"
 header-style:  text
 catalog:       true
 tags:
-    - API 测试
     - Postman
 ---
 
