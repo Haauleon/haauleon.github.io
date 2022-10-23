@@ -2,7 +2,6 @@
 layout:        post
 title:         "Python3 | 函数和方法"
 subtitle:      "python 中函数和方法的区别"
-date:          2021-05-17
 author:        "Haauleon"
 header-style:  text
 catalog:       true
