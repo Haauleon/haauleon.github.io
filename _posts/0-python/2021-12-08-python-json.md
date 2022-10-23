@@ -2,7 +2,6 @@
 layout:        post
 title:         "python3 | 读写 json 文件"
 subtitle:      ""
-date:          2021-12-08
 author:        "Other"
 header-style:  text
 catalog:       true
