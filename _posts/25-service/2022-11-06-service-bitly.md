@@ -26,7 +26,7 @@ bit.ly 简单说就是一个网址缩短服务，它可以很长的一段地址�
 <br>
 
 ###### 创建短链接
-bit.ly 的官网是 [https://bitly.com/](https://bitly.com/)，目前免费用户每个月只能创建 50 个短链接。bitly 的账号登录需要借助特殊工具，国内用户无法直接使用谷歌账号登录，原因就是大家都懂的。              
+bit.ly 的官网是 [https://bitly.com/](https://bitly.com/)，目前免费用户每个月只能创建 50 个短链接。bit.ly 的账号登录需要借助特殊工具，国内用户无法直接使用谷歌账号登录，原因就是大家都懂的。              
 
 ![](\img\in-post\post-service\2022-11-06-service-bitly-2.png)     
 
