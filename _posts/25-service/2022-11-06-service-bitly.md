@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "网址缩短服务 | bitly"
+title:         "网址缩短服务 | bit.ly"
 subtitle:      "缩短网址得分享更容易，国内用户无法使用该网站的服务但也有办法"
 author:        "Haauleon"
 header-style:  text
