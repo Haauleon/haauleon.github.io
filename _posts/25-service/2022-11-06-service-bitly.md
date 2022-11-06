@@ -15,7 +15,7 @@ tags:
 <br>
 <br>
 
-### bitly
+### bit.ly
 bit.ly 简单说就是一个网址缩短服务，它可以很长的一段地址缩短成端地址，使得分享更加容易。不过国内用户无法使用该网站的服务，也就是说无法直接访问 [http://bit.ly/2a9ep8V](http://bit.ly/2a9ep8V) ，但是在众多网友的积极帮助下，可以将 [http://bit.ly/2a9ep8V](http://bit.ly/2a9ep8V) 替换成 [http://j.mp/2a9ep8V](http://j.mp/2a9ep8V) ，也是可以访问的，已验证成功。    
 
 百思不得其解的我百度了一下，直到看到有个网友的回答：   
