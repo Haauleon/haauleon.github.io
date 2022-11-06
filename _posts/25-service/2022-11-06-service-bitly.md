@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "网址缩短服务 | bitly"
-subtitle:      "缩短网址使得分享网址更加容易，不过国内用户无法使用该网站的服务"
+subtitle:      "缩短网址得分享更容易，国内用户无法使用该网站的服务但也有办法"
 author:        "Haauleon"
 header-style:  text
 catalog:       true
@@ -10,13 +10,16 @@ tags:
 ---
 
 ### bitly
-bit.ly 简单说就是一个网址缩短服务，它可以让你缩短网址，使得分享网址更加容易。不过国内用户无法使用该网站的服务。       
+bit.ly 简单说就是一个网址缩短服务，它可以很长的一段地址缩短成端地址，使得分享更加容易。不过国内用户无法使用该网站的服务，也就是说无法直接访问 [http://bit.ly/2a9ep8V](http://bit.ly/2a9ep8V) ，但是在众多网友的积极帮助下，可以将 [http://bit.ly/2a9ep8V](http://bit.ly/2a9ep8V) 替换成 [http://j.mp/2a9ep8V](http://j.mp/2a9ep8V) ，也是可以访问的，已验证成功。    
+
+百思不得其解的我百度了一下，直到看到有个网友的回答：   
+> Bit.ly 推出更短域名的 J.mp，它与 Bit.ly 共享一套系统，因此无论在何家的主域名后跟上相同的字符串，总会指向同一个地址`。     
 
 ![](\img\in-post\post-service\2022-11-06-service-bitly-1.png)   
 
 
 ###### 创建短链接
-目前免费用户每个月只能创建 50 个短链接。        
+bit.ly 的官网是 [https://bitly.com/](https://bitly.com/)，目前免费用户每个月只能创建 50 个短链接。        
 
 ![](\img\in-post\post-service\2022-11-06-service-bitly-2.png)     
 
