@@ -100,3 +100,12 @@ tags:
 
 （3）重启     
 ![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-17.jpg)    
+
+<br>
+<br>
+
+（4）验证是否安装成功      
+```
+C:\Users\Haauleon>vagrant --version
+Vagrant 2.3.2
+```
