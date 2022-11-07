@@ -109,3 +109,8 @@ tags:
 C:\Users\Haauleon>vagrant --version
 Vagrant 2.3.2
 ```
+
+<br>
+<br>
+
+###### 2、使用 Vagrant
