@@ -94,3 +94,9 @@ tags:
 <br>
 
 ![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-16.jpg)    
+
+<br>
+<br>
+
+（3）重启     
+![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-17.jpg)    
