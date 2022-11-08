@@ -306,15 +306,63 @@ Last login: Tue Nov  8 04:12:02 2022 from 10.0.2.2
 <br>
 
 ###### 1、安装 Docker
-（1）进入[官网](https://www.docker.com/)下载     
+（1）下载[docker-toolbox](http://mirrors.aliyun.com/docker-toolbox/windows/docker-toolbox/)          
 ![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-20.jpg)    
 
 <br>
 <br>
 
-（2）双击 Docker Desktop Installer.exe 进行安装      
+（2）双击 DockerToolbox-18.03.0-ce.exe 进行安装      
 ![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-21.jpg)   
 
 <br>
 
-![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-22.jpg)   
+![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-22.jpg)     
+
+<br>
+
+![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-23.jpg)   
+
+<br>
+
+![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-24.jpg)   
+
+<br>
+
+![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-25.jpg)   
+
+<br>
+
+![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-26.jpg)   
+
+<br>
+<br>
+
+###### 2、启动 Docker Toolbox 终端
+安装完成后双击 Docker QuickStart Terminal 图标来启动 Docker Toolbox 终端即进入 Docker Shell，如下：          
+![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-27.jpg)   
+
+<br>
+
+首次启动 Docker Toolbox 终端时，会检查本地是否存在 boot2docker.iso 这个镜像文件，如果没有就会从 github 上自动下载最新版本，因此第一次启动时花费的时间较长。在进行一系列的初始化后，最后的提示如下：    
+```
+docker is configured to use the default machine with IP 192.168.99.100
+For help getting started, check out the docs at https://docs.docker.com
+```    
+![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-28.jpg)      
+
+<br>
+
+上面的 192.168.99.100 是 Docker 创建的虚拟机的 IP，之后访问应用其实都是在请求这个 IP。如果忘记了也可以通过如下命令获得：    
+```
+$ docker-machine ip
+192.168.99.100
+```
+
+<br>
+
+检查 Docker 是否安装成功：    
+```
+$ docker --version
+Docker version 18.03.0-ce, build 0520e24302
+```
