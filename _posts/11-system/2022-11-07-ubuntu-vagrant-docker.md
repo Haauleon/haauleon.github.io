@@ -440,6 +440,7 @@ dongweiming/web_develop   dev                 43fb02d9c1a3        6 years ago   
 ###### 4、首次进入容器
 使用以下命令可以进入容器，前面的提示是 zsh 新用户安装。进入容器后，默认使用 ubuntu 这个用户，并切换到 `/home/ubuntu/web_develop` 目录下。          
 ```
+$ docker run --name web_dev -it -p 9000:9000 -p 3141:3141 -p 5000:5000 dongweiming/web_develop:dev /bin/zsh
 This is the Z Shell configuration function for new users,
 zsh-newuser-install.
 You are seeing this message because you have no zsh startup files
