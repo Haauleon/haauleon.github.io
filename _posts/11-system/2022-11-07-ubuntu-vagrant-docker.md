@@ -72,7 +72,7 @@ tags:
 
 <br>
 
-###### 1、安装 Vagrant
+#### 1、安装 Vagrant
 （1）进入[官网](https://www.vagrantup.com/)下载        
 ![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-10.jpg)    
 
@@ -120,7 +120,7 @@ Vagrant 2.3.2
 <br>
 <br>
 
-### 三、Vagrantfile 配置文件
+#### 2、Vagrantfile 配置文件
 &emsp;&emsp;一个打包好的操作系统在 Vagrant 中称为一个 Box，而这个 Box 实际上是一个 zip 包。这个 zip 包包含了 Vagrant 的虚拟机配置信息和 VirtualBox 的虚拟机镜像文件。Vagrantfile 文件中保存了虚拟机的各项配置，如下：     
 
 ```
@@ -149,8 +149,8 @@ end
 <br>
 <br>
 
-### 四、首次使用 Vagrant
-###### 1、创建 SSH 秘钥     
+#### 3、首次使用 Vagrant
+###### （1）创建 SSH 秘钥     
 董老师定制的 Box 需要创建一个 SSH 秘钥用于自动登录。如果之前没有创建过则使用以下命令进行创建：     
 ```
 C:\Users\Haauleon>ssh-keygen
@@ -161,7 +161,7 @@ C:\Users\Haauleon>ssh-keygen
 <br>
 <br>
 
-###### 2、启动虚拟机     
+###### （2）启动虚拟机     
 ```
 PS D:\gitee\web_develop> vagrant up
 Bringing machine 'default' up with 'virtualbox' provider...
@@ -219,7 +219,7 @@ Bringing machine 'default' up with 'virtualbox' provider...
 <br>
 <br>
 
-###### 3、初始化系统环境     
+###### （3）初始化系统环境     
 第一次启动完成后需要使用配置脚本来初始化系统环境，`provision` 会执行 Vagrantfile 中定义的 file 命令 `config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/authorized_keys"` ，将本机的 `~/.ssh/id_rsa.pub` 拷贝到目标服务器并保存为 `~/.ssh/authorized_keys`。      
 
 ```
@@ -231,7 +231,7 @@ PS D:\gitee\web_develop> vagrant provision
 <br>
 <br>
 
-###### 4、登录虚拟机    
+###### （4）登录虚拟机    
 启动完成后就可以登录虚拟机了。     
 ```
 PS D:\gitee\web_develop> vagrant ssh
@@ -262,7 +262,7 @@ Last login: Wed Aug 17 16:21:41 2016 from 10.0.2.2
 <br>
 <br>
 
-### 五、下次使用 Vagrant
+#### 4、再次使用 Vagrant
 关闭连接命令：    
 ```
 ❯ exit
@@ -298,7 +298,7 @@ Last login: Tue Nov  8 04:12:02 2022 from 10.0.2.2
 <br>
 <br>
 
-### 六、Docker
+### 三、Docker
 &emsp;&emsp;Docker 是用 Go 语言编写的一个基于 Linux 容器（Linux Containers, LXC）的开源容器引擎。跟传统的虚拟机不同，虚拟机都是一个完整的操作系统所以占用计算机资源三件套（CPU、内存、硬盘等）。而 Docker 是 “操作系统级别的虚拟化” ，因此可以达到秒级启动，与虚拟机相比，Docker 容器本身几乎不占用什么开销，可见其性能之卓越。且因 Docker 具有可移植性所以 “一次封装，到处运行” 的优势被众所周知。        
 
 &emsp;&emsp;2014年7月21日，IBM 公司发表过一份全英文报告[《虚拟机与Linux容器的性能比较》](https://pan.baidu.com/s/1v_22iLbWhsjl-Kj0hHdVbA?pwd=lt3w)，可使用[百度翻译](https://fanyi.baidu.com/mtpe-individual/#/editor/quickImport)进行全文档翻译后享用。       
