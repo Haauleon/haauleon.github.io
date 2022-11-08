@@ -366,3 +366,8 @@ $ docker-machine ip
 $ docker --version
 Docker version 18.03.0-ce, build 0520e24302
 ```
+
+<br>
+<br>
+
+###### 3、下载镜像
