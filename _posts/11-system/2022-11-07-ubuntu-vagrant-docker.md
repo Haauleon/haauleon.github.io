@@ -24,7 +24,7 @@ tags:
 
 <br>
 
-###### 1、安装 VirtualBox
+#### 1、安装 VirtualBox
 （1）进入[官网](https://www.virtualbox.org/)下载最新版       
 ![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-1.jpg)    
 
@@ -305,7 +305,7 @@ Last login: Tue Nov  8 04:12:02 2022 from 10.0.2.2
 
 <br>
 
-###### 1、安装 Docker
+#### 1、安装 Docker
 （1）下载[docker-toolbox](http://mirrors.aliyun.com/docker-toolbox/windows/docker-toolbox/)          
 ![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-20.jpg)    
 
@@ -338,7 +338,7 @@ Last login: Tue Nov  8 04:12:02 2022 from 10.0.2.2
 <br>
 <br>
 
-###### 2、启动 Docker Toolbox 终端
+#### 2、启动 Docker Toolbox 终端
 安装完成后双击 Docker QuickStart Terminal 图标来启动 Docker Toolbox 终端即进入 Docker Shell，如下：          
 ![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-27.jpg)   
 
@@ -370,7 +370,7 @@ Docker version 18.03.0-ce, build 0520e24302
 <br>
 <br>
 
-###### 3、下载镜像
+#### 3、下载镜像
 Dockerfile 配置文件内容如下：   
 ```
 FROM ubuntu:16.04
@@ -437,7 +437,7 @@ dongweiming/web_develop   dev                 43fb02d9c1a3        6 years ago   
 <br>
 <br>
 
-###### 4、首次进入容器
+#### 4、首次进入容器
 使用以下命令可以进入容器，前面的提示是 zsh 新用户安装。进入容器后，默认使用 ubuntu 这个用户，并切换到 `/home/ubuntu/web_develop` 目录下。          
 ```
 $ docker run --name web_dev -it -p 9000:9000 -p 3141:3141 -p 5000:5000 dongweiming/web_develop:dev /bin/zsh
@@ -472,7 +472,7 @@ The function will be run again next time.  To prevent this, execute:
 <br>
 <br>
 
-###### 5、退出容器
+#### 5、退出容器
 使用 `exit` 命令退出即可：   
 ```
 30ea46d16b2a% exit
@@ -481,7 +481,7 @@ The function will be run again next time.  To prevent this, execute:
 <br>
 <br>
 
-###### 6、再次进入容器
+#### 6、再次进入容器
 使用 `exit` 命令从容器退出后，容器就关闭了，可使用以下命令进行重新登录：     
 ```
 $ docker start web_dev   # 回车一次
@@ -494,3 +494,44 @@ The function will be run again next time.  To prevent this, execute:
   touch ~/.zshrc
 30ea46d16b2a%
 ```
+
+<br>
+<br>
+
+#### 7、Docker 虚拟机端口转发
+&emsp;&emsp;在 Docker 环境中访问应用需要使用 http://192.168.99.100:PORT 这个地址，由于 Vagrant 做了端口转发，直接在宿主机上访问 127.0.0.1:PORT 即可。为了使 Docker 和 Vagrant 访问的地址一致，可以使用以下命令实现。          
+
+<br>
+
+（1）获取 Docker 虚拟机的名字        
+```
+$ docker-machine inspect|grep MachineName
+        "MachineName": "default",
+```
+
+可知，Docker 虚拟机的名字是 default。      
+
+<br>
+<br>
+
+（2）使用 Shell 命令添加本机与容器的端口镜像      
+VBoxManage 是 VirtualBox 提供的命令行工具，使用如下命令添加本机与容器的端口镜像成功后，就可以使用 http://127.0.0.1:PORT 来统一访问了。     
+```
+$ for port in 3141 5000 9000
+> do
+> VBoxManage controlvm "default" natpf1 "tcp-port$port,tcp,127.0.0.1,$port,,$port"; echo $port
+> done
+3141
+5000
+9000
+```
+
+<br>
+
+**坑一：VBoxManage 命令不存在**      
+```
+$ for port in 3141 5000 9000 ; do VBoxManage controlvm "default" natpf1 "tcp-port$port,tcp,127.0.0.1,$port,,$port"; echo $port; done
+bash: VBoxManage: command not found
+```
+需要配置环境变量，在 `环境变量 > 系统变量 > Path` 变量中添加 VBoxManage.exe 所在目录的路径 `D:\Oracle\VirtualBox\` 即可。    
+![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-29.jpg)   
