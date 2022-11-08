@@ -306,3 +306,15 @@ Last login: Tue Nov  8 04:12:02 2022 from 10.0.2.2
 <br>
 
 ###### 1、安装 Docker
+（1）进入[官网](https://www.docker.com/)下载     
+![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-20.jpg)    
+
+<br>
+<br>
+
+（2）双击 Docker Desktop Installer.exe 进行安装      
+![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-21.jpg)   
+
+<br>
+
+![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-22.jpg)   
