@@ -8,6 +8,8 @@ catalog:       true
 tags:
     - 操作系统
     - Web开发
+    - Docker
+    - Vagrant
 ---
 
 > 本篇所有操作均在 64 位的 Windows 11 系统下执行
@@ -292,3 +294,15 @@ Run 'do-release-upgrade' to upgrade to it.
 
 Last login: Tue Nov  8 04:12:02 2022 from 10.0.2.2
 ```
+
+<br>
+<br>
+
+### 六、Docker
+&emsp;&emsp;Docker 是用 Go 语言编写的一个基于 Linux 容器（Linux Containers, LXC）的开源容器引擎。跟传统的虚拟机不同，虚拟机都是一个完整的操作系统所以占用计算机资源三件套（CPU、内存、硬盘等）。而 Docker 是 “操作系统级别的虚拟化” ，因此可以达到秒级启动，与虚拟机相比，Docker 容器本身几乎不占用什么开销，可见其性能之卓越。且因 Docker 具有可移植性所以 “一次封装，到处运行” 的优势被众所周知。        
+
+&emsp;&emsp;2014年7月21日，IBM 公司发表过一份全英文报告[《虚拟机与Linux容器的性能比较》](https://pan.baidu.com/s/1v_22iLbWhsjl-Kj0hHdVbA?pwd=lt3w)，可使用[百度翻译](https://fanyi.baidu.com/mtpe-individual/#/editor/quickImport)进行全文档翻译后享用。       
+
+<br>
+
+###### 1、安装 Docker
