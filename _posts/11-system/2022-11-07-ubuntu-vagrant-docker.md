@@ -371,3 +371,125 @@ Docker version 18.03.0-ce, build 0520e24302
 <br>
 
 ###### 3、下载镜像
+Dockerfile 配置文件内容如下：   
+```
+FROM ubuntu:16.04
+
+MAINTAINER DongWeiming <ciici123@gmail.com>
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse\n\
+    deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse\n\
+    deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse\n\
+    deb http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted universe multiverse\n\
+    deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse\n\
+    deb-src http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse\n\
+    deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse\n\
+    deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse\n\
+    deb-src http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted universe multiverse\n\
+    deb-src http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse\n\
+    ' > /etc/apt/sources.list
+
+RUN apt-get update
+RUN apt-get install python curl git zsh sudo -yq
+RUN useradd -ms /bin/bash ubuntu
+RUN echo "ubuntu ALL=(ALL) NOPASSWD: ALL"  >> /etc/sudoers
+RUN echo "ubuntu:ubuntu" | chpasswd
+USER ubuntu
+workdir /home/ubuntu
+RUN git clone https://github.com/dongweiming/web_develop
+RUN cd /home/ubuntu/web_develop
+
+EXPOSE 9000 3141 22 5000
+```
+
+<br>
+
+执行以下命令可以直接下载董老师上传好的基于 Ubuntu:16.04 LTS 的镜像：     
+```
+$ docker pull dongweiming/web_develop:dev
+dev: Pulling from dongweiming/web_develop
+5ba4f30e5bea: Pull complete
+9d7d19c9dc56: Pull complete
+ac6ad7efd0f9: Pull complete
+e7491a747824: Pull complete
+a3ed95caeb02: Pull complete
+e42ba31532a7: Pull complete
+92d10652653c: Pull complete
+58ad29242685: Pull complete
+fd1ea66774c4: Pull complete
+da69b3de3c09: Pull complete
+1209a5fcd32b: Pull complete
+faf8957e629c: Pull complete
+Digest: sha256:ff43adf798f27d616ad2c7fec6fd79680cf2205b5996a3841230ba827522e85c
+Status: Downloaded newer image for dongweiming/web_develop:dev
+```
+
+<br>
+
+下载完成后检查镜像列表是否存在此镜像：    
+```
+$ docker images
+REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
+dongweiming/web_develop   dev                 43fb02d9c1a3        6 years ago         294MB
+```
+
+<br>
+<br>
+
+###### 4、首次进入容器
+使用以下命令可以进入容器，前面的提示是 zsh 新用户安装。进入容器后，默认使用 ubuntu 这个用户，并切换到 `/home/ubuntu/web_develop` 目录下。          
+```
+This is the Z Shell configuration function for new users,
+zsh-newuser-install.
+You are seeing this message because you have no zsh startup files
+(the files .zshenv, .zprofile, .zshrc, .zlogin in the directory
+~).  This function can help you with a few settings that should
+make your use of the shell easier.
+
+You can:
+
+(q)  Quit and do nothing.  The function will be run again next time.
+
+(0)  Exit, creating the file ~/.zshrc containing just a comment.
+     That will prevent this function being run again.
+
+(1)  Continue to the main menu.
+
+(2)  Populate your ~/.zshrc with the configuration recommended
+     by the system administrator and exit (you will need to edit
+     the file by hand, if so desired).
+
+--- Type one of the keys in parentheses ---
+
+Aborting.
+The function will be run again next time.  To prevent this, execute:
+  touch ~/.zshrc
+30ea46d16b2a%
+```
+
+<br>
+<br>
+
+###### 5、退出容器
+使用 `exit` 命令退出即可：   
+```
+30ea46d16b2a% exit
+```
+
+<br>
+<br>
+
+###### 6、再次进入容器
+使用 `exit` 命令从容器退出后，容器就关闭了，可使用以下命令进行重新登录：     
+```
+$ docker start web_dev   # 回车一次
+web_dev
+$ docker attach web_dev  # 回车两次
+
+
+Aborting.
+The function will be run again next time.  To prevent this, execute:
+  touch ~/.zshrc
+30ea46d16b2a%
+```
