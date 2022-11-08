@@ -119,7 +119,7 @@ Vagrant 2.3.2
 <br>
 
 ### 三、Vagrantfile 配置文件
-&emsp;&emsp;一个打包好的操作系统在 Vagrant 中称为一个 Box，而这个 Box 实际上是一个 zip 包。这个 zip 包包含了 Vagrant 的虚拟机配置信息和 VirtualBox 的虚拟机镜像文件。`Vagrantfile` 文件中保存了虚拟机的各项配置，如下：     
+&emsp;&emsp;一个打包好的操作系统在 Vagrant 中称为一个 Box，而这个 Box 实际上是一个 zip 包。这个 zip 包包含了 Vagrant 的虚拟机配置信息和 VirtualBox 的虚拟机镜像文件。Vagrantfile 文件中保存了虚拟机的各项配置，如下：     
 
 ```
 # coding: utf-8
@@ -209,7 +209,7 @@ Bringing machine 'default' up with 'virtualbox' provider...
 <br>
 
 **坑一：vagrant up 报错**      
-启动虚拟机之前，需要进入 `Vagrantfile` 文件所在的目录，否则执行会报错，报错提示：`A Vagrant environment or target machine is required to run this command. Run vagrant init to create a new Vagrant environment. Or, get an ID of a target machine from vagrant global-status to run this command on. A final option is to change to a directory with a Vagrantfile and to try again.`      
+启动虚拟机之前，需要进入 Vagrantfile 文件所在的目录，否则执行会报错，报错提示：`A Vagrant environment or target machine is required to run this command. Run vagrant init to create a new Vagrant environment. Or, get an ID of a target machine from vagrant global-status to run this command on. A final option is to change to a directory with a Vagrantfile and to try again.`      
 
 **坑二：下载 Box 耗时长**      
 启动的时候会检查本地有没有这个 Box，没有的话就会下载，第一次下载的时间较长，将近十分钟。     
