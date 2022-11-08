@@ -147,7 +147,7 @@ end
 <br>
 <br>
 
-### 四、使用 Vagrant
+### 四、首次使用 Vagrant
 ###### 1、创建 SSH 秘钥     
 董老师定制的 Box 需要创建一个 SSH 秘钥用于自动登录。如果之前没有创建过则使用以下命令进行创建：     
 ```
@@ -255,4 +255,40 @@ Last login: Wed Aug 17 16:21:41 2016 from 10.0.2.2
 
 ~ ubuntu@WEB
 ❯
+```
+
+<br>
+<br>
+
+### 五、下次使用 Vagrant
+关闭连接命令：    
+```
+❯ exit
+Connection to 127.0.0.1 closed.
+```
+
+<br>
+
+下次进行登录时，直接使用命令 `> vagrant ssh` 即可。     
+```
+PS D:\gitee\web_develop> vagrant ssh
+==> default: The machine you're attempting to SSH into is configured to use
+==> default: password-based authentication. Vagrant can't script entering the
+==> default: password for you. If you're prompted for a password, please enter
+==> default: the same password you have configured in the Vagrantfile.
+Welcome to Ubuntu 16.04 LTS (GNU/Linux 4.4.0-34-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+111 packages can be updated.
+0 updates are security updates.
+
+New release '18.04.6 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Tue Nov  8 04:12:02 2022 from 10.0.2.2
 ```
