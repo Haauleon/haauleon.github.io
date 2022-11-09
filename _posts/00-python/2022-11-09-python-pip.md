@@ -111,3 +111,8 @@ Installing setuptools, pip, wheel...done.
 ~ ubuntu@WEB
 ❯
 ```
+
+<br>
+<br>
+
+#### 2、virtualenv 定制化
