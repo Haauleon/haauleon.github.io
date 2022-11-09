@@ -150,7 +150,7 @@ end
 <br>
 <br>
 
-#### 3、首次使用 Vagrant
+#### 3、首次启动虚拟机
 ###### （1）创建 SSH 秘钥     
 董老师定制的 Box 需要创建一个 SSH 秘钥用于自动登录。如果之前没有创建过则使用以下命令进行创建：     
 ```
@@ -263,7 +263,7 @@ Last login: Wed Aug 17 16:21:41 2016 from 10.0.2.2
 <br>
 <br>
 
-#### 4、再次使用 Vagrant
+#### 4、再次启动虚拟机
 关闭连接命令：    
 ```
 ❯ exit
@@ -272,8 +272,9 @@ Connection to 127.0.0.1 closed.
 
 <br>
 
-下次进行登录时，直接使用命令 `> vagrant ssh` 即可。     
-```
+下次启动虚拟机成功后，需要进行登录时可直接使用命令 `> vagrant ssh` ：           
+```shell
+PS D:\gitee\web_develop> vagrant up
 PS D:\gitee\web_develop> vagrant ssh
 ==> default: The machine you're attempting to SSH into is configured to use
 ==> default: password-based authentication. Vagrant can't script entering the
@@ -294,6 +295,9 @@ Run 'do-release-upgrade' to upgrade to it.
 
 
 Last login: Tue Nov  8 04:12:02 2022 from 10.0.2.2
+
+~ ubuntu@WEB
+❯
 ```
 
 <br>
