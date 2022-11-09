@@ -49,7 +49,64 @@ yum、emerge、apt-get 等
 <br>
 <br>
 
-#### 3、构建和分发包的工具
+#### 3、构建和分发项目的工具
+&emsp;&emsp;如果想要把自己的项目分享出去，放到 PYPI 或者其他托管服务上时，需要使用构建和分发项目工具来实现。除非项目的环境依赖简单到只需要用到 distutils ，否则推荐使用 setuptools 包。
 
 <br>
 <br>
+
+### 二、虚拟环境
+虚拟环境可以解决以下问题：    
+（1）系统自带的 Python 是 2.6，而新项目要用到 Python 2.7 中的某些特性        
+（2）不同的项目之间使用了不同版本的某些包，但由于某些原因（如有依赖冲突）而无法直接升级到最新版本     
+（3）所有的包若都共用一个目录，很容易出现更新了项目A的依赖，却影响了项目B用到的依赖的情况          
+
+&emsp;&emsp;使用虚拟环境可以让全局的 site-package 目录非常干净，从而实现对环境进行隔离。目前主流的创建和管理虚拟环境的工具有 virtualenv 和 pyvenv。    
+
+<br>
+
+#### 1、安装和使用 virtualenv
+（1）安装 virtualenv    
+```
+> pip install virtualenv
+```
+
+<br>
+<br>
+
+（2）使用 virtualenv 创建一个 Python 环境，环境名为 venv    
+```
+❯ virtualenv venv
+New python executable in /home/ubuntu/venv/bin/python
+Installing setuptools, pip, wheel...done.
+
+~ ubuntu@WEB 10s
+❯
+```
+
+<br>
+<br>
+
+（3）激活虚拟环境 venv        
+```
+❯ source venv/bin/activate
+
+~ ubuntu@WEB
+(venv) ❯
+
+(venv) ❯ which python
+/home/ubuntu/venv/bin/python
+
+```
+
+<br>
+<br>
+
+（4）退出虚拟环境 venv      
+```
+~ ubuntu@WEB
+(venv) ❯ deactivate
+
+~ ubuntu@WEB
+❯
+```
