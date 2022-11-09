@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "环境搭建 | Python 包管理和虚拟环境"
-subtitle:      ""
+subtitle:      "常用的包管理工具 pip 和虚拟环境 virtualenv 定制化"
 author:        "Haauleon"
 header-style:  text
 catalog:       true
