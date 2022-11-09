@@ -7,6 +7,7 @@ header-style:  text
 catalog:       true
 tags:
     - 操作系统
+    - MacOS
 ---
 
 ## 背景

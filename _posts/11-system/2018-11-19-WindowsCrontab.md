@@ -6,6 +6,7 @@ author: "Haauleon"
 header-style: text
 tags:
   - 操作系统
+  - Windows
 ---
 
 &emsp;&emsp;之前使用Jenkins来完成定时构建，后来想想如果只是单纯想跑定时任务的话，用windows自带的定时任务其实也是个不错的选择，简单方便，照旧还是放毛老师的照片来镇楼镇妖&#94;&#95;&#94;。      
