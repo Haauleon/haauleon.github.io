@@ -88,6 +88,7 @@ Installing setuptools, pip, wheel...done.
 <br>
 
 （3）激活虚拟环境 venv        
+激活成功后，可以看到已经不再使用系统环境变量中的 Python 了，而是在虚拟环境 /home/ubuntu/venv 下创建了一个单独的 python 环境。原系统环境变量的 Python 是 /usr/bin/python。       
 ```
 ❯ source venv/bin/activate
 
