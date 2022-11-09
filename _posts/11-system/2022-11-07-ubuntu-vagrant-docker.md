@@ -1,7 +1,7 @@
 ---
 layout:        post
-title:         "Ubuntu | 使用Docker和Vagrant安装Ubuntu"
-subtitle:      "搭建一个能运行的虚拟机环境"
+title:         "环境搭建 | 搭建一个能运行的虚拟机环境"
+subtitle:      "使用 Docker 和 Vagrant 安装 Ubuntu"
 author:        "Haauleon"
 header-style:  text
 catalog:       true
@@ -10,6 +10,7 @@ tags:
     - Web开发
     - Docker
     - Vagrant
+    - Ubuntu
 ---
 
 > 本篇所有操作均在 64 位的 Windows 11 系统下执行
