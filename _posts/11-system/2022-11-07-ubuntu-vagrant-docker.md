@@ -264,16 +264,19 @@ Last login: Wed Aug 17 16:21:41 2016 from 10.0.2.2
 <br>
 
 #### 4、再次启动虚拟机
-关闭连接命令：    
+关闭命令：    
 ```
+~ ubuntu@WEB
 ❯ exit
 Connection to 127.0.0.1 closed.
+PS D:\gitee\web_develop> vagrant halt
+==> default: Attempting graceful shutdown of VM...
 ```
 
 <br>
 
 下次启动虚拟机成功后，需要进行登录时可直接使用命令 `> vagrant ssh` ：           
-```shell
+```
 PS D:\gitee\web_develop> vagrant up
 PS D:\gitee\web_develop> vagrant ssh
 ==> default: The machine you're attempting to SSH into is configured to use
@@ -478,16 +481,15 @@ The function will be run again next time.  To prevent this, execute:
 <br>
 
 #### 5、退出容器
-使用 `exit` 命令退出即可：   
 ```
 30ea46d16b2a% exit
-```
+``` 
 
 <br>
 <br>
 
-#### 6、再次进入容器
-使用 `exit` 命令从容器退出后，容器就关闭了，可使用以下命令进行重新登录：     
+#### 6、重新登录容器
+从容器退出后，容器就关闭了，可使用以下命令进行重新登录：     
 ```
 $ docker start web_dev   # 回车一次
 web_dev
@@ -521,7 +523,7 @@ $ docker-machine inspect|grep MachineName
 
 （2）使用 Shell 命令添加本机与容器的端口镜像      
 VBoxManage 是 VirtualBox 提供的命令行工具，使用如下命令添加本机与容器的端口镜像成功后，就可以使用 http://127.0.0.1:PORT 来统一访问了。     
-```
+```shell
 $ for port in 3141 5000 9000
 > do
 > VBoxManage controlvm "default" natpf1 "tcp-port$port,tcp,127.0.0.1,$port,,$port"; echo $port
@@ -534,7 +536,7 @@ $ for port in 3141 5000 9000
 <br>
 
 **坑一：VBoxManage 命令不存在**      
-```
+```shell
 $ for port in 3141 5000 9000 ; do VBoxManage controlvm "default" natpf1 "tcp-port$port,tcp,127.0.0.1,$port,,$port"; echo $port; done
 bash: VBoxManage: command not found
 ```
