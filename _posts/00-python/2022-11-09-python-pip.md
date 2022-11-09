@@ -73,7 +73,6 @@ yum、emerge、apt-get 等
 ```
 
 <br>
-<br>
 
 （2）使用 virtualenv 创建一个 Python 环境，环境名为 venv    
 ```
@@ -85,7 +84,6 @@ Installing setuptools, pip, wheel...done.
 ❯
 ```
 
-<br>
 <br>
 
 （3）激活虚拟环境 venv        
@@ -101,7 +99,6 @@ Installing setuptools, pip, wheel...done.
 
 ```
 
-<br>
 <br>
 
 （4）退出虚拟环境 venv      
