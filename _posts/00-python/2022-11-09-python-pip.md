@@ -22,7 +22,7 @@ Python 的官方仓库，[https://pypi.python.org/pypi](https://pypi.python.org/
 Github 上有很多 Python 工具包，例如：解析、格式化、存储、验证手机号码 [https://github.com/daviddrysdale/python-phonenumbers](https://github.com/daviddrysdale/python-phonenumbers)       
 
 **（3）Bitbucket**     
-跟 Github 一样，用于代码托管
+跟 Github 一样，用于代码托管，官方网址：[https://bitbucket.org](https://bitbucket.org)      
 
 <br>
 <br>
