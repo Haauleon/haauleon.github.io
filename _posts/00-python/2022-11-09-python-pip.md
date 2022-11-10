@@ -8,7 +8,14 @@ catalog:       true
 tags:
     - Python
     - Web开发
+    - Vagrant
+    - Ubuntu
 ---
+
+> 本篇所有操作均在基于 Ubuntu 16.04 LTS 的虚拟机下完成，且使用 vagrant 来操作虚拟机 
+
+<br>
+<br>
 
 ### 一、包管理
 &emsp;&emsp;Python 的第三方包很强大，使得我们不需要额外造轮子就可以享用，轮子直达：[https://zhuanlan.zhihu.com/p/511280808](https://zhuanlan.zhihu.com/p/511280808)。    
