@@ -252,14 +252,14 @@ Collecting flake8
 
 #### 3、virtualenvwrapper
 &emsp;&emsp;virtualenvwrapper 是对 virtualenv 的功能扩展，主要有以下用途：    
-（1）管理全部虚拟环境，方便创建、删除和拷贝虚拟环境    
-（2）单个命令就可以切换不同的虚拟环境    
-（3）使用 Tab 补全虚拟环境    
-（4）用户粒度的钩子支持     
+- 管理全部虚拟环境，方便创建、删除和拷贝虚拟环境    
+- 单个命令就可以切换不同的虚拟环境    
+- 使用 Tab 补全虚拟环境    
+- 用户粒度的钩子支持     
 
 <br>
 
-###### （1）安装
+（1）安装
 ```
 ~ ubuntu@WEB
 ❯ pip install virtualenvwrapper -i https://pypi.douban.com/simple
@@ -267,7 +267,7 @@ Collecting flake8
 
 <br>
 
-###### （2）初始化添加钩子模板
+（2）初始化添加钩子模板
 初始化 virtualenvwrapper 之后 ~/venv 目录也会添加一些用户级别的 virtualenvwrapper 的钩子模板。     
 ```
 ❯ export WORKON_HOME=~/venv
@@ -283,3 +283,161 @@ Collecting flake8
 ```
 ❯ vim ~/.zshrc
 ```
+
+<br>
+
+（3）创建虚拟环境 venv1    
+使用 `mkvirtualenv` 来创建虚拟环境，同时还会添加以下5个项目级别的钩子模板。        
+- predeactivate：在虚拟环境取消激活之前执行     
+- postdeactivate：在虚拟环境取消激活之后执行    
+- preactivate：在虚拟环境激活之前执行    
+- postactivate：在虚拟环境激活之后执行     
+- get_env_details：使用 lsvirtualenv/showvirtualenv 等命令时，对于当前环境的额外钩子，可以添加虚拟环境介绍等内容   
+
+```
+❯ mkvirtualenv venv1
+New python executable in /home/ubuntu/venv/venv1/bin/python
+Installing setuptools, pip, wheel...done.
+virtualenvwrapper.user_scripts creating /home/ubuntu/venv/venv1/bin/predeactivate
+virtualenvwrapper.user_scripts creating /home/ubuntu/venv/venv1/bin/postdeactivate
+virtualenvwrapper.user_scripts creating /home/ubuntu/venv/venv1/bin/preactivate
+virtualenvwrapper.user_scripts creating /home/ubuntu/venv/venv1/bin/postactivate
+virtualenvwrapper.user_scripts creating /home/ubuntu/venv/venv1/bin/get_env_details
+
+~ ubuntu@WEB 14s
+(venv1) ❯
+```
+
+<br>
+
+（4）使用 workon + Tab 键切换虚拟环境   
+```
+❯ workon <Tab>
+local  venv1  venv3  venv4
+❯ workon venv3
+
+~ ubuntu@WEB
+(venv3) ❯
+```
+
+<br>
+
+（5）virtualenvwrapper 常用命令     
+- lsvirtualenv：列出全部的虚拟环境     
+    ```
+    ❯ lsvirtualenv
+    local
+    =====
+
+
+    venv1
+    =====
+
+
+    venv3
+    =====
+
+
+    venv4
+    =====
+
+
+
+    ~ ubuntu@WEB
+    ❯
+    ```
+- showvirtualenv：列出单个虚拟环境的信息     
+    ```
+    ❯ showvirtualenv [环境名]
+    ```
+- rmvirtualenv：删除一个虚拟环境    
+    ```
+    ❯ rmvirtualenv venv3
+    Removing venv3...
+
+    ~ ubuntu@WEB
+    ❯ lsvirtualenv
+    local
+    =====
+
+
+    venv1
+    =====
+
+
+    venv4
+    =====
+
+
+
+    ```
+- cpvirtualenv：拷贝虚拟环境    
+    ```
+    ❯ cpvirtualenv venv4 venv3
+    Copying venv4 as venv3...
+
+    ~ ubuntu@WEB
+    (venv3) ❯ deactivate
+
+    ~ ubuntu@WEB
+    ❯ lsvirtualenv
+    local
+    =====
+
+
+    venv1
+    =====
+
+
+    venv3
+    =====
+
+
+    venv4
+    =====
+
+
+
+    ```
+- allvirtualenv：对当前所有虚拟环境执行统一的命令。比如给所有虚拟环境都安装 xlwt，就可以用以下命令：   
+    ```
+    ❯ allvirtualenv pip install xlwt -i https://pypi.douban.com/simple
+    local
+    =====
+    Requirement already satisfied (use --upgrade to upgrade): xlwt in ./lib/python2.7/site-packages
+
+    venv1
+    =====
+    Collecting xlwt
+    Using cached https://pypi.doubanio.com/packages/44/48/def306413b25c3d01753603b1a222a011b8621aed27cd7f89cbc27e6b0f4/xlwt-1.3.0-py2.py3-none-any.whl
+    Installing collected packages: xlwt
+    Successfully installed xlwt-1.3.0
+
+    venv3
+    =====
+    Collecting xlwt
+    Using cached https://pypi.doubanio.com/packages/44/48/def306413b25c3d01753603b1a222a011b8621aed27cd7f89cbc27e6b0f4/xlwt-1.3.0-py2.py3-none-any.whl
+    Installing collected packages: xlwt
+    Successfully installed xlwt-1.3.0
+
+    venv4
+    =====
+    Collecting xlwt
+    Using cached https://pypi.doubanio.com/packages/44/48/def306413b25c3d01753603b1a222a011b8621aed27cd7f89cbc27e6b0f4/xlwt-1.3.0-py2.py3-none-any.whl
+    Installing collected packages: xlwt
+    Successfully installed xlwt-1.3.0
+    ```
+- cdvirtualenv：直接切换到虚拟环境的子目录里    
+    ```
+    ❯ workon venv3
+
+    ~ ubuntu@WEB
+    (venv3) ❯ cdvirtualenv bin
+
+    ~/venv/venv3/bin ubuntu@WEB
+    (venv3) ❯ pwd
+    /home/ubuntu/venv/venv3/bin
+
+    ~/venv/venv3/bin ubuntu@WEB
+    (venv3) ❯
+    ```
