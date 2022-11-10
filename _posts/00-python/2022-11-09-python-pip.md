@@ -121,7 +121,7 @@ Installing setuptools, pip, wheel...done.
 <br>
 
 #### 2、virtualenv 定制化
-**效果实现：在生成虚拟环境 venv 的同时安装 flake8 的自定义脚本**     
+**效果实现：在生成虚拟环境 venv 的同时安装 requests 的自定义脚本**     
 
 （1）让 ubuntu 这个用户对 virtualenv 文件可见，方便直接替换     
 ```
@@ -138,4 +138,61 @@ Installing setuptools, pip, wheel...done.
 
 <br>
 
-（2）
+（2）编写定制化的脚本    
+原版本的 virtualenv 内容如下：    
+```
+❯ which virtualenv
+/usr/local/bin/virtualenv
+
+~ ubuntu@WEB
+❯ cat /usr/local/bin/virtualenv
+#!/usr/bin/python
+
+# -*- coding: utf-8 -*-
+import re
+import sys
+
+from virtualenv import main
+
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())
+```
+
+定制化的脚本可以全局替换到原版本，实现在默认的虚拟环境安装完成后去执行其他的工作，脚本如下：      
+```python
+# coding=utf-8
+import subprocess
+
+import virtualenv
+
+virtualenv_path = subprocess.check_output(['which', 'virtualenv']).strip()
+
+EXTRA_TEXT = '''
+def after_install(options, home_dir):
+    subprocess.call(['{}/bin/pip'.format(home_dir), 'install', 'requests'])
+'''
+
+
+def main():
+    text = virtualenv.create_bootstrap_script(EXTRA_TEXT, python_version='2.7')
+    print 'Updating %s' % virtualenv_path
+    with open(virtualenv_path, 'w') as f:
+        f.write(text)
+
+
+if __name__ == '__main__':
+    main()
+```
+
+<br>
+
+（3）执行定制化脚本，替换原有的版本 /usr/local/bin/virtualenv      
+```
+~ ubuntu@WEB
+❯ python web_develop/chapter2/section2/create-venv-script.py
+Updating /usr/local/bin/virtualenv
+
+~ ubuntu@WEB
+❯
+```
