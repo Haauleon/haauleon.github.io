@@ -136,6 +136,18 @@ Installing setuptools, pip, wheel...done.
 ❯
 ```
 
+**如果不改变文件的权限而直接进行定制化脚本的替换，则抛出以下异常：**         
+```
+❯ python web_develop/chapter2/section2/create-venv-script.py
+Updating /usr/local/bin/virtualenv
+Traceback (most recent call last):
+  File "web_develop/chapter2/section2/create-venv-script.py", line 22, in <module>
+    main()
+  File "web_develop/chapter2/section2/create-venv-script.py", line 17, in main
+    with open(virtualenv_path, 'w') as f:
+IOError: [Errno 13] Permission denied: '/usr/local/bin/virtualenv'
+```
+
 <br>
 
 （2）编写定制化的脚本    
@@ -196,3 +208,24 @@ Updating /usr/local/bin/virtualenv
 ~ ubuntu@WEB
 ❯
 ```
+
+<br>
+
+（4）生成虚拟环境 tmp 并检查有无自动安装 requests 包     
+```
+❯ virtualenv venv
+New python executable in /home/ubuntu/venv/bin/python2.7
+Also creating executable in /home/ubuntu/venv/bin/python
+Installing setuptools, pip, wheel...done.
+Collecting flake8
+```
+
+**如果在这过程有任何一环节出现异常，初始化方法如下：**     
+（1）使用 `> vagrant halt` 关闭虚拟机     
+（2）进入 VirtualBox 中删除该虚拟机的所有文件    
+（3）重新启动虚拟机 `> vagrant up`     
+（4）重新进行初始化 `> vagrant provision`     
+（5）重新连接虚拟机 `> vagrant ssh`，登录成功后再进行重新操作     
+
+<br>
+<br>
