@@ -121,3 +121,21 @@ Installing setuptools, pip, wheel...done.
 <br>
 
 #### 2、virtualenv 定制化
+**效果实现：在生成虚拟环境 venv 的同时安装 flake8 的自定义脚本**     
+
+（1）让 ubuntu 这个用户对 virtualenv 文件可见，方便直接替换     
+```
+~ ubuntu@WEB
+❯ which virtualenv
+/usr/local/bin/virtualenv
+
+~ ubuntu@WEB
+❯ sudo chown ubuntu:ubuntu /usr/local/bin/virtualenv
+
+~ ubuntu@WEB
+❯
+```
+
+<br>
+
+（2）
