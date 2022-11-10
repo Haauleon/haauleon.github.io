@@ -12,7 +12,7 @@ tags:
     - Ubuntu
 ---
 
-> 本篇所有操作均在基于 Ubuntu 16.04 LTS 的虚拟机下完成，且使用 vagrant 来操作虚拟机 
+> 本篇所有操作均在基于 Ubuntu 16.04 LTS 的虚拟机下完成，且使用 vagrant 来操作虚拟机，VirtualBox Version: 7.0 
 
 <br>
 <br>
