@@ -240,8 +240,8 @@ Installing setuptools, pip, wheel...done.
 Collecting flake8
 ```
 
-**坑：在玩的过程中出现了怎么都无法解决的异常，最好的办法就是出厂化处理**       
-（1）使用 `> vagrant halt` 关闭虚拟机     
+**坑：在玩的过程中倘若出现了怎么都无法解决的异常，最好的办法就是出厂化处理**       
+（1）关闭虚拟机 `> vagrant halt`           
 （2）进入 VirtualBox 中删除该虚拟机的所有文件    
 （3）重新启动虚拟机 `> vagrant up`     
 （4）重新进行初始化 `> vagrant provision`     
