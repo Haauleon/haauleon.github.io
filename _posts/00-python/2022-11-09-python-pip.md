@@ -441,3 +441,14 @@ local  venv1  venv3  venv4
     ~/venv/venv3/bin ubuntu@WEB
     (venv3) ❯
     ```
+
+<br>
+
+（5）用户级别的钩子脚本    
+&emsp;&emsp;钩子（hook）脚本是被一些版本库事件触发的程序，例如创建新版本，或修改非版本控制的属性。每种钩子都会被告知事件的足够信息，操作的目标，触发事件的用户名。依赖于钩子的输出或返回状态，钩子程序可以继续执行，停止或以某种方式挂起。      
+```
+~/venv/venv3/bin ubuntu@WEB
+(venv3) ❯ cat /home/ubuntu/venv/venv3/bin/postdeactivate
+#!/usr/bin/zsh
+# This hook is sourced after this virtualenv is deactivated.
+```
