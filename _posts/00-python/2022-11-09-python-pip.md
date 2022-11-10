@@ -267,7 +267,7 @@ Collecting flake8
 
 <br>
 
-###### （1）安装
+###### （1）安装豆瓣源
 ```
 ~ ubuntu@WEB
 ❯ pip install virtualenvwrapper -i https://pypi.douban.com/simple
