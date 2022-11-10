@@ -240,7 +240,7 @@ Installing setuptools, pip, wheel...done.
 Collecting flake8
 ```
 
-**坑：如果在这过程有任何一环节出现异常，恢复出厂化方法如下**     
+**坑：在玩的过程中出现了怎么都无法解决的异常，最好的办法就是出厂化处理**       
 （1）使用 `> vagrant halt` 关闭虚拟机     
 （2）进入 VirtualBox 中删除该虚拟机的所有文件    
 （3）重新启动虚拟机 `> vagrant up`     
