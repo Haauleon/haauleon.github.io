@@ -143,7 +143,10 @@ Installing setuptools, pip, wheel...done.
 #### 2、virtualenv 定制化
 **效果实现：在生成虚拟环境 venv 的同时安装 flake8 的自定义脚本**     
 
-（1）让 ubuntu 这个用户对 virtualenv 文件可见，方便直接替换     
+<br>
+
+###### （1）更改 virtualenv 权限    
+让 ubuntu 这个用户对 virtualenv 文件可见，方便直接替换         
 ```
 ~ ubuntu@WEB
 ❯ which virtualenv
@@ -169,9 +172,10 @@ IOError: [Errno 13] Permission denied: '/usr/local/bin/virtualenv'
 ```
 
 <br>
+<br>
 
-（2）编写定制化的脚本    
-原版本的 virtualenv 内容如下：    
+###### （2）编写定制化的脚本    
+原版本的 virtualenv 内容如下：      
 ```
 ❯ which virtualenv
 /usr/local/bin/virtualenv
@@ -191,7 +195,7 @@ if __name__ == '__main__':
     sys.exit(main())
 ```
 
-定制化的脚本可以全局替换到原版本，实现在默认的虚拟环境安装完成后去执行其他的工作，脚本如下：      
+定制化的脚本可以全局替换到原版本，实现在默认的虚拟环境安装完成后去执行其他的工作，脚本如下：        
 ```python
 # coding=utf-8
 import subprocess
@@ -218,8 +222,10 @@ if __name__ == '__main__':
 ```
 
 <br>
+<br>
 
-（3）执行定制化脚本，替换原有的版本 /usr/local/bin/virtualenv      
+###### （3）执行并替换原有版本
+执行定制化脚本，替换原有的版本 /usr/local/bin/virtualenv          
 ```
 ~ ubuntu@WEB
 ❯ python web_develop/chapter2/section2/create-venv-script.py
@@ -230,8 +236,10 @@ Updating /usr/local/bin/virtualenv
 ```
 
 <br>
+<br>
 
-（4）生成虚拟环境 tmp 并检查有无自动安装 flake8 等各种包               
+###### （4）重新生成虚拟环境
+生成虚拟环境 tmp 并检查有无自动安装 flake8 等各种包                  
 ```
 ❯ virtualenv venv
 New python executable in /home/ubuntu/venv/bin/python2.7
