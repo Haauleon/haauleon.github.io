@@ -321,7 +321,7 @@ virtualenvwrapper.user_scripts creating /home/ubuntu/venv/venv1/bin/get_env_deta
 <br>
 <br>
 
-###### （4）workon + Tab 键切换虚拟环境   
+###### （4）workon 切换虚拟环境   
 ```
 ❯ workon <Tab>
 local  venv1  venv3  venv4
