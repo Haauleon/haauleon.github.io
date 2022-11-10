@@ -266,6 +266,7 @@ Collecting flake8
 ```
 
 <br>
+<br>
 
 ###### （2）初始化添加钩子模板
 初始化 virtualenvwrapper 之后 ~/venv 目录也会添加一些用户级别的 virtualenvwrapper 的钩子模板。     
@@ -284,6 +285,7 @@ Collecting flake8
 ❯ vim ~/.zshrc
 ```
 
+<br>
 <br>
 
 ###### （3）创建虚拟环境   
@@ -309,6 +311,7 @@ virtualenvwrapper.user_scripts creating /home/ubuntu/venv/venv1/bin/get_env_deta
 ```
 
 <br>
+<br>
 
 ###### （4）workon + Tab 键切换虚拟环境   
 ```
@@ -320,6 +323,7 @@ local  venv1  venv3  venv4
 (venv3) ❯
 ```
 
+<br>
 <br>
 
 ###### （5）常用命令     
@@ -442,6 +446,7 @@ local  venv1  venv3  venv4
     (venv3) ❯
     ```
 
+<br>
 <br>
 
 ###### （5）用户级别的钩子脚本    
