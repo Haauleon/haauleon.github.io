@@ -231,7 +231,7 @@ Updating /usr/local/bin/virtualenv
 
 <br>
 
-（4）生成虚拟环境 tmp 并检查有无自动安装 requests 包     
+（4）生成虚拟环境 tmp 并检查有无自动安装 flake8 等各种包               
 ```
 ❯ virtualenv venv
 New python executable in /home/ubuntu/venv/bin/python2.7
