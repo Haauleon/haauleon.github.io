@@ -322,6 +322,7 @@ virtualenvwrapper.user_scripts creating /home/ubuntu/venv/venv1/bin/get_env_deta
 <br>
 
 ###### （4）workon 切换虚拟环境   
+使用 workon + Tab 键实现虚拟环境的切换      
 ```
 ❯ workon <Tab>
 local  venv1  venv3  venv4
