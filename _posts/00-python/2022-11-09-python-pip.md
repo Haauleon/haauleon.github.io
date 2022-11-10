@@ -241,11 +241,11 @@ Collecting flake8
 ```
 
 **坑：在玩的过程中倘若出现了怎么都无法解决的异常，最好的办法就是出厂化处理**       
-（1）关闭虚拟机 `> vagrant halt`           
-（2）进入 VirtualBox 中删除该虚拟机的所有文件    
-（3）重新启动虚拟机 `> vagrant up`     
-（4）重新进行初始化 `> vagrant provision`     
-（5）重新连接虚拟机 `> vagrant ssh`，登录成功后再重新进行操作     
+① 关闭虚拟机 `> vagrant halt`           
+② 进入 VirtualBox 中删除该虚拟机的所有文件    
+③ 重新启动虚拟机 `> vagrant up`     
+④ 重新进行初始化 `> vagrant provision`     
+⑤ 重新连接虚拟机 `> vagrant ssh`，登录成功后再重新进行操作     
 
 <br>
 <br>
@@ -259,7 +259,7 @@ Collecting flake8
 
 <br>
 
-（1）安装
+###### （1）安装
 ```
 ~ ubuntu@WEB
 ❯ pip install virtualenvwrapper -i https://pypi.douban.com/simple
@@ -267,7 +267,7 @@ Collecting flake8
 
 <br>
 
-（2）初始化添加钩子模板
+###### （2）初始化添加钩子模板
 初始化 virtualenvwrapper 之后 ~/venv 目录也会添加一些用户级别的 virtualenvwrapper 的钩子模板。     
 ```
 ❯ export WORKON_HOME=~/venv
@@ -286,7 +286,7 @@ Collecting flake8
 
 <br>
 
-（3）创建虚拟环境 venv1    
+###### （3）创建虚拟环境   
 使用 `mkvirtualenv` 来创建虚拟环境，同时还会添加以下5个项目级别的钩子模板。        
 - predeactivate：在虚拟环境取消激活之前执行     
 - postdeactivate：在虚拟环境取消激活之后执行    
@@ -310,7 +310,7 @@ virtualenvwrapper.user_scripts creating /home/ubuntu/venv/venv1/bin/get_env_deta
 
 <br>
 
-（4）使用 workon + Tab 键切换虚拟环境   
+###### （4）workon + Tab 键切换虚拟环境   
 ```
 ❯ workon <Tab>
 local  venv1  venv3  venv4
@@ -322,7 +322,7 @@ local  venv1  venv3  venv4
 
 <br>
 
-（5）virtualenvwrapper 常用命令     
+###### （5）常用命令     
 - lsvirtualenv：列出全部的虚拟环境     
     ```
     ❯ lsvirtualenv
@@ -444,7 +444,7 @@ local  venv1  venv3  venv4
 
 <br>
 
-（5）用户级别的钩子脚本    
+###### （5）用户级别的钩子脚本    
 &emsp;&emsp;钩子（hook）脚本是被一些版本库事件触发的程序，例如创建新版本，或修改非版本控制的属性。每种钩子都会被告知事件的足够信息，操作的目标，触发事件的用户名。依赖于钩子的输出或返回状态，钩子程序可以继续执行，停止或以某种方式挂起。      
 ```
 ~/venv/venv3/bin ubuntu@WEB
