@@ -240,12 +240,12 @@ Installing setuptools, pip, wheel...done.
 Collecting flake8
 ```
 
-**坑：如果在这过程有任何一环节出现异常，初始化方法如下**     
+**坑：如果在这过程有任何一环节出现异常，恢复出厂化方法如下**     
 （1）使用 `> vagrant halt` 关闭虚拟机     
 （2）进入 VirtualBox 中删除该虚拟机的所有文件    
 （3）重新启动虚拟机 `> vagrant up`     
 （4）重新进行初始化 `> vagrant provision`     
-（5）重新连接虚拟机 `> vagrant ssh`，登录成功后再进行重新操作     
+（5）重新连接虚拟机 `> vagrant ssh`，登录成功后再重新进行操作     
 
 <br>
 <br>
