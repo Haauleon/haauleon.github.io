@@ -246,3 +246,40 @@ Collecting flake8
 （3）重新启动虚拟机 `> vagrant up`     
 （4）重新进行初始化 `> vagrant provision`     
 （5）重新连接虚拟机 `> vagrant ssh`，登录成功后再进行重新操作     
+
+<br>
+<br>
+
+#### 3、virtualenvwrapper
+&emsp;&emsp;virtualenvwrapper 是对 virtualenv 的功能扩展，主要有以下用途：    
+（1）管理全部虚拟环境，方便创建、删除和拷贝虚拟环境    
+（2）单个命令就可以切换不同的虚拟环境    
+（3）使用 Tab 补全虚拟环境    
+（4）用户粒度的钩子支持     
+
+<br>
+
+###### （1）安装
+```
+~ ubuntu@WEB
+❯ pip install virtualenvwrapper -i https://pypi.douban.com/simple
+```
+
+<br>
+
+###### （2）初始化添加钩子模板
+初始化 virtualenvwrapper 之后 ~/venv 目录也会添加一些用户级别的 virtualenvwrapper 的钩子模板。     
+```
+❯ export WORKON_HOME=~/venv
+
+~ ubuntu@WEB
+❯ source /usr/local/bin/virtualenvwrapper.sh
+
+~ ubuntu@WEB
+❯
+```
+
+通常上述两行会放在 shell 的配置文件里面，这样每次登录时就自动初始化了。打开 ~/.zshrc 文件，在文件末尾添加上述两行，保存。     
+```
+❯ vim ~/.zshrc
+```
