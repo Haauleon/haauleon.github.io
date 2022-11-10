@@ -46,8 +46,9 @@ yum、emerge、apt-get 等
 通过命令行 `$ python setup.py install` 进行安装     
 
 <br>
+<br>
 
-**pip 使用介绍**         
+#### 3、pip 使用介绍         
 目前安装、管理第三方包的主流工具是 pip 且其已经被内置到 python2.7.9 和 python3.4 及以上版本里面了，主要原因：    
 （1）支持第三方包的安装、卸载、升级等等包管理功能     
 （2）支持二进制包使用 wheel 格式（后缀是 .whl）     
@@ -55,9 +56,28 @@ yum、emerge、apt-get 等
 （4）可以集中管理项目依赖列表文件 requirements.txt   
 
 <br>
+
+**坑：pypi.python.org 在国内被墙了导致装包时速度过慢或者无法安装（请求超时）等问题，更换为豆瓣源可以解决**               
+```
+~ ubuntu@WEB
+(venv) ❯ pip install xlwt
+Collecting xlwt
+  Could not fetch URL https://pypi.python.org/simple/xlwt/: There was a problem confirming the ssl certificate: EOF occurred in violation of protocol (_ssl.c:590) - skipping
+  Could not find a version that satisfies the requirement xlwt (from versions: )
+No matching distribution found for xlwt
+
+~ ubuntu@WEB 6s
+(venv) ❯ pip install xlwt -i https://pypi.douban.com/simple
+Collecting xlwt
+  Using cached https://pypi.doubanio.com/packages/44/48/def306413b25c3d01753603b1a222a011b8621aed27cd7f89cbc27e6b0f4/xlwt-1.3.0-py2.py3-none-any.whl
+Installing collected packages: xlwt
+Successfully installed xlwt-1.3.0
+```
+
+<br>
 <br>
 
-#### 3、构建和分发项目的工具
+#### 4、构建和分发项目的工具
 &emsp;&emsp;如果想要把自己的项目分享出去，放到 PYPI 或者其他托管服务上时，需要使用构建和分发项目工具来实现。除非项目的环境依赖简单到只需要用到 distutils ，否则推荐使用 setuptools 包。
 
 <br>
@@ -121,7 +141,7 @@ Installing setuptools, pip, wheel...done.
 <br>
 
 #### 2、virtualenv 定制化
-**效果实现：在生成虚拟环境 venv 的同时安装 requests 的自定义脚本**     
+**效果实现：在生成虚拟环境 venv 的同时安装 flake8 的自定义脚本**     
 
 （1）让 ubuntu 这个用户对 virtualenv 文件可见，方便直接替换     
 ```
@@ -136,7 +156,7 @@ Installing setuptools, pip, wheel...done.
 ❯
 ```
 
-**如果不改变文件的权限而直接进行定制化脚本的替换，则抛出以下异常：**         
+如果不改变文件的权限而直接进行定制化脚本的替换，则抛出以下异常：                
 ```
 ❯ python web_develop/chapter2/section2/create-venv-script.py
 Updating /usr/local/bin/virtualenv
@@ -182,7 +202,7 @@ virtualenv_path = subprocess.check_output(['which', 'virtualenv']).strip()
 
 EXTRA_TEXT = '''
 def after_install(options, home_dir):
-    subprocess.call(['{}/bin/pip'.format(home_dir), 'install', 'requests'])
+    subprocess.call(['{}/bin/pip'.format(home_dir), 'install', 'flake8'])
 '''
 
 
@@ -220,12 +240,9 @@ Installing setuptools, pip, wheel...done.
 Collecting flake8
 ```
 
-**如果在这过程有任何一环节出现异常，初始化方法如下：**     
+**坑：如果在这过程有任何一环节出现异常，初始化方法如下**     
 （1）使用 `> vagrant halt` 关闭虚拟机     
 （2）进入 VirtualBox 中删除该虚拟机的所有文件    
 （3）重新启动虚拟机 `> vagrant up`     
 （4）重新进行初始化 `> vagrant provision`     
 （5）重新连接虚拟机 `> vagrant ssh`，登录成功后再进行重新操作     
-
-<br>
-<br>
