@@ -104,7 +104,7 @@ pip 需要升级到 9.0.3，否则安装 devpi-server 会有异常：
 Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-M32JbN/importlib-metadata/
 ```
 
-解决方法（pip 升级到 0.0.3 版本）：
+解决方法（pip 升级到 9.0.3 版本）：
 ```
 ❯ pip --version
 pip 8.1.2 from /home/ubuntu/.venvburrito/lib/python2.7/site-packages/pip-8.1.2-py2.7.egg (python 2.7)
