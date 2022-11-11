@@ -18,8 +18,51 @@ tags:
 <br>
 
 ### 一、命令自动补全
+#### 1、查看当前的 shell
+查看当前发行版可以使用的 shell 有哪些：             
+参考：[直达链接](https://blog.csdn.net/Michael177/article/details/124369188)         
+```
+❯ cat /etc/shells
+# /etc/shells: valid login shells
+/bin/sh
+/bin/dash
+/bin/bash
+/bin/rbash
+/usr/bin/tmux
+/usr/bin/screen
+/bin/zsh
+/usr/bin/zsh
+```
+
+<br>
+
+使用一条命令即可查看 ubuntu 系统当前正在使用的 shell：     
+```
+$ ps -ef | grep `echo $$` | grep -v grep | grep -v ps
+```  
+**① bash**     
+```
+❯ bash
+ubuntu@WEB:~$ ps -ef | grep `echo $$` | grep -v grep | grep -v ps
+ubuntu    2217  2150  0 15:04 pts/0    00:00:00 bash
+```
+**② zsh**     
+```
+ubuntu@WEB:~$ zsh
+
+~ ubuntu@WEB
+❯ ps -ef | grep `echo $$` | grep -v grep | grep -v ps
+ubuntu    2240  2217  7 15:05 pts/0    00:00:00 zsh
+ubuntu    2273  2240  0 15:05 pts/9    00:00:00 zsh
+```
+
+
+<br>
+<br>
+
+#### 2、不同 shell 的配置
 **zsh 用户**      
-&emsp;&emsp;pip 支持自动补全功能，zsh 用户可以使用以下命令实现 pip 命令自动补全，如下输入 i + Tab键后自动补全 install：        
+&emsp;&emsp;pip 支持自动补全功能，zsh 用户可以使用以下命令实现 pip 命令自动补全，如下输入 i + Tab键后会自动补全 install：          
 ```
 ❯ zsh
 ❯ pip completion --zsh >> ~/.zprofile    
@@ -44,4 +87,10 @@ ubuntu@WEB:~$ pip i<Tab键>
 <br>
 <br>
 
-### 二、
+### 二、devapi 缓存代理服务器
+&emsp;&emsp;pip 缓存只针对当前的用户，如果公司使用 Python 的规模很大，尤其是有很多自己分发的包时，使用缓存代理服务器可以很大程度提高下载效率，从而不再依赖网络环境到 PYPI 进行下载包了。      
+
+安装 devapi 缓存代理服务器：    
+```
+
+```
