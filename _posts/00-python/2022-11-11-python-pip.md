@@ -17,7 +17,7 @@ tags:
 <br>
 <br>
 
-### 一、命令自动补全
+### 一、pip 命令自动补全
 #### 1、查看当前的 shell
 查看当前发行版可以使用的 shell 有哪些：             
 参考：[直达链接](https://blog.csdn.net/Michael177/article/details/124369188)         
