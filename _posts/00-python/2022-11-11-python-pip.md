@@ -184,3 +184,37 @@ Successfully installed backports-abc-0.5 certifi-2022.9.24 django-1.9.6 singledi
 
 （4）通过 http://127.0.0.1:3141 访问 web       
 ![](\img\in-post\post-python\2022-11-11-python-pip-1.jpg)   
+
+<br>
+<br>
+
+#### 5、长期使用缓存代理服务器
+&emsp;&emsp;临时使用的方法上面已经给出，即在 pip install 后添加 -i http://localhost:3141/root/pypi/。若要长期使用，则需修改本地的 pip.conf 文件。     
+（1）在 ~/.config 下新建一个目录 pip      
+```
+❯ mkdir ~/.config/pip -p
+```
+
+（2）在 pip 目录下新建一个 pip.conf 配置文件并写入以下内容，然后保存                 
+```
+❯ vim ~/.config/pip/pip.conf
+
+~ ubuntu@WEB 1m 9s
+❯ cat ~/.config/pip/pip.conf
+[global]
+index-url = http://localhost:3141/root/pypi/+simple/
+```
+
+（3）启动缓存代理服务器后下载 xlrd     
+配置完成之后，以后的第三方包下载都是从缓存代理获取的，而不是每次都到 PYPI 下载             
+```
+❯ devpi-server --host=0.0.0.0 --start
+❯ sudo pip install xlrd
+The directory '/home/ubuntu/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/home/ubuntu/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Collecting xlrd
+  Downloading http://localhost:3141/root/pypi/+f/6a3/3ee89877bd9ab/xlrd-2.0.1-py2.py3-none-any.whl (96kB)
+    100% |████████████████████████████████| 102kB 38.1MB/s
+Installing collected packages: xlrd
+Successfully installed xlrd-2.0.1
+```
