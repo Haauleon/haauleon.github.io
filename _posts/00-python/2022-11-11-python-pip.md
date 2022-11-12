@@ -218,3 +218,8 @@ Collecting xlrd
 Installing collected packages: xlrd
 Successfully installed xlrd-2.0.1
 ```
+
+<br>
+<br>
+
+### 三、PYPI 的完全镜像    
