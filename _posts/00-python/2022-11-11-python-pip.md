@@ -228,4 +228,4 @@ Successfully installed xlrd-2.0.1
 参考：        
 [使用 bandersnatch 搭建 pypi 本地镜像源（20211026）](https://blog.csdn.net/liurizhou/article/details/120980817)      
 [linux下 使用 bandersnatch 搭建Python pypi本地源](https://blog.csdn.net/becivells/article/details/53024201)     
-[镜像下载](https://www.cnpython.com/qa/1332102#)
+[镜像下载与搭建](https://www.cnpython.com/qa/1332102#)
