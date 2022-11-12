@@ -209,9 +209,7 @@ index-url = http://localhost:3141/root/pypi/+simple/
 配置完成之后，以后的第三方包下载都是从缓存代理获取的，而不是每次都到 PYPI 下载             
 ```
 ❯ devpi-server --host=0.0.0.0 --start
-❯ sudo pip install xlrd
-The directory '/home/ubuntu/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
-The directory '/home/ubuntu/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+❯ pip install xlrd
 Collecting xlrd
   Downloading http://localhost:3141/root/pypi/+f/6a3/3ee89877bd9ab/xlrd-2.0.1-py2.py3-none-any.whl (96kB)
     100% |████████████████████████████████| 102kB 38.1MB/s
