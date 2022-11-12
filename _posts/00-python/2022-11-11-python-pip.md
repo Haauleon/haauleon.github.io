@@ -224,4 +224,5 @@ Successfully installed xlrd-2.0.1
 
 ### 三、PYPI 的完全镜像    
 至少需要准备 1T 以上的硬盘空间，参考：        
-[使用bandersnatch搭建pypi 本地镜像源（20211026）](https://blog.csdn.net/liurizhou/article/details/120980817)
+[使用bandersnatch搭建pypi 本地镜像源（20211026）](https://blog.csdn.net/liurizhou/article/details/120980817)      
+[linux下 使用bandersnatch搭建Python pypi本地源](https://blog.csdn.net/becivells/article/details/53024201)
