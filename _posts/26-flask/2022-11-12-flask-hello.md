@@ -110,3 +110,12 @@ if __name__ == '__main__':
     &emsp;&emsp;执行 app.run 就可以启动服务了。默认 Flask 只监听虚拟机的本地 127.0.0.1 这个地址，端口为 5000。而这里对虚拟机做的端口转发是 9000，所以需要指定 host 和 port 参数。 0.0.0.0 表示监听所有地址，这样就可以在本机进行访问了。      
     &emsp;&emsp;服务器启动后，会调用 werkzeug.serving.run_simple 进入轮询，默认使用单进程单线程的 werkzeug.serving.BaseWSGIServer 处理请求，实际上还是使用标准库 BaseHTTPServer.HTTPServer，通过 select.select 做 0.5 秒的 `while True` 的时间轮询。        
     &emsp;&emsp;当我们访问 http://127.0.0.1:9000 ，通过 app.url_map 找到注册的 `/` 这个 URL 模式，就找到了对应的 hello_world 函数并执行，返回 `Hello World!`，状态码为 200。如果访问一个不存在的路径，如 http://127.0.0.1:9000/a ，此时 Flask 找不到对应的模式，就会向浏览器返回 `Not Found`，状态码是 404。
+
+<br>
+<br>
+
+#### 3、app.run
+&emsp;&emsp;默认的 app.run 的启动方式只合适调试，不要在生产环境中使用，生产环境应该使用 Gunicorn 或者uWSGI。       
+
+参考：    
+[gunicorn部署flask项目简单示例](https://blog.csdn.net/feng_1_ying/article/details/107469379)
