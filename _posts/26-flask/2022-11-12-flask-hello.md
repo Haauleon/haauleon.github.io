@@ -21,7 +21,7 @@ tags:
 ### Hello World
 环境准备：     
 Python 2.7.11+      
-pip==9.0.3 
+pip==9.0.3     
 flask==0.12.1           
 
 ```
