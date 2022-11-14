@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Flask Web | app.run 调试模式"
+title:         "Flask Web | app.run调试模式"
 subtitle:      "启用 app.run 的调试模式并使用 PIN 码"
 author:        "Haauleon"
 header-style:  text
@@ -52,14 +52,6 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9000)
 ```
 
-控制台输入：    
-```
- * Restarting with stat
- * Debugger is active!
- * Debugger PIN: 150-759-644
- * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)
-```
-
 <br>
 <br>
 
@@ -80,21 +72,13 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9000, debug=True)
 ```
 
-控制台输入：    
-```
- * Restarting with stat
- * Debugger is active!
- * Debugger PIN: 150-759-644
- * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)
-```
-
 <br>
 <br>
 
 ### 三、认识 PIN 码
 &emsp;&emsp;需要注意，开启调试模式会成为一个巨大的安全隐患，因此它决不能用于生产环境中。      
 
-&emsp;&emsp;Werkzeug 从 0.11 版本开始默认启用了 PIN （全称 Personal Identification Number）码的身份验证，旨在让调试环境下的攻击者更难利用调试器。启动程序时可以看到类似的启动提示：     
+&emsp;&emsp;Werkzeug 从 0.11 版本开始默认启用了 PIN （全称 Personal Identification Number）码的身份验证，旨在让调试环境下的 Hacker 更难利用调试器。启动程序时可以看到类似的启动提示：     
 ```
  * Restarting with stat
  * Debugger is active!
