@@ -48,4 +48,4 @@ Requires: itsdangerous, click, Werkzeug, Jinja2
 <br>
 
 #### 1、Flask 内置配置变量
-app.config 内置的全部配置变量可以参看：[官方文档](https://flask.palletsprojects.com/en/2.2.x/config/)
+app.config 内置的全部配置变量可以参考：[官方文档](https://flask.palletsprojects.com/en/2.2.x/config/)
