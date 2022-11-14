@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Flask Web | Flask 调试模式"
-subtitle:      "app.run 启用调试模式并使用 PIN 码让调试环境下的攻击者更难利用调试器"
+subtitle:      "启用调试模式并使用 PIN 码让 Hacker 在调试环境下更难利用调试器"
 author:        "Haauleon"
 header-style:  text
 catalog:       true
