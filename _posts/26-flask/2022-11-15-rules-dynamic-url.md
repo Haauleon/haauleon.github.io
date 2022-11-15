@@ -76,4 +76,65 @@ if __name__ == '__main__':
 ```
 
 &emsp;&emsp;其中，`@app.route('/item/<id>')` 尖括号中的内容是动态的，凡是匹配到 /item/ 前缀的 URL 都会被映射到这个路由上，在内部把 id 作为参数而获得。     
-&emsp;&emsp;它使用了特殊的字段标记 <variable_name> ，默认类型是字符串，也就是说我们在浏览器输入的字符会被当做是字符串传给对应的 item() 函数进行处理。
+&emsp;&emsp;它使用了特殊的字段标记 `<variable_name>` ，默认类型是字符串，也就是说我们在浏览器输入的字符会被当做是字符串传给对应的 item() 函数进行处理。   
+
+<br>
+<br>
+
+### 二、指定参数类型
+如果需要指定参数类型，需要标记成 `<converter:variable_name>` 这样的格式， converter 有以下几种：      
+
+|converter|释义|
+|----|----|
+|string|接受任何没有斜杠 `/` 的文本（不指定类型时默认是字符串类型）|
+|int|接受整数|
+|float|同 int，但是接受浮点数|
+|path|和默认的详细，但也接受斜杆 `/`|
+|uuid|只接受 uuid 字符串|
+|any|可以指定多种路径，但是需要传入参数|
+
+<br>
+
+#### 1、指定 any 类型
+**any 类型代码片段：**       
+```python
+# coding=utf-8
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route('/item/<any(a,b):id>')
+def item(id):
+    return 'item: {}'.format(id)
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=9000, debug=True)
+```
+
+&emsp;&emsp;如上，在浏览器中访问 http://127.0.0.1/item/a 和访问 http://127.0.0.1/item/b 都符合这个规则，访问 http://127.0.0.1/item/a 则返回 `item: a`，访问 http://127.0.0.1/item/b 则返回 `item: b`。    
+
+<br>
+<br>
+
+### 三、参数传递
+&emsp;&emsp;如果不希望定制子路径，还可以通过传递参数的方式，需要导入 request：             
+```python
+# coding=utf-8
+from flask import Flask, request
+
+app = Flask(__name__)
+
+
+@app.route('/item/')
+def item():
+    id = request.args.get('id')
+    return 'item: {}'.format(id)
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=9000, debug=True)
+```
+
+&emsp;&emsp;如上，在浏览器中访问 http://127.0.0.1/item/?id=1 则返回 `item: 1`。
