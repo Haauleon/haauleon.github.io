@@ -82,15 +82,14 @@ if __name__ == '__main__':
 
 ```
 
+<br>
+
 执行结果如下：    
-1. 访问 http://127.0.0.1:9000/list1/a+b+c+d+e       
-    返回 `Separator: + [u'a', u'b', u'c', u'd', u'e']`   
+1. `访问 http://127.0.0.1:9000/list1/a+b+c+d+e`          
     ![](\img\in-post\post-flask\2022-11-15-url-translator-custom-2.jpg)   
 
-2. 访问 http://127.0.0.1:9000/list2/a|b|c|d|e       
-    返回 `Separator: | [u'a', u'b', u'c', u'd', u'e']`      
+2. `访问 http://127.0.0.1:9000/list2/a|b|c|d|e`                 
     ![](\img\in-post\post-flask\2022-11-15-url-translator-custom-3.jpg)  
 
-3. 访问 http://127.0.0.1:9000/list3/a b c d e      
-    返回 `Separator: [u'a', u'b', u'c', u'd', u'e']`    
+3. `访问 http://127.0.0.1:9000/list3/a b c d e`            
     ![](\img\in-post\post-flask\2022-11-15-url-translator-custom-4.jpg)  
