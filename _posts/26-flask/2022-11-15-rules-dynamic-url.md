@@ -58,7 +58,7 @@ if __name__ == '__main__':
 <br>
 
 #### 2、URL 抽象写法
-&emsp;&emsp;如上所述，如果不抽象，那么当 /item/ 后拼接多少个不同的 id 时，就要写多少个符合此 id 的 URL 和视图函数，这样的代码既不简洁也不美观。正确的用法如下：      
+&emsp;&emsp;如上所述，如果不抽象，那么当 /item/ 后拼接多少个不同的 id 时，就要写多少个符合此 id 的 URL 和视图函数，这样的代码既不简洁也不美观。正确的写法如下：      
 ```python
 # coding=utf-8
 from flask import Flask
