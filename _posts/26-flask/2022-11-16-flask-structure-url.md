@@ -22,7 +22,6 @@ tags:
 &emsp;&emsp;用 url_for 构建 URL，它接受函数名作为第一个参数，也接受对应 URL 规则的变量部分的命名参数，未知的变量部分会添加到 URL 末尾作为查询参数。 
 
 <br>
-<br>
 
 #### 1、url_for 基本用法
 &emsp;&emsp;test_request_context 可以帮助我们在交互模式下产生请求上下文。     
