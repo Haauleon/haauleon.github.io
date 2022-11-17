@@ -132,7 +132,7 @@ except ImportError:
 ```
 
 代码分析：      
-（1）      
+（1）         
 ```python
 from local_settings import *
 ```       
@@ -180,5 +180,124 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9000, debug=app.debug)
 ```
 
-代码分析：    
-1. ``
+代码分析：     
+（1）       
+```python
+app.config.from_object('config')
+```
+&emsp;&emsp;向 app.config 加载配置文件 config.py 中的全部内容。     
+
+（2）     
+```python
+@app.route('/people/')
+```
+&emsp;&emsp;访问 `http://127.0.0.1/people` 的请求会被 308 跳转至 `http://127.0.0.1/people/`，保证了 URL 的唯一性。     
+
+（3）      
+```python
+user_agent = request.headers.get('User-Agent')
+```
+&emsp;&emsp;request.headers 存放了请求头的头部信息，通过它可以获取 UA 值。     
+
+（4）      
+```python
+@app.route('/login/', methods=['GET', 'POST'])
+```
+&emsp;&emsp;request.methods 的值是请求的类型，表示可以使用 POST 请求。      
+
+（5）      
+```python
+abort(401)
+```
+&emsp;&emsp;执行 abort(401) 会放弃请求并返回错误代码 401，表示禁止访问。之后的语句永远不会被执行。如下图所示：      
+![](\img\in-post\post-flask\2022-11-17-flask-1-url-redirect-3.jpg)        
+
+（6）       
+```python
+app.run(host='0.0.0.0', port=9000, debug=app.debug)
+```
+&emsp;&emsp;能使用 `debug=app.debug` 是因为 flask.config.ConfigAttribute 在 app 中做了配置的代理，app.debug 其实就是 `app.config['DEBUG']` 且默认值是 True。目前的配置代理项有：     
+```
+app.debug -> DEBUG
+app.testing -> TESTING
+app.secret_key -> SECRET_KEY
+app.session_cookie_name -> SESSION_COOKIE_NAME
+app.permanent_session_lifetime -> PERMANENT_SESSION_LIFETIME
+app.use_x_sendfile -> USE_X_SENDFILE
+app.logger_name -> LOGGER_NAME
+```
+
+<br>
+<br>
+
+#### 3、flask.config.ConfigAttribute
+&emsp;&emsp;安装了 flask 之后，进入 flask\app.py 文件中可看到以下配置键且均设置了默认值（在 default_config 中设置默认值）：      
+```python
+class Flask(_PackageBoundObject):
+    ......
+    config_class = Config
+    debug = ConfigAttribute('DEBUG')
+    testing = ConfigAttribute('TESTING')
+    secret_key = ConfigAttribute('SECRET_KEY')
+    session_cookie_name = ConfigAttribute('SESSION_COOKIE_NAME')
+    permanent_session_lifetime = ConfigAttribute('PERMANENT_SESSION_LIFETIME',
+        get_converter=_make_timedelta)
+    send_file_max_age_default = ConfigAttribute('SEND_FILE_MAX_AGE_DEFAULT',
+        get_converter=_make_timedelta)
+    use_x_sendfile = ConfigAttribute('USE_X_SENDFILE')
+    logger_name = ConfigAttribute('LOGGER_NAME')
+    ......
+    default_config = ImmutableDict({
+        'DEBUG':                                get_debug_flag(default=False),
+        'TESTING':                              False,
+        'PROPAGATE_EXCEPTIONS':                 None,
+        'PRESERVE_CONTEXT_ON_EXCEPTION':        None,
+        'SECRET_KEY':                           None,
+        'PERMANENT_SESSION_LIFETIME':           timedelta(days=31),
+        'USE_X_SENDFILE':                       False,
+        'LOGGER_NAME':                          None,
+        'LOGGER_HANDLER_POLICY':               'always',
+        'SERVER_NAME':                          None,
+        'APPLICATION_ROOT':                     None,
+        'SESSION_COOKIE_NAME':                  'session',
+        'SESSION_COOKIE_DOMAIN':                None,
+        'SESSION_COOKIE_PATH':                  None,
+        'SESSION_COOKIE_HTTPONLY':              True,
+        'SESSION_COOKIE_SECURE':                False,
+        'SESSION_REFRESH_EACH_REQUEST':         True,
+        'MAX_CONTENT_LENGTH':                   None,
+        'SEND_FILE_MAX_AGE_DEFAULT':            timedelta(hours=12),
+        'TRAP_BAD_REQUEST_ERRORS':              False,
+        'TRAP_HTTP_EXCEPTIONS':                 False,
+        'EXPLAIN_TEMPLATE_LOADING':             False,
+        'PREFERRED_URL_SCHEME':                 'http',
+        'JSON_AS_ASCII':                        True,
+        'JSON_SORT_KEYS':                       True,
+        'JSONIFY_PRETTYPRINT_REGULAR':          True,
+        'JSONIFY_MIMETYPE':                     'application/json',
+        'TEMPLATES_AUTO_RELOAD':                None,
+    })
+```
+
+<br>
+
+&emsp;&emsp;再转到 flask\config.py 文件中可看到 ConfigAttribute 类的作用其实就是将属性转发到配置，所以上述 `app.run(host='0.0.0.0', port=9000, debug=app.debug)` 中的 `debug=app.debug` 也就等同于 `debug=app.config['DEBUG']`，由于 `app.config['DEBUG']` 默认值是 False ，所以 `debug=app.debug` 最终等于 `debug=False`：      
+```python
+class ConfigAttribute(object):
+    """Makes an attribute forward to the config"""
+
+    def __init__(self, name, get_converter=None):
+        self.__name__ = name
+        self.get_converter = get_converter
+
+    def __get__(self, obj, type=None):
+        if obj is None:
+            return self
+        rv = obj.config[self.__name__]
+        if self.get_converter is not None:
+            rv = self.get_converter(rv)
+        return rv
+
+    def __set__(self, obj, value):
+        obj.config[self.__name__] = value
+```
