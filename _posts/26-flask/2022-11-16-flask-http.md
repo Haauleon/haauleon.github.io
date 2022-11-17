@@ -19,6 +19,11 @@ tags:
 <br>
 
 ### 一、HTTP 方法
+环境准备：     
+Python 2.7.11+      
+pip==9.0.3     
+flask==0.11.1   
+
 &emsp;&emsp;HTTP 有多个访问 URL 方法，默认情况下，路由只回应 GET 请求，但是通过 app.route 装饰器传递 methods 参数可以改变这个行为。如下使用 `methods=['GET', 'POST']` 可以实现既支持 GET 请求也支持 POST 请求：           
 ```python
 # -*- coding: utf-8 -*-#

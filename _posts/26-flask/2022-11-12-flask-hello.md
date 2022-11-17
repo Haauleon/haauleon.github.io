@@ -22,7 +22,7 @@ tags:
 环境准备：     
 Python 2.7.11+      
 pip==9.0.3     
-flask==0.12.1           
+flask==0.11.1           
 
 ```
 ❯ python --version
@@ -35,13 +35,13 @@ pip 9.0.3 from /usr/local/lib/python2.7/dist-packages (python 2.7)
 ~/web_develop master* ⇣ ubuntu@WEB
 ❯ pip show Flask
 Name: Flask
-Version: 0.12.1
+Version: 0.11.1
 Summary: A microframework based on Werkzeug, Jinja2 and good intentions
 Home-page: http://github.com/pallets/flask/
 Author: Armin Ronacher
 Author-email: armin.ronacher@active-4.com
 License: BSD
-Location: /usr/local/lib/python2.7/dist-packages
+Location: d:\python27\lib\site-packages
 Requires: itsdangerous, click, Werkzeug, Jinja2
 ```
 

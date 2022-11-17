@@ -22,9 +22,9 @@ tags:
 环境准备：     
 Python 2.7.11+      
 pip==9.0.3     
-flask==0.12.1           
+flask==0.11.1            
 
-&emsp;&emsp;复杂的项目需要配置各种环境，app.config 内置的全部配置变量可以参考：[官方文档](https://flask.palletsprojects.com/en/0.12.x/config/)，先打印看看 flask 的 0.12.1 版本提供的内置配置变量有哪些：        
+&emsp;&emsp;复杂的项目需要配置各种环境，app.config 内置的全部配置变量可以参考：[官方文档](https://flask.palletsprojects.com/en/0.12.x/config/)，先打印看看 flask 的 0.11.1 版本提供的内置配置变量有哪些：        
 ```python
 # coding=utf-8
 from flask import Flask

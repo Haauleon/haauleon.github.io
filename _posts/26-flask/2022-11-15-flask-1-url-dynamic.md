@@ -22,7 +22,7 @@ tags:
 环境准备：     
 Python 2.7.11+      
 pip==9.0.3     
-flask==0.12.1    
+flask==0.11.1    
 
 <br>
 
