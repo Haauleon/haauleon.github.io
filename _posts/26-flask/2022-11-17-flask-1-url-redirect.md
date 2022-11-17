@@ -113,3 +113,72 @@ if __name__ == '__main__':
 
 相关链接：      
 [浅析 http 状态码 301、302、303、307、308 区别及对 SEO 优化网址 URL 劫持的影响](http://t.zoukankan.com/goloving-p-14087235.html)
+
+<br>
+<br>
+
+### 三、应用代码分析
+#### 1、配置文件
+`config.py` 配置文件内容：     
+```python 
+# coding=utf-8
+# file: config.py 
+DEBUG = False
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
+```
+
+代码分析：      
+（1）      
+```python
+from local_settings import *
+```       
+&emsp;&emsp;local_settings.py 文件时可选存在的，它不进入版本库。若在 local_settings.py 文件中添加了设置项，则这些设置项会全部被添加进配置文件 config.py 中。注意：这是常用的通过本地配置文件重载版本库配置的方法！
+
+<br>
+<br>
+
+#### 2、应用文件
+`simple.py` 文件内容：     
+```python
+# coding=utf-8
+# file: simple.py 
+from flask import Flask, request, abort, redirect, url_for
+
+app = Flask(__name__)
+app.config.from_object('config')
+
+
+@app.route('/people/')
+def people():
+    name = request.args.get('name')
+    if not name:
+        return redirect(url_for('login'))
+    user_agent = request.headers.get('User-Agent')
+    return 'Name: {0}; UA: {1}'.format(name, user_agent)
+
+
+@app.route('/login/', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        user_id = request.headers.get('user_id')
+        return 'User: {} login'.format(user_id)
+    else:
+        return 'Open Login page'
+
+
+@app.route('/secret/')
+def secret():
+    abort(401)
+    print 'This is never executed'
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=9000, debug=app.debug)
+```
+
+代码分析：    
+1. ``
