@@ -216,7 +216,7 @@ abort(401)
 ```python
 app.run(host='0.0.0.0', port=9000, debug=app.debug)
 ```
-&emsp;&emsp;能使用 `debug=app.debug` 是因为 flask.config.ConfigAttribute 在 app 中做了配置的代理，app.debug 其实就是 `app.config['DEBUG']` 且默认值是 True。目前的配置代理项有：     
+&emsp;&emsp;能使用 `debug=app.debug` 是因为 flask.config.ConfigAttribute 在 app 中做了配置的代理，app.debug 其实就是 `app.config['DEBUG']` 且默认值是 False（可以通过打印 `print app.debug` 进行验证）。目前的配置代理项有：     
 ```
 app.debug -> DEBUG
 app.testing -> TESTING
@@ -281,7 +281,7 @@ class Flask(_PackageBoundObject):
 
 <br>
 
-&emsp;&emsp;再转到 flask\config.py 文件中可看到 ConfigAttribute 类的作用其实就是将属性转发到配置，所以上述 `app.run(host='0.0.0.0', port=9000, debug=app.debug)` 中的 `debug=app.debug` 也就等同于 `debug=app.config['DEBUG']`，由于 `app.config['DEBUG']` 默认值是 False ，所以 `debug=app.debug` 最终等于 `debug=False`：      
+&emsp;&emsp;再转到 flask\config.py 文件中可看到 ConfigAttribute 类的作用其实就是将属性转发到配置。所以上述 `app.run(host='0.0.0.0', port=9000, debug=app.debug)` 中的 `debug=app.debug` 也就等同于 `debug=app.config['DEBUG']`，由于 `app.config['DEBUG']` 默认值是 False ，所以 `debug=app.debug` 最终等于 `debug=False`：      
 ```python
 class ConfigAttribute(object):
     """Makes an attribute forward to the config"""
