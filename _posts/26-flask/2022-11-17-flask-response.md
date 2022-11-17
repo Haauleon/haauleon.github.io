@@ -212,6 +212,18 @@ if __name__ == '__main__':
         ]
     }
     ```
-    
+
 <br>
 <br>
+
+#### 3、使用 httpie 发送请求
+&emsp;&emsp; httpie 是一个使用 Python 编写的，提供了语法高亮、JSON 支持，可以替代 curl 在命令行下请求数据的工具，它也可以很方便地集成到 Python 项目中。      
+
+（1）安装 httpie      
+```
+pip install httpie==0.9.4
+```
+
+（2）使用 httpie     
+打开终端，请求 http://127.0.0.1:9000/headers2，结果如下：     
+![](\img\in-post\post-flask\2022-11-17-flask-response.jpg)               
