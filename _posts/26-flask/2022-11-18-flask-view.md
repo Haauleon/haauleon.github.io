@@ -118,4 +118,9 @@ class BaseView(View):
 ```python
 app.add_url_rule('/users', view_func=UserView.as_view('userview'))
 ```
-&emsp;&emsp;app.add_url_rule 的作用跟 app.route 是一样的，都是用来绑定 URL 和视图函数的路由关系。
+&emsp;&emsp;app.add_url_rule 的作用跟 app.route 是一样的，都是用来绑定 URL 和视图函数的路由关系，这里就是将 /users （自定义的 URL）和 userview （自定义的函数名）绑定在一起。    
+
+<br>
+<br>
+
+#### 2、基于调度方法的视图
