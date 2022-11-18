@@ -53,8 +53,6 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9000, debug=True)
 ```
 
-<br>
-
 执行结果如下：    
 ```
 /item/1/
