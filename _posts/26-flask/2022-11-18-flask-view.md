@@ -91,8 +91,7 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000, debug=True)
 ```
 
-执行结果如下：    
-GET http://127.0.0.1:3000/users       
+访问 GET http://127.0.0.1:3000/users 的执行结果如下：          
 ```
 HTTP/1.0 200 OK
 Content-Length: 172
