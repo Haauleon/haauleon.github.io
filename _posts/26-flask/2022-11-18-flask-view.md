@@ -296,3 +296,8 @@ app.add_url_rule('/users/', view_func=UserAPI.as_view('users'))
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 ```
+
+<br>
+
+相关链接：    
+[关于 Flask 高级视图 —— 装饰器修饰视图的方法](https://blog.csdn.net/qq_55961861/article/details/126538113)
