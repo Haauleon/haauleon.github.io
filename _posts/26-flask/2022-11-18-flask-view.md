@@ -279,7 +279,7 @@ def user_required(f):
 
 
 class UserAPI(MethodView):
-    decorator = [user_required]
+    decorator = [user_required]  # 在继承 MethodView 的类中添加 decorator 属性来实现对视图的装饰
 
     def get(self):
         return jsonify({
