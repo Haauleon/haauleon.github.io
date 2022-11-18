@@ -208,6 +208,9 @@ if __name__ == '__main__':
 
 <br>
 
+相关链接：    
+[flask 即插视图(Pluggable Views) 和 endpoint](https://www.cnblogs.com/piperck/p/6060505.html)
+
 #### 1、对视图的装饰
 ###### （1）装饰 as_view 的返回值
 &emsp;&emsp;通过装饰 as_view 的返回值来实现对视图的装饰功能，常用于权限的检查、登录验证等。     
