@@ -29,8 +29,9 @@ flask==0.11.1
 &emsp;&emsp;即插视图是使用视图功能的另一种方式，不同于函数的通用视图方式，它的灵感来自于 Django 的基于类，而这样的视图方式就可以支持类的继承这一特性，也便于代码后期维护。它有两种视图类型，分别是 `标准视图` 和 `基于调度方法的视图`。     
 
 <br>
+<br>
 
-#### 1、标准视图
+### 二、标准视图
 &emsp;&emsp;标准视图需要继承 flask.views.View，将类 UserView 使用 as_view 作为视图函数，设置一个视图函数名 userview 之后与 /users 的 URL 规则绑定在一起。基础类 BaseView 继承即插视图类 View 并实现自己的 dispatch_request 方法，在执行这个视图的时候会执行 dispatch_request 方法，这样就可以灵活运用这个特性。所以，使用标准视图时必须要自己实现 dispatch_request。          
 
 模板文件 chapter3/section1/users.html 的内容如下：    
@@ -150,7 +151,7 @@ app.add_url_rule('/users', view_func=UserView.as_view('userview'))
 <br>
 <br>
 
-#### 2、基于调度方法的视图
+### 三、基于调度方法的视图
 &emsp;&emsp;flask.views.MethodView 对每个 HTTP 方法执行不同的函数（映射到对应方法的小写的同名方法上），如实现了 get() 方法，则在发送 GET 请求时将会执行 get() 方法的代码块，这对 RESTful API 尤其有用。这里没有重写 dispatch_request 方法，意味着会调用继承自 MethodView 的 dispatch_request 方法，在请求指定的 HTTP 方法时执行对应的函数。            
 ```python
 # coding=utf-8
@@ -206,10 +207,9 @@ if __name__ == '__main__':
     ```
 
 <br>
-<br>
 
-### 二、对视图的装饰
-#### 1、装饰 as_view 的返回值
+#### 1、对视图的装饰
+###### （1）装饰 as_view 的返回值
 &emsp;&emsp;通过装饰 as_view 的返回值来实现对视图的装饰功能，常用于权限的检查、登录验证等。     
 ```python
 def user_required(f):
@@ -226,7 +226,7 @@ app.add_url_rule('/users/', view_func=view)
 <br>
 <br>
 
-#### 2、添加 decorator 属性
+###### （2）添加 decorator 属性
 &emsp;&emsp;从 Flask 0.8 开始，还可以通过在继承 MethodView 的类中添加 decorator 属性来实现对视图的装饰。      
 ```python
 class UserAPI(MethodView):
