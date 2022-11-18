@@ -53,6 +53,8 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9000, debug=True)
 ```
 
+<br>
+
 执行结果如下：    
 ```
 /item/1/
@@ -99,6 +101,8 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9000, debug=True)
 
 ```
+
+<br>
 
 执行结果如下：     
 1. 访问 `http://127.0.0.1:9000/item` 时，页面会被重定向至 `http://127.0.0.1:9000/hello/cheng/`     

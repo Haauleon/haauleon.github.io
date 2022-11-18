@@ -52,6 +52,8 @@ if __name__ == '__main__':
 
 ```
 
+<br>
+
 执行结果如下：    
 &emsp;&emsp;访问 `GET http://127.0.0.1:9000/help` 后页面会自动跳转至新的页面 `GET http://127.0.0.1:9000/help2`。        
 
@@ -83,6 +85,8 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9000, debug=True)
 
 ```
+
+<br>
 
 执行结果如下：    
 &emsp;&emsp;访问 `GET http://127.0.0.1:9000/index` 后页面会自动跳转至新的页面 `GET http://127.0.0.1:9000/index2/?id=2`。        
@@ -136,6 +140,8 @@ except ImportError:
     pass
 ```
 
+<br>
+
 代码分析：      
 （1）         
 ```python
@@ -184,6 +190,8 @@ def secret():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9000, debug=app.debug)
 ```
+
+<br>
 
 代码分析：     
 （1）       

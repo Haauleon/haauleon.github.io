@@ -45,6 +45,8 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9000, debug=True)
 ```
 
+<br>
+
 执行结果如下：     
 &emsp;&emsp;上述 URL 路径很像一个文件系统中的文件夹路径。在浏览器窗口输入 `http://127.0.0.1:9000/index` 后会被重定向到带 `/` 的规范的 URL ``http://127.0.0.1:9000/index/` 上，这样有助于避免搜索引擎索引同一个页面两次。     
 
@@ -69,6 +71,8 @@ def home():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9000, debug=True)
 ```
+
+<br>
 
 执行结果如下：     
 &emsp;&emsp;上述 URL 路径很像一个文件的路径。在浏览器窗口输入 `http://127.0.0.1:9000/home/` 后会产生一个 404（Not Found）错误。      
