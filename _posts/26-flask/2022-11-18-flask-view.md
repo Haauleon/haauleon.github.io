@@ -211,19 +211,47 @@ if __name__ == '__main__':
 相关链接：    
 [flask 即插视图(Pluggable Views) 和 endpoint](https://www.cnblogs.com/piperck/p/6060505.html)
 
+<br>
+
 #### 1、对视图的装饰
 ###### （1）装饰 as_view 的返回值
 &emsp;&emsp;通过装饰 as_view 的返回值来实现对视图的装饰功能，常用于权限的检查、登录验证等。     
 ```python
+# coding=utf-8
+from flask import Flask, jsonify, abort
+from flask.views import MethodView
+
+app = Flask(__name__)
+
+
 def user_required(f):
+    """定义一个装饰器用来装饰视图"""
+
     def decorator(*args, **kwargs):
-        if not g,user:
+        if not g.user:
             abort(401)
         return f(*args, **kwargs)
+
     return decorator
 
-view = user_required(UserAPI.as_view('users'))
+
+class UserAPI(MethodView):
+
+    def get(self):
+        return jsonify({
+            'username': 'fake',
+            'avatar': 'https://gfs17.gomein.net.cn/T1ATE5BTJv1RCvBVdK_450.jpg'
+        })
+
+    def post(self):
+        return 'UNSUPPORTED!'
+
+
+view = user_required(UserAPI.as_view('users'))  # 装饰 as_view 的返回值来实现对视图的装饰功能
 app.add_url_rule('/users/', view_func=view)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
 ```
 
 <br>
@@ -232,6 +260,39 @@ app.add_url_rule('/users/', view_func=view)
 ###### （2）添加 decorator 属性
 &emsp;&emsp;从 Flask 0.8 开始，还可以通过在继承 MethodView 的类中添加 decorator 属性来实现对视图的装饰。      
 ```python
+# coding=utf-8
+from flask import Flask, jsonify, abort
+from flask.views import MethodView
+
+app = Flask(__name__)
+
+
+def user_required(f):
+    """定义一个装饰器用来装饰视图"""
+
+    def decorator(*args, **kwargs):
+        if not g.user:
+            abort(401)
+        return f(*args, **kwargs)
+
+    return decorator
+
+
 class UserAPI(MethodView):
     decorator = [user_required]
+
+    def get(self):
+        return jsonify({
+            'username': 'fake',
+            'avatar': 'https://gfs17.gomein.net.cn/T1ATE5BTJv1RCvBVdK_450.jpg'
+        })
+
+    def post(self):
+        return 'UNSUPPORTED!'
+
+
+app.add_url_rule('/users/', view_func=UserAPI.as_view('users'))
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
 ```
