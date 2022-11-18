@@ -31,7 +31,17 @@ flask==0.11.1
 <br>
 
 #### 1、标准视图
-&emsp;&emsp;标准视图需要继承 flask.views.View，将类 UserView 使用 as_view 作为视图函数，设置一个视图函数名 userview 之后与 /users 的 URL 规则绑定在一起。基础类 BaseView 继承即插视图类 View 并实现自己的 dispatch_request 方法，在执行这个视图的时候会执行 dispatch_request 方法，这样就可以灵活运用这个特性。所以，使用标准视图时必须要自己实现 dispatch_request。       
+&emsp;&emsp;标准视图需要继承 flask.views.View，将类 UserView 使用 as_view 作为视图函数，设置一个视图函数名 userview 之后与 /users 的 URL 规则绑定在一起。基础类 BaseView 继承即插视图类 View 并实现自己的 dispatch_request 方法，在执行这个视图的时候会执行 dispatch_request 方法，这样就可以灵活运用这个特性。所以，使用标准视图时必须要自己实现 dispatch_request。          
+
+模板文件 chapter3/section1/users.html 的内容如下：    
+```html
+{% for user in users %}
+<p>{{ user.username }}</p>
+<img src="{{ user.avatar }}"></img>
+{% endfor %}
+```
+
+执行文件的内容如下：      
 ```python
 # coding=utf-8
 from flask import Flask, request, render_template
@@ -79,6 +89,10 @@ app.add_url_rule('/users', view_func=UserView.as_view('userview'))
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000, debug=True)
 ```
+
+执行结果如下：    
+
+
 
 <br>
 
