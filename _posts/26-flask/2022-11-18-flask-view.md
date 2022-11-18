@@ -91,7 +91,20 @@ if __name__ == '__main__':
 ```
 
 执行结果如下：    
+GET http://127.0.0.1:3000/users       
+```
+HTTP/1.0 200 OK
+Content-Length: 172
+Content-Type: text/html; charset=utf-8
+Date: Fri, 18 Nov 2022 08:33:57 GMT
+Server: Werkzeug/0.11.10 Python/2.7.11
 
+<p>fake</p>
+<img src="https://gfs17.gomein.net.cn/T1ATE5BTJv1RCvBVdK_450.jpg"></img>
+
+<p>niko</p>
+<img src="https://gfs17.gomein.net.cn/T1ATE5BTJv1RCvBVdK_450.jpg"></img>
+```
 
 
 <br>
@@ -138,3 +151,84 @@ app.add_url_rule('/users', view_func=UserView.as_view('userview'))
 <br>
 
 #### 2、基于调度方法的视图
+&emsp;&emsp;flask.views.MethodView 对每个 HTTP 方法执行不同的函数（映射到对应方法的小写的同名方法上），如实现了 get() 方法，则在发送 GET 请求时将会执行 get() 方法的代码块，这对 RESTful API 尤其有用。这里没有重写 dispatch_request 方法，意味着会调用继承自 MethodView 的 dispatch_request 方法，在请求指定的 HTTP 方法时执行对应的函数。            
+```python
+# coding=utf-8
+from flask import Flask, jsonify
+from flask.views import MethodView
+
+app = Flask(__name__)
+
+
+class UserAPI(MethodView):
+
+    def get(self):
+        return jsonify({
+            'username': 'fake',
+            'avatar': 'https://gfs17.gomein.net.cn/T1ATE5BTJv1RCvBVdK_450.jpg'
+        })
+
+    def post(self):
+        return 'UNSUPPORTED!'
+
+
+app.add_url_rule('/user', view_func=UserAPI.as_view('userview'))
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+```
+
+<br>
+
+执行结果如下：    
+1. 访问 GET HTTP://127.0.0.1:5000/user        
+    ```
+    HTTP/1.0 200 OK
+    Content-Length: 172
+    Content-Type: text/html; charset=utf-8
+    Date: Fri, 18 Nov 2022 08:33:57 GMT
+    Server: Werkzeug/0.11.10 Python/2.7.11
+
+    <p>fake</p>
+    <img src="https://gfs17.gomein.net.cn/T1ATE5BTJv1RCvBVdK_450.jpg"></img>
+
+    <p>niko</p>
+    <img src="https://gfs17.gomein.net.cn/T1ATE5BTJv1RCvBVdK_450.jpg"></img>
+    ```
+2. 访问 POST HTTP://127.0.0.1:5000/user      
+    ```
+    HTTP/1.0 200 OK
+    Content-Type: text/html; charset=utf-8
+    Date: Fri, 18 Nov 2022 09:47:56 GMT
+    Server: Werkzeug/0.11.10 Python/2.7.11
+
+    UNSUPPORTED!
+    ```
+
+<br>
+<br>
+
+### 二、对视图的装饰
+#### 1、装饰 as_view 的返回值
+&emsp;&emsp;通过装饰 as_view 的返回值来实现对视图的装饰功能，常用于权限的检查、登录验证等。     
+```python
+def user_required(f):
+    def decorator(*args, **kwargs):
+        if not g,user:
+            abort(401)
+        return f(*args, **kwargs)
+    return decorator
+
+view = user_required(UserAPI.as_view('users'))
+app.add_url_rule('/users/', view_func=view)
+```
+
+<br>
+<br>
+
+#### 2、添加 decorator 属性
+&emsp;&emsp;从 Flask 0.8 开始，还可以通过在继承 MethodView 的类中添加 decorator 属性来实现对视图的装饰。      
+```python
+class UserAPI(MethodView):
+    decorator = [user_required]
+```
