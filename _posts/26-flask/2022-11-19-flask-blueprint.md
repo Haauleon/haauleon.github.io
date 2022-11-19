@@ -243,3 +243,9 @@ if __name__ == '__main__':
 
     /admin/new
     ```
+
+<br>
+<br>
+
+相关链接：    
+[Flask 蓝图](https://blog.csdn.net/weixin_41973615/article/details/82252501)
