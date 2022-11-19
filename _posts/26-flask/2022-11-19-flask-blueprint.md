@@ -97,7 +97,7 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9000)
 ```
 
-执行主程序，访问结果结果：     
+执行主程序，访问结果如下：     
 1. 访问 GET http://127.0.0.1:9000/user/          
     ```
     HTTP/1.0 200 OK
@@ -109,12 +109,12 @@ if __name__ == '__main__':
     /user/
     ```
 2. 访问 http://127.0.0.1:9000/user/profile     
-```
-HTTP/1.0 200 OK
-Content-Length: 13
-Content-Type: text/html; charset=utf-8
-Date: Sat, 19 Nov 2022 14:58:30 GMT
-Server: Werkzeug/0.11.10 Python/2.7.11
+    ```
+    HTTP/1.0 200 OK
+    Content-Length: 13
+    Content-Type: text/html; charset=utf-8
+    Date: Sat, 19 Nov 2022 14:58:30 GMT
+    Server: Werkzeug/0.11.10 Python/2.7.11
 
-/user/profile
-```
+    /user/profile
+    ```
