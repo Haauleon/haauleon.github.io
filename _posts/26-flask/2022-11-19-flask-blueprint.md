@@ -120,3 +120,126 @@ if __name__ == '__main__':
 
     /user/profile
     ```
+
+<br>
+<br>
+
+### 二、蓝图基础实践
+#### 1、项目结构
+&emsp;&emsp;项目 app_blueprint 由主程序文件和模块文件构成。       
+```
+app_blueprint/
+├── admin.py         # admin 模块文件
+├── manage_v1.py
+├── manage_v2.py     # 主程序文件
+└── user.py          # user 模块文件
+```
+
+![](\img\in-post\post-flask\2022-11-19-flask-blueprint-1.jpg)  
+
+<br>
+<br>
+
+#### 2、模块文件
+（1）user.py 模块文件    
+```python
+# -*- coding: utf-8 -*-#
+from flask import Blueprint
+
+# 三个参数分别是：蓝图的名称（自定义）、蓝图所在的模块、URL 前缀
+bp = Blueprint('user', __name__, url_prefix='/user')
+
+
+@bp.route('/hello')
+def hello():
+    return '/user/hello'
+
+
+@bp.route('/new')
+def new():
+    return '/user/new'
+
+
+@bp.route('/edit')
+def edit():
+    return '/user/edit'
+```
+
+（2）admin.py 模块文件     
+```python
+# -*- coding: utf-8 -*-#
+from flask import Blueprint
+
+# 三个参数分别是：蓝图的名称（自定义）、蓝图所在的模块、URL 前缀
+bp = Blueprint('admin', __name__, url_prefix='/admin')
+
+
+@bp.route('/hello')
+def hello():
+    return '/admin/hello'
+
+
+@bp.route('/new')
+def new():
+    return '/admin/new'
+
+
+@bp.route('/edit')
+def edit():
+    return '/admin/edit'
+```
+
+<br>
+<br>
+
+#### 3、主程序文件
+manage_v2.py 主程序文件     
+```python
+# -*- coding: utf-8 -*-#
+from flask import Flask
+import admin
+import user
+
+app = Flask(__name__)
+app.register_blueprint(admin.bp)
+app.register_blueprint(user.bp)
+
+
+if __name__ == '__main__':
+    print app.url_map
+    app.run(host='0.0.0.0', port=2000, debug=True)
+```
+
+<br>
+<br>
+
+#### 4、执行主程序
+执行主程序：     
+```
+> python manage_v2.py
+```
+
+<br>
+
+在另一个终端中使用 httpie 来发送请求，请求结果如下：      
+1. 访问 GET http://127.0.0.1:2000/user/hello     
+    ```
+    HTTP/1.0 200 OK
+    Content-Length: 11
+    Content-Type: text/html; charset=utf-8
+    Date: Sat, 19 Nov 2022 15:20:08 GMT
+    Server: Werkzeug/1.0.1 Python/2.7.11
+
+    /user/hello
+    ```
+2. 访问 GET http://127.0.0.1:2000/admin/new     
+    ```
+    HTTP/ OK
+    HTTP/1.0 200 OK
+    Content-Length: 10
+    Content-Type: text/html; charset=utf-8
+    Date: Sat, 19 Nov 2022 15:19:48 GMT
+    Server: Werkzeug/1.0.1 Python/2.7.11
+
+    /admin/new
+    ```
