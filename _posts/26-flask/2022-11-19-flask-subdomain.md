@@ -55,7 +55,13 @@ if __name__ == '__main__':
 
 &emsp;&emsp;配置保存后 a.example.com 和 b.example.com 这两个子域名都可以映射到 127.0.0.1 上，都可以进行访问。需要注意的是，子域名不能在 127.0.0.1 上出现，也不能在 localhost 上出现。执行该程序后，现在打开一个新的终端来验证一下：        
 ```
-(venv) ❯ http http://b.example.com:4000 --print b
+(venv) ❯ http http://b.example.com:4000
+HTTP/1.0 200 OK
+Content-Length: 1
+Content-Type: text/html; charset=utf-8
+Date: Sat, 19 Nov 2022 16:06:10 GMT
+Server: Werkzeug/0.11.10 Python/2.7.11+
+
 b
 ```
 
