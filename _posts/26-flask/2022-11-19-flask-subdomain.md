@@ -53,7 +53,7 @@ if __name__ == '__main__':
 127.0.0.1 a.example.com b.example.com
 ```
 
-&emsp;&emsp;这样就可以使 a.example.com 和 b.example.com 都映射到 127.0.0.1 上，都可以进行访问。需要注意的是，子域名不能在 127.0.0.1 上出现，也不能在 localhost 上出现。现在来验证一下：      
+&emsp;&emsp;配置保存后 a.example.com 和 b.example.com 这两个子域名都可以映射到 127.0.0.1 上，都可以进行访问。需要注意的是，子域名不能在 127.0.0.1 上出现，也不能在 localhost 上出现。现在来验证一下：      
 ```
 
 ```
