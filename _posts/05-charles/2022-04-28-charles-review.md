@@ -3,7 +3,8 @@ layout:        post
 title:         "Charles | 保姆级实操总结"
 subtitle:      "总结工作中常用的功能、脚本和工具等"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-charles/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Charles

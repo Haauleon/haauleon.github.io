@@ -3,7 +3,8 @@ layout:        post
 title:         "Charles | URL 映射"
 subtitle:      "使用 Charles 拦截项目接口映射请求本地或映射远程地址URL"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-charles/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Charles

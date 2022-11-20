@@ -3,7 +3,8 @@ layout:        post
 title:         "Charles | 代理设置"
 subtitle:      "设置远程终端代理"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-charles/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Charles

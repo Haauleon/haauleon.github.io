@@ -3,7 +3,8 @@ layout:        post
 title:         "Charles | https 证书设置"
 subtitle:      "在 win10 系统中导入 Charles CA 证书"
 author:        "Others"
-header-style:  text
+header-img:    "img/in-post/post-charles/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
   - Charles
