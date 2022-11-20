@@ -3,7 +3,8 @@ layout:        post
 title:         "Nodejs | npm install 权限问题"
 subtitle:      "npm ERR! Error: EACCES: permission denied"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-node/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Nodejs

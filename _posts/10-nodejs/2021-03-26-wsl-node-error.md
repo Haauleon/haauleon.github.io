@@ -3,7 +3,8 @@ layout: post
 title: "WSL | Running node error"
 subtitle: "在 windows 的子系统上安装 node 的问题解决"
 author: "Haauleon"
-header-style: text
+header-img:    "img/in-post/post-node/bg.jpeg"
+header-mask:   0.4
 tags:
   - Nodejs
 ---

@@ -3,7 +3,8 @@ layout:        post
 title:         "Nodejs | 本地文件自动上传"
 subtitle:      "使用 sftp-publish 工具自动上传本地文件至服务器"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-node/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Nodejs

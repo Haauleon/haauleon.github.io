@@ -3,7 +3,8 @@ layout: post
 title: "百度 API | 百度地图添加标注的 js 代码"
 subtitle: "看看自动生成的代码，然后根据 api 进行组装和删减"
 author: "Haauleon"
-header-style: text
+header-img:    "img/in-post/post-node/bg.jpeg"
+header-mask:   0.4
 tags:
   - Nodejs
 ---

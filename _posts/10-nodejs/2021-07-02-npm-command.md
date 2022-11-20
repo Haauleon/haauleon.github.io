@@ -3,7 +3,8 @@ layout:        post
 title:         "Nodejs | npm 常用命令"
 subtitle:      "列出所有日常使用命令集"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-node/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Nodejs
