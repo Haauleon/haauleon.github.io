@@ -3,7 +3,8 @@ layout:        post
 title:         "Jmeter | 原生、Badboy 录制 jmx 脚本"
 subtitle:      "Jmeter 中 HTTP 脚本录制的两种方式详解"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jmeter/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jmeter

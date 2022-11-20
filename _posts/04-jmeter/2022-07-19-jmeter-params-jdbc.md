@@ -3,7 +3,8 @@ layout:        post
 title:         "Jmeter | JDBC 请求设置参数值"
 subtitle:      "使用 Parameter Value 进行多值传递"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jmeter/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jmeter

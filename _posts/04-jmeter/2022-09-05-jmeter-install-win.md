@@ -3,7 +3,8 @@ layout:        post
 title:         "Jmeter | Windows 系统下的安装"
 subtitle:      "下载、安装和汉化"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jmeter/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jmeter

@@ -3,7 +3,8 @@ layout:        post
 title:         "Jmeter | 响应 json 格式化"
 subtitle:      "将文本响应转为 json 格式以方便查看"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jmeter/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jmeter

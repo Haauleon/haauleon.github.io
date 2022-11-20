@@ -3,7 +3,8 @@ layout:        post
 title:         "Jmeter | 事务控制器"
 subtitle:      "通过事务控制器将多个操作统计成一个事务从而观察 TPS（每秒事务数）"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jmeter/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jmeter

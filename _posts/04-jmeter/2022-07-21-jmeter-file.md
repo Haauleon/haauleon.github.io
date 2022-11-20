@@ -3,7 +3,8 @@ layout:        post
 title:         "Jmeter | 上传文件"
 subtitle:      "使用 Jmeter 发送上传文件请求"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jmeter/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jmeter

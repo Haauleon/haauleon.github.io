@@ -3,7 +3,8 @@ layout:        post
 title:         "Jmeter | 使用 JMeter 测试 Web Service"
 subtitle:      "JMeter 测试 Web 服务的应用案例"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jmeter/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jmeter

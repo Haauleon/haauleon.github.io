@@ -3,7 +3,8 @@ layout:        post
 title:         "Jmeter | 压力测试查看TPS"
 subtitle:      "通过命令行执行查看详细报告"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jmeter/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jmeter

@@ -3,7 +3,8 @@ layout:        post
 title:         "Jmeter | 集合点"
 subtitle:      "通过同步定时器模拟大量用户在同一时刻发送请求"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jmeter/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jmeter

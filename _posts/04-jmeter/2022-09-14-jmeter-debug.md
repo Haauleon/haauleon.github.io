@@ -3,7 +3,8 @@ layout:        post
 title:         "Jmeter | 脚本调试总结"
 subtitle:      "调试手工编写的需要登录状态的Jmeter脚本"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jmeter/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jmeter

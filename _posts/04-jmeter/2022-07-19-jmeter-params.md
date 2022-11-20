@@ -3,7 +3,8 @@ layout:        post
 title:         "Jmeter | 用户自定义变量"
 subtitle:      "使用自定义变量增加 JDBC 请求中 SQL 语句的灵活性"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jmeter/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jmeter

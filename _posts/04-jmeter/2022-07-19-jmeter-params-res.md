@@ -3,7 +3,8 @@ layout:        post
 title:         "Jmeter | JDBC 请求设置响应数组"
 subtitle:      "请求成功后，通过设置 Result variable name 将 SQL 查询成功的结果保存在一个数组里"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jmeter/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jmeter

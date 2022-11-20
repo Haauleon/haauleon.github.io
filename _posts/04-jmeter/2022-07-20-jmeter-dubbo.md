@@ -3,7 +3,8 @@ layout:        post
 title:         "Jmeter | 使用 Jmeter 测试 Dubbo 接口"
 subtitle:      "Jmeter 本身不支持 Dubbo 接口测试，需要下载扩展的插件"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jmeter/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jmeter

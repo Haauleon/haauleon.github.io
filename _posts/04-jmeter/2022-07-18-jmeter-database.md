@@ -3,7 +3,8 @@ layout:        post
 title:         "Jmeter | 数据库接口测试"
 subtitle:      "数据库驱动下载和基本 JDBC 请求"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jmeter/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jmeter

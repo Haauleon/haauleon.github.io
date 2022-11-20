@@ -3,7 +3,8 @@ layout:        post
 title:         "Jmeter | 使用插件设计浪涌、阶梯状递增负载等场景"
 subtitle:      "该插件解决 Jmeter 原线程组无法负载递增的问题"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jmeter/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jmeter

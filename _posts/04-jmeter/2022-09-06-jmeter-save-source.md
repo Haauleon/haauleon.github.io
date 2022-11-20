@@ -3,7 +3,8 @@ layout:        post
 title:         "Jmeter | 如何将负载机对测试结果的影响降到最低？"
 subtitle:      "从运行方式、性能监控设置等方面提高负载机性能"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jmeter/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jmeter

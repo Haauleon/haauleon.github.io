@@ -3,7 +3,8 @@ layout:        post
 title:         "Jmeter | 提取响应值并设为全局变量"
 subtitle:      "使用 JSON 提取器获取响应字段值、设置全局变量和引用"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jmeter/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jmeter
