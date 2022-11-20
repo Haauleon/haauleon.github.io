@@ -3,7 +3,8 @@ layout:        post
 title:         "Android | PerfDog 采集性能指标"
 subtitle:      "使用 PerfDog 采集性能指标并上传至云端分析"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-app-test/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - 数据分析

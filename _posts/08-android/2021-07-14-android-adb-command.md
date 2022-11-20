@@ -3,7 +3,8 @@ layout:        post
 title:         "Android | adb 常用命令"
 subtitle:      "列举了一些工作中常用的 adb 命令"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-app-test/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Android

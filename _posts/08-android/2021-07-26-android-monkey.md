@@ -3,7 +3,8 @@ layout:        post
 title:         "Android | monkey 压力测试"
 subtitle:      "使用压力测试工具测试 app 是否会 crash"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-app-test/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Android

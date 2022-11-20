@@ -3,7 +3,8 @@ layout:        post
 title:         "Android | adb 基本使用"
 subtitle:      "adb 命令的简单使用"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-app-test/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Android

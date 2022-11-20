@@ -3,7 +3,8 @@ layout:        post
 title:         "Android | 获取 apk 的包名和主类名"
 subtitle:      "对 apk 进行 debug 签名"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-app-test/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Android

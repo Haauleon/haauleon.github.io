@@ -3,7 +3,8 @@ layout:        post
 title:         "Android | adb 命令行工具的安装"
 subtitle:      "通过 Android SDK 进行安装"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-app-test/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Android
