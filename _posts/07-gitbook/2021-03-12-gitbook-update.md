@@ -3,7 +3,8 @@ layout:        post
 title:         "Gitbook | 编辑与发布"
 subtitle:      "如何编辑、发布和远程访问电子书？"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-gitbook/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Gitbook

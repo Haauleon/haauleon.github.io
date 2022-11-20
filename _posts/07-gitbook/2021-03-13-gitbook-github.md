@@ -3,7 +3,8 @@ layout:        post
 title:         "Gitbook | 托管静态资源"
 subtitle:      "如何将 Gitbook 集成到 Github Pages？"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-gitbook/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Gitbook

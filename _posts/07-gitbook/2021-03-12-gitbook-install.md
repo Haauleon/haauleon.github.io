@@ -3,7 +3,8 @@ layout:        post
 title:         "Gitbook | 安装与使用"
 subtitle:      "Gitbook 的使用场景是什么？怎么安装？"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-gitbook/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Gitbook
