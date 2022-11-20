@@ -3,7 +3,8 @@ layout:        post
 title:         "Jenkins | 多命令行持续集成"
 subtitle:      "Jenkins + Newman + Nodejs + python3 + Nginx 实现自动化测试"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jenkins/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Nginx

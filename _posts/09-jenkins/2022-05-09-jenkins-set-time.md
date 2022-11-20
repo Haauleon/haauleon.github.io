@@ -3,7 +3,8 @@ layout:        post
 title:         "Jenkins | 设置自动化构建时间"
 subtitle:      "适用于自动化流水线定时构建任务的时间设置"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-jenkins/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Jenkins
