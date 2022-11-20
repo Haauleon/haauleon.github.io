@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Flask Web | Flask 命令行接口"
-subtitle:      "可以直接在命令行窗口执行 flask 命令启动应用"
+subtitle:      "在命令行窗口执行 flask 命令启动应用、shell 交互以及使用 flask.cli 模块"
 author:        "Haauleon"
 header-style:  text
 catalog:       true
@@ -115,4 +115,7 @@ True
 <br>
 
 #### 3、集成 Click
-&emsp;&emsp;从 Flask 0.11 开始，Flask 集成了 Click
+&emsp;&emsp;从 Flask 0.11 开始，Flask 集成了 Click。      
+```
+
+```
