@@ -3,7 +3,8 @@ layout:        post
 title:         "Postman | Tests Script"
 subtitle:      "如何使用 Postman 自带的 API 完成测试断言？"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-postman/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Postman

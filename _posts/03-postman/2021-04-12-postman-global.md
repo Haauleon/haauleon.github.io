@@ -3,7 +3,8 @@ layout:        post
 title:         "Postman | 全局变量"
 subtitle:      "全局变量可以解决什么问题？"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-postman/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Postman

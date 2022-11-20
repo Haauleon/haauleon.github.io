@@ -3,7 +3,8 @@ layout:        post
 title:         "Postman | 生成 API 测试代码"
 subtitle:      "如何自动生成 Python-requests 测试代码？"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-postman/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Postman

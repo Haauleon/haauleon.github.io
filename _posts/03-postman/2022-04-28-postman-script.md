@@ -3,7 +3,8 @@ layout:        post
 title:         "Postman | 在脚本中发送请求"
 subtitle:      "在 Postman 脚本中使用 pm.sendRequest 发送请求"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-postman/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Postman

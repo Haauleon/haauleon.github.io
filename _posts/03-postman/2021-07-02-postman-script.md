@@ -3,7 +3,8 @@ layout:        post
 title:         "Postman | 常用的测试脚本"
 subtitle:      "列出所有常用的前置脚本和后置脚本"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-postman/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Postman

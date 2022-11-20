@@ -3,7 +3,8 @@ layout: post
 title: "postman | Mac 使用 newman 生成测试报告"
 subtitle: '如何使用 postman 快速且高效完成自动化测试'
 author: "Haauleon"
-header-style: text
+header-img:    "img/in-post/post-postman/bg.jpeg"
+header-mask:   0.4
 tags:
   - Postman
   - Newman

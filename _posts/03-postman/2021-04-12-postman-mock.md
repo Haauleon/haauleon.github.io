@@ -3,7 +3,8 @@ layout:        post
 title:         "Postman | Mock Server"
 subtitle:      "如何使用模拟服务器来自定义一个 API？"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-postman/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Postman

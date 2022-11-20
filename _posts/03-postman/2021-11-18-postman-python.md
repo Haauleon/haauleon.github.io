@@ -3,7 +3,8 @@ layout:        post
 title:         "python3 | 批量执行 postman 请求集合"
 subtitle:      "使用 python 解析 postman 的 json 文件并批量发送请求"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-postman/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
   - Python

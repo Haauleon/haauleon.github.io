@@ -3,7 +3,8 @@ layout:        post
 title:         "Postman | 环境变量"
 subtitle:      "如何高效地使用环境变量？"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-postman/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Postman

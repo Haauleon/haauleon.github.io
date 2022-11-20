@@ -3,7 +3,8 @@ layout:        post
 title:         "Postman | Chrome 插件版"
 subtitle:      "如何使用插件版拦截并篡改浏览器请求？"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-postman/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Postman

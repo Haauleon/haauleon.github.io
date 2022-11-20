@@ -3,7 +3,8 @@ layout:        post
 title:         "Postman | Newman"
 subtitle:      "如何使用 Newman 来完成 API 自动化测试？"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-postman/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Postman

@@ -3,7 +3,8 @@ layout:        post
 title:         "Postman | 导入 OpenAPI 格式的接口文档"
 subtitle:      "前提：其他接口测试工具可以导出 OpenAPI 格式的数据"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-postman/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Postman

@@ -3,7 +3,8 @@ layout:        post
 title:         "Postman | 集合"
 subtitle:      "如何自动化批量运行指定的接口集合？"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-postman/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Postman
