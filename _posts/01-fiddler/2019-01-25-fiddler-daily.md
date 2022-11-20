@@ -3,7 +3,8 @@ layout:        post
 title:         "Fiddler 日常使用小技巧"
 subtitle:      'Fiddler 实用技巧 2'
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-fiddler/bg.jpeg"
+header-mask:   0.4
 tags:
   - Fiddler
 ---

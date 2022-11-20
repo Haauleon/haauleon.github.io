@@ -3,7 +3,8 @@ layout:        post
 title:         "Fiddler | 弱网测试及设置"
 subtitle:      "参考自 https://www.jianshu.com/p/b9e349b8f411"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-fiddler/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Fiddler

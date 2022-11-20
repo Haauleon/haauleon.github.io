@@ -3,7 +3,8 @@ layout:        post
 title:         "Fiddler vs Charles"
 subtitle:      "接口抓包工具功能对照表"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-fiddler/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Fiddler

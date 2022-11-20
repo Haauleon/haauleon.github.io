@@ -3,7 +3,8 @@ layout:        post
 title:         "Fiddler | 代理设置"
 subtitle:      "Windows 系统下载、安装、设置远程终端代理"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-fiddler/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Fiddler

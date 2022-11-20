@@ -3,7 +3,8 @@ layout:        post
 title:         "Fiddler | 部分实用的小功能"
 subtitle:      "Windows 系统下列出 Fiddler 其他一些工作中比较实用的小功能"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-fiddler/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Fiddler

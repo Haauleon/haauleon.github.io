@@ -3,7 +3,8 @@ layout:        post
 title:         "Fiddler | URL 映射请求"
 subtitle:      "如何将请求A转发到请求B"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-fiddler/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Fiddler

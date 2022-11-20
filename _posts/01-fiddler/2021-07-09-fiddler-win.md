@@ -3,7 +3,8 @@ layout:        post
 title:         "Fiddler | 微信小程序抓包"
 subtitle:      "实现 windows 系统桌面版微信小程序抓包"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-fiddler/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Fiddler
