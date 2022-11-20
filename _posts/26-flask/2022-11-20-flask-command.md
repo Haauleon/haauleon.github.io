@@ -115,7 +115,23 @@ True
 <br>
 
 #### 3、集成 Click
-&emsp;&emsp;从 Flask 0.11 开始，Flask 集成了 Click。      
+&emsp;&emsp;从 Flask 0.11 开始，Flask 集成了 Click，并且使用 Click 甚至还能替换 Flask-Script。现在基于 flask.cli 模块添加子命令 initdb，该子命令用来初始化数据库，代码没有实际逻辑只做演示。            
+```python
+# coding=utf-8
+import click
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.cli.command()
+def initdb():
+    click.echo('Init the db')
 ```
 
+&emsp;&emsp;指定上述执行文件位置后就可以使用 initdb 了。     
+```
+ ❯ export FLASK_APP=web/app_cli.py
+ ❯ flask initdb
+Init the db
 ```
