@@ -172,3 +172,11 @@ def initdb():
  ❯ flask initdb
 Init the db
 ```
+
+
+<br>
+<br>
+
+相关链接：    
+[Flask内置命令行工具—CLI](https://segmentfault.com/a/1190000017436977)        
+[Flask内置命令行工具—CLI 官方文档](https://flask.palletsprojects.com/en/1.0.x/cli/)
