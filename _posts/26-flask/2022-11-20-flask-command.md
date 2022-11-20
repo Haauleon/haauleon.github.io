@@ -1,7 +1,7 @@
 ---
 layout:        post
-title:         "Flask Web | Flask 命令行接口"
-subtitle:      "在命令行窗口执行 flask 命令启动应用、shell 交互以及使用 flask.cli 模块"
+title:         "Flask Web | 命令行接口使用"
+subtitle:      "在命令行窗口执行 flask 命令启动应用、flask shell 交互以及使用 flask.cli 模块"
 author:        "Haauleon"
 header-style:  text
 catalog:       true
@@ -42,7 +42,8 @@ if __name__ == '__main__':
 #### 1、Flask-Script 启动应用   
 &emsp;&emsp;一个比较好的方式是使用第三方扩展 Flask-Script 管理，需要安装以下版本的 Flask-Script 包：     
 ```
-(venv) ❯ pip show Flask-Script
+ ❯ pip install Flask-Script==2.0.5
+ ❯ pip show Flask-Script
 ---
 Metadata-Version: 2.0
 Name: Flask-Script
@@ -115,7 +116,43 @@ True
 <br>
 
 #### 3、集成 Click
-&emsp;&emsp;从 Flask 0.11 开始，Flask 集成了 Click，并且使用 Click 甚至还能替换 Flask-Script。现在基于 flask.cli 模块添加子命令 initdb，该子命令用来初始化数据库，代码没有实际逻辑只做演示。            
+&emsp;&emsp;从 Flask 0.11 开始，Flask 集成了 Click，如下 Requires：     
+```
+ ❯ pip show flask
+---
+Metadata-Version: 2.0
+Name: Flask
+Version: 0.11.1
+Summary: A microframework based on Werkzeug, Jinja2 and good intentions
+Home-page: http://github.com/pallets/flask/
+Author: Armin Ronacher
+Author-email: armin.ronacher@active-4.com
+Installer: pip
+License: BSD
+Location: /home/ubuntu/.virtualenvs/venv/lib/python2.7/site-packages
+Requires: itsdangerous, click, Werkzeug, Jinja2
+Classifiers:
+  Development Status :: 4 - Beta
+  Environment :: Web Environment
+  Intended Audience :: Developers
+  License :: OSI Approved :: BSD License
+  Operating System :: OS Independent
+  Programming Language :: Python
+  Programming Language :: Python :: 2
+  Programming Language :: Python :: 2.6
+  Programming Language :: Python :: 2.7
+  Programming Language :: Python :: 3
+  Programming Language :: Python :: 3.3
+  Programming Language :: Python :: 3.4
+  Programming Language :: Python :: 3.5
+  Topic :: Internet :: WWW/HTTP :: Dynamic Content
+  Topic :: Software Development :: Libraries :: Python Modules
+Entry-points:
+  [console_scripts]
+  flask=flask.cli:main
+```
+
+&emsp;&emsp;使用 Click 甚至还能替换 Flask-Script。现在基于 flask.cli 模块添加子命令 initdb，该子命令用来初始化数据库，代码没有实际逻辑只做演示。            
 ```python
 # coding=utf-8
 import click
