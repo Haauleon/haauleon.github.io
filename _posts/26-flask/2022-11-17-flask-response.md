@@ -3,7 +3,8 @@ layout:        post
 title:         "Flask Web | 响应"
 subtitle:      "视图函数的返回值会被自动转换为响应对象，需要包装 jsonify 使其返回 JSON 格式的响应"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-flask/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Flask

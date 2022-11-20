@@ -3,7 +3,8 @@ layout:        post
 title:         "Flask Web | 自定义转换器"
 subtitle:      "自定义一个 URL 转换器来实现同时接收多个参数并处理"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-flask/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Flask

@@ -3,7 +3,8 @@ layout:        post
 title:         "Flask Web | 构造 URL"
 subtitle:      "选择构建 URL 而不是直接在代码中拼接 URL 的场景"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-flask/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Flask

@@ -3,7 +3,8 @@ layout:        post
 title:         "Flask Web | 命令行接口使用"
 subtitle:      "在命令行窗口执行 flask 命令启动应用、flask shell 交互以及使用 flask.cli 模块"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-flask/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Flask

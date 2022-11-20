@@ -3,7 +3,8 @@ layout:        post
 title:         "Flask Web | Flask 安装和入门"
 subtitle:      "安装和入门使用，hello world 代码逐行解释"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-flask/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Flask

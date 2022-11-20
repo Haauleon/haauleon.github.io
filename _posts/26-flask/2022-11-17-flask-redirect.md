@@ -3,7 +3,8 @@ layout:        post
 title:         "Flask Web | 跳转和重定向"
 subtitle:      "跳转（301）为页面被永久性移走，重定向（302）为页面暂时性转移"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-flask/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Flask

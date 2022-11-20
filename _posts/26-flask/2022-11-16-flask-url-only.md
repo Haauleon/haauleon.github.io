@@ -3,7 +3,8 @@ layout:        post
 title:         "Flask Web | 唯一 URL"
 subtitle:      "Flask 的 URL 规则基于 Werkzeug 路由模块背后的思想即希望保证优雅且唯一的 URL"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-flask/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Flask

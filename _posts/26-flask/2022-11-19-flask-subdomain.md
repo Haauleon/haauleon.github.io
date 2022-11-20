@@ -3,7 +3,8 @@ layout:        post
 title:         "Flask Web | 子域名"
 subtitle:      "借助 subdomain 实现 SaaS 应用为用户提供一个子域名来访问"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-flask/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Flask

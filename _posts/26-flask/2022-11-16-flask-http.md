@@ -3,7 +3,8 @@ layout:        post
 title:         "Flask Web | HTTP 方法"
 subtitle:      "使用装饰器传参可以改变路由只回应 GET 请求的行为"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-flask/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Flask

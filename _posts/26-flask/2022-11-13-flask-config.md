@@ -3,7 +3,8 @@ layout:        post
 title:         "Flask Web | Flask 配置管理"
 subtitle:      "使用文件集中管理 app.config 的设置项，可通过三种方式加载配置文件"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-flask/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Flask

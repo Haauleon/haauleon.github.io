@@ -3,7 +3,8 @@ layout:        post
 title:         "Flask Web | 动态 URL 规则"
 subtitle:      "将符合同种规则的 URL 抽象成一个 URL 模式"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-flask/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Flask

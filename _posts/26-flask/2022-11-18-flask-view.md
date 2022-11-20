@@ -3,7 +3,8 @@ layout:        post
 title:         "Flask Web | 即插视图"
 subtitle:      "使用基于类而不是绑定函数与URL关系(app.route)的通用视图方式来实现继承"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-flask/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Flask
