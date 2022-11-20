@@ -3,7 +3,8 @@ layout:        post
 title:         "数据监控 | 钉钉业务预警脚本"
 subtitle:      "python + node + newman + dingtalk + crontab"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

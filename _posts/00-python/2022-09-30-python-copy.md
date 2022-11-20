@@ -3,7 +3,8 @@ layout:        post
 title:         "Python3 | 深拷贝与浅拷贝"
 subtitle:      "简单回顾一下两者的区别"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 tags:
     - Python
 ---

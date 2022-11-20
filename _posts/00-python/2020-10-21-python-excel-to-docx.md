@@ -3,7 +3,8 @@ layout:        post
 title:         "Python3 | excel 转 docx"
 subtitle:      "读取 excel 表的单元格的值，填充 docx 文档的表格"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

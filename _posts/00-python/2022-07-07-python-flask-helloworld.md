@@ -3,7 +3,8 @@ layout:        post
 title:         "Flask | 构造 post 请求"
 subtitle:      ""
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

@@ -3,7 +3,8 @@ layout:        post
 title:         "爬虫 | pyppeteer 框架实现刷浏览量 pv"
 subtitle:      "增加芝麻代理池的多用户自动登录并领取 ip 刷数据"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

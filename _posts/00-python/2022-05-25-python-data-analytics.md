@@ -3,7 +3,8 @@ layout:        post
 title:         "数据分析 | 小试牛刀"
 subtitle:      "创建数据分析图表类来玩玩"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

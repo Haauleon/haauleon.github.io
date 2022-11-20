@@ -3,7 +3,8 @@ layout:        post
 title:         "python3 | 读写 json 文件"
 subtitle:      ""
 author:        "Other"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
   - Python

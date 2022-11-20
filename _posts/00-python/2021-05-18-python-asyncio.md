@@ -3,7 +3,8 @@ layout:        post
 title:         "Python3 | asyncio 的应用"
 subtitle:      "asyncio 的使用方式和使用场景是什么？"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

@@ -3,7 +3,8 @@ layout:        post
 title:         "单元测试框架 | API 自动化测试"
 subtitle:      "基于 unittest + requests + utx 的接口自动化"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

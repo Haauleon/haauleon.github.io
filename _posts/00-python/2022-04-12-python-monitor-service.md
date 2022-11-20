@@ -3,7 +3,8 @@ layout:        post
 title:         "爬虫 | 爬虫执行策略脚本"
 subtitle:      "爬取源: http://www.hengqin.gov.cn/macao_zh_hans/hzqgl/dtyw/xwbb/"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

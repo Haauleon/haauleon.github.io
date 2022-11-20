@@ -4,7 +4,8 @@ title:         "Python3 | 命名空间 locals"
 subtitle:      "如何在全局和局部作用域中使用命名空间？"
 date:          2017-11-17
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

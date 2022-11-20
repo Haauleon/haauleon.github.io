@@ -4,7 +4,8 @@ title:         "Python3 | 随机数模块 random"
 subtitle:      "列举了使用 random 模块的所有的场景"
 date:          2017-11-18
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

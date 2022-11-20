@@ -3,7 +3,8 @@ layout:        post
 title:         "爬虫 | 网站增加谷歌分析指标"
 subtitle:      "谷歌分析指标如 pv、uv、跳出率，增加 local 和芝麻代理池两种方式"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

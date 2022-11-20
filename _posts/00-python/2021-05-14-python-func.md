@@ -3,7 +3,8 @@ layout:        post
 title:         "Python3 | 绑定与未绑定方法"
 subtitle:      "类中的绑定方法与未绑定方法的区别"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

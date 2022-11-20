@@ -3,7 +3,8 @@ layout:        post
 title:         "Python3 | requests 访问 https 网站"
 subtitle:      "有些网站 https 需要证书才可以访问, 两种解决方法"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

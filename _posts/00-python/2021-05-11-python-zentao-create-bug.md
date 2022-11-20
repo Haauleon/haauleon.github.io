@@ -3,7 +3,8 @@ layout:        post
 title:         "禅道 | Python3 脚本创建 bug"
 subtitle:      "写了一个创建 bug 的 python3 脚本 demo"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

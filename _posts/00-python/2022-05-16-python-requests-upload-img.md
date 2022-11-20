@@ -3,7 +3,8 @@ layout:        post
 title:         "爬虫 | requests 模块下载图片"
 subtitle:      "通过 requests 请求文件链接，将文件下载至本地"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

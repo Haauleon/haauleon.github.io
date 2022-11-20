@@ -3,7 +3,8 @@ layout:        post
 title:         "爬虫 | pyppeteer 运行报错"
 subtitle:      "urllib3.exceptions.MaxRetryError: HTTPSConnectionPool"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

@@ -3,7 +3,8 @@ layout:        post
 title:         "禅道 | Python3 脚本获取产品列表"
 subtitle:      "解决获取产品列表接口的编码解码、字典值查键等问题"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

@@ -3,7 +3,8 @@ layout:        post
 title:         "python3 | 自定义命令行参数"
 subtitle:      "命令行自定义参数以及处理命令行参数"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
   - Python

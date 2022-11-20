@@ -3,7 +3,8 @@ layout:        post
 title:         "百度 API | 百度翻译"
 subtitle:      "每秒只能请求一次"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

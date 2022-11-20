@@ -4,7 +4,8 @@ title:         "爬虫 | 豆瓣小组-珠海租房监控器"
 subtitle:      ""
 date:          2021-09-01
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
   - Python

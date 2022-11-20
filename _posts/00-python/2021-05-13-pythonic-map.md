@@ -3,7 +3,8 @@ layout:        post
 title:         "Python3 | 函数式编程"
 subtitle:      "map、filter 的使用"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

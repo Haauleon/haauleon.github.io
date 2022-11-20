@@ -3,7 +3,8 @@ layout:        post
 title:         "Python3 | 关键字"
 subtitle:      "列举了 3.7 版本所有的关键字及其定义"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

@@ -3,7 +3,8 @@ layout:        post
 title:         "Python3 | 终端运行时找不到自定义模块"
 subtitle:      "报错 ModuleNotFoundError: No module named ‘XXX‘，找不到自定义模块"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

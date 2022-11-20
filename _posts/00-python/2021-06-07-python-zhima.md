@@ -3,7 +3,8 @@ layout:        post
 title:         "爬虫 | 刷网页浏览量脚本"
 subtitle:      "基于 pyppeteer + 免费芝麻代理池"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

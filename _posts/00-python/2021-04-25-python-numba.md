@@ -3,7 +3,8 @@ layout:        post
 title:         "Python3 | 加速的方法"
 subtitle:      "列举了一些让程序运行加速的方法"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

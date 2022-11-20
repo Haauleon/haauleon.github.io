@@ -3,7 +3,8 @@ layout:        post
 title:         "Python3 | 正则提取指定范围的信息"
 subtitle:      "正则表达式快速提取并返回列表"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

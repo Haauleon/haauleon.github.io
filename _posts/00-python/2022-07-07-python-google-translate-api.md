@@ -3,7 +3,8 @@ layout:        post
 title:         "谷歌 | 开源 google 翻译 api"
 subtitle:      "有一些异常需要处理"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

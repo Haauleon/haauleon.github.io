@@ -3,7 +3,8 @@ layout:        post
 title:         "Python3 | 执行 shell 命令"
 subtitle:      "用于在 python 脚本内通过管道来执行 shell 命令"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

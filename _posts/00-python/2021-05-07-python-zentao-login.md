@@ -3,7 +3,8 @@ layout:        post
 title:         "禅道 | Python3 脚本登录"
 subtitle:      "解决禅道登录接口的密码加密等问题"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

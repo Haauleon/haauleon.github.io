@@ -3,7 +3,8 @@ layout:        post
 title:         "Python3 | xlrd 运行报错"
 subtitle:      "xlrd.biffh.XLRDError: Excel xlsx file; not supported"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

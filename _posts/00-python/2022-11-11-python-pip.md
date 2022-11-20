@@ -3,7 +3,8 @@ layout:        post
 title:         "环境搭建 | pip 高级用法"
 subtitle:      "命令自动补全，使用 devapi 作为缓存代理服务器，PYPI 的完全镜像"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

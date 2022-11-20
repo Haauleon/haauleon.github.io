@@ -3,7 +3,8 @@ layout:        post
 title:         "Python3 | 计算字符串中的重复字符"
 subtitle:      ""
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

@@ -3,7 +3,8 @@ layout:        post
 title:         "数据分析 | BOSS 直聘"
 subtitle:      "爬取数据、处理数据、生成图表"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

@@ -3,7 +3,8 @@ layout:        post
 title:         "Python3 | 本地ip刷网页浏览量脚本"
 subtitle:      ""
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

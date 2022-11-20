@@ -3,7 +3,8 @@ layout:        post
 title:         "爬虫 | requests 获取响应 cookies"
 subtitle:      "介绍 cookies 的两种添加方式即 cookies 和 headers 传参"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

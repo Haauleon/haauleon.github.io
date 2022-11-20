@@ -3,7 +3,8 @@ layout:        post
 title:         "爬虫 | requests 模块实现商品数据上传"
 subtitle:      "将客户提供的 upload 图片目录和 productTemplate.xlsx 文件的商品数据上传至壹壹车后台"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

@@ -3,7 +3,8 @@ layout:        post
 title:         "数据监控 | 接口自动化测试"
 subtitle:      "基于 Newman + 钉钉 outgoing 实现接口自动化测试及预警"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

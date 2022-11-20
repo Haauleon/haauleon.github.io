@@ -3,7 +3,8 @@ layout:        post
 title:         "爬虫 | iframe 元素获取"
 subtitle:      "webdriver API 实现获取嵌套网页的元素"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

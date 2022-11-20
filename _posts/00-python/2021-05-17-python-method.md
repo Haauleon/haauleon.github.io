@@ -3,7 +3,8 @@ layout:        post
 title:         "Python3 | 函数和方法"
 subtitle:      "python 中函数和方法的区别"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

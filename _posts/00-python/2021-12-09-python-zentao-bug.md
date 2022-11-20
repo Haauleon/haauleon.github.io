@@ -3,7 +3,8 @@ layout:        post
 title:         "禅道 | Python3 每日统计 bug"
 subtitle:      "通过设置定时任务完成每日禅道 bug 统计并发送钉钉消息"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

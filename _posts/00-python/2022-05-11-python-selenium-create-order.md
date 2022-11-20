@@ -3,7 +3,8 @@ layout:        post
 title:         "爬虫 | 使用 selenium 框架实现"
 subtitle:      "跨境说出海易前台刷单 + 后台订单状态"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

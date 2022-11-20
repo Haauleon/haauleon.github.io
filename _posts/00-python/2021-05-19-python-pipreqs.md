@@ -3,7 +3,8 @@ layout:        post
 title:         "Python3 | pipreqs 的使用"
 subtitle:      "pip 生成和安装 requirements.txt 文件"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

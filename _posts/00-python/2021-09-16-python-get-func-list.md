@@ -3,7 +3,8 @@ layout:        post
 title:         "python3 | 获取类中除内置方法外的所有方法名"
 subtitle:      ""
 author:        "Others"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
   - Python

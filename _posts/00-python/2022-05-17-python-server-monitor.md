@@ -3,7 +3,8 @@ layout:        post
 title:         "数据监控 | SSH 自运化监控服务器性能指标"
 subtitle:      "收藏了很多小链接，需要时再自取，嘿嘿"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

@@ -3,7 +3,8 @@ layout:        post
 title:         "爬虫 | pyppeteer 框架实现爬取京东商品图片"
 subtitle:      "原文: https://blog.csdn.net/weixin_44826986/article/details/124114130"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

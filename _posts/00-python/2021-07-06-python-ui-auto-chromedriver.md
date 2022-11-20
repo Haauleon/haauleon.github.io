@@ -3,7 +3,8 @@ layout:        post
 title:         "爬虫 | 自动下载 chromedriver"
 subtitle:      "使用 webdriver-manager 自动配置 chromedriver"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

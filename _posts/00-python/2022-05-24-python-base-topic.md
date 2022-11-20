@@ -3,7 +3,8 @@ layout:        post
 title:         "面试 | Python 面试题"
 subtitle:      "python 基础题、企业面试题、高级题"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

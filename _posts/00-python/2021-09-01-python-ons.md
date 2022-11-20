@@ -3,7 +3,8 @@ layout:        post
 title:         "爬虫 | 获取广东新冠数据"
 subtitle:      ""
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
   - Python

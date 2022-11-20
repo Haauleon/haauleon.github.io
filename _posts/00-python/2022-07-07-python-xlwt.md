@@ -3,7 +3,8 @@ layout:        post
 title:         "自动化办公 | 使用 xlrd+xlwt 读取/写入 Excel 数据"
 subtitle:      ""
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

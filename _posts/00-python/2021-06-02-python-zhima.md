@@ -3,7 +3,8 @@ layout:        post
 title:         "爬虫 | 国内 ip 代理池访问网页"
 subtitle:      "xlrd + pyppeteer 实现读取 excel 刷网页并截图"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

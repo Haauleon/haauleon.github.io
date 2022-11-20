@@ -4,7 +4,8 @@ title:         "Python3 | aiohttp 模块提示 ssl 异常"
 subtitle:      "aiohttp.client_exceptions.ClientConnectorCertificateError"
 date:          2017-11-01
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python

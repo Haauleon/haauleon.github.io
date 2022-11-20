@@ -3,7 +3,8 @@ layout:        post
 title:         "Python3 | 常见的解释器"
 subtitle:      "用的最多的是 CPython 和 IPython"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Python
