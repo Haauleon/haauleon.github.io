@@ -254,7 +254,7 @@ if __name__ == '__main__':
     Python 2.7.11+ (default, Apr 17 2016, 14:00:29)
     [GCC 5.3.1 20160413] on linux2
     App: app_cli
-    Instance: /home/ubuntu/web_develop/chapter3/section1/instance
+    Instance: /home/ubuntu/web/instance
     >>>
     ```
 3. 不使用 --plain 参数      
@@ -264,7 +264,7 @@ if __name__ == '__main__':
     Python 2.7.11+ (default, Apr 17 2016, 14:00:29)
     [GCC 5.3.1 20160413] on linux2
     App: app_cli
-    Instance: /home/ubuntu/web_develop/chapter3/section1/instance
+    Instance: /home/ubuntu/web/instance
     In [1]:
     ```
 
