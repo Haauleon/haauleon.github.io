@@ -232,12 +232,14 @@ if __name__ == '__main__':
 ```
 
 
-<br>
-
 在使用 new_shell 子命令前，需要先指定 FLASK_APP 变量：      
 ```
- ❯ export FLASK_APP=web/app_cli.py
+❯ export FLASK_APP=web/app_cli.py
 ```
+
+<br>
+
+执行结果如下：      
 1. 查看子命令的帮助信息     
   ```
   ❯ flask new_shell --help
@@ -248,24 +250,24 @@ if __name__ == '__main__':
     --help   Show this message and exit.
   ```
 2. 使用 --plain 参数      
-```
- ❯ flask new_shell --plain
-Python 2.7.11+ (default, Apr 17 2016, 14:00:29)
-[GCC 5.3.1 20160413] on linux2
-App: app_cli
-Instance: /home/ubuntu/web_develop/chapter3/section1/instance
->>>
-```
+  ```
+  ❯ flask new_shell --plain
+  Python 2.7.11+ (default, Apr 17 2016, 14:00:29)
+  [GCC 5.3.1 20160413] on linux2
+  App: app_cli
+  Instance: /home/ubuntu/web_develop/chapter3/section1/instance
+  >>>
+  ```
 3. 不使用 --plain 参数      
 &emsp;&emsp;直接执行命令行 `> flask new_shell` 时，由于使用了 @with_appcontext 装饰器，因此 new_shell 会使用 app 这个上下文。当执行 `import IPython` 这条语句时，由于 pip 已安装第三方包 ipython==5.0.0，所以 has_ipython 标志位设置为 True，进而执行到 `use_plain_shell = not has_ipython or plain` 这条语句时，明显得知 use_plain_shell 的值为 False，所以最终选择执行的语句是 `ipython_shell(user_ns, banner)` ，也就是使用 IPython 交互环境，如下所示。             
-```
- ❯ flask new_shell
-Python 2.7.11+ (default, Apr 17 2016, 14:00:29)
-[GCC 5.3.1 20160413] on linux2
-App: app_cli
-Instance: /home/ubuntu/web_develop/chapter3/section1/instance
-In [1]:
-```
+  ```
+  ❯ flask new_shell
+  Python 2.7.11+ (default, Apr 17 2016, 14:00:29)
+  [GCC 5.3.1 20160413] on linux2
+  App: app_cli
+  Instance: /home/ubuntu/web_develop/chapter3/section1/instance
+  In [1]:
+  ```
 
 <br>
 <br>
