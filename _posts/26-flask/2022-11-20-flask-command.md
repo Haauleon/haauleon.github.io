@@ -178,6 +178,98 @@ Init the db
 <br>
 <br>
 
+#### 4、flask.cli 实现子命令
+&emsp;&emsp;实现一个叫做 new_shell 的子命令。使用 app.cli.command 来指定子命令的名字和帮助信息，使用 click.option 给子命令添加参数。由于子命令 new_shell 需要使用 app 这个上下文，所以需要添加 with_appcontext 这个装饰器。     
+```python
+# coding=utf-8
+import sys
+import code
+
+import click
+from flask import Flask
+from flask.cli import with_appcontext  # 导入上下文装饰器
+
+try:
+    import IPython  # noqa
+    has_ipython = True
+except ImportError:
+    has_ipython = False
+
+app = Flask(__name__)
+
+
+def plain_shell(user_ns, banner):
+    sys.exit(code.interact(banner=banner, local=user_ns))
+
+
+def ipython_shell(user_ns, banner):
+    IPython.embed(banner1=banner, user_ns=user_ns)
+
+
+@app.cli.command('new_shell', short_help='Runs a shell in the app context.')
+@click.option('--plain', help='Use Plain Shell', is_flag=True)
+@with_appcontext
+def shell_command(plain):
+    from flask.globals import _app_ctx_stack
+    app = _app_ctx_stack.top.app
+    banner = 'Python %s on %s\nApp: %s%s\nInstance: %s' % (
+        sys.version,
+        sys.platform,
+        app.import_name,
+        app.debug and ' [debug]' or '',
+        app.instance_path,
+    )
+    user_ns = app.make_shell_context()
+    use_plain_shell = not has_ipython or plain
+    if use_plain_shell:
+        plain_shell(user_ns, banner)
+    else:
+        ipython_shell(user_ns, banner)
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=9000)
+```
+
+
+<br>
+
+在使用 new_shell 子命令前，需要先指定 FLASK_APP 变量：      
+```
+ ❯ export FLASK_APP=web/app_cli.py
+```
+1. 查看子命令的帮助信息     
+  ```
+  ❯ flask new_shell --help
+  Usage: flask new_shell [OPTIONS]
+
+  Options:
+    --plain  Use Plain Shell
+    --help   Show this message and exit.
+  ```
+2. 使用 --plain 参数      
+```
+ ❯ flask new_shell --plain
+Python 2.7.11+ (default, Apr 17 2016, 14:00:29)
+[GCC 5.3.1 20160413] on linux2
+App: app_cli
+Instance: /home/ubuntu/web_develop/chapter3/section1/instance
+>>>
+```
+3. 不使用 --plain 参数      
+&emsp;&emsp;直接执行命令行 `> flask new_shell` 时，由于使用了 @with_appcontext 装饰器，因此 new_shell 会使用 app 这个上下文。当执行 `import IPython` 这条语句时，由于 pip 已安装第三方包 ipython==5.0.0，所以 has_ipython 标志位设置为 True，进而执行到 `use_plain_shell = not has_ipython or plain` 这条语句时，明显得知 use_plain_shell 的值为 False，所以最终选择执行的语句是 `ipython_shell(user_ns, banner)` ，也就是使用 IPython 交互环境，如下所示。             
+```
+ ❯ flask new_shell
+Python 2.7.11+ (default, Apr 17 2016, 14:00:29)
+[GCC 5.3.1 20160413] on linux2
+App: app_cli
+Instance: /home/ubuntu/web_develop/chapter3/section1/instance
+In [1]:
+```
+
+<br>
+<br>
+
 相关链接：    
 [Flask内置命令行工具—CLI](https://segmentfault.com/a/1190000017436977)        
 [Flask内置命令行工具—CLI 官方文档](https://flask.palletsprojects.com/en/1.0.x/cli/)
