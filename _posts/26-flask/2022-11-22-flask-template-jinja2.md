@@ -24,8 +24,6 @@ pip==9.0.3
 flask==0.11.1   
 httpie==0.9.4     
 
-&emsp;&emsp;Jinja2 是日本寺庙的意思，并且寺庙的英文 temple 和 template 的发音类似。       
-
 &emsp;&emsp;Jinja2 是 Flask 默认的仿 Django 模板的一个模板引擎，由 Flask 的作者开发。它速度快，被广泛使用，并且提供了可选的沙箱模板来保证执行环境的安全。有以下优点：    
 （1）让 HTML 设计者和后端 Python 开发工作分离。    
 （2）减少使用 Python 的复杂程度，**页面逻辑应该独立于业务逻辑**，这样才能开发出易于维护的程序。    
