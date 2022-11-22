@@ -151,8 +151,8 @@ u'Hello Lily'
     <body>
         {# This is a Comment #}
         <ul id="navigation">
-            {% for item in items %}
-                <li><a href="{{ item.href }}">{{ item['caption'] }}</a></li>
+            {% for user in users %}
+                <li><a href="{{ user.href }}">{{ user['caption'] }}</a></li>
             {% endfor %}
         </ul>
 
@@ -176,14 +176,14 @@ u'Hello Lily'
 ```
 {# This is a Comment #}
         ...
-            {% for item in items %}
-                <li><a href="{{ item.href }}">{{ item['caption'] }}</a></li>
+            {% for user in users %}
+                <li><a href="{{ user.href }}">{{ user['caption'] }}</a></li>
 ```
 &emsp;&emsp;上面是三种分隔符，每种分隔符都包含开始标记和结束标记。`{#...#}` 是模板注释，不会出现在渲染的页面里，是给程序员看的。`{%...%}` 用于执行诸如 for 循环或者赋值的语句。`{{...}}` 用于把表达式的结果输出到模板上，即最终将使用真实值进行替换。      
 
 （3）       
 ```
-{% for item in items %}
+{% for user in users %}
     ...
 {% endfor %}
 ```
@@ -191,12 +191,12 @@ u'Hello Lily'
 
 （4）      
 ```
-<li><a href="{{ item.href }}">{{ item['caption'] }}</a></li>
+<li><a href="{{ user.href }}">{{ user['caption'] }}</a></li>
 ```
 &emsp;&emsp;应用把变量传递到模板，可以使用点（`.`）来访问变量的属性，也可以使用中括号语法（`[]`）。下面两行的效果几乎是一样的：     
 ```
-{{ item.href }}
-{{ item['href'] }}
+{{ user.href }}
+{{ user['href'] }}
 ```
 
 （5）      
@@ -207,4 +207,26 @@ u'Hello Lily'
 
 <br>
 <br>
+
+### 四、Jinja2 的高级功能      
+#### 1、使用过滤器
+&emsp;&emsp;Jinja2 内置了很多非常多的[过滤器](https://jinja.palletsprojects.com/en/2.11.x/templates/#builtin-filters)，需要熟悉这些过滤器，大多在工作中都很常用。
+
+<br>
+<br>
+
+#### 2、模板继承
+
+
+
+#### 3、宏
+
+
+#### 4、赋值
+
+
+#### 5、include 语句
+
+
+#### 6、import 语句
 
