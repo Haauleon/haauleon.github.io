@@ -158,12 +158,14 @@ u'Hello Lily'
 ![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-3.jpg)    
 &emsp;&emsp;此处的 for 循环，这种控制结构的代码块都需要以 `{endxxx}` 作为结束标志。      
 
-（4）`<li><a href="{{ user.href }}">{{ user['caption'] }}</a></li>`           
+（4）      
+![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-4.jpg)           
 &emsp;&emsp;应用把变量传递到模板，可以使用点（`.`）来访问变量的属性，也可以使用中括号语法（`[]`）。下面两行的效果几乎是一样的：     
 `{{ user.href }}`     
 `{{ user['href'] }}`
 
-（5）`<h1>{{ title | trim }}</h1>`      
+（5）     
+![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-5.jpg)         
 &emsp;&emsp;trim 是一个过滤器，在模板中通过管道符（`|`）把变量和过滤器分开。也可以使用多个过滤器，如 `{{ title | trim | striptags}}`，striptags 也是一个过滤器。  
 
 <br>
