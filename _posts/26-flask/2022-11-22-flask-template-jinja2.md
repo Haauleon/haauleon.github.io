@@ -74,3 +74,31 @@ Requires:
 <br>
 <br>
 
+### 二、API 的基本使用方式
+#### 1、创建并渲染模板
+（1）Jinja2 通过 Template 类创建并渲染模板       
+&emsp;&emsp;以下代码片段可知，Jinja2.Template 和 [string.Template](https://haauleon.gitee.io/2022/11/22/flask-template/) 做的事情很像，都是使用 Template 类创建一个对象然后实例化。      
+```
+In[1]: from jinja2 import Template
+In[2]: temp = Template('Hello {{ name }}')
+In[3]: temp.render(name='haauleon')
+Out[3]: 
+u'Hello haauleon'
+```
+
+<br>
+
+（2）使用 Environment 的实例来存储配置和全局对象   
+&emsp;&emsp;以下代码片段可以解释上述使用 Jinja2.Template 代码片段的背后逻辑，这里使用了 jinja2.Environment 的实例 env 来存储配置和全局对象 temp，最后使用真实值进行替换。           
+```
+In[4]: from jinja2 import Environment
+In[5]: env = Environment()
+In[6]: temp = env.from_string('Hello {{ name }}')
+In[7]: temp.render(name='Lily')
+Out[7]: 
+u'Hello Lily'
+```
+
+<br>
+<br>
+
