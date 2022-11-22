@@ -89,7 +89,7 @@ u'Hello haauleon'
 <br>
 
 （2）使用 Environment 的实例来存储配置和全局对象   
-&emsp;&emsp;     
+&emsp;&emsp;以下代码片段可以解释上述使用 Jinja2.Template 代码片段的背后逻辑，这里使用了 jinja2.Environment 的实例 env 来存储配置和全局对象 temp，最后使用真实值进行替换。           
 ```
 In[4]: from jinja2 import Environment
 In[5]: env = Environment()
@@ -99,8 +99,61 @@ Out[7]:
 u'Hello Lily'
 ```
 
-
 <br>
 <br>
 
 #### 2、使用模板加载器
+1. 先创建一个模板，并写入内容     
+    ```
+    > echo 'Hello {{ name }}' > templates/jinja2/hello.html
+    ```
+2. 再创建一个文件，用于加载模板文件     
+    ```
+    > touch app.py
+    ```
+3. 在 app.py 文件中加载指定位置的模板文件 hello.html     
+    &emsp;&emsp;以下代码中 Environment 的实例用于存储配置和全局对象，然后从文件系统或其他指定位置加载模板。
+    ```
+    In[8]: from jinja2 import Environment, PackageLoader
+    In[9]: env = Environment(loader=PackageLoader('app', 'templates/jinja2'))
+    In[10]: temp = env.get_template('hello.html')
+    In[11]: temp.render(name='haauleon')
+    Out[11]: 
+    u'Hello haauleon'
+    ```
+    &emsp;&emsp;通过 Environment 创建了一个模板环境，模板加载器（loader）会在 templates 文件夹中寻找对应的模板文件。由于模板文件在模板目录的子目录 jinja2/ 下，所以代码也可以这么写：    
+    ```
+    In[12]: from jinja2 import Environment, PackageLoader
+    In[13]: env = Environment(loader=PackageLoader('app', 'templates'))
+    In[14]: temp = env.get_template('jinja2/hello.html')
+    In[15]: temp.render(name='haauleon')
+    Out[15]: 
+    u'Hello haauleon'
+    ```
+
+<br>
+
+&emsp;&emsp;使用模板加载器的另一个明显的好处就是可以支持 **模板继承**。     
+
+<br>
+<br>
+
+### 三、Jinja2 的基本语法
+
+
+<br>
+<br>
+
+### 四、Jinja2 的高级功能
+#### 1、模板继承
+
+
+
+#### 2、宏
+
+
+#### 3、赋值
+
+
+#### 4、in
+
