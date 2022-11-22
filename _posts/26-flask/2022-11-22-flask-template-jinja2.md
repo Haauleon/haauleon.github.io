@@ -142,7 +142,7 @@ u'Hello Lily'
 &emsp;&emsp;模板仅仅是文本文件，它可以使用任何基于文本的格式（HTML、XML、CSV、LaTex 等），它没有特定的扩展名，通常使用 `.html` 作为后缀名。     
 
 &emsp;&emsp;模板包含 “变量” 或 “表达式”，这两者在模板求值的时候会被替换为真实值。除此之外，模板中还有标签和控制语句。      
-```
+```text
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -150,14 +150,14 @@ u'Hello Lily'
     </head>
     <body>
         {# This is a Comment #}
-        <ul id="navigation">
+        <ul id="user-comment">
             {% for user in users %}
                 <li><a href="{{ user.href }}">{{ user['caption'] }}</a></li>
             {% endfor %}
         </ul>
 
         <h1>{{ title | trim }}</h1>
-        <p>{{ content }}</p>
+        <p>{{ comment }}</p>
 
     </body>
 </html>
