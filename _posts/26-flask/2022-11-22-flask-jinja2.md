@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Flask Web | jinja2 模板"
+title:         "Flask Web | Jinja2 模板"
 subtitle:      "Flask 默认的仿 Django 模板的一个模板引擎，速度快、被广泛使用、提供沙箱模板"
 author:        "Haauleon"
 header-img:    "img/in-post/post-flask/bg.jpeg"
@@ -17,7 +17,7 @@ tags:
 <br>
 <br>
 
-### 一、命令行接口
+### 一、Jinja2 模板
 环境准备：     
 Python 2.7.11+      
 pip==9.0.3     
