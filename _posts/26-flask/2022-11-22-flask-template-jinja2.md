@@ -1,7 +1,7 @@
 ---
 layout:        post
-title:         "Flask Web | Jinja2 模板"
-subtitle:      "Flask 默认的仿 Django 模板的一个模板引擎，速度快、提供沙箱模板"
+title:         "Flask Web | Jinja2"
+subtitle:      "仿 Django 模板的一个模板引擎，速度快、提供沙箱模板"
 author:        "Haauleon"
 header-img:    "img/in-post/post-flask/bg.jpeg"
 header-mask:   0.4
@@ -27,10 +27,10 @@ httpie==0.9.4
 &emsp;&emsp;Jinja2 是日本寺庙的意思，并且寺庙的英文 temple 和 template 的发音类似。       
 
 &emsp;&emsp;Jinja2 是 Flask 默认的仿 Django 模板的一个模板引擎，由 Flask 的作者开发。它速度快，被广泛使用，并且提供了可选的沙箱模板来保证执行环境的安全。有以下优点：    
-- 让 HTML 设计者和后端 Python 开发工作分离。    
-- 减少使用 Python 的复杂程度，**页面逻辑应该独立于业务逻辑**，这样才能开发出易于维护的程序。    
-- 模板非常灵活、快速和安全，对设计者和开发者会更友好。    
-- 提供了控制语句、继承等高级功能，减少开发的复杂度。     
+（1）让 HTML 设计者和后端 Python 开发工作分离。    
+（2）减少使用 Python 的复杂程度，**页面逻辑应该独立于业务逻辑**，这样才能开发出易于维护的程序。    
+（3）模板非常灵活、快速和安全，对设计者和开发者会更友好。    
+（4）提供了控制语句、继承等高级功能，减少开发的复杂度。     
 
 &emsp;&emsp;Jinja2 是 Flask 的一个依赖，安装 Flask 的同时 Flask 也随之安装。而 Jinja2 从 2.7 开始就已经依赖 MarkupSafe 了，MarkupSafe 的 C 实现要快得多。           
 ```
@@ -215,18 +215,18 @@ u'Hello Lily'
 <br>
 <br>
 
-#### 1、模板继承
+#### 2、模板继承
 
 
 
-#### 2、宏
+#### 3、宏
 
 
-#### 3、赋值
+#### 4、赋值
 
 
-#### 4、include 语句
+#### 5、include 语句
 
 
-#### 5、import 语句
+#### 6、import 语句
 
