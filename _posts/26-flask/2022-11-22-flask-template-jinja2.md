@@ -167,13 +167,13 @@ u'Hello Lily'
 
 以上模板的解析如下：   
 （1）       
-```
+```text
 <!DOCTYPE html>
 ```
 &emsp;&emsp;声明文档类型是 HTML5。      
 
 （2）      
-```
+```text
 {# This is a Comment #}
         ...
             {% for user in users %}
@@ -182,7 +182,7 @@ u'Hello Lily'
 &emsp;&emsp;上面是三种分隔符，每种分隔符都包含开始标记和结束标记。`{#...#}` 是模板注释，不会出现在渲染的页面里，是给程序员看的。`{%...%}` 用于执行诸如 for 循环或者赋值的语句。`{{...}}` 用于把表达式的结果输出到模板上，即最终将使用真实值进行替换。      
 
 （3）       
-```
+```text
 {% for user in users %}
     ...
 {% endfor %}
@@ -190,17 +190,17 @@ u'Hello Lily'
 &emsp;&emsp;此处的 for 循环，这种控制结构的代码块都需要以 `{endxxx}` 作为结束标志。      
 
 （4）      
-```
+```text
 <li><a href="{{ user.href }}">{{ user['caption'] }}</a></li>
 ```
 &emsp;&emsp;应用把变量传递到模板，可以使用点（`.`）来访问变量的属性，也可以使用中括号语法（`[]`）。下面两行的效果几乎是一样的：     
-```
+```text
 {{ user.href }}
 {{ user['href'] }}
 ```
 
 （5）      
-```
+```text
 <h1>{{ title | trim }}</h1>
 ```
 &emsp;&emsp;trim 是一个过滤器，在模板中通过管道符（`|`）把变量和过滤器分开。也可以使用多个过滤器，如 `{{ title | trim | striptags}}`，striptags 也是一个过滤器。  
