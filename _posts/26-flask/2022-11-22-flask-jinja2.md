@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Flask Web | jinja2 模板"
-subtitle:      ""
+subtitle:      "Flask 默认的仿 Django 模板的一个模板引擎，速度快、被广泛使用、提供沙箱模板"
 author:        "Haauleon"
 header-img:    "img/in-post/post-flask/bg.jpeg"
 header-mask:   0.4
