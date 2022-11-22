@@ -160,9 +160,8 @@ u'Hello Lily'
 
 （4）      
 ![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-4.jpg)           
-&emsp;&emsp;应用把变量传递到模板，可以使用点（`.`）来访问变量的属性，也可以使用中括号语法（`[]`）。下面两行的效果几乎是一样的：     
-`{{ user.href }}`     
-`{{ user['href'] }}`
+&emsp;&emsp;应用把变量传递到模板，可以使用点（`.`）来访问变量的属性，也可以使用中括号语法（`[]`）。下面两行的效果几乎是一样的：        
+![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-6.jpg)      
 
 （5）     
 ![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-5.jpg)         
