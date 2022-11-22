@@ -165,7 +165,7 @@ u'Hello Lily'
 
 （5）     
 ![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-5.jpg)         
-&emsp;&emsp;trim 是一个过滤器，在模板中通过管道符（`|`）把变量和过滤器分开。也可以使用多个过滤器，如 `{{ title | trim | striptags}}`，striptags 也是一个过滤器。  
+&emsp;&emsp;trim 是一个过滤器，在模板中通过管道符（`|`）把变量和过滤器分开。也可以连续使用多个过滤器，多个过滤器之间也通过管道符隔开。       
 
 <br>
 <br>
