@@ -80,11 +80,6 @@ class DrivingTest:
         """文字转语音播报"""
         self.engine.say(text)
         self.engine.runAndWait()
-        # time.sleep(5)
-
-    def say_sleep(self, text):
-        self.engine.say(text)
-        self.engine.runAndWait()
         time.sleep(2)
 
     def stop(self):
