@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Python3 | 汉字转语音播报"
-subtitle:      "实现科目三灯光模拟考试语音播报，支持控制台输入答案并打分"
+subtitle:      "实现科目三灯光模拟考试语音播报，控制台输入并打分"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
 header-mask:   0.4
