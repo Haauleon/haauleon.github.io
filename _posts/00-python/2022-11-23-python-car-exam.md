@@ -54,6 +54,7 @@ import pyttsx3
 import time
 import random
 
+# 配置问题列表
 questions_list = [
     '请打开前照灯',
     '进入照明良好道路',
@@ -110,6 +111,7 @@ class DrivingTest:
 
 
 class DrivingScore:
+    """配置问题答案"""
 
     @staticmethod
     def find_answer(question: str, user_input: str) -> bool:
