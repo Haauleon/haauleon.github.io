@@ -80,7 +80,7 @@ class DrivingTest:
         """文字转语音播报"""
         self.engine.say(text)
         self.engine.runAndWait()
-        time.sleep(2)  # 私自练习的时候可以调快一点
+        time.sleep(2)  # 自己练习的时候可以调快一点
 
     def stop(self):
         self.engine.stop()
