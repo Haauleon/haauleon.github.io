@@ -190,6 +190,9 @@ u'Hello Lily'
 （2）第二步：接着定义一个子模板 index.html       
 ![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-8.jpg)         
 
+&emsp;&emsp;如果想多次使用同一个快，可以使用特殊的 `self` 变量并调用与块同名的函数：       
+![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-9.jpg)       
+
 <br>
 
 打开 Python 控制台，看看最后显示 index.html 模板的完整内容：       
@@ -226,11 +229,18 @@ In[15]: print(template.render())
 #### 3、宏
 
 
+<br>
+<br>
+
 #### 4、赋值
 
+<br>
+<br>
 
 #### 5、include 语句
 
+<br>
+<br>
 
 #### 6、import 语句
 
