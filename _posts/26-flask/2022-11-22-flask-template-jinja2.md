@@ -178,8 +178,50 @@ u'Hello Lily'
 <br>
 
 #### 2、模板继承
+&emsp;&emsp;使用模板继承，能使得模板重用，提高工作效率和代码质量。如果无法重用，那么编写的模板只是一次性的死模板，用完即弃，造成资源浪费。模板继承的前提是先定义一个基础的 “骨架” 模板，让后面的子模板去继承这个基础模板。        
 
+（1）第一步：先定义一个基础的 “骨架” 模板 base.html          
+![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-7.jpg)        
 
+&emsp;&emsp;如上图，在以上这能被重载的三个代码块 head、content 和 footer 中，head 代码块是有默认内容的，所以该基类模板在被子模板继承时，如果子模板没有重载该 head 代码块的内容，那么就会显示该基类模板的 head 代码块的默认内容。
+
+<br>
+
+（2）第二步：接着定义一个子模板 index.html       
+![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-8.jpg)         
+
+<br>
+
+打开 Python 控制台，看看最后显示 index.html 模板的完整内容：       
+```
+In[12]: from jinja2 import Environment, PackageLoader
+In[13]: env = Environment(loader=PackageLoader('app', 'templates/jinja2'))
+In[14]: template = env.get_template('index.html')
+In[15]: print(template.render())
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css" />
+        <title>Index - My Webpage</title>
+        <style type="text/css">
+            .important { color: #336699; }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+        <h1>Index</h1>
+        <p class="important">
+            Welcome on my awesome homepage.
+        </p>
+        </div>
+        <div id="footer">
+        </div>
+    </body>
+</html>
+```
+
+<br>
+<br>
 
 #### 3、宏
 
