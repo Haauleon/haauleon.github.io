@@ -227,7 +227,18 @@ In[15]: print(template.render())
 <br>
 
 #### 3、宏
-
+&emsp;&emsp;宏类似于常规编程中的函数，它用于把常用行为抽象为可重用的函数，可以被多次调用。     
+```
+In[16]: from jinja2 import Template
+In[17]: Template('''
+   ...: {% macro index(name) %}
+   ...:     Hello {{ name }}     
+   ...: {% endmacro %}
+   ...: <p>{{ index('haauleon')}}</p>
+   ...: ''').render()
+Out[17]: 
+u'\n    \n    <p>\n        Hello haauleon     \n    </p>\n    '
+```
 
 <br>
 <br>
