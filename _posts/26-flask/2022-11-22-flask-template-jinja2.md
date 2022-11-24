@@ -195,7 +195,7 @@ u'Hello Lily'
 
 <br>
 
-打开 Python 控制台，看看最后显示 index.html 模板的完整内容：       
+打开 Python 控制台，看看 index.html 模板渲染后的最终效果：       
 ```
 In[12]: from jinja2 import Environment, PackageLoader
 In[13]: env = Environment(loader=PackageLoader('app', 'templates/jinja2'))
@@ -248,4 +248,40 @@ In[15]: print(template.render())
 <br>
 
 #### 6、import 语句
+&emsp;&emsp;Jinja2 支持在不同的模板中导入宏并使用，与 Python 中的 import 语句类似。有两种方式来导入模板：       
+1. 可以把整个模板导入到一个变量中      
+    ```
+    import xxx.html
+    ```
+2. 从已导入模板中导入特定的宏     
+    ```
+    from xxx.html import macro1, macro2
+    ```
 
+<br>
+
+（1）第一步：先定义一个宏模板 macro.html      
+![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-13.jpg)     
+
+
+<br>
+
+（2）第二步：再定义一个模板来引用并调用宏模板中的宏 hello_macro.html     
+![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-14.jpg)     
+
+<br>
+
+打开 Python 控制台，看看 hello_macro.html 模板渲染后的最终效果：       
+```
+In[19]: from jinja2 import FileSystemLoader, Environment
+In[20]: from datetime import datetime
+In[21]: loader = FileSystemLoader('templates/jinja2')
+In[22]: template = Environment(loader=loader).get_template('hello_macro.html')
+In[23]: print(template.render(time=datetime.now()))
+<p>
+    Hello world
+</p>
+<p>
+    2022-11-24 11:48:52
+</p>
+```
