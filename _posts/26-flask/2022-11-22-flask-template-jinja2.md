@@ -234,11 +234,15 @@ In[15]: print(template.render())
 <br>
 
 #### 4、赋值
+&emsp;&emsp;在代码块中，可以为变量赋值。赋值使用 set 标签，并且可以为多个变量赋值。      
+![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-11.jpg)     
 
 <br>
 <br>
 
 #### 5、include 语句
+&emsp;&emsp;include 语句用于包含一个模板，渲染时会在 include 语句的对应位置添加被包含的模板内容。可以使用 `ignore missiong` 标记，如果模板不存在，Jinja 就会忽略这条语句。       
+![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-12.jpg)     
 
 <br>
 <br>
