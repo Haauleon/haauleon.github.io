@@ -237,10 +237,31 @@ u'Hello Vivian\n'
 <br>
 
 #### 3、<%namespace>
+&emsp;&emsp;`<%namespace>` 的作用很像 Python 的 import，可以把其他模板当成是 Python 模块一样引用进来。以下代码把模板文件 /utils.html 当作模块并导入 strftime 函数：        
+```
+<%namespace file="/utils.html" import="strftime"/>
+```
 
+&emsp;&emsp;导入 strftime 后就可以直接使用了：      
+```
+<h2>${strftime(datetime.now())}</h2>
+```
 
+&emsp;&emsp;import 支持 `*` 操作符（可能会影响性能，建议采用显示的 import）。     
+```
+<%namespace file="/utils.html" import="*"/>
+```
 
+&emsp;&emsp;file 参数还可以接收表达式，动态地传入文件名：     
+```
+<%namespace name="dyn" file="${context['namespace_name']}"/>
+```
 
+&emsp;&emsp;除了上面通过 `utils.strftime` 的方式调用，还可用以下两种方式调用：      
+```
+<%utils:strftime args='${datetime.now()}'/>
+<%call expr='utils.strftime()' args='${datetime.now()}'></%call>
+```
 
 <br>
 <br>
