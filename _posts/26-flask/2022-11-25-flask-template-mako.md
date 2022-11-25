@@ -72,10 +72,19 @@ u'Hello Haauleon!'
 <br>
 
 #### 2、单个模板文件渲染
-&emsp;&emsp;模板文件后缀不强制以 `.mako` 结尾，使用 `.html` 甚至 `.txt` 都是可以接受的。      
+&emsp;&emsp;模板文件后缀不强制以 `.mako` 结尾，使用 `.html` 甚至 `.txt` 都是可以接受的。         
+
+（1）第一步：定义模板文件 `hello.mako` 并写入以下内容       
+```
+Hello ${name}
 ```
 
+<br>
+
+（2）第二步：打开 Python 控制台，渲染此模板文件      
 ```
+
+```   
 
 <br>
 <br>
