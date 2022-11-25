@@ -74,7 +74,7 @@ Requires:
 <br>
 <br>
 
-### 二、API 的基本使用方式
+### 二、基本 API 的使用
 #### 1、创建并渲染模板
 （1）Jinja2 通过 Template 类创建并渲染模板       
 &emsp;&emsp;以下代码片段可知，Jinja2.Template 和 [string.Template](https://haauleon.gitee.io/2022/11/22/flask-template/) 做的事情很像，都是使用 Template 类创建一个对象然后实例化。      
@@ -170,7 +170,7 @@ u'Hello Lily'
 <br>
 <br>
 
-### 四、Jinja2 的高级功能      
+### 四、Jinja2 的高级用法      
 #### 1、使用过滤器
 &emsp;&emsp;Jinja2 内置了很多非常多的[过滤器](https://jinja.palletsprojects.com/en/2.11.x/templates/#builtin-filters)，需要熟悉这些过滤器，大多在工作中都很常用。
 
