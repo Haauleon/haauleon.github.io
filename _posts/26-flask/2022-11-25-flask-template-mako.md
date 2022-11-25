@@ -81,7 +81,7 @@ Hello ${name}
 
 <br>
 
-（2）第二步：打开 Python 控制台，渲染此模板文件      
+（2）第二步：打开 Python 控制台，渲染此模板文件        
 ```
 In [5]: from mako.template import Template
 In [6]: Template(filename='templates/mako/hello.mako').render(name='Lily')
@@ -93,7 +93,22 @@ u'Hello Lily\n'
 <br>
 
 #### 3、使用缓存
+&emsp;&emsp;Mako 自带了缓存系统，所以可以优化一下性能，保存编译后的模板，待下次有参数相同的调用就能直接使用缓存结果。        
 
+（1）第一步：定义模板文件 `templates/mako/hello.mako` 并写入以下内容       
+```
+Hello ${name}
+```
+
+<br>
+
+（2）第二步：在项目主路径下设置缓存文件夹 tmp/mako_cache      
+```
+In [13]: from mako.template import Template
+In [14]: Template(filename='templates/mako/hello.mako', module_directory='tmp/mako_cache').render(name='Micky')
+Out[14]: 
+u'Hello Micky\n'
+```
 
 <br>
 <br>
