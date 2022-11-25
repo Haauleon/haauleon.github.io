@@ -54,7 +54,7 @@ Successfully installed Mako-1.1.6
 <br>
 
 ### 二、基本 API 的使用
-&emsp;&emsp;作为模板语言的 Mako，下面演示一下模板渲染和子模板渲染的基本用法。         
+&emsp;&emsp;作为模板语言的 Mako，下面演示一下模板渲染和子模板文件渲染的基本用法。         
 
 <br>
 
@@ -130,8 +130,8 @@ tmp/mako_cache
 <br>
 <br>
 
-#### 4、继承(子)模板文件渲染
+#### 4、子模板文件渲染
 
 
-<br>
+<br
 <br>
