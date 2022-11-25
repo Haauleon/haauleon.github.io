@@ -54,8 +54,37 @@ Successfully installed Mako-1.1.6
 <br>
 
 ### 二、基本 API 的使用
-&emsp;&emsp;作为模板语言，Mako 同样支持模板渲染，下面演示一下单个模板渲染和模板继承渲染。    
+&emsp;&emsp;作为模板语言的 Mako，下面演示一下模板渲染和子模板渲染的基本用法。         
 
 <br>
 
-#### 1、
+#### 1、模板渲染
+&emsp;&emsp;
+```
+In [1]: from mako.template import Template
+In [2]: temp = Template('Hello ${name}!')
+In [3]: temp.render(name='Haauleon')
+Out[3]: 
+u'Hello Haauleon!'
+```
+
+<br>
+<br>
+
+#### 2、单个模板文件渲染
+&emsp;&emsp;
+
+<br>
+<br>
+
+#### 3、使用缓存
+
+
+<br>
+<br>
+
+#### 4、继承(子)模板文件渲染
+
+
+<br>
+<br>
