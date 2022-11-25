@@ -182,7 +182,7 @@ u'Hello Vivian\n'
 <br>
 
 ### 三、Mako 的基本语法
-
+![](\img\in-post\post-flask\2022-11-25-flask-template-mako-1.jpg)   
 
 <br>
 
