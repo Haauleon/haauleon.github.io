@@ -110,7 +110,7 @@ Out[14]:
 u'Hello Micky\n'
 ```
 
-&emsp;&emsp;执行完成后将会在当前项目主路径下生成一个 tmp/mako_cache 的缓存目录，而生成的缓存文件则按照模板路径的结构进行保存。例如模板路径是 templates/mako/hello.mako，而设置的缓存目录是 tmp/mako_cache，那么最终生成的缓存文件路径是 tmp/mako_cache/templates/mako/hello.mako，如下所示。      
+&emsp;&emsp;执行完成后将会在当前项目主路径下生成一个 tmp/mako_cache 的缓存目录，而生成的缓存文件则按照模板路径的结构进行保存。例如模板路径是 templates/mako/hello.mako，而设置的缓存目录是 tmp/mako_cache，那么最终生成的缓存文件路径是 tmp/mako_cache/templates/mako/hello.pyc，如下所示。      
 ```
 haauleon@LAPTOP-EA7BF21I:/mnt/d/gitee/web_develop$ ls -al tmp/mako_cache
 total 0
@@ -120,13 +120,11 @@ drwxrwxrwx 1 haauleon haauleon 4096 Nov 25 10:59 templates
 haauleon@LAPTOP-EA7BF21I:/mnt/d/gitee/web_develop$ tree tmp/mako_cache
 tmp/mako_cache
 └── templates
-    └── chapter3
-        └── section2
-            └── mako
-                ├── hello.mako.py
-                └── hello.mako.pyc
+        └── mako
+            ├── hello.mako.py
+            └── hello.mako.pyc
 
-4 directories, 2 files
+2 directories, 2 files
 ```
 
 <br>
