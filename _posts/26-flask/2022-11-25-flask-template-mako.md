@@ -187,8 +187,20 @@ u'Hello Vivian\n'
 <br>
 
 #### 1、<%page>
+&emsp;&emsp;上图的 `<%include...>` 并没有带参数，nav.html 里面只要用 `<%page/>` 即可，当需要传参的时候这样使用：      
+```
+<%page args="x, y, z='default'"/>
+``` 
 
+&emsp;&emsp;插入模板的语法如下：     
+```
+<%namespace name="utils" file="/utils.html" args="1, 2, z='z'"/>
+```
 
+&emsp;&emsp;还可以指定缓存方式：      
+```
+<%page cached="True" cache_type="memory"/>
+```
 
 <br>
 <br>
