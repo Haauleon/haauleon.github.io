@@ -59,7 +59,7 @@ Successfully installed Mako-1.1.6
 <br>
 
 #### 1、模板渲染
-&emsp;&emsp;
+&emsp;&emsp;Mako 的变量使用了 `${...}` 的风格，可以通过 Template 类创建一个模板实例并渲染它。       
 ```
 In [1]: from mako.template import Template
 In [2]: temp = Template('Hello ${name}!')
