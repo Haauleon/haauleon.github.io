@@ -74,7 +74,7 @@ u'Hello Haauleon!'
 #### 2、单个模板文件渲染
 &emsp;&emsp;模板文件后缀不强制以 `.mako` 结尾，使用 `.html` 甚至 `.txt` 都是可以接受的。         
 
-（1）第一步：定义模板文件 `templates/mako/hello.mako` 并写入以下内容       
+（1）第一步：定义模板文件 templates/mako/hello.mako 并写入以下内容       
 ```
 Hello ${name}
 ```
@@ -95,7 +95,7 @@ u'Hello Lily\n'
 #### 3、使用缓存
 &emsp;&emsp;Mako 自带了缓存系统，所以可以优化一下性能，保存编译后的模板，待下次有参数相同的调用就能直接使用缓存结果。        
 
-（1）第一步：定义模板文件 `templates/mako/hello.mako` 并写入以下内容       
+（1）第一步：定义模板文件 templates/mako/hello.mako 并写入以下内容       
 ```
 Hello ${name}
 ```
@@ -108,6 +108,25 @@ In [13]: from mako.template import Template
 In [14]: Template(filename='templates/mako/hello.mako', module_directory='tmp/mako_cache').render(name='Micky')
 Out[14]: 
 u'Hello Micky\n'
+```
+
+&emsp;&emsp;执行完成后将会在当前项目主路径下生成一个 tmp/mako_cache 的缓存目录，而生成的缓存文件则按照模板路径的结构进行保存。例如模板路径是 templates/mako/hello.mako，而设置的缓存目录是 tmp/mako_cache，那么最终生成的缓存文件路径是 tmp/mako_cache/templates/mako/hello.mako，如下所示。      
+```
+haauleon@LAPTOP-EA7BF21I:/mnt/d/gitee/web_develop$ ls -al tmp/mako_cache
+total 0
+drwxrwxrwx 1 haauleon haauleon 4096 Nov 25 10:59 .
+drwxrwxrwx 1 haauleon haauleon 4096 Nov 25 10:59 ..
+drwxrwxrwx 1 haauleon haauleon 4096 Nov 25 10:59 templates
+haauleon@LAPTOP-EA7BF21I:/mnt/d/gitee/web_develop$ tree tmp/mako_cache
+tmp/mako_cache
+└── templates
+    └── chapter3
+        └── section2
+            └── mako
+                ├── hello.mako.py
+                └── hello.mako.pyc
+
+4 directories, 2 files
 ```
 
 <br>
