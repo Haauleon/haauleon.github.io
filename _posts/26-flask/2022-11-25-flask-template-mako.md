@@ -72,7 +72,10 @@ u'Hello Haauleon!'
 <br>
 
 #### 2、单个模板文件渲染
-&emsp;&emsp;
+&emsp;&emsp;模板文件后缀不强制以 `.mako` 结尾，使用 `.html` 甚至 `.txt` 都是可以接受的。      
+```
+
+```
 
 <br>
 <br>
