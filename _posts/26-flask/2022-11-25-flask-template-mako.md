@@ -206,9 +206,31 @@ u'Hello Vivian\n'
 <br>
 
 #### 2、<%block>
-&emsp;&emsp;`%block` 和 `%def` 很像，它受 Jinja2 的 block 启发，在定义的地方被渲染，无须像 `%def` 那样当需要调用时才会被渲染。`%block` 也可以接收缓存、过滤器的参数：      
+&emsp;&emsp;`%block` 和 `%def` 很像，它受 Jinja2 的 block 启发，在定义的地方被渲染，无须像 `%def` 那样当需要调用时才会被渲染。`%block` 也可以接收缓存、过滤器的参数：         
+```
+<html>
+    <body>
+        <%block cached="True" cache_timeout="60">
+            This content will be cached for 60 seconds.
+        </%block>
+    </body>
+</html>
 ```
 
+&emsp;&emsp;还可以给代码块加个名字以便重复调用，以下代码中 pagecontrol 共渲染了两次：       
+```
+<div name="page">
+    <%block name="pagecontrol">
+        <a href="">previous page</a> |
+        <a href="">next page</a>
+    </%block>
+
+    <table>
+        ## some content
+    </table>
+
+    ${pagecontrol()}
+</div>
 ```
 
 <br>
