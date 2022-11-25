@@ -189,10 +189,22 @@ u'Hello Vivian\n'
 #### 1、<%page>
 
 
+
+<br>
+<br>
+
 #### 2、<%block>
 
 
+
+<br>
+<br>
+
 #### 3、<%namespace>
+
+
+
+
 
 <br>
 <br>
