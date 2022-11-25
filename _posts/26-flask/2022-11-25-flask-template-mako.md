@@ -131,7 +131,9 @@ tmp/mako_cache
 <br>
 
 #### 4、子模板文件渲染
-&emsp;&emsp;除了单个模板文件的渲染之外，倘若存在模板继承或者模板引用了其他模板的情况时，就需要渲染子模板文件，这里使用类 TemplateLookup 告诉 Mako 要搜索的基类模板的路径。                  
+&emsp;&emsp;除了单个模板文件的渲染之外，倘若存在模板继承或者模板引用了其他模板的情况时，就需要渲染子模板文件，这里使用类 TemplateLookup 告诉 Mako 要搜索的基类模板的路径。                   
+
+**方式一：通过 Template.render() 进行渲染**       
 ```
 In [13]: from mako.lookup import TemplateLookup  # 导入搜索模板类
 In [14]: from mako.template import Template      # 导入模板类
@@ -140,6 +142,17 @@ In [16]: temp = Template('<%include file="hello.mako"/>', lookup=mylookup)  # in
 In [17]: temp.render(name='Corilin')             # 模板渲染
 Out[17]: 
 u'Hello Corilin\n'
+```
+
+<br>
+
+**方式二：通过 TemplateLookup.get_template.render() 进行渲染**      
+```
+In [3]: from mako.lookup import TemplateLookup
+In [4]: mylookup = TemplateLookup(directories=['templates/chapter3/section2/mako'])
+In [5]: mylookup.get_template('hello.mako').render(name='Cindy')
+Out[5]: 
+u'Hello Cindy\n'
 ```
 
 <br>
