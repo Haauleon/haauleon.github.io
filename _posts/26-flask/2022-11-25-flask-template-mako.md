@@ -206,8 +206,10 @@ u'Hello Vivian\n'
 <br>
 
 #### 2、<%block>
+&emsp;&emsp;`%block` 和 `%def` 很像，它受 Jinja2 的 block 启发，在定义的地方被渲染，无须像 `%def` 那样当需要调用时才会被渲染。`%block` 也可以接收缓存、过滤器的参数：      
+```
 
-
+```
 
 <br>
 <br>
