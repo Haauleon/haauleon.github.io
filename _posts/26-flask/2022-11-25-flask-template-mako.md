@@ -149,10 +149,33 @@ u'Hello Corilin\n'
 **方式二：通过 TemplateLookup.get_template.render() 进行渲染**      
 ```
 In [3]: from mako.lookup import TemplateLookup
-In [4]: mylookup = TemplateLookup(directories=['templates/chapter3/section2/mako'])
+In [4]: mylookup = TemplateLookup(directories=['templates/mako'])
 In [5]: mylookup.get_template('hello.mako').render(name='Cindy')
 Out[5]: 
 u'Hello Cindy\n'
+```
+
+<br>
+
+**方式三：TemplateLookup 同样支持 module_directory 参数**                 
+```
+In [9]:  from mako.lookup import TemplateLookup
+In [10]: mylookup = TemplateLookup(directories=['templates/mako'], module_directory='tmp/mako2_cache')
+In [11]: mylookup.get_template('hello.mako').render(name='Dibby')
+Out[11]: 
+u'Hello Dibby\n'
+```
+
+<br>
+
+**方式四：使用相对路径渲染模板文件**          
+&emsp;&emsp;模板名称 /hello.mako 以 `/` 开头，是因为搜索目录 directories 已经被包含在内了，使用 `/` 仅表示相对路径。      
+```
+In [12]: from mako.lookup import TemplateLookup
+In [13]: mylookup = TemplateLookup(directories=['templates/mako'])
+In [14]: mylookup.get_template('/hello.mako').render(name='Vivian')
+Out[14]: 
+u'Hello Vivian\n'
 ```
 
 <br>
