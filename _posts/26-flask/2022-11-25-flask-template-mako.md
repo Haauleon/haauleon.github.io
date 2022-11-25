@@ -185,6 +185,16 @@ u'Hello Vivian\n'
 
 
 <br>
+
+#### 1、<%page>
+
+
+#### 2、<%block>
+
+
+#### 3、<%namespace>
+
+<br>
 <br>
 
 ### 四、Mako 的高级用法
