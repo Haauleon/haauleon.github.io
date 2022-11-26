@@ -108,6 +108,16 @@ Requires:
     Query OK, 0 rows affected (0.00 sec)
     ```
 3. 设置用户权限。用户 web 对数据库 mydb 有全部权限     
-```
+    ```
+    mysql> use mydb;
+    Database changed
+    mysql> grant all on r.* TO 'web'@'localhost';
+    Query OK, 0 rows affected (0.00 sec)
 
-```
+    mysql> quit;
+    Bye
+    ```
+
+<br>
+<br>
+
