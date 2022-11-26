@@ -401,7 +401,87 @@ def render_body(context,**pageargs):
 <br>
 
 ### 五、模板继承
+&emsp;&emsp;可以使用 Mako 的模板继承来生成和 Jinja2 一样的 HTML 页面。      
 
+（1）第一步：定义基础的骨架模板 base.html      
+```
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <%block name="head">
+            <link rel="stylesheet" href="style.css" />
+            <title>${ self.title() } - My Webpage</title>
+        </%block>
+    </head>
+    <body>
+        <div id="content">
+            <%block name="content"/>
+        </div>
+        <div id="footer">
+            <%block name="footer"/>
+        </div>
+    </body>
+</html>
+
+<%def name="title()">
+</%def>
+```
+
+<br>
+
+（2）第二步：定义一个子模板 index.html      
+```
+<%inherit file="base.html"/>
+
+<%def name="title()">Index</%def>
+
+<%block name="head">
+    ${ parent.head() }
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+</%block>
+
+<%block name="content">
+    <h1>Index</h1>
+    <p class="important">
+        Welcome on my awesome homepage.
+    </p>
+</%block>
+```
+
+<br>
+
+&emsp;&emsp;最终执行的子模板渲染效果如下：     
+```
+In [7]: from mako.lookup import TemplateLookup
+In [8]: mylookup = TemplateLookup(directories=['templates/chapter3/section2/mako'])
+In [9]: print(mylookup.get_template('index.html').render())
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css" />
+        <title>Index - My Webpage</title>
+        
+        <style type="text/css">
+            .important { color: #336699; }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            
+        <h1>Index</h1>
+        <p class="important">
+            Welcome on my awesome homepage.
+        </p>
+        </div>
+        <div id="footer">
+            
+        </div>
+    </body>
+</html>
+```
 
 <br>
 <br>
