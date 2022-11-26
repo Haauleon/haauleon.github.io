@@ -196,3 +196,13 @@ with con as cur:
     for row in rows:
         print row['Id'], row['Name']
 ```
+
+&emsp;&emsp;这次使用了 with 语句。connect 的 __enter__ 方法返回了游标，在 with 语句中执行结束，它会判断当前是否有错误，有错误就回滚，没有则进行事务提交，相当于无须自己来写下面的异常处理：     
+```python
+try:
+    cur = con.cursor()
+    cur.execute("insert into example(Name) values('haauleon')")
+    con.commit()
+except MySQLdb.Error as e:
+    con.rollback()
+```
