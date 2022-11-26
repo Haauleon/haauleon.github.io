@@ -83,7 +83,31 @@ Requires:
 
 ### 二、设置应用账号和权限
 &emsp;&emsp;root 的权限很大，不应该在 Web 应用中直接使用此用户（root 密码一般都会被写进应用的配置文件中），应该使用一个单独的用户。执行以下三步来创建一个单独的用户并分配权限：     
-1. 创建一个数据库 r      
+1. 创建一个数据库 mydb      
+    ```
+    ~ ubuntu@WEB
+    ❯ sudo mysql -u root
+    Welcome to the MySQL monitor.  Commands end with ; or \g.
+    Your MySQL connection id is 3
+    Server version: 5.7.13-0ubuntu0.16.04.2 (Ubuntu)
+
+    Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
+
+    Oracle is a registered trademark of Oracle Corporation and/or its
+    affiliates. Other names may be trademarks of their respective
+    owners.
+
+    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+    mysql> create database mydb;
+    Query OK, 1 row affected (0.00 sec)
+    ```    
+2. 创建一个用户，名为 web，密码为 web      
+    ```
+    mysql> create user 'web'@'locallost' identified by 'web';
+    Query OK, 0 rows affected (0.00 sec)
+    ```
+3. 设置用户权限。用户 web 对数据库 mydb 有全部权限     
 ```
 
-```    
+```
