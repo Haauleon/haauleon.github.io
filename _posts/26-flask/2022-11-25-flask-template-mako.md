@@ -489,3 +489,5 @@ In [9]: print(mylookup.get_template('index.html').render())
 
 
 ### 六、Mako 排错
+
+#### 1、在终端打印编译内容
