@@ -316,7 +316,6 @@ ${ "<tag>some value</tag>" | h,trim }
 &emsp;&emsp;在 Mako 中定义一个过滤器非常简单，首先定义一个 mako 模板文件 my_filters.html 并写入以下内容：     
 ```
 <%!
-    ## 声明全局函数并使用默认参数值 "text"
     def div(text):
         return "<div>" + text + "</div>"
 %>
