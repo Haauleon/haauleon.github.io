@@ -410,6 +410,8 @@ def render_body(context,**pageargs):
     <head>
         <%block name="head">
             <link rel="stylesheet" href="style.css" />
+            ## 此处没有使用 title() 而是使用了 self.title()
+            ## 如果没有加 self，子模板继承后即便重写了 title 函数，在调用 parent.title() 时使用的还是原来 title 函数，造成子模板不能覆盖父模板的内容
             <title>${ self.title() } - My Webpage</title>
         </%block>
     </head>
