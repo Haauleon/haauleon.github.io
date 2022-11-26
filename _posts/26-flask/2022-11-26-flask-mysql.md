@@ -60,6 +60,7 @@ mysql-server is already the newest version (5.7.13-0ubuntu0.16.04.2).
 #### 2、安装驱动 MySQLdb
 **注意：** 安装的是 mysql-python，而不是 MySQLdb。      
 ```
+~ ubuntu@WEB
 ❯ sudo pip install mysql-python
 Collecting mysql-python
 Installing collected packages: mysql-python
