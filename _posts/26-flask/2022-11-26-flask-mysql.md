@@ -37,6 +37,7 @@ httpie==0.9.4
 <br>
 
 #### 1、安装 MySQL
+&emsp;&emsp;进入 ubuntu 终端页面，使用以下命令完成 mysql 的安装。安装完成之后默认已经启动了 MySQL，安装 mysql-server 的过程中需要指定 root 账户的密码，**生产环境一定要设置强复杂度的密码**。    
 ```
 ~ ubuntu@WEB
 ❯ sudo apt-get install mysql-server libmysqlclient-dev -yq
@@ -57,6 +58,7 @@ mysql-server is already the newest version (5.7.13-0ubuntu0.16.04.2).
 <br>
 
 #### 2、安装驱动 MySQLdb
+**注意：** 安装的是 mysql-python，而不是 MySQLdb。      
 ```
 ❯ sudo pip install mysql-python
 Collecting mysql-python
@@ -75,3 +77,4 @@ License: GPL
 Location: /usr/local/lib/python2.7/dist-packages
 Requires:
 ```
+
