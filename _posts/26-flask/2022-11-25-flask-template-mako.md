@@ -491,3 +491,13 @@ In [9]: print(mylookup.get_template('index.html').render())
 ### 六、Mako 排错
 
 #### 1、在终端打印编译内容
+&emsp;&emsp;找到 Mako 源码中的 template.py 文件，在 _compile 这个函数结尾处添加两行打印输出。这样就可以在终端看到编译后的模板的内容，从而定位错误原因了。      
+```python
+def _compile(template, text, filename, generate_magic_comment):
+    ...
+
+    for index, s in enumerate(source.splitlines()):
+        print index, s
+
+    return source, lexer
+```
