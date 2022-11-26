@@ -266,9 +266,96 @@ u'Hello Vivian\n'
 <br>
 <br>
 
-### 四、Mako 的高级用法
-#### 1、过滤器
+### 四、过滤器
+&emsp;&emsp;Mako 模板中同样使用管道符号（`|`）把过滤器和变量分隔开，但需要注意的是，多个过滤器是用逗号（`,`）隔开。     
+```
+${ "this is some text" | u }
+${ "<tag>some value</tag>" | h,trim }
+```
 
+<br>
+
+#### 1、常用过滤器
+&emsp;&emsp;Mako 中的常用过滤器包含以下 4 种：      
+1. u: URL 的转换，等价于 `urllib.quote_plus(string.encode('utf-8'))`       
+    ```
+    In [3]: from mako.template import Template
+    In [4]: Template('Hello ${ name | u}!').render(name='Haauleon')
+    Out[4]: 
+    u'Hello Haauleon!'
+    In [5]: Template('Hello ${ name | u}!').render(name=u'小可爱')
+    Out[5]: 
+    u'Hello %E5%B0%8F%E5%8F%AF%E7%88%B1!'
+    ```
+2. h: HTML 转换，等价于 `markupsafe.escape(string)`，如果没有安装 markupsafe 模块则等价于 `cgi.escape(string, True)`       
+    ```
+    In [9]:  from mako.template import Template
+    In [10]: Template('Hello ${ name|h }!').render(name='<div>&emsp;&emsp;</div>')
+    Out[10]: 
+    u'Hello &lt;div&gt;&amp;emsp;&amp;emsp;&lt;/div&gt;!'
+    ```
+3. trim: 过滤行首和行尾的空格，实际上是 `string.strip()`      
+    ```
+    In [13]: from mako.template import Template
+    In [14]: Template('Hello ${ name|trim }!').render(name='       A B C        ')
+    Out[14]: 
+    u'Hello A B C!'
+    ```
+4. n: 禁用默认的过滤器       
+    ```
+    In [17]: from mako.template import Template
+    In [18]: Template('Hello ${ name|n }!').render(name=' a &emsp; ')
+    Out[18]: 
+    u'Hello  a &emsp; !'
+    ```
+
+<br>
+<br>
+
+#### 2、定义一个过滤器
+&emsp;&emsp;在 Mako 中定义一个过滤器非常简单，首先定义一个 mako 模板文件 my_filters.html 并写入以下内容：     
+```
+<%!
+    ## 声明全局函数并使用默认参数值 "text"
+    def div(text):
+        return "<div>" + text + "</div>"
+%>
+
+## 传固定值
+Here's a div: ${ "ABC" | div }
+## 需从外部传入参数 text 的值
+Here's a div: ${ text | div }
+```  
+
+&emsp;&emsp;由于函数 div 需要传入参数 text，如果不传参则执行到 `Here's a div: ${ text | div }` 这一行的时候会报错。       
+```
+In [15]: from mako.lookup import TemplateLookup
+In [16]: mylookup = TemplateLookup(directories=['templates/mako'])
+In [17]: print(mylookup.get_template('my_filters.html').render(text='hello'))
+
+Here's a div: <div>ABC</div>
+Here's a div: <div>hello</div>
+```
+
+&emsp;&emsp;还可以使用 default_filters 参数指定全局的设置。如果不指定，在 python2 中默认设置是 `['unicode']`，在 python3 中默认设置是 `['str']`。如以下代码已在 default_filters 中指定过滤器 `trim` 了，所以就不需要在模板中指定了。           
+```
+In [26]: from mako.lookup import TemplateLookup
+In [27]: mylookup = TemplateLookup(directories=['templates/mako'], default_filters=['unicode', 'trim', 'decode.utf8'])
+In [28]: print(mylookup.get_template('my_filters.html').render(text=u' 小可爱     '))
+
+Here's a div: <div>ABC</div>
+Here's a div: <div>小可爱</div>
+```
+
+
+&emsp;&emsp;如果想要全局开启自定义的过滤器，需要使用以下方式：     
+```
+mylookup = Template(
+    directories=['templates/mako'],
+    default_filters=['str', 'myfilter'],
+    imports=['from mypackage import myfilter']
+)
+```
 
 <br>
 <br>
