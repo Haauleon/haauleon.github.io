@@ -122,7 +122,7 @@ Requires:
 <br>
 
 ### 三、用 MySQLdb 写原生语句
-&emsp;&emsp;以下编写一系列数据库开发的例子，为了重复利用，把常量放到独立的 consts.py 文件里，写入以下内容：     
+&emsp;&emsp;以下编写一系列数据库开发的例子，为了重复利用，把常量放到独立的 consts.py 配置文件里，写入以下内容：     
 ```python
 # coding=utf-8
 HOSTNAME = 'localhost'
@@ -132,3 +132,8 @@ PASSWORD = 'web'
 DB_URI = 'mysql://{}:{}@{}/{}'.format(
     USERNAME, PASSWORD, HOSTNAME, DATABASE)
 ```
+
+&emsp;&emsp;导入配置文件的常量后，开始用 MySQLdb 写原生语句：      
+```python
+
+``` 
