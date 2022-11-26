@@ -121,7 +121,8 @@ Requires:
 <br>
 <br>
 
-### 三、用 MySQLdb 写原生语句
+### 三、使用 MySQLdb
+#### 1、配置文件 consts.py
 &emsp;&emsp;以下编写一系列数据库开发的例子，为了重复利用，把常量放到独立的 consts.py 配置文件里，写入以下内容：     
 ```python
 # coding=utf-8
@@ -133,6 +134,10 @@ DB_URI = 'mysql://{}:{}@{}/{}'.format(
     USERNAME, PASSWORD, HOSTNAME, DATABASE)
 ```
 
+<br>
+<br>
+
+#### 2、用 MySQLdb 写原生语句
 &emsp;&emsp;导入配置文件的常量后，开始用 MySQLdb 写原生语句：      
 ```python
 # coding=utf-8
@@ -156,3 +161,38 @@ finally:
     if con:
         con.close()
 ``` 
+
+<br>
+<br>
+
+#### 3、CRUD 数据库操作
+&emsp;&emsp;数据库操作主要以 **CRUD** 为主。CRUD 是 Create（创建）、Read（读取）、Update（更新）和 Delete（删除）的缩写。以下是 CRUD 的代码示例：     
+```python
+# coding=utf-8
+import MySQLdb
+from consts import HOSTNAME, DATABASE, USERNAME, PASSWORD
+
+
+con = MySQLdb.connect(HOSTNAME, USERNAME, PASSWORD, DATABASE)
+
+with con as cur:
+    cur.execute('drop table if exists users')
+    cur.execute('create table users(Id INT PRIMARY KEY AUTO_INCREMENT, '
+                'Name VARCHAR(25))')
+    cur.execute("insert into users(Name) values('xiaoming')")
+    cur.execute("insert into users(Name) values('wanglang')")
+    cur.execute('select * from users')
+
+    rows = cur.fetchall()
+    for row in rows:
+        print row
+    cur.execute('update users set Name=%s where Id=%s', ('ming', 1))
+    print 'Number of rows updated:',  cur.rowcount
+
+    cur = con.cursor(MySQLdb.cursors.DictCursor)
+    cur.execute('select * from users')
+
+    rows = cur.fetchall()
+    for row in rows:
+        print row['Id'], row['Name']
+```
