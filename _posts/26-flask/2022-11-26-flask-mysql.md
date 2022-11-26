@@ -126,7 +126,7 @@ Requires:
 ```python
 # coding=utf-8
 HOSTNAME = 'localhost'
-DATABASE = 'r'
+DATABASE = 'mydb'
 USERNAME = 'web'
 PASSWORD = 'web'
 DB_URI = 'mysql://{}:{}@{}/{}'.format(
@@ -135,5 +135,24 @@ DB_URI = 'mysql://{}:{}@{}/{}'.format(
 
 &emsp;&emsp;导入配置文件的常量后，开始用 MySQLdb 写原生语句：      
 ```python
+# coding=utf-8
+import MySQLdb  # 导入驱动模块
+from consts import HOSTNAME, DATABASE, USERNAME, PASSWORD  # 导入配置文件的常量
 
+try:
+    # MySQLdb.connect 返回的 con 是一个数据库连接实例。使用完通过 con 关闭数据库是一个好习惯
+    con = MySQLdb.connect(HOSTNAME, USERNAME, PASSWORD, DATABASE)
+    # con.cursor 返回的一个游标，数据库操作都是在游标实例上执行的
+    cur = con.cursor()
+    # cur.execute 方法传入的就是要执行的 SQL 语句
+    cur.execute("SELECT VERSION()")
+    # cur.fetchone 返回执行结果，这一点一开始可能不适应，因为数据库操作的结果不是在 execute 中直接返回的，而是需要使用 fetchone、fetchall、fetchmany 这样的方法获取结果
+    ver = cur.fetchone()
+    print "Database version : %s " % ver
+except MySQLdb.Error as e:
+    print "Error %d: %s" % (e.args[0], e.args[1])
+    exit(1)
+finally:
+    if con:
+        con.close()
 ``` 
