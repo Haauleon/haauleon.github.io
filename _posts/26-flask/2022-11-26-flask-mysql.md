@@ -37,10 +37,41 @@ httpie==0.9.4
 <br>
 
 #### 1、安装 MySQL
+```
+~ ubuntu@WEB
+❯ sudo apt-get install mysql-server libmysqlclient-dev -yq
+Reading package lists...
+Building dependency tree...
+Reading state information...
+libmysqlclient-dev is already the newest version (5.7.13-0ubuntu0.16.04.2).
+mysql-server is already the newest version (5.7.13-0ubuntu0.16.04.2).
+0 upgraded, 0 newly installed, 0 to remove and 112 not upgraded.
 
+~ ubuntu@WEB
+❯ sudo /etc/init.d/mysql start
+[ ok ] Starting mysql (via systemctl): mysql.service.
+```
 
 
 <br>
 <br>
 
-#### 2、安装驱动
+#### 2、安装驱动 MySQLdb
+```
+❯ sudo pip install mysql-python
+Collecting mysql-python
+Installing collected packages: mysql-python
+Successfully installed mysql-python-1.2.5
+
+~ ubuntu@WEB
+❯ pip show mysql-python
+Name: MySQL-python
+Version: 1.2.5
+Summary: Python interface to MySQL
+Home-page: https://github.com/farcepest/MySQLdb1
+Author: Andy Dustman
+Author-email: farcepest@gmail.com
+License: GPL
+Location: /usr/local/lib/python2.7/dist-packages
+Requires:
+```
