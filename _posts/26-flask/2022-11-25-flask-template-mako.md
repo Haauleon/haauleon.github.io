@@ -348,7 +348,7 @@ Here's a div: <div>小可爱</div>
 ```
 
 
-&emsp;&emsp;如果想要全局开启自定义的过滤器，需要使用以下方式：     
+&emsp;&emsp;如果想要全局开启自定义的过滤器，需要使用以下方式：          
 ```
 mylookup = Template(
     directories=['templates/mako'],
@@ -356,6 +356,38 @@ mylookup = Template(
     imports=['from mypackage import myfilter']
 )
 ```
+&emsp;&emsp;Mako 模板编译完成后会生成这样的代码，截取片段如下：    
+```python
+# -*- coding:utf-8 -*-
+from mako import runtime, filters, cache
+UNDEFINED = runtime.UNDEFINED
+STOP_RENDERING = runtime.STOP_RENDERING
+__M_dict_builtin = dict
+__M_locals_builtin = locals
+_magic_number = 10
+_modified_time = 1669345191.0
+_enable_loop = True
+_template_filename = 'templates/mako/hello.mako'
+_template_uri = 'templates/mako/hello.mako'
+_source_encoding = 'utf-8'
+_exports = []
+
+
+def render_body(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        __M_locals = __M_dict_builtin(pageargs=pageargs)
+        name = context.get('name', UNDEFINED)
+        __M_writer = context.writer()
+        __M_writer(u'Hello ')
+        __M_writer(unicode(name))
+        __M_writer(u'\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+```
+&emsp;&emsp;render_body 是每个 Mako 模板编译完成之后生成的 Python 代码的主函数，渲染的时候就是通过调用它生成 HTML 代码的。过滤器的执行顺序和当时指定的顺序是一样的。      
+
 
 <br>
 <br>
