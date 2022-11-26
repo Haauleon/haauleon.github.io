@@ -489,6 +489,10 @@ In [9]: print(mylookup.get_template('index.html').render())
 
 
 ### 六、Mako 排错
+&emsp;&emsp;Mako 有一个让人非常迷惑的地方，即出现 `NameError(NameError: Undefined)`，尤其在使用了模板多继承的情况下。举个例子，不小心在模板中使用了一个没有被定义的变量，渲染页面就会失败。    
+
+
+<br>
 
 #### 1、在终端打印编译内容
 &emsp;&emsp;找到 Mako 源码中的 template.py 文件，在 _compile 这个函数结尾处添加两行打印输出。这样就可以在终端看到编译后的模板的内容，从而定位错误原因了。      
