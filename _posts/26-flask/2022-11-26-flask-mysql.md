@@ -21,7 +21,7 @@ tags:
 <br>
 <br>
 
-### 一、使用 MySQL
+### 一、环境安装
 环境准备：     
 Python 2.7.11+      
 pip==9.0.3     
@@ -78,3 +78,12 @@ Location: /usr/local/lib/python2.7/dist-packages
 Requires:
 ```
 
+<br>
+<br>
+
+### 二、设置应用账号和权限
+&emsp;&emsp;root 的权限很大，不应该在 Web 应用中直接使用此用户（root 密码一般都会被写进应用的配置文件中），应该使用一个单独的用户。执行以下三步来创建一个单独的用户并分配权限：     
+1. 创建一个数据库 r      
+```
+
+```    
