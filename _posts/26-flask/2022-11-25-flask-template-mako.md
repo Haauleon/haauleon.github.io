@@ -337,6 +337,10 @@ Here's a div: <div>ABC</div>
 Here's a div: <div>hello</div>
 ```
 
+<br>
+<br>
+
+#### 3、指定全局的设置
 &emsp;&emsp;还可以使用 default_filters 参数指定全局的设置。如果不指定，在 python2 中默认设置是 `['unicode']`，在 python3 中默认设置是 `['str']`。如以下代码已在 default_filters 中指定过滤器 `trim` 了，所以就不需要在模板中指定了。           
 ```
 In [26]: from mako.lookup import TemplateLookup
@@ -347,7 +351,10 @@ Here's a div: <div>ABC</div>
 Here's a div: <div>小可爱</div>
 ```
 
+<br>
+<br>
 
+#### 4、全局开启自定义过滤器
 &emsp;&emsp;如果想要全局开启自定义的过滤器，需要使用以下方式：          
 ```
 mylookup = Template(
@@ -356,6 +363,7 @@ mylookup = Template(
     imports=['from mypackage import myfilter']
 )
 ```
+
 &emsp;&emsp;Mako 模板编译完成后会生成这样的代码，截取片段如下：    
 ```python
 # -*- coding:utf-8 -*-
@@ -392,11 +400,11 @@ def render_body(context,**pageargs):
 <br>
 <br>
 
-#### 2、模板继承
+### 五、模板继承
 
 
 <br>
 <br>
 
 
-#### 3、Mako 排错
+### 六、Mako 排错
