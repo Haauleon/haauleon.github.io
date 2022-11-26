@@ -1,7 +1,7 @@
 ---
 layout:        post
-title:         "Flask Web | MySQLdb 数据库开发"
-subtitle:      "用 MySQL 的 Python 驱动（MySQLdb）写原生语句"
+title:         "Flask Web | 使用 MySQLdb"
+subtitle:      "用 MySQL 的 Python 驱动（MySQLdb）写原生语句来进行数据库开发"
 author:        "Haauleon"
 header-img:    "img/in-post/post-flask/bg.jpeg"
 header-mask:   0.4
@@ -13,6 +13,7 @@ tags:
     - Vagrant
     - Ubuntu
     - MySQL
+    - 数据库
 ---
 
 > 本篇所有操作均在基于 Ubuntu 16.04 LTS 的虚拟机下完成，且使用 Vagrant 来操作虚拟机系统，虚拟机系统 VirtualBox Version: 7.0 
@@ -32,5 +33,8 @@ httpie==0.9.4
 #### 1、安装 MySQL
 
 
+
+<br>
+<br>
 
 #### 2、安装驱动
