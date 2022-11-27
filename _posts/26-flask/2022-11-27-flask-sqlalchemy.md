@@ -52,6 +52,32 @@ Requires: importlib-metadata
 
 ### 二、使用 SQLAlchemy
 #### 1、连接数据库
+&emsp;&emsp;使用 `> vagrant ssh` 连接和操作虚拟机系统，输入 `> ipython` 打开 Ipython 进入交互终端：    
+```
+In [11]: from sqlalchemy import create_engine
+In [12]: engine = create_engine('sqlite://', echo=False)
+In [13]: with engine.connect() as con:
+    ...:     rs = con.execute('SELECT 1')
+    ...:     print rs.fetchone()
+    ...:
+(1,)
 ```
 
+&emsp;&emsp;create_engine 传入了一个数据库的 URI，`sqlite://` 表示使用了一个 SQLite 的内存型数据库。       
+
+URI 的格式如下：   
+```
+dialect+driver://username:password@host:port/database
+```
+1. dialect 是数据库的实现，比如 MySQL、PostgreSQL、SQLite      
+2. driver 是 Python 对应的驱动，如果不指定就会选择默认的驱动，比如 MySQL 的默认驱动是 MySQLdb      
+    ```python
+    engine = create_engine('mysql+mysqldb://haauleon:123456@localhost:8000/mydb')
+    ```
+
+<br>
+
+&emsp;&emsp;所以如果连接的是 MySQL 数据库，由于已有默认驱动 MySQLdb，就可以不用指定驱动。如以下语句来连接 MySQL 数据库：         
+```python
+engine = create_engine('mysql://haauleon:123456@localhost:8000/mydb')
 ```
