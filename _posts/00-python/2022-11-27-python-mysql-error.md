@@ -17,6 +17,7 @@ tags:
 
 ### 一、异常处理
 #### 1、mysql-python 安装异常
+&emsp;&emsp;windows11 在执行第三方包安装命令 `pip install mysql-python==1.2.5` 时报了如下错误：      
 ```
 > pip install MySQL-python==1.2.5
 Collecting MySQL-python==1.2.5
