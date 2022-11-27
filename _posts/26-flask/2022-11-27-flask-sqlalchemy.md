@@ -80,6 +80,7 @@ In [20]: with engine.connect() as con:
 ```
 dialect+driver://username:password@host:port/database
 ```
+
 1. dialect 是数据库的实现，比如 MySQL、PostgreSQL、SQLite      
 2. driver 是 Python 对应的驱动，如果不指定就会选择默认的驱动，比如 MySQL 的默认驱动是 MySQLdb      
     ```python
