@@ -28,5 +28,8 @@ flask==0.11.1
 httpie==0.9.4     
 
 
-&emsp;&emsp;SQLAlchemy 是最流行的关系型数据库的 ORM 框架，它由 Mako 的作者 Mike Bayer 创建。
+&emsp;&emsp;SQLAlchemy 是最流行的关系型数据库的 ORM 框架，它由 Mako 的作者 Mike Bayer 创建，[官网直达](https://www.sqlalchemy.org/)。        
+
 <br>
+
+#### 1、安装 SQLAlchemy
