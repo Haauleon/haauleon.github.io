@@ -33,3 +33,16 @@ httpie==0.9.4
 <br>
 
 #### 1、安装 SQLAlchemy
+```
+> pip install SQLAlchemy
+> pip show SQLAlchemy
+Name: SQLAlchemy
+Version: 1.4.44
+Summary: Database Abstraction Library
+Home-page: https://www.sqlalchemy.org
+Author: Mike Bayer
+Author-email: mike_mp@zzzcomputing.com
+License: MIT
+Location: d:\python27\lib\site-packages
+Requires: importlib-metadata
+```
