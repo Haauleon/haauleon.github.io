@@ -105,3 +105,57 @@ In [23]: with engine.connect() as con:
 2022-11-27 03:07:37,449 INFO sqlalchemy.engine.base.Engine ()
 (1,)
 ``` 
+
+<br>
+<br>
+
+#### 2、使用原生 SQL
+&emsp;&emsp;之前写的一文 [curd-数据库操作](https://haauleon.gitee.io/2022/11/26/flask-mysql/#3crud-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C) 中 curd.py 代码如下：     
+```python
+# coding=utf-8
+import MySQLdb
+from consts import HOSTNAME, DATABASE, USERNAME, PASSWORD
+
+
+con = MySQLdb.connect(HOSTNAME, USERNAME, PASSWORD, DATABASE)
+
+with con as cur:
+    cur.execute('drop table if exists users')
+    cur.execute('create table users(Id INT PRIMARY KEY AUTO_INCREMENT, '
+                'Name VARCHAR(25))')
+    cur.execute("insert into users(Name) values('xiaoming')")
+    cur.execute("insert into users(Name) values('wanglang')")
+    cur.execute('select * from users')
+
+    rows = cur.fetchall()
+    for row in rows:
+        print row
+    cur.execute('update users set Name=%s where Id=%s', ('ming', 1))
+    print 'Number of rows updated:',  cur.rowcount
+
+    cur = con.cursor(MySQLdb.cursors.DictCursor)
+    cur.execute('select * from users')
+
+    rows = cur.fetchall()
+    for row in rows:
+        print row['Id'], row['Name']
+```
+
+&emsp;&emsp;现在将以上的代码改写成使用 SQLAlchemy 的 CRUD 代码：      
+```python
+# coding=utf-8
+from sqlalchemy import create_engine
+from consts import DB_URI  # 从配置文件 consts.py 中导入 DB_URI = 'mysql://{}:{}@{}/{}'.format(USERNAME, PASSWORD, HOSTNAME, DATABASE)
+
+eng = create_engine(DB_URI)
+with eng.connect() as con:
+    con.execute('drop table if exists users')
+    con.execute('create table users(Id INT PRIMARY KEY AUTO_INCREMENT, '
+                'Name VARCHAR(25))')
+    con.execute("insert into users(name) values('xiaoming')")
+    con.execute("insert into users(name) values('wanglang')")
+    rs = con.execute('select * from users')
+    # rs 结果通过返回值获取，不再需要执行 rs.fetchone() 或者 rs.fetchall() 也能获取到
+    for row in rs:
+        print row
+```
