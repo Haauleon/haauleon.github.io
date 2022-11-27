@@ -8,6 +8,7 @@ header-mask:   0.4
 catalog:       true
 tags:
     - Python
+    - Windows
 ---
 
 > 本篇所有操作均在基于 Python==2.7.11 且 pip==9.0.3 的环境下完成 
