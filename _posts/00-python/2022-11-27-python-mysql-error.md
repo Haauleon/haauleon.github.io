@@ -61,7 +61,11 @@ open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compil
 <br>
 
 #### 2、报错处理
-1. 到 [https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysql-python](https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysql-python) 下载对应的 mysql-python 的 `.whl` 第三方包      
+1. 到 [https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysql-python](https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysql-python) 下载 mysql-python 对应的第三方包 `MySQL_python‑1.2.5‑cp27‑none‑win_amd64.whl`。如果提供的链接在线下载失败，可使用以下离线包：    
+    ```
+    链接：https://pan.baidu.com/s/17cwrXq1wJ_3yS022gxAeZw?pwd=yzo5 
+    提取码：yzo5 
+    ```      
 2. 进入 cmd 窗口，重新安装，安装成功          
     ```
     > pip install MySQL_python‑1.2.5‑cp27‑none‑win_amd64.whl
