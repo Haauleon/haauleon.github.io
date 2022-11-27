@@ -51,7 +51,7 @@ Requires: importlib-metadata
 <br>
 
 ### 二、使用 SQLAlchemy
-#### 1、连接数据库
+#### 1、create_engine 连接数据库
 &emsp;&emsp;使用 `> vagrant ssh` 连接和操作虚拟机系统，输入 `> ipython` 打开 Ipython 进入交互终端：      
 ```
 In [14]: from sqlalchemy import create_engine
@@ -72,9 +72,7 @@ In [20]: with engine.connect() as con:
 (1,)
 ```
 
-&emsp;&emsp;create_engine 传入了一个数据库的 URI，`sqlite://` 表示使用了一个 SQLite 的内存型数据库。       
-
-URI 的格式如下：   
+&emsp;&emsp;create_engine 传入了一个数据库的 URI，`sqlite://` 表示使用了一个 SQLite 的内存型数据库。URI 的格式如下：     
 ```
 dialect+driver://username:password@host:port/database
 ```
@@ -91,5 +89,19 @@ dialect+driver://username:password@host:port/database
 engine = create_engine('mysql://haauleon:123456@localhost:8000/mydb')
 ```
 
-<br>
-
+&emsp;&emsp;如果需要详细的输出，可以设置 echo=True：      
+```
+In [21]: from sqlalchemy import create_engine
+In [22]: engine = create_engine('sqlite://', echo=True)
+In [23]: with engine.connect() as con:
+    ...:     rs = con.execute('SELECT 1')
+    ...:     print rs.fetchone()
+    ...:
+2022-11-27 03:07:37,442 INFO sqlalchemy.engine.base.Engine SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2022-11-27 03:07:37,442 INFO sqlalchemy.engine.base.Engine ()
+2022-11-27 03:07:37,445 INFO sqlalchemy.engine.base.Engine SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2022-11-27 03:07:37,445 INFO sqlalchemy.engine.base.Engine ()
+2022-11-27 03:07:37,448 INFO sqlalchemy.engine.base.Engine SELECT 1
+2022-11-27 03:07:37,449 INFO sqlalchemy.engine.base.Engine ()
+(1,)
+``` 
