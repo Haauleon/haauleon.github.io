@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Python2 | windows11 安装 mysql-python 的报错处理"
+title:         "Python2 | windows11 安装 mysql-python 报错"
 subtitle:      "building '_mysql' extension error: Microsoft Visual C++ 9.0 is required."
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
