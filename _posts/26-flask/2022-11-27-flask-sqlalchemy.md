@@ -52,11 +52,20 @@ Requires: importlib-metadata
 
 ### 二、使用 SQLAlchemy
 #### 1、连接数据库
-&emsp;&emsp;使用 `> vagrant ssh` 连接和操作虚拟机系统，输入 `> ipython` 打开 Ipython 进入交互终端：    
+&emsp;&emsp;使用 `> vagrant ssh` 连接和操作虚拟机系统，输入 `> ipython` 打开 Ipython 进入交互终端：      
 ```
-In [11]: from sqlalchemy import create_engine
-In [12]: engine = create_engine('sqlite://', echo=False)
-In [13]: with engine.connect() as con:
+In [14]: from sqlalchemy import create_engine
+In [15]: engine = create_engine('sqlite://', echo=False)
+In [16]: rs = engine.execute('SELECT 1')
+In [17]: rs.fetchone()
+Out[17]: (1,)
+```
+
+&emsp;&emsp;可以使用 with 语句做异常处理，如下：    
+```
+In [18]: from sqlalchemy import create_engine
+In [19]: engine = create_engine('sqlite://', echo=False)
+In [20]: with engine.connect() as con:
     ...:     rs = con.execute('SELECT 1')
     ...:     print rs.fetchone()
     ...:
@@ -81,3 +90,6 @@ dialect+driver://username:password@host:port/database
 ```python
 engine = create_engine('mysql://haauleon:123456@localhost:8000/mydb')
 ```
+
+<br>
+
