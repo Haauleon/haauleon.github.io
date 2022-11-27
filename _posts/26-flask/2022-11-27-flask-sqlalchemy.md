@@ -20,11 +20,13 @@ tags:
 <br>
 <br>
 
-### 一、ORM 概览
+### 一、SQLAlchemy
 环境准备：     
 Python 2.7.11+      
 pip==9.0.3     
 flask==0.11.1   
 httpie==0.9.4     
 
+
+&emsp;&emsp;SQLAlchemy 是最流行的关系型数据库的 ORM 框架，它由 Mako 的作者 Mike Bayer 创建。
 <br>
