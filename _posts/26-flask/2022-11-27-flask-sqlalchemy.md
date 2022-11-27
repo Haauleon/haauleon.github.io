@@ -61,6 +61,8 @@ In [17]: rs.fetchone()
 Out[17]: (1,)
 ```
 
+<br>
+
 &emsp;&emsp;可以使用 with 语句做异常处理，如下：    
 ```
 In [18]: from sqlalchemy import create_engine
@@ -71,6 +73,8 @@ In [20]: with engine.connect() as con:
     ...:
 (1,)
 ```
+
+<br>
 
 &emsp;&emsp;create_engine 传入了一个数据库的 URI，`sqlite://` 表示使用了一个 SQLite 的内存型数据库。URI 的格式如下：     
 ```
@@ -88,6 +92,8 @@ dialect+driver://username:password@host:port/database
 ```python
 engine = create_engine('mysql://haauleon:123456@localhost:8000/mydb')
 ```
+
+<br>
 
 &emsp;&emsp;如果需要详细的输出，可以设置 echo=True：      
 ```
@@ -141,6 +147,8 @@ with con as cur:
         print row['Id'], row['Name']
 ```
 
+<br>
+
 &emsp;&emsp;现在将以上的代码改写成使用 SQLAlchemy 的 CRUD 代码：      
 ```python
 # coding=utf-8
@@ -149,6 +157,7 @@ from consts import DB_URI  # 从配置文件 consts.py 中导入 DB_URI = 'mysql
 
 eng = create_engine(DB_URI)
 with eng.connect() as con:
+    # con.execute() 执行 SQL 语句
     con.execute('drop table if exists users')
     con.execute('create table users(Id INT PRIMARY KEY AUTO_INCREMENT, '
                 'Name VARCHAR(25))')
@@ -159,3 +168,8 @@ with eng.connect() as con:
     for row in rs:
         print row
 ```
+
+<br>
+<br>
+
+#### 3、使用表达式
