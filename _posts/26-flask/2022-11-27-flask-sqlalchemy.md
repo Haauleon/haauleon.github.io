@@ -160,6 +160,13 @@ with eng.connect() as con:
         print row
 ```
 
+执行结果如下：    
+```
+(1L, 'xiaoming')
+(2L, 'wanglang')
+```
+
+
 <br>
 <br>
 
