@@ -163,6 +163,12 @@ finally:
         con.close()
 ``` 
 
+执行结果如下：    
+```
+Database version : 5.7.13-0ubuntu0.16.04.2
+```
+
+
 <br>
 <br>
 
@@ -196,6 +202,15 @@ with con as cur:
     rows = cur.fetchall()
     for row in rows:
         print row['Id'], row['Name']
+```
+
+执行结果如下：    
+```
+(1L, 'xiaoming')
+(2L, 'wanglang')
+Number of rows updated: 1
+1 ming
+2 wanglang
 ```
 
 &emsp;&emsp;这次使用了 with 语句。connect 的 `__enter__` 方法返回了游标，在 with 语句中执行结束，它会判断当前是否有错误，有错误就回滚，没有则进行事务提交，相当于无须自己来写下面的异常处理：     
