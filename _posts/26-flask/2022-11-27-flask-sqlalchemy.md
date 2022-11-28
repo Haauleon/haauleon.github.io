@@ -171,3 +171,80 @@ with eng.connect() as con:
 <br>
 
 #### 3、使用表达式
+```python
+# coding=utf-8
+from sqlalchemy import (create_engine, Table, MetaData, Column, Integer,
+                        String, tuple_)
+from sqlalchemy.sql import select, asc, and_
+from consts import DB_URI
+
+eng = create_engine(DB_URI)
+
+meta = MetaData(eng)
+# 定义数据库中的表的模型
+users = Table(
+    'Users', meta,
+    Column('Id', Integer, primary_key=True, autoincrement=True),
+    Column('Name', String(50), nullable=False),
+)
+
+# 在创建表的时候判断该表是否已存在，已存在则不创建
+if users.exists():
+    users.drop()
+users.create()  # 创建表 users
+"""
+# 如果要创建的表比较多，比如定义了表 users、balance、account...可使用以下语句：  
+mete.create_all(eng)
+"""
+
+
+def execute(s):
+    print '-' * 20
+    rs = con.execute(s)
+    for row in rs:
+        print row['Id'], row['Name']
+
+
+with eng.connect() as con:
+    for username in ('xiaoming', 'wanglang', 'lilei'):
+        user = users.insert().values(Name=username)
+        con.execute(user)
+
+    # stm 变量就是一个生成好的 SQL 语句
+    stm = select([users]).limit(1)
+    execute(stm)
+
+    k = [(2,)]
+    stm = select([users]).where(tuple_(users.c.Id).in_(k))
+    execute(stm)
+
+    stm = select([users]).where(and_(users.c.Id > 2,
+                                     users.c.Id < 4))
+    execute(stm)
+
+    """
+    此处的 select([users]).order_by(asc(users.c.Name)) 生成的 SQL 语句即 stm 的返回值是如下：   
+    SELECT `Users`.`Id`, `Users`.`Name` FROM `Users` ORDER BY `Users`.`Name` ASC
+    """
+    stm = select([users]).order_by(asc(users.c.Name))
+    execute(stm)
+
+    stm = select([users]).where(users.c.Name.like('%min%'))
+    execute(stm)
+```
+
+执行结果如下：    
+```
+--------------------
+1 xiaoming
+--------------------
+2 wanglang
+--------------------
+3 lilei
+--------------------
+3 lilei
+2 wanglang
+1 xiaoming
+--------------------
+1 xiaoming
+```
