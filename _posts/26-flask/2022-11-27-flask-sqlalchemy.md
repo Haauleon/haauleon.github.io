@@ -194,7 +194,7 @@ if users.exists():
 users.create()  # 创建表 users
 """
 # 如果要创建的表比较多，比如定义了表 users、balance、account...可使用以下语句：  
-mete.create_all(eng)
+meta.create_all(eng)
 """
 
 
