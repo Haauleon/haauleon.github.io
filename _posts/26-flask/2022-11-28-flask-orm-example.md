@@ -137,3 +137,13 @@ rs = session.query(User).from_statement(
     text('SELECT * FROM users where name=:name')).params(name='wanglang').all()
 get_result(rs)
 ```
+
+查询结果如下：   
+```
+--------------------
+lilei
+--------------------
+xiaoming
+--------------------
+wanglang
+```
