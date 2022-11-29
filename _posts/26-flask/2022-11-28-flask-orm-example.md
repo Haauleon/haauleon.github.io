@@ -77,6 +77,26 @@ def get_result(rs):
     print '-' * 20
     for user in rs:
         print user.name
+
+
+# 示例一、查询表 users 中全部的记录
+rs = session.query(User).all()
+get_result(rs)
+# 示例二、查询 id 包含 [2, ] 的记录，此处查询 id=2。若为 [2, 3, 4] 则查询 id=2,id=3,id=4 的记录
+rs = session.query(User).filter(User.id.in_([2, ]))
+get_result(rs)
+# 示例三、查询 id>2 and id<4 的记录
+rs = session.query(User).filter(and_(User.id > 2, User.id < 4))
+get_result(rs)
+# 示例四、查询 id=2 or id=4 的记录
+rs = session.query(User).filter(or_(User.id == 2, User.id == 4))
+get_result(rs)
+# 示例五、模糊查询 like
+rs = session.query(User).filter(User.name.like('%min%'))
+get_result(rs)
+# 示例六、查询 name='xiaoming' 的记录
+user = session.query(User).filter_by(name='xiaoming').first()
+get_result([user])
 ```
 
 <br>
@@ -127,6 +147,44 @@ xiaoming
 
 #### 2、复杂的条件查询语句
 ```python
+# coding=utf-8
+from sqlalchemy import create_engine, Column, Integer, String, Sequence, text
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+from consts import DB_URI
+
+eng = create_engine(DB_URI)
+Base = declarative_base()
+
+
+class User(Base):
+    __tablename__ = 'users'
+
+    id = Column(Integer, Sequence('user_id_seq'),
+                primary_key=True, autoincrement=True)
+    name = Column(String(50))
+
+
+Base.metadata.drop_all(bind=eng)
+Base.metadata.create_all(bind=eng)
+
+Session = sessionmaker(bind=eng)
+session = Session()
+
+session.add_all([User(name=username)
+                 for username in ('xiaoming', 'wanglang', 'lilei')])
+
+session.commit()
+
+
+def get_result(rs):
+    print '-' * 20
+    for user in rs:
+        print user.name
+
+
+# 使用 text() 直接输入 SQL 语句，使用 params() 进行关键字传参，使用 order_by() 进行排序
 rs = session.query(User).filter(
     text('id > 2 and id < 4')).order_by(text('id')).all()
 get_result(rs)
