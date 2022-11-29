@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Flask Web | 使用 SQLAlchemy"
-subtitle:      "SQLAlchemy 是最流行的关系型数据库的 ORM 框架"
+subtitle:      "配置并连接数据库、使用原生 SQL 语句和表达式语言"
 author:        "Haauleon"
 header-img:    "img/in-post/post-flask/bg.jpeg"
 header-mask:   0.4
