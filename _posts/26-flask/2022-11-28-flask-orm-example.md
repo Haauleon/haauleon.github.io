@@ -27,7 +27,9 @@ pip==9.0.3
 flask==0.11.1   
 httpie==0.9.4     
 
+<br>
 
+#### 1、sessionmaker 创建会话
 &emsp;&emsp;ORM 是基于 SQLAlchemy 表达式语言的，如下代码示例：     
 ```python
 # coding=utf-8
@@ -101,7 +103,7 @@ get_result([user])
 
 <br>
 
-#### 1、条件查询语句示例   
+#### 2、query 条件查询语句   
 &emsp;&emsp;如上代码所示，使用 create_engine() 配置数据库，使用 sessionmaker() 创建会话与数据库建立连接，使用 session.create_all() 将模型实例对象的修改加入会话并通过 session.commit() 提交。数据库中表 users 已有三条记录 `'xiaoming', 'wanglang', 'lilei'`，现在进行表的查询，使用如下有条件的简单查询语句：       
 ```python
 # 示例一、查询表 users 中全部的记录
@@ -145,7 +147,7 @@ xiaoming
 <br>
 <br>
 
-#### 2、复杂的条件查询语句
+#### 3、text 复杂条件查询
 ```python
 # coding=utf-8
 from sqlalchemy import create_engine, Column, Integer, String, Sequence, text
