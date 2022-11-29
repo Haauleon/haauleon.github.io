@@ -12,7 +12,6 @@ tags:
     - Web开发
     - Vagrant
     - Ubuntu
-    - MySQL
     - 数据库
 ---
 
