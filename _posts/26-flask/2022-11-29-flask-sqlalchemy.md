@@ -141,5 +141,47 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 #### 5、应用创建文件
 &emsp;&emsp;所有配置都准备好之后，在创建应用的文件 app_with_sqlalchemy.py 中加载配置并启动应用。     
 ```python
+# coding=utf-8
+from flask import Flask, request, jsonify
 
+from ext import db
+from users import User  # 导入模型类
+
+app = Flask(__name__)
+# 使用 from_object 加载 config.py 中的配置，生产环境中推荐这样管理配置
+app.config.from_object('config')
+# 将第三方扩展放在 ext.py 之后，这里只需要使用 xx.init_app(app) 的方式初始化，这也是推动的用法
+db.init_app(app)
+
+"""
+Flask-SQLAlchemy 要求执行的时候有应用上下文，但是在这里还没有，所以需要使用 with app.app_context() 创建应用上下文
+"""
+with app.app_context():
+    """
+    drop_all() 和 create_all() 要在定义 model 之后再执行
+    """
+    db.drop_all()
+    db.create_all()
+
+
+@app.route('/users', methods=['POST'])
+def users():
+    username = request.form.get('name')
+
+    user = User(username)
+    """
+    print 的 user.id 永远是 None，因为在没有 commit 之前还没有创建它；commit 之后 user.id 会自动改成在表中创建的条目 id
+    """
+    print 'User ID: {}'.format(user.id)
+    db.session.add(user)
+    db.session.commit()
+
+    return jsonify({'id': user.id})
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=9000)
 ```
+
+启动应用，查看输出结果：     
+1. 
