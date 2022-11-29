@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Flask Web | Flask-SQLAlchemy"
-subtitle:      "在 Flask 实际项目中使用 SQLAlchemy"
+subtitle:      "Flask 中使用 SQLAlchemy 实现在 Web 上实现创建用户"
 author:        "Haauleon"
 header-img:    "img/in-post/post-flask/bg.jpeg"
 header-mask:   0.4
@@ -52,9 +52,24 @@ Requires: SQLAlchemy, Flask
 <br>
 <br>
 
-### 二、db.Model 模型设计
+### 二、Web 创建用户实践
+&emsp;&emsp;实现一个能在 Web 上实现创建用户的应用，项目文件结构如下：     
+```
+web
+├── __init__.py
+├── app_with_sqlalchemy.py   # 应用创建文件
+├── config.py                # 应用配置文件
+├── consts.py                # 数据库配置文件
+├── ext.py                   # 第三方扩展集合文件
+└── users.py                 # 模型文件
+```     
+
+<br>
+
+#### 1、db.Model 模型设计
 &emsp;&emsp;一个大型项目，模型应该对应地存放在不同的模型文件中，如下将 users 这个表的模型存放到 users.py 中：      
 ```python
+# coding=utf-8
 from ext import db
 
 
@@ -78,4 +93,53 @@ class User(db.Model):
 <br>
 <br>
 
-#### 1
+#### 2、使用 ext.py 文件
+&emsp;&emsp;在 ext.py 文件中存放 Flask 第三方的扩展，文件内容如下：      
+```python
+# coding=utf-8
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+```
+&emsp;&emsp;这样的好处是，由于 db 是一个没有依赖的常量， 因此在 app 中就可以使用 `from ext import db`，这样就不会造成 **循环依赖**。
+
+<br>
+<br>
+
+
+#### 3、数据库配置文件
+数据库配置文件 consts.py 的内容如下：    
+```python
+# coding=utf-8
+HOSTNAME = 'localhost'
+DATABASE = 'r'
+USERNAME = 'web'
+PASSWORD = 'web'
+DB_URI = 'mysql://{}:{}@{}/{}'.format(
+    USERNAME, PASSWORD, HOSTNAME, DATABASE)
+```
+
+<br>
+<br>
+
+#### 4、应用配置文件
+&emsp;&emsp;把应用的配置也独立出来，统一放到 config.py 中，如下内容：      
+```python
+# coding=utf-8
+# 导入数据库配置
+from consts import DB_URI
+# 应用配置项
+DEBUG = True
+SQLALCHEMY_DATABASE_URI = DB_URI
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+```
+
+<br>
+<br>
+
+#### 5、应用创建文件
+&emsp;&emsp;所有配置都准备好之后，在创建应用的文件 app_with_sqlalchemy.py 中加载配置并启动应用。     
+```python
+
+```
