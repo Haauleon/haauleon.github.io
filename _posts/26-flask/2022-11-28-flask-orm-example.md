@@ -102,7 +102,7 @@ get_result([user])
 <br>
 
 #### 1、条件查询语句示例   
-&emsp;&emsp;如上代码所示，使用 create_engine() 配置数据库，使用 sessionmaker() 创建会话与数据库建立连接
+&emsp;&emsp;如上代码所示，使用 create_engine() 配置数据库，使用 sessionmaker() 创建会话与数据库建立连接，使用 session.create_all() 将模型实例对象的修改加入会话并通过 session.commit() 提交。数据库中表 users 已有三条记录 `'xiaoming', 'wanglang', 'lilei'`，现在进行表的查询，使用如下有条件的查询语句：       
 ```python
 # 示例一、查询表 users 中全部的记录
 rs = session.query(User).all()
