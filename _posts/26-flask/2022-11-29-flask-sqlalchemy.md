@@ -184,4 +184,25 @@ if __name__ == '__main__':
 ```
 
 启动应用，查看输出结果：     
-1. 
+```
+POST http://127.0.0.1:9000/users?name=wujun
+POST /users?name=wujun HTTP/1.1
+User-Agent: PostmanRuntime/7.29.2
+Accept: */*
+Cache-Control: no-cache
+Postman-Token: f53491f1-b97e-4d70-ab34-26e7c0ec4cdb
+Host: 127.0.0.1:9000
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 0
+ 
+HTTP/1.0 200 OK
+Content-Type: application/json
+Content-Length: 14
+Server: Werkzeug/0.11.10 Python/2.7.11+
+Date: Tue, 29 Nov 2022 14:31:09 GMT
+ 
+{
+"id": 4
+}
+```
