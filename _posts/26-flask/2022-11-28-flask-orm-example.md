@@ -184,7 +184,7 @@ def get_result(rs):
         print user.name
 
 
-# 使用 text() 直接输入 SQL 语句，使用 params() 进行关键字传参，使用 order_by() 进行排序
+# 使用 text() 直接输入 SQL 语句，使用 params() 进行关键字传参，使用 order_by() 进行如下正序排序
 rs = session.query(User).filter(
     text('id > 2 and id < 4')).order_by(text('id')).all()
 get_result(rs)
