@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Flask Web | DROP TABLE 报错"
+title:         "数据库 | DROP TABLE 报错"
 subtitle:      "ERROR 1217 (23000): Cannot delete or update a parent row: a foreign key constraint fails"
 author:        "Haauleon"
 header-img:    "img/in-post/post-flask/bg.jpeg"
