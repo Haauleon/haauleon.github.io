@@ -219,7 +219,6 @@ wanglang
 
 如：
 rs = session.query(User).order_by(User.id).all()
-rs = session.query(User).order_by(text('id')).all()
 ```
 
 <br>
@@ -230,8 +229,8 @@ rs = session.query(User).order_by(text('id')).all()
 返回的查询对象集 = session.query(模型类).order_by(-模型类.字段名).all()
 
 如：
-rs = session.query(User).order_by(text('id').desc()).all()
-rs = session.query(User).order_by(-text('id')).all()
+rs = session.query(User).order_by(User.id.desc()).all()
+rs = session.query(User).order_by(-User.id).all()
 ```
 
 
