@@ -205,3 +205,84 @@ xiaoming
 --------------------
 wanglang
 ```
+
+<br>
+<br>
+
+### 二、ORM 三种排序方式
+#### 1、order_by()
+&emsp;&emsp;order_by 可以指定根据这个表中的某个字段进行排序，如果前面加上一个 `-` 代表是降序排序。查询时使用 order_by，如果想要倒序显示必须 desc() 方法指定。    
+
+（1）正序排序     
+```
+返回的查询对象集 = session.query(模型类).order_by(模型类.字段名).all()
+
+如：
+rs = session.query(User).order_by(User.id).all()
+rs = session.query(User).order_by(text('id')).all()
+```
+
+<br>
+
+（2）倒序排序    
+```
+返回的查询对象集 = session.query(模型类).order_by(模型类.字段名.desc()).all()
+返回的查询对象集 = session.query(模型类).order_by(-模型类.字段名).all()
+
+如：
+rs = session.query(User).order_by(text('id').desc()).all()
+rs = session.query(User).order_by(-text('id')).all()
+```
+
+
+<br>
+<br>
+
+#### 2、__mapper_args__
+&emsp;&emsp;定义模型类时，使用 `__mapper_args__={"order_by": 字段}` 指定排序方式。     
+```python
+class Article(Base):
+
+    __tablename__ = "article"
+
+    id = Column(Integer, autoincrement=True, primary_key=True)
+    title = Column(String(20), nullable=False)
+    create_time = Column(DateTime, nullable=False,default=datetime.now)
+    __mapper_args__ = {
+        "order_by":id.desc()
+    }
+    
+    def __repr__(self):
+        return "<id:%s>" % self.id
+```
+
+
+<br>
+<br>
+
+#### 3、relationship 指定参数
+```python
+class User(Base):
+
+    __tablename__ = 'user
+
+    id = Column (Integer, primary_key=True, autoincrement=True)
+    username = Column(String(50), nullable=False)
+
+
+class Article(Base):
+
+    __tablename__ = 'article' 
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    title = Column(String(50), nullable=False)
+    create time = Column(DateTime, nullable=False, default=datetime.now)
+    uid = Column(Integer, ForeignKey('user.id'))
+    author = relationship("User", backref=backref("articles", order_by=create_time.desc()))
+```
+
+<br>
+<br>
+
+相关链接：     
+[ORM-三种排序方式](https://blog.csdn.net/weixin_44737646/article/details/104622417)
