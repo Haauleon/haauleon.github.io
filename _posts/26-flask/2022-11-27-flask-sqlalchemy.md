@@ -51,7 +51,7 @@ Requires: importlib-metadata
 <br>
 
 ### 二、使用 SQLAlchemy
-#### 1、create_engine 连接数据库
+#### 1、create_engine 配置数据库
 &emsp;&emsp;使用 `> vagrant ssh` 连接和操作虚拟机系统，输入 `> ipython` 打开 Ipython 进入交互终端：      
 ```
 In [14]: from sqlalchemy import create_engine
@@ -83,7 +83,7 @@ dialect+driver://username:password@host:port/database
 engine = create_engine('mysql+mysqldb://haauleon:123456@localhost:8000/mydb')
 ```
 
-&emsp;&emsp;所以如果连接的是 MySQL 数据库，由于已有默认驱动 MySQLdb，就可以不用指定驱动。如以下语句来连接 MySQL 数据库：         
+&emsp;&emsp;所以如果连接的是 MySQL 数据库，由于已有默认驱动 MySQLdb，就可以不用指定驱动。如以下语句来配置 MySQL 数据库：         
 ```python
 engine = create_engine('mysql://haauleon:123456@localhost:8000/mydb')
 ```

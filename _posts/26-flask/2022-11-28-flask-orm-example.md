@@ -38,7 +38,7 @@ from sqlalchemy.orm import sessionmaker
 
 from consts import DB_URI    # 导入数据库连接配置
 
-eng = create_engine(DB_URI)  # 连接数据库
+eng = create_engine(DB_URI)  # 配置数据库
 Base = declarative_base()    # 构造基类
 
 
@@ -56,7 +56,7 @@ Base.metadata.drop_all(bind=eng)    # 删除全部表（实际工作时不要这
 Base.metadata.create_all(bind=eng)  # 创建多个表
 
 
-# 通过 sessionmaker 创建一个会话，会话提供了事务控制的支持
+# 通过 sessionmaker 创建一个会话与数据库建立连接，会话提供了事务控制的支持
 Session = sessionmaker(bind=eng)
 session = Session()
 
@@ -97,4 +97,47 @@ get_result(rs)
 # 示例六、查询 name='xiaoming' 的记录
 user = session.query(User).filter_by(name='xiaoming').first()
 get_result([user])
+```
+
+<br>
+
+#### 1、条件查询语句示例   
+&emsp;&emsp;如上代码所示，使用 create_engine() 配置数据库，使用 sessionmaker() 创建会话与数据库建立连接
+```python
+# 示例一、查询表 users 中全部的记录
+rs = session.query(User).all()
+get_result(rs)
+# 示例二、查询 id 包含 [2, ] 的记录，此处查询 id=2。若为 [2, 3, 4] 则查询 id=2,id=3,id=4 的记录
+rs = session.query(User).filter(User.id.in_([2, ]))
+get_result(rs)
+# 示例三、查询 id>2 and id<4 的记录
+rs = session.query(User).filter(and_(User.id > 2, User.id < 4))
+get_result(rs)
+# 示例四、查询 id=2 or id=4 的记录
+rs = session.query(User).filter(or_(User.id == 2, User.id == 4))
+get_result(rs)
+# 示例五、模糊查询 like
+rs = session.query(User).filter(User.name.like('%min%'))
+get_result(rs)
+# 示例六、查询 name='xiaoming' 的记录
+user = session.query(User).filter_by(name='xiaoming').first()
+get_result([user])
+```
+
+查询结果如下：     
+```
+--------------------
+xiaoming
+wanglang
+lilei
+--------------------
+wanglang
+--------------------
+lilei
+--------------------
+wanglang
+--------------------
+xiaoming
+--------------------
+xiaoming
 ```
