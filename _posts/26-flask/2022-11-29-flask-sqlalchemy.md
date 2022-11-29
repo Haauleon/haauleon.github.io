@@ -150,7 +150,7 @@ from users import User  # 导入模型类
 app = Flask(__name__)
 # 使用 from_object 加载 config.py 中的配置，生产环境中推荐这样管理配置
 app.config.from_object('config')
-# 将第三方扩展放在 ext.py 之后，这里只需要使用 xx.init_app(app) 的方式初始化，这也是推动的用法
+# 将第三方扩展放在 ext.py 之后，这里只需要使用 xx.init_app(app) 的方式初始化，这也是推荐的用法
 db.init_app(app)
 
 """
