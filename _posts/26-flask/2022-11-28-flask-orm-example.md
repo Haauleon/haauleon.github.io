@@ -20,7 +20,7 @@ tags:
 <br>
 <br>
 
-### 一、SQLAlchemy
+### 一、使用 ORM
 环境准备：     
 Python 2.7.11+      
 pip==9.0.3     
@@ -28,4 +28,7 @@ flask==0.11.1
 httpie==0.9.4     
 
 
-&emsp;&emsp;
+&emsp;&emsp;ORM 是基于 SQLAlchemy 表达式语言的，如下代码示例：     
+```python
+
+```

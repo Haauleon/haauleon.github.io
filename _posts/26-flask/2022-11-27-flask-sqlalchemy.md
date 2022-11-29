@@ -188,7 +188,7 @@ users = Table(
     Column('Name', String(50), nullable=False),
 )
 
-# 在创建表的时候判断该表是否已存在，已存在则不创建
+# 在创建表的时候判断该表是否已存在，已存在则不删除表后再创建表
 if users.exists():
     users.drop()
 users.create()  # 创建表 users
