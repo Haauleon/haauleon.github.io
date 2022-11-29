@@ -77,26 +77,6 @@ def get_result(rs):
     print '-' * 20
     for user in rs:
         print user.name
-
-
-# 示例一、查询表 users 中全部的记录
-rs = session.query(User).all()
-get_result(rs)
-# 示例二、查询 id 包含 [2, ] 的记录，此处查询 id=2。若为 [2, 3, 4] 则查询 id=2,id=3,id=4 的记录
-rs = session.query(User).filter(User.id.in_([2, ]))
-get_result(rs)
-# 示例三、查询 id>2 and id<4 的记录
-rs = session.query(User).filter(and_(User.id > 2, User.id < 4))
-get_result(rs)
-# 示例四、查询 id=2 or id=4 的记录
-rs = session.query(User).filter(or_(User.id == 2, User.id == 4))
-get_result(rs)
-# 示例五、模糊查询 like
-rs = session.query(User).filter(User.name.like('%min%'))
-get_result(rs)
-# 示例六、查询 name='xiaoming' 的记录
-user = session.query(User).filter_by(name='xiaoming').first()
-get_result([user])
 ```
 
 <br>
