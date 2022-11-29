@@ -183,7 +183,7 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9000)
 ```
 
-启动应用，查看输出结果：     
+启动应用，发送以下请求查看响应结果：     
 ```
 POST http://127.0.0.1:9000/users?name=wujun
 POST /users?name=wujun HTTP/1.1
@@ -205,4 +205,15 @@ Date: Tue, 29 Nov 2022 14:31:09 GMT
 {
 "id": 4
 }
+```
+
+应用文件显示的内容如下：     
+```
+ ❯ python web/app_with_sqlalchemy.py
+ * Running on http://0.0.0.0:9000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger pin code: 203-908-357
+User ID: None
+10.0.2.2 - - [29/Nov/2022 14:31:09] "POST /users?name=wujun HTTP/1.1" 200 -
 ```
