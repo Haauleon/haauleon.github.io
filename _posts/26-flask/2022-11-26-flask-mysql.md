@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Flask Web | 使用 MySQLdb"
-subtitle:      "用 MySQL 的 Python 驱动（MySQLdb）写原生语句来进行数据库开发"
+subtitle:      "用驱动 MySQLdb 写 SQL 原生语句进行数据库开发"
 author:        "Haauleon"
 header-img:    "img/in-post/post-flask/bg.jpeg"
 header-mask:   0.4
