@@ -1,7 +1,7 @@
 ---
 layout:        post
-title:         "Flask Web | 使用 ORM"
-subtitle:      "ORM 是基于 SQLAlchemy 表达式语言的"
+title:         "Flask Web | SQLAlchemy 数据库关联"
+subtitle:      "使用外键进行多表关联，保证数据一致性且实现一些级联操作"
 author:        "Haauleon"
 header-img:    "img/in-post/post-flask/bg.jpeg"
 header-mask:   0.4
