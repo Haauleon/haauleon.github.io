@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Flask Web | SQLAlchemy —— 使用 ORM"
+title:         "Flask Web | 使用 ORM"
 subtitle:      "ORM 构造模型基类、创建会话连接、复杂条件查询和三种排序方式"
 author:        "Haauleon"
 header-img:    "img/in-post/post-flask/bg.jpeg"
