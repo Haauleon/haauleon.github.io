@@ -16,8 +16,8 @@ tags:
 <br>
 <br>
 
-### 一、异常处理
-#### 1、mysql-python 安装异常
+
+### 一、mysql-python 安装报错
 &emsp;&emsp;windows11 在执行第三方包安装命令 `pip install mysql-python==1.2.5` 时报了如下错误：      
 ```
 > pip install MySQL-python==1.2.5
@@ -60,7 +60,7 @@ open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compil
 <br>
 <br>
 
-#### 2、报错处理
+### 二、报错处理
 1. 到 [https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysql-python](https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysql-python) 下载 mysql-python 对应的第三方包 `MySQL_python‑1.2.5‑cp27‑none‑win_amd64.whl`。如果提供的链接在线下载失败，可使用以下离线包：    
     ```
     链接：https://pan.baidu.com/s/17cwrXq1wJ_3yS022gxAeZw?pwd=yzo5 
