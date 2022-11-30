@@ -9,6 +9,7 @@ catalog:       true
 tags:
     - Python
     - Windows
+    - 爬虫
 ---
 
 > 本篇所有操作均在基于 Python==3.8.10 且 pip==22.3.1 的环境下完成 
