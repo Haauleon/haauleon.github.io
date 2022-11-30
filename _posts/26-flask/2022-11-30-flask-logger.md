@@ -49,10 +49,6 @@ app.config['DATABASE_QUERY_TIMEOUT'] = 0.0001
 app.config['SQLALCHEMY_RECORD_QUERIES'] = True
 db.init_app(app)
 
-# 格式化程序实例用于将 LogRecord 转换为用户定制的格式化文本
-formatter = logging.Formatter(
-    "[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s")
-
 
 ```
 
