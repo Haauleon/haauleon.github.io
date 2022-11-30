@@ -50,7 +50,7 @@ app.config['SQLALCHEMY_RECORD_QUERIES'] = True
 db.init_app(app)
 
 # 格式化程序实例用于将 LogRecord 转换为用户定制的格式化文本
-formatter = logging.Formatter("[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s")
+formatter = logging.Formatter("[%(asctime)s] (%(pathname)s:%(lineno)d) %(levelname)s - %(message)s")
 
 """
 RotatingFileHandler() 用于记录到一组文件的处理程序，当当前文件达到一定大小时，该处理程序将从一个文件切换到下一个文件。
