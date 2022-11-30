@@ -10,9 +10,6 @@ tags:
     - Flask
     - Python
     - Web开发
-    - 数据库
-    - ORM
-    - SQLAlchemy
 ---
 
 > 本篇所有操作均在基于 Ubuntu 16.04 LTS 的虚拟机下完成，且使用 Vagrant 来操作虚拟机系统，虚拟机系统 VirtualBox Version: 7.0 
