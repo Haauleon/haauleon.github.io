@@ -106,8 +106,7 @@ async def launch(options: dict = None, **kwargs: Any) -> Browser:
 <br>
 
 指定浏览器路径的方法如下：    
-1. 查看稳定版 chrome.exe 的文件路径     
-    进入浏览器主页，在地址栏输入 chrome://version，找到可执行文件路径并复制        
+1. 查看稳定版 chrome.exe 的文件路径。进入浏览器主页，在地址栏输入 chrome://version，找到可执行文件路径并复制           
     ![](\img\in-post\post-python\2022-11-30-python-pyppeteer-error-5.jpg)
 2. 更新 pyppeteer 脚本代码，增加 pyppeteer.launch 设置项          
     ```python
