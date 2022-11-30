@@ -141,3 +141,5 @@ async def launch(options: dict = None, **kwargs: Any) -> Browser:
 
 相关链接：    
 [开启 TLS 1.3 加密协议，极速 HTTPS 体验](https://www.cnblogs.com/upyun/p/8296404.html)      
+[如何修复ERR SSL VERSION OR CIPHER MISMATCH](https://jingyan.baidu.com/article/9f7e7ec0c8647b6f28155495.html)     
+[pyppeteer框架如何指定Chrome浏览器](https://blog.csdn.net/weixin_43343144/article/details/116242289)
