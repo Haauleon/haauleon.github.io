@@ -76,7 +76,7 @@ pyppeteer.errors.PageError: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://m
 <br>
 
 #### 2、pyppeteer 设置浏览器
-&emsp;&emsp;以上方法在手动打开 chromium 浏览器访问 [https://macaoideas.ipim.gov.mo/home](https://macaoideas.ipim.gov.mo/home) 时成功，但是在 pyppeteer 脚本执行去自动化访问的时候，发现 pyppeteer 启动的 chromium 浏览器还是无法访问该网站，检查发现在执行 pyppeteer 自动化脚本时所启动的 chromium 浏览器依然使用的是默认的 flags（TLS 1.3 默认不支持），而不是刚刚已经更新过的。     
+&emsp;&emsp;以上方法在手动打开 chromium 浏览器访问 [https://macaoideas.ipim.gov.mo/home](https://macaoideas.ipim.gov.mo/home) 时成功，但是在 pyppeteer 脚本执行去自动化访问网站的时候，发现还是无法访问该网站且报错信息不变，检查发现在执行脚本时所启动的 chromium 浏览器依然使用的是默认的 flags 配置，而不是刚刚已经更新过的。     
 
 &emsp;&emsp;换条思路，使用稳定版的 chrome 浏览器去访问 [https://macaoideas.ipim.gov.mo/home](https://macaoideas.ipim.gov.mo/home)，发现访问成功。打开新的标签页访问 chrome://flags 检查 TLS 选项得到如下信息：             
 ```
@@ -87,7 +87,7 @@ Strictly conform the Fetch spec to omit TLS client certificates if credential mo
 
 &emsp;&emsp;所以，第二种方法就是将 pyppeteer 脚本中默认的 chromium 浏览器（开发版的 chrome）替换为指定的 chrome 浏览器（稳定版的 chrome），这样一来就可以解决自动化脚本执行的报错问题。      
 
-&emsp;&emsp;查看 pyppeteer.launcher 文档，可通过增加设置项 `executablePath` 的方式指定浏览器的路径，如下：     
+&emsp;&emsp;查看 pyppeteer.launcher 文档，可通过增加设置项 `executablePath` 的方式指定浏览器的路径，文档内容如下：     
 ```
 async def launch(options: dict = None, **kwargs: Any) -> Browser:
     """Start chrome process and return :class:`~pyppeteer.browser.Browser`.
@@ -133,3 +133,11 @@ async def launch(options: dict = None, **kwargs: Any) -> Browser:
     ...
     ...
     ```
+3. 重新执行脚本，执行成功，报错已经解决
+
+
+<br>
+<br>
+
+相关链接：    
+[开启 TLS 1.3 加密协议，极速 HTTPS 体验](https://www.cnblogs.com/upyun/p/8296404.html)      
