@@ -1,0 +1,73 @@
+---
+layout:        post
+title:         "Python3 | pyppeteer 报错"
+subtitle:      "pyppeteer.errors.PageError: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at ..."
+author:        "Haauleon"
+header-img:    "img/in-post/post-python/bg.jpeg"
+header-mask:   0.4
+catalog:       true
+tags:
+    - Python
+    - Windows
+---
+
+> 本篇所有操作均在基于 Python==3.8.10 且 pip==22.3.1 的环境下完成 
+
+<br>
+<br>
+
+
+### 一、pyppeteer 执行报错
+&emsp;&emsp;使用 pyppeteer 框架写的浏览器自动化脚本执行报错，报错信息如下：     
+```
+Traceback (most recent call last):
+  File "C:/Users/Haauleon/AppData/Roaming/JetBrains/PyCharmCE2022.1/scratches/scratch_1.py", line 324, in <module>
+    Run.exec_local()
+  File "C:/Users/Haauleon/AppData/Roaming/JetBrains/PyCharmCE2022.1/scratches/scratch_1.py", line 317, in exec_local
+    loop.run_until_complete(task)  # 完成事件循环，直到最后一个任务结束
+  File "C:\Users\Haauleon\AppData\Local\Programs\Python\Python38\lib\asyncio\base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "C:/Users/Haauleon/AppData/Roaming/JetBrains/PyCharmCE2022.1/scratches/scratch_1.py", line 257, in main
+    await self.increase_more_pageviews()
+  File "C:/Users/Haauleon/AppData/Roaming/JetBrains/PyCharmCE2022.1/scratches/scratch_1.py", line 247, in increase_more_pageviews
+    await self.goto_page('https://macaoideas.ipim.gov.mo/home')  # 3.1MB
+  File "C:/Users/Haauleon/AppData/Roaming/JetBrains/PyCharmCE2022.1/scratches/scratch_1.py", line 223, in goto_page
+    await self.page.goto(page_url, timeout=0)
+  File "C:\Users\Haauleon\AppData\Local\Programs\Python\Python38\lib\site-packages\pyppeteer\page.py", line 831, in goto
+    raise PageError(result)
+pyppeteer.errors.PageError: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://macaoideas.ipim.gov.mo/home
+Task was destroyed but it is pending!
+task: <Task pending name='Task-47' coro=<wait() running at C:\Users\Haauleon\AppData\Local\Programs\Python\Python38\lib\asyncio\tasks.py:426> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x000002DE78D7CB50>()]> cb=[NavigatorWatcher.__init__.<locals>.<lambda>() at C:\Users\Haauleon\AppData\Local\Programs\Python\Python38\lib\site-packages\pyppeteer\navigator_watcher.py:54]>
+```
+
+<br>
+<br>
+
+### 二、报错分析
+```
+pyppeteer.errors.PageError: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://macaoideas.ipim.gov.mo/home
+```
+&emsp;&emsp;报错提示指明了是被访问的网站 [https://macaoideas.ipim.gov.mo/home](https://macaoideas.ipim.gov.mo/home) 无法提供安全连接。访问网站时，浏览器会尝试与主机服务器建立连接，检查有效的SSL证书。如果浏览器在验证这些检查时遇到问题，则会产生 ERR_SSL_VERSION_OR_CIPHER_MISMATCH 错误。        
+
+<br>
+<br>
+
+### 三、报错处理
+#### 1、chromium flags 更新
+&emsp;&emsp;由于 pyppeteer 框架在不指定浏览器时，默认使用的是 chromium 浏览器。该浏览器在第一次执行 pyppeteer 脚本时会自动下载安装，用户不需要手动下载。现在找到 chromium 浏览器存放的目录：     
+
+1. Windows 系统下打开 Everything 软件，输入 chrome.exe 进行搜索        
+2. 在搜索结果中，找到路径中包含 pyppeteer 的 chrome.exe 程序      
+    ![](\img\in-post\post-python\2022-11-30-python-pyppeteer-error-1.jpg)
+3. 双击打开 chrome.exe 程序，进入 chromium 浏览器主页      
+4. 访问 [https://macaoideas.ipim.gov.mo/home](https://macaoideas.ipim.gov.mo/home)，访问失败      
+    ![](\img\in-post\post-python\2022-11-30-python-pyppeteer-error-2.jpg)
+5. 在浏览器地址栏输入 chrome://flags 回车后搜索 `TLS` 和 `QUIC` 并进行修改，修改项如下：    
+    ```
+    Experimental QUIC protocol: Disabled
+    TLS 1.3: Enabled(Final)
+    ```
+    ![](\img\in-post\post-python\2022-11-30-python-pyppeteer-error-3.jpg)
+6. 修改完成后重启 chromium 浏览器方可生效     
+7. 重启后再次访问 [https://macaoideas.ipim.gov.mo/home](https://macaoideas.ipim.gov.mo/home)，访问成功      
+    ![](\img\in-post\post-python\2022-11-30-python-pyppeteer-error-4.jpg)
