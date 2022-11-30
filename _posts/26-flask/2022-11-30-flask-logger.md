@@ -29,7 +29,7 @@ httpie==0.9.4
 <br>
 
 #### 1、启用查询记录功能
-&emsp;&emsp;设置配置项 DATABASE_QUERY_TIMEOUT 和 SQLALCHEMY_RECORD_QUERIES 的阈值，然后使用 logging.Formatter 格式化被记录到日志文件 slow_query.log 中的字符串，最后添加 app.after_request 钩子用于每次请求结束后获取执行的查询语句并判断阈值，超过就记录到日志中。如执行以下代码：                
+&emsp;&emsp;设置配置项 DATABASE_QUERY_TIMEOUT 和 SQLALCHEMY_RECORD_QUERIES 的阈值，然后格式化被记录到日志文件 slow_query.log 中的字符串，最后添加 app.after_request 钩子用于每次请求结束后获取执行的查询语句并判断阈值，超过就记录到日志中。如执行以下代码：                
 ```python
 # coding=utf-8
 import logging
