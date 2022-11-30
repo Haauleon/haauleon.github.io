@@ -53,12 +53,12 @@ db.init_app(app)
 formatter = logging.Formatter(
     "[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s")
 
-"""
+'''
 RotatingFileHandler() 用于记录到一组文件的处理程序，当当前文件达到一定大小时，该处理程序将从一个文件切换到下一个文件。
 例如：
 handler = RotatingFileHandler('slow_query.log', maxBytes=10000, backupCount=10)
 给 app.logger 添加一个记录日志到名为 slow_query.log 的文件的处理器，这个日志会按大小切分
-"""
+'''
 handler = RotatingFileHandler('slow_query.log', maxBytes=10000, backupCount=10)
 handler.setLevel(logging.WARN)
 handler.setFormatter(formatter)
@@ -81,11 +81,9 @@ def users():
     return jsonify({'id': user.id})
 
 
-"""
+'''
 此处添加 app.after_request 钩子，每次请求结束后获取执行的查询语句，例如超过阈值则记录日志
-"""
-
-
+'''
 @app.after_request
 def after_request(response):
     for query in get_debug_queries():
@@ -161,49 +159,49 @@ Duration: 0.000504970550537
 #### 4、日志文件的内容
 &emsp;&emsp;从终端显示的结果可知，由于 `app.config['DATABASE_QUERY_TIMEOUT'] = 0.0001`，而 `Duration: 0.000504970550537`，因此 `query.duration > app.config['DATABASE_QUERY_TIMEOUT']`，所以超过设定阈值后就会被记录到日志文件 slow_query.log 中。日志文件的内容如下：     
 ```
-(venv) ❯ cat -n chapter3/section3/slow_query.log
-     1  [2016-08-14 17:22:09,859] {logger_slow_query.py:48} WARNING -
-     2  Context:logger_slow_query.py:36 (users)
-     3  SLOW QUERY: INSERT INTO users (name) VALUES (%s)
-     4  Parameters: ('lihang',)
-     5  Duration: 0.000456809997559
-     6
-     7  [2016-08-14 17:22:09,860] {logger_slow_query.py:48} WARNING -
-     8  Context:logger_slow_query.py:38 (users)
-     9  SLOW QUERY: SELECT users.id AS users_id, users.name AS users_name
-    10  FROM users
-    11  WHERE users.id = %s
-    12  Parameters: (1L,)
-    13  Duration: 0.000252962112427
-    14
-    15  [2016-08-14 17:22:50,244] {logger_slow_query.py:48} WARNING -
-    16  Context:logger_slow_query.py:36 (users)
-    17  SLOW QUERY: INSERT INTO users (name) VALUES (%s)
-    18  Parameters: ('lihang',)
-    19  Duration: 0.000751972198486
-    20
-    21  [2016-08-14 17:22:50,245] {logger_slow_query.py:48} WARNING -
-    22  Context:logger_slow_query.py:38 (users)
-    23  SLOW QUERY: SELECT users.id AS users_id, users.name AS users_name
-    24  FROM users
-    25  WHERE users.id = %s
-    26  Parameters: (1L,)
-    27  Duration: 0.000526905059814
-    28
-    29  [2016-08-14 17:23:04,196] {logger_slow_query.py:48} WARNING -
-    30  Context:logger_slow_query.py:36 (users)
-    31  SLOW QUERY: INSERT INTO users (name) VALUES (%s)
-    32  Parameters: ('lihang',)
-    33  Duration: 0.00152277946472
-    34
-    35  [2016-08-14 17:23:04,197] {logger_slow_query.py:48} WARNING -
-    36  Context:logger_slow_query.py:38 (users)
-    37  SLOW QUERY: SELECT users.id AS users_id, users.name AS users_name
-    38  FROM users
-    39  WHERE users.id = %s
-    40  Parameters: (2L,)
-    41  Duration: 0.000243902206421
-    42
+❯ cat -n chapter3/section3/slow_query.log
+[2016-08-14 17:22:09,859] {logger_slow_query.py:48} WARNING -
+Context:logger_slow_query.py:36 (users)
+SLOW QUERY: INSERT INTO users (name) VALUES (%s)
+Parameters: ('lihang',)
+Duration: 0.000456809997559
+
+[2016-08-14 17:22:09,860] {logger_slow_query.py:48} WARNING -
+Context:logger_slow_query.py:38 (users)
+SLOW QUERY: SELECT users.id AS users_id, users.name AS users_name
+FROM users
+WHERE users.id = %s
+Parameters: (1L,)
+Duration: 0.000252962112427
+
+[2016-08-14 17:22:50,244] {logger_slow_query.py:48} WARNING -
+Context:logger_slow_query.py:36 (users)
+SLOW QUERY: INSERT INTO users (name) VALUES (%s)
+Parameters: ('lihang',)
+Duration: 0.000751972198486
+
+[2016-08-14 17:22:50,245] {logger_slow_query.py:48} WARNING -
+Context:logger_slow_query.py:38 (users)
+SLOW QUERY: SELECT users.id AS users_id, users.name AS users_name
+FROM users
+WHERE users.id = %s
+Parameters: (1L,)
+Duration: 0.000526905059814
+
+[2016-08-14 17:23:04,196] {logger_slow_query.py:48} WARNING -
+Context:logger_slow_query.py:36 (users)
+SLOW QUERY: INSERT INTO users (name) VALUES (%s)
+Parameters: ('lihang',)
+Duration: 0.00152277946472
+
+[2016-08-14 17:23:04,197] {logger_slow_query.py:48} WARNING -
+Context:logger_slow_query.py:38 (users)
+SLOW QUERY: SELECT users.id AS users_id, users.name AS users_name
+FROM users
+WHERE users.id = %s
+Parameters: (2L,)
+Duration: 0.000243902206421
+
 ```
 
 &emsp;&emsp;日志中包含了 **出现问题的代码位置** 以及 **对应的 SQL 语句**，就可以直接知道问题的根源了。       
