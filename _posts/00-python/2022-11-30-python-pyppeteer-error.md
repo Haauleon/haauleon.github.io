@@ -78,7 +78,7 @@ pyppeteer.errors.PageError: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://m
 #### 2、pyppeteer 设置浏览器
 &emsp;&emsp;以上方法在手动打开 chromium 浏览器访问 [https://macaoideas.ipim.gov.mo/home](https://macaoideas.ipim.gov.mo/home) 时成功，但是在 pyppeteer 脚本执行去自动化访问的时候，发现 pyppeteer 启动的 chromium 浏览器还是无法访问该网站，检查发现在执行 pyppeteer 自动化脚本时所启动的 chromium 浏览器依然使用的是默认的 flags，而不是刚刚已经更新过的。     
 
-&emsp;&emsp;换条思路，使用稳定版的 chrome 浏览器去访问 [https://macaoideas.ipim.gov.mo/home](https://macaoideas.ipim.gov.mo/home)，发现访问成功。所以，第二种方法就是在使用 pyppeteer 框架的脚本中指定 chrome 浏览器（稳定版的 chrome），而不是使用默认的 chromium 浏览器（开发版的 chrome），这样一来就可以解决自动化脚本执行的报错。      
+&emsp;&emsp;换条思路，使用稳定版的 chrome 浏览器去访问 [https://macaoideas.ipim.gov.mo/home](https://macaoideas.ipim.gov.mo/home)，发现访问成功。所以，第二种方法就是在使用 pyppeteer 框架的脚本中指定 chrome 浏览器（稳定版的 chrome），而不是使用默认的 chromium 浏览器（开发版的 chrome），这样一来就可以解决自动化脚本执行的报错问题。      
 
 &emsp;&emsp;查看 pyppeteer.launcher 文档，可通过增加设置项 `executablePath` 的方式指定浏览器的路径，如下：     
 ```
@@ -96,5 +96,33 @@ async def launch(options: dict = None, **kwargs: Any) -> Browser:
 ```
 
 1. 查看稳定版 chrome.exe 的文件路径     
-    进入浏览器主页，在地址栏输入 chrome://version，找到可执行文件路径并复制      
-2. 
+    进入浏览器主页，在地址栏输入 chrome://version，找到可执行文件路径并复制        
+    ![](\img\in-post\post-python\2022-11-30-python-pyppeteer-error-5.jpg)
+2. 更新 pyppeteer 脚本代码，增加 pyppeteer.launch 设置项          
+    ```python
+    ...
+    ...
+
+    async def _init(self):
+    """初始化浏览器"""
+    self.browser = await launch(
+        {
+            'executablePath': 'C:\Program Files\Google\Chrome\Application\chrome.exe',
+            'headless': True,  # 浏览器是否启用无头模式
+            'args': ['--disable-extensions',
+                        '--hide-scrollbars',
+                        '--disable-bundled-ppapi-flash',
+                        '--mute-audio',
+                        '--no-sandbox',
+                        '--disable-setuid-sandbox',
+                        '--disable-gpu',
+                        '--disable-infobars',
+                        '--proxy-server={}'.format(self.proxy)],
+            'dumpio': True,  # 不添加会卡顿,
+            'autoClose': True  # 在自动关闭浏览器的时候删除tmp文件
+        }
+    )
+
+    ...
+    ...
+    ```
