@@ -78,7 +78,7 @@ pyppeteer.errors.PageError: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://m
 #### 2、pyppeteer 设置浏览器
 &emsp;&emsp;以上方法在手动打开 chromium 浏览器访问 [https://macaoideas.ipim.gov.mo/home](https://macaoideas.ipim.gov.mo/home) 时成功，但是在 pyppeteer 脚本执行去自动化访问的时候，发现 pyppeteer 启动的 chromium 浏览器还是无法访问该网站，检查发现在执行 pyppeteer 自动化脚本时所启动的 chromium 浏览器依然使用的是默认的 flags，而不是刚刚已经更新过的。     
 
-&emsp;&emsp;换条思路，使用稳定版的 chrome 浏览器去访问 [https://macaoideas.ipim.gov.mo/home](https://macaoideas.ipim.gov.mo/home)，发现访问成功。所以，第二种方法就是在使用 pyppeteer 框架的脚本中指定 chrome 浏览器（稳定版的 chrome），而不是使用默认的 chromium 浏览器（开发版的 chrome），这样一来就可以解决自动化脚本执行的报错问题。      
+&emsp;&emsp;换条思路，使用稳定版的 chrome 浏览器去访问 [https://macaoideas.ipim.gov.mo/home](https://macaoideas.ipim.gov.mo/home)，发现访问成功。所以，第二种方法就是将 pyppeteer 脚本中默认的 chromium 浏览器（开发版的 chrome）替换为指定的 chrome 浏览器（稳定版的 chrome），这样一来就可以解决自动化脚本执行的报错问题。      
 
 &emsp;&emsp;查看 pyppeteer.launcher 文档，可通过增加设置项 `executablePath` 的方式指定浏览器的路径，如下：     
 ```
