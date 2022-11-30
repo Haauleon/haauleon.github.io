@@ -71,3 +71,30 @@ pyppeteer.errors.PageError: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at https://m
 6. 修改完成后重启 chromium 浏览器方可生效     
 7. 重启后再次访问 [https://macaoideas.ipim.gov.mo/home](https://macaoideas.ipim.gov.mo/home)，访问成功      
     ![](\img\in-post\post-python\2022-11-30-python-pyppeteer-error-4.jpg)
+
+<br>
+<br>
+
+#### 2、pyppeteer 设置浏览器
+&emsp;&emsp;以上方法在手动打开 chromium 浏览器访问 [https://macaoideas.ipim.gov.mo/home](https://macaoideas.ipim.gov.mo/home) 时成功，但是在 pyppeteer 脚本执行去自动化访问的时候，发现 pyppeteer 启动的 chromium 浏览器还是无法访问该网站，检查发现在执行 pyppeteer 自动化脚本时所启动的 chromium 浏览器依然使用的是默认的 flags，而不是刚刚已经更新过的。     
+
+&emsp;&emsp;换条思路，使用稳定版的 chrome 浏览器去访问 [https://macaoideas.ipim.gov.mo/home](https://macaoideas.ipim.gov.mo/home)，发现访问成功。所以，第二种方法就是在使用 pyppeteer 框架的脚本中指定 chrome 浏览器（稳定版的 chrome），而不是使用默认的 chromium 浏览器（开发版的 chrome），这样一来就可以解决自动化脚本执行的报错。      
+
+&emsp;&emsp;查看 pyppeteer.launcher 文档，可通过增加设置项 `executablePath` 的方式指定浏览器的路径，如下：     
+```
+async def launch(options: dict = None, **kwargs: Any) -> Browser:
+    """Start chrome process and return :class:`~pyppeteer.browser.Browser`.
+    This function is a shortcut to :meth:`Launcher(options, **kwargs).launch`.
+    Available options are:
+    * ``ignoreHTTPSErrors`` (bool): Whether to ignore HTTPS errors. Defaults to
+      ``False``.
+    * ``headless`` (bool): Whether to run browser in headless mode. Defaults to
+      ``True`` unless ``appMode`` or ``devtools`` options is ``True``.
+    * ``executablePath`` (str): Path to a Chromium or Chrome executable to run
+      instead of default bundled Chromium.
+    ...
+```
+
+1. 查看稳定版 chrome.exe 的文件路径     
+    进入浏览器主页，在地址栏输入 chrome://version，找到可执行文件路径并复制      
+2. 
