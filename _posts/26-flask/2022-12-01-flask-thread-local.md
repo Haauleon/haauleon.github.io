@@ -81,5 +81,5 @@ print mydata.number
 <br>
 <br>
 
-#### 2、werkzeug.ocal
+#### 2、werkzeug.local
 
