@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Flask Web | 本地线程"
-subtitle:      "本地线程 threading.local 和 Werkzeug.local 的使用"
+subtitle:      "本地线程 threading.local 和 Werkzeug.local.Local"
 author:        "Haauleon"
 header-img:    "img/in-post/post-flask/bg.jpeg"
 header-mask:   0.4
@@ -81,5 +81,17 @@ print mydata.number
 <br>
 <br>
 
-#### 2、werkzeug.local
-
+#### 2、werkzeug.local.Local
+&emsp;&emsp;Werkzeug 自己实现了本地线程。werkzeug.local.Local 和 上述的 threading.local 的区别如下：     
+- Werkzeug 使用了自定义的 `__storage__` 保存不同线程下的状态    
+- Werkzeug 提供了释放本地线程的 release_local 方法   
+- Werkzeug 使用如下方法得到 get_ident 函数，用来获得线程/协程标识符    
+    ```python
+    try:
+        from greenlet import getcurrent as get_ident
+    except ImportError:
+        try:
+            from thread omport get_ident
+        except ImportError:
+            from _thread import get_ident
+    ```
