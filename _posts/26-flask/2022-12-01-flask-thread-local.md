@@ -24,4 +24,51 @@ pip==9.0.3
 flask==0.11.1   
 httpie==0.9.4     
 
-&emsp;&emsp;
+&emsp;&emsp;本地线程（Thread Local）希望不同的线程对于内容的修改只在线程内发挥作用，线程之间互不影响。简单来说，我们定义并启动了多个线程来执行任务，但是每个线程只能执行自己线程内部的代码块，不去影响其他线程，为了获取线程执行的进度/结果，需要定义一个 threading.local() 对象来保存这些线程的状态。如下代码所示：     
+```python
+# coding=utf-8
+import threading
+
+mydata = threading.local()
+mydata.number = 42
+print mydata.number
+log = []
+
+
+def f1():
+    mydata.number = 11
+    log.append(mydata.number)
+
+
+def f2():
+    mydata.number = 12
+    log.append(mydata.number)
+
+
+def f3():
+    mydata.number = 13
+    log.append(mydata.number)
+
+
+"""
+定义三个线程 thread1、thread2和thread3 并启动
+"""
+thread1 = threading.Thread(target=f1)
+thread2 = threading.Thread(target=f2)
+thread3 = threading.Thread(target=f3)
+thread1.start()
+thread1.join()
+thread2.start()
+thread2.join()
+thread3.start()
+thread3.join()
+print log
+print mydata.number
+```
+
+执行结果如下：     
+```
+42
+[11, 12, 13]
+42
+```
