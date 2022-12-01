@@ -118,3 +118,28 @@ app = Flask(__name__)
 def people():
     name = request.args.get('name')
 ```
+
+&emsp;&emsp;flask.request 就是一个 LocalProxy 实例，这个实例是用来获取名为 _request_ctx_stack 的栈顶对象。以下代码逻辑能正常使用，其流程如下：     
+1. 用户访问 /people/ 产生请求   
+2. 在发生请求的过程中向 _request_ctx_stack 推入这个请求上下文的对象，它会变成栈顶。request 就会成为这个请求的上下文，其包含了这次请求相关的信息和数据     
+3. 在视图函数 people() 中使用 request 就可以使用 request.args.get() 获取请求的参数值 name 了   
+
+```python
+# coding=utf-8
+from functools import partial
+from werkzeug.local import LocalStack, LocalProxy
+
+_request_ctx_stack = LocalStack()
+
+
+def _lookup_req_object(name):
+    top = _request_ctx_stack.top
+    if top is None:
+        raise RuntimeError('working outside of request context')
+    return getattr(top, name)
+
+
+request = LocalProxy(partial(_lookup_req_object, 'request'))
+```
+
+&emsp;&emsp;设想一下，如果不使用 LocalStack 和 LocalProxy 的话，要想让视图函数 people() 访问到请求对象，就只能将其作为参数，一步步传入视图函数中。这样做的缺点是会让每个视图函数都增加一个 request 参数，而 Flask 巧妙地使用上下文把某些对象变为全局可访问（实际上是特定环境的局部对象的代理），每个线程看到的上下文对象确是不同的，这样就巧妙地解决了这个问题。
