@@ -103,3 +103,18 @@ print mydata.number
 &emsp;&emsp;Werkzeug 还实现了两种数据结构：    
 - LocalStack: 基于 werkzeug.local.Local 实现的栈结构，可以将对象推入、弹出，也可以快速拿到栈顶对象。     
 - LocalProxy: 作用和名字一样，是标准的代理模式。构造此结构时接受一个可以调用的参数（一般是函数），这个函数执行后就是通过 LocalStack 实例化的栈的栈顶对象。对于 LocalProxy 对象的操作实际上都会转发到这个栈顶对象（也就是一个 Thread Local 对象）上面。
+
+<br>
+<br>
+
+### 二、flask.request
+&emsp;&emsp;以下代码段是先引用了 flask.request，但是直到用户访问了 `/people/` 的时候才通过 request.args.get() 方法获取请求的参数值。试想一下，在引用 flask.request 时，倘若此时还没有用户访问 `/people/`，也就是还没有用户发送 `/people/` 请求，那么这个请求的上下文是怎么获得的呢？       
+```python
+from flask import Flask, request
+app = Flask(__name__)
+
+
+@app.route('/people/')
+def people():
+    name = request.args.get('name')
+```
