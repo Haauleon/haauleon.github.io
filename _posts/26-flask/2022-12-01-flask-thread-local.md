@@ -72,3 +72,5 @@ print mydata.number
 [11, 12, 13]  # 在线程内变成了 mydata.number 的值
 42            # 但是没有影响到开始设置的值
 ```
+
+&emsp;&emsp;本地线程的原理就是：在 `threading.current_thread().__dict__` 里添加一个包含对象 mydata 的 id 值的 key，用来保存不同线程的状态
