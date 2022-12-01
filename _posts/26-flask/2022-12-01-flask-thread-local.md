@@ -26,7 +26,7 @@ httpie==0.9.4
 
 <br>
 
-#### 1、threading.local()
+#### 1、threading.local
 &emsp;&emsp;本地线程（Thread Local）希望不同的线程对于内容的修改只在线程内发挥作用，线程之间互不影响。简单来说，我们定义并启动了多个线程来执行任务，但是每个线程只能执行自己线程内部的代码块，不去影响其他线程，为了获取线程执行的进度/结果，需要定义一个 threading.local() 对象来保存这些线程的状态。如下代码所示：     
 ```python
 # coding=utf-8
