@@ -95,3 +95,11 @@ print mydata.number
         except ImportError:
             from _thread import get_ident
     ```
+    &emsp;&emsp;以上代码块表示如果已经安装了 Greentlet 第三方包，就会优先选择 Greentlet，否则使用系统线程。      
+    &emsp;&emsp;Greentlet 是以 C 扩展模块形式接入 Python 的轻量级协程，它运行在操作系统进程的内部，但是会被协作式地调度。    
+
+<br>
+
+&emsp;&emsp;Werkzeug 还实现了两种数据结构：    
+- LocalStack: 基于 werkzeug.local.Local 实现的栈结构，可以将对象推入、弹出，也可以快速拿到栈顶对象。     
+- LocalProxy: 作用和名字一样，是标准的代理模式。构造此结构时接受一个可以调用的参数（一般是函数），这个函数执行后就是通过 LocalStack 实例化的栈的栈顶对象。对于 LocalProxy 对象的操作实际上都会转发到这个栈顶对象（也就是一个 Thread Local 对象）上面。
