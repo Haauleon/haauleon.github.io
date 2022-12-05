@@ -98,8 +98,8 @@ mysql> DESC PasteFile;
 
 #### 3、项目结构
 ```
- ❯ tree chapter3/section5
-chapter3/section5
+ ❯ tree web
+web
 ├── __init__.py
 ├── config.py
 ├── utils.py
