@@ -114,7 +114,7 @@ web
 
 <br>
 
-#### 1、__init__.py     
+#### 1、`__init__.py`     
 &emsp;&emsp;`__init__.py` 会在 import 的时候被执行，而空的 `__init__.py` 在 Python 新版本（Python3.8 版本）中已经不需要你额外去定义了，因为就算你不定义 init， Python 也知道你导入的包路径。但如果想做一些初始化操作或者预先导入相关的模块，那么定义 `__init__.py` 还是很有必要的。     
 
 &emsp;&emsp;该项目仍使用的是 python 2.7.11+，需要定义一个 `__init__.py` 文件，此文件为空文件。    
