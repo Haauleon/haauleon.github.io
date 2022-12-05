@@ -54,6 +54,16 @@ short-url==1.2.1      # 创建短链接
 
 #### 2、建表语句
 文件托管服务的建表语句如下（databases/schema.sql）:    
-```
-
+```sql
+CREATE TABLE `PasteFile` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `filename` varchar(5000) NOT NULL,
+    `filehash` varchar(128) NOT NULL,
+    `filemd5` varchar(128) NOT NULL,
+    `uploadtime` datetime NOT NULL,
+    `mimetype` varchar(256) NOT NULL,
+    `size` int(11) unsigned NOT NULL,
+    PRIMARY KEY(`id`),
+    UNIQUE KEY `filehash` (`filehash`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
