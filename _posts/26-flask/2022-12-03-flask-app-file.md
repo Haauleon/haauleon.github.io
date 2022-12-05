@@ -107,7 +107,7 @@ web
 ├── ext.py            # 存放扩展的封装
 ├── models.py         # 存放模型
 ├── app.py            # 存放主程序
-└── requirements.txt  # 项目依赖文件
+└── requirements.txt  # 项目依赖集合文件
 
 0 directories, 8 files
 ```
