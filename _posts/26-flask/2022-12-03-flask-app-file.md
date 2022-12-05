@@ -502,6 +502,7 @@ db.init_app(app)
 <br>
 
 #### 8、requirements.txt
+&emsp;&emsp;项目依赖的第三方 pip 包集合文件，可以使用命令行 `> pip install -r requirements.txt` 进行批量安装。      
 ```python
 python-magic==0.4.10
 Pillow==3.2.0
