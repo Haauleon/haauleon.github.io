@@ -101,13 +101,13 @@ mysql> DESC PasteFile;
  ❯ tree web
 web
 ├── __init__.py
-├── config.py
-├── utils.py
-├── mimes.py
-├── ext.py
-├── models.py
-├── app.py
-└── requirements.txt
+├── config.py         # 用于存放配置
+├── utils.py          # 用于存放功能函数
+├── mimes.py          # 只接受文件中定义了的媒体类型
+├── ext.py            # 存放扩展的封装
+├── models.py         # 存放模型
+├── app.py            # 存放主程序
+└── requirements.txt  # 项目依赖文件
 
 0 directories, 8 files
 ```
