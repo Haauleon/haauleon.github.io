@@ -53,7 +53,7 @@ short-url==1.2.1      # 创建短链接
 <br>
 
 #### 2、建表语句
-文件托管服务的建表语句如下（databases/schema.sql）:    
+文件托管服务的建表语句如下:          
 ```sql
 CREATE TABLE `PasteFile` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -63,7 +63,32 @@ CREATE TABLE `PasteFile` (
     `uploadtime` datetime NOT NULL,
     `mimetype` varchar(256) NOT NULL,
     `size` int(11) unsigned NOT NULL,
-    PRIMARY KEY(`id`),
+    PRIMARY KEY (`id`),
     UNIQUE KEY `filehash` (`filehash`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+&emsp;&emsp;建表时指定了 `ENGINE=InnoDB`，意味着这个表会使用 InnoDB 引擎，这是 MySQL 的默认存储引擎。现在创建一个文件 databases/schema.sql，写入以上建表 SQL 语句，然后使用命令行将该文件导入到数据库中：            
+```
+❯ vim databases/schema.sql
+> (echo "use r"; cat databases/schema.sql) | mysql --user='web' --password='web'
+```
+
+&emsp;&emsp;将表导入到数据库后，可以通过以下命令检查是否导入成功：    
+```
+> sudo mysql -u root
+mysql> use r;
+mysql> DESC PasteFile;
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| id         | int(11)          | NO   | PRI | NULL    | auto_increment |
+| filename   | varchar(5000)    | NO   |     | NULL    |                |
+| filehash   | varchar(128)     | NO   |     | NULL    |                |
+| filemd5    | varchar(128)     | NO   |     | NULL    |                |
+| uploadtime | datetime         | NO   |     | NULL    |                |
+| mimetype   | varchar(256)     | NO   |     | NULL    |                |
+| size       | int(11) unsigned | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
 ```
