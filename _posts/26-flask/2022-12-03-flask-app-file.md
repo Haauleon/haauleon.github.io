@@ -96,7 +96,7 @@ mysql> DESC PasteFile;
 <br>
 <br>
 
-#### 3、项目结构
+### 三、项目结构
 ```
  ❯ tree web
 web
@@ -106,8 +106,33 @@ web
 ├── mimes.py
 ├── ext.py
 ├── models.py
-├── app.txt
-└── requirements.py
+├── app.py
+└── requirements.txt
 
 0 directories, 8 files
 ```
+
+<br>
+
+#### 1、__init__.py     
+
+
+#### 2、config.py     
+
+
+#### 3、utils.py      
+
+
+
+#### 4、mimes.py     
+
+
+#### 5、ext.py       
+
+
+#### 6、models.py      
+
+
+#### 7、app.py    
+
+#### 8、requirements.txt
