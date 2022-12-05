@@ -123,13 +123,79 @@ web
 <br>
 
 #### 2、config.py     
-
+```python
+# coding=utf-8
+"""
+@File    :   config.py
+@Function:   用于存放配置
+"""
+DEBUG = True
+SQLALCHEMY_DATABASE_URI = 'mysql://web:web@localhost:3306/r'
+# 指定存放上传文件的目录
+UPLOAD_FOLDER = '/tmp/permdir'
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+```
 
 <br>
 <br>
 
 #### 3、utils.py      
+```python
+# coding=utf-8
+"""
+@File    :   utils.py
+@Function:   用于存放功能函数
+"""
+import os
+import hashlib
+from functools import partial
 
+from config import UPLOAD_FOLDER
+
+HERE = os.path.abspath(os.path.dirname(__file__))
+
+
+def get_file_md5(f, chunk_size=8192):
+    """
+    获得文件的 md5 值
+    @param f:
+    @param chunk_size:
+    @return:
+    """
+    h = hashlib.md5()
+    while True:
+        chunk = f.read(chunk_size)
+        if not chunk:
+            break
+        h.update(chunk)
+    return h.hexdigest()
+
+
+def humanize_bytes(bytesize, precision=2):
+    """
+    返回可读的文件大小
+    @param bytesize:
+    @param precision: 保留小数点后多少位，默认是精确到后两位
+    @return:
+    """
+    abbrevs = (
+        (1 << 50, 'PB'),  # 1 << 50 == 2^50 == 1125899906842624 bytes == 1PB
+        (1 << 40, 'TB'),  # 1 << 40 == 2^40 == 1099511627776 bytes == 1TB
+        (1 << 30, 'GB'),  # 1 << 30 == 2^30 == 1073741824 bytes == 1GB
+        (1 << 20, 'MB'),  # 1 << 20 == 2^20 == 1048576 bytes == 1MB
+        (1 << 10, 'kB'),  # 1 << 10 == 2^10 == 1024 bytes == 1KB
+        (1, 'bytes')
+    )
+    if bytesize == 1:
+        return '1 byte'
+    for factor, suffix in abbrevs:
+        if bytesize >= factor:
+            break
+    return '%.*f %s' % (precision, bytesize / factor, suffix)
+
+
+get_file_path = partial(os.path.join, HERE, UPLOAD_FOLDER)
+```
 
 <br>
 <br>
