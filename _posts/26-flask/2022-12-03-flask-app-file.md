@@ -97,3 +97,17 @@ mysql> DESC PasteFile;
 <br>
 
 #### 3、项目结构
+```
+ ❯ tree chapter3/section5
+chapter3/section5
+├── __init__.py
+├── config.py
+├── utils.py
+├── mimes.py
+├── ext.py
+├── models.py
+├── app.txt
+└── requirements.py
+
+0 directories, 8 files
+```
