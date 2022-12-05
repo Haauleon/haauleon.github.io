@@ -201,7 +201,40 @@ get_file_path = partial(os.path.join, HERE, UPLOAD_FOLDER)
 <br>
 
 #### 4、mimes.py     
+```python
+# coding=utf-8
+"""
+@File    :   mimes.py
+@Function:   只接受文件中定义了的媒体类型
+"""
+AUDIO_MIMES = [
+    'audio/x-aac',
+    'audio/mp4',
+    'audio/ogg',
+    'audio/mpeg',
+    'audio/x-m4a',
+    'audio/mp3'
+]
 
+IMAGE_MIMES = [
+    'image/x-icon',
+    'image/svg+xml',
+    'image/jpeg',
+    'image/gif',
+    'image/png',
+    'image/webp'
+]
+
+VIDEO_MIMES = [
+    'video/x-msvideo',
+    'video/quicktime',
+    'video/mpeg',
+    'video/h264',
+    'video/mp4',
+    'video/ogg',
+    'video/webm',
+]
+```
 
 <br>
 <br>
