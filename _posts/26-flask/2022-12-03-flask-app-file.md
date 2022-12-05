@@ -240,7 +240,18 @@ VIDEO_MIMES = [
 <br>
 
 #### 5、ext.py       
+```python
+# coding=utf-8
+"""
+@File    :   ext.py
+@Function:   存放扩展的封装
+"""
+from flask_mako import MakoTemplates, render_template  # noqa
+from flask_sqlalchemy import SQLAlchemy
 
+mako = MakoTemplates()
+db = SQLAlchemy()
+```
 
 <br>
 <br>
