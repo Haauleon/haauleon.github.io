@@ -115,24 +115,45 @@ web
 <br>
 
 #### 1、__init__.py     
+&emsp;&emsp;
 
+<br>
+<br>
 
 #### 2、config.py     
 
 
+<br>
+<br>
+
 #### 3、utils.py      
 
 
+<br>
+<br>
 
 #### 4、mimes.py     
 
 
+<br>
+<br>
+
 #### 5、ext.py       
 
+
+<br>
+<br>
 
 #### 6、models.py      
 
 
+<br>
+<br>
+
 #### 7、app.py    
+
+
+<br>
+<br>
 
 #### 8、requirements.txt
