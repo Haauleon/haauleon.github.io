@@ -259,6 +259,11 @@ db = SQLAlchemy()
 #### 6、models.py    
 &emsp;&emsp;文件中只包含了 PasteFile 模型，字段定义和初始化方法如下：     
 ```python
+# coding=utf-8
+"""
+@File    :   models.py
+@Function:   存放模型
+"""
 from ext import db
 
 
@@ -461,7 +466,37 @@ class PasteFile(db.Model):
 <br>
 
 #### 7、app.py    
+&emsp;&emsp;使用 SharedDataMiddleware 是实现在页面读取源文件的最简单的方法。      
 
+&emsp;&emsp;如下代码片段，只是把第三方扩展初始化放在了 app.py 文件中，而没有使用 `db = SQLAlchemy(app)` 这样的方法。这是因为在大型应用中如果 db 被多个模型文件引用的话，会造成 `from app import db` 这样的方式，但是往往在 app.py 中也会引用模型文件定义的类，这样就造成了循环引用。所以最好的方式是把它放在不依赖其他模块的独立文件中。   
+```python
+# coding=utf-8
+"""
+@File    :   app.py
+@Function:   应用主程序
+"""
+import os
+
+from werkzeug import SharedDataMiddleware
+from flask import abort, Flask, request, jsonify, redirect, send_file
+
+from ext import db, mako, render_template
+from models import PasteFile
+from utils import get_file_path, humanize_bytes
+
+ONE_MONTH = 60 * 60 * 24 * 30
+
+app = Flask(__name__, template_folder='../../templates/r',
+            static_folder='../../static')
+app.config.from_object('config')
+
+app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
+    '/i/': get_file_path()
+})
+
+mako.init_app(app)
+db.init_app(app)
+```
 
 <br>
 <br>
