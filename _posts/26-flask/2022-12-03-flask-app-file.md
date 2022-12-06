@@ -567,11 +567,26 @@ def preview(filehash):
 <br>
 
 #### 5、短链接页
-&emsp;&emsp;由于 hash 值太长，支持使用短链接的方式访问，使用 `/s/short_url` 这样的地址：     
+&emsp;&emsp;由于 hash 值太长，支持使用短链接的方式访问，使用 `/s/short_url` 这样的地址。但是并不需要把短链接存放进数据库，正确的做法是用 id 这个唯一标识生成短链接地址。         
 ```python
 @app.route('/s/<symlink>')
 def s(symlink):
     paste_file = PasteFile.get_by_symlink(symlink)
 
     return redirect(paste_file.url_p)
+```
+
+```python
+class PasteFile(db.Model):
+    ...
+
+    @cached_property
+    def symlink(self):
+        return short_url.encode_url(self.id)
+
+    @classmethod
+    def get_by_symlink(cls, symlink, code=404):
+        """通过短链接获得对应数据库条目的方法"""
+        id = short_url.decode_url(symlink)
+        return cls.query.filter_by(id=id).first() or abort(code)
 ```
