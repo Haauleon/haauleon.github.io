@@ -448,7 +448,76 @@ class PasteFile(db.Model):
 <br>
 
 #### 2、重置设置图片页
+&emsp;&emsp;支持对现有的图片重新设置大小，返回新的图片地址：     
+```python
+@app.route('/r/<img_hash>')
+def rsize(img_hash):
+    w = request.args['w']
+    h = request.args['h']
 
+    old_paste = PasteFile.get_by_filehash(img_hash)
+    new_paste = PasteFile.rsize(old_paste, w, h)
+
+    return new_paste.url_i
+```
+
+```python
+class PasteFile(db.Model):
+    ...
+
+    @classmethod
+    def get_by_filehash(cls, filehash, code=404):
+        """
+        从数据库中找到匹配 filehash 的条目
+        @param filehash:
+        @param code:
+        @return:
+        """
+        return cls.query.filter_by(filehash=filehash).first() or abort(code)
+
+    def get_url(self, subtype, is_symlink=False):
+        """
+        通过 get_url 可以拼不同类型的请求地址
+        @param subtype:
+        @param is_symlink:
+        @return:
+        """
+        hash_or_link = self.symlink if is_symlink else self.filehash
+        return 'http://{host}/{subtype}/{hash_or_link}'.format(
+            subtype=subtype, host=request.host, hash_or_link=hash_or_link)
+
+    @property
+    def url_i(self):
+        """
+        获取源文件的地址
+        @return:
+        """
+        return self.get_url('i')
+
+    @property
+    def url_p(self):
+        """
+        获取文件预览地址
+        @return:
+        """
+        return self.get_url('p')
+
+    @property
+    def url_s(self):
+        """
+        获取文件短链接地址
+        @return:
+        """
+        return self.get_url('s', is_symlink=True)
+
+    @property
+    def url_d(self):
+        """
+        获取文件下载地址
+        @return:
+        """
+        return self.get_url('d')
+```
 
 <br>
 <br>
