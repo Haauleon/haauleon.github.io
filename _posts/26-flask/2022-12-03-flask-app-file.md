@@ -523,15 +523,55 @@ class PasteFile(db.Model):
 <br>
 
 #### 3、下载页
+&emsp;&emsp;下载文件时使用 `/d/img_hash.jpg` 这样的地址，可以用 Flask 提供的 send_file 实现：    
+```python
+from flask import send_file
 
+ONE_MONTH = 60 * 60 * 24 * 30
+
+
+@app.route('/d/<filehash>', methods=['GET'])
+def download(filehash):
+    paste_file = PasteFile.get_by_filehash(filehash)
+
+    return send_file(open(paste_file.path, 'rb'),
+                     mimetype='application/octet-stream',
+                     cache_timeout=ONE_MONTH,
+                     as_attachment=True,
+                     attachment_filename=paste_file.filename.encode('utf-8'))
+```
 
 <br>
 <br>
 
 #### 4、预览页
+&emsp;&emsp;预览文件使用 `/p/img_hash.jpg` 这样的地址。在首页上传完毕时也会在地址栏显示了这样的地址，但事实上并没有发生跳转，只是用了 JavaScript 修改了地址。由于它们使用了同一个文件卡片组件，所以看起来一模一样。           
+```python
+@app.route('/p/<filehash>')
+def preview(filehash):
+    paste_file = PasteFile.get_by_filehash(filehash)
 
+    if not paste_file:
+        filepath = get_file_path(filehash)
+        if not(os.path.exists(filepath) and (not os.path.islink(filepath))):
+            return abort(404)
+
+        paste_file = PasteFile.create_by_old_paste(filehash)
+        db.session.add(paste_file)
+        db.session.commit()
+
+    return render_template('success.html', p=paste_file)
+```
 
 <br>
 <br>
 
 #### 5、短链接页
+&emsp;&emsp;由于 hash 值太长，支持使用短链接的方式访问，使用 `/s/short_url` 这样的地址：     
+```python
+@app.route('/s/<symlink>')
+def s(symlink):
+    paste_file = PasteFile.get_by_symlink(symlink)
+
+    return redirect(paste_file.url_p)
+```
