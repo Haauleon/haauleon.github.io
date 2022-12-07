@@ -547,3 +547,9 @@ bash: VBoxManage: command not found
 ```
 需要配置环境变量，在 `环境变量 > 系统变量 > Path` 变量中添加 VBoxManage.exe 所在目录的路径 `D:\Oracle\VirtualBox\` 即可。    
 ![](\img\in-post\post-system\2022-11-07-ubuntu-docker-vagrant-29.jpg)   
+
+<br>
+<br>
+
+相关链接：    
+[docker删除容器](https://blog.csdn.net/m0_67401746/article/details/124513237)
