@@ -16,7 +16,7 @@ tags:
 <br>
 
 ### bit.ly
-&emsp;&emsp;bit.ly 简单说就是一个网址缩短服务，它可以很长的一段地址缩短成端地址，使得分享更加容易。不过国内用户无法使用该网站的服务，也就是说无法直接访问 [http://bit.ly/2a9ep8V](http://bit.ly/2a9ep8V) ，但是在众多网友的积极帮助下，可以将 [http://bit.ly/2a9ep8V](http://bit.ly/2a9ep8V) 替换成 [http://j.mp/2a9ep8V](http://j.mp/2a9ep8V) ，也是可以访问的，已验证成功。    
+&emsp;&emsp;bit.ly 简单说就是一个网址缩短服务，它可以将很长的一段地址缩短成端地址，使得分享更加容易。不过国内用户无法使用该网站的服务，也就是说无法直接访问 [http://bit.ly/2a9ep8V](http://bit.ly/2a9ep8V) ，但是在众多网友的积极帮助下，可以将 [http://bit.ly/2a9ep8V](http://bit.ly/2a9ep8V) 替换成 [http://j.mp/2a9ep8V](http://j.mp/2a9ep8V) ，也是可以访问的，已验证成功。    
 
 百思不得其解的我百度了一下，直到看到有个网友的回答：   
 > Bit.ly 推出更短域名的 J.mp，它与 Bit.ly 共享一套系统，因此无论在何家的主域名后跟上相同的字符串，总会指向同一个地址。     
