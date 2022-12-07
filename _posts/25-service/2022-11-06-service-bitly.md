@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "网址缩短服务 | bit.ly"
-subtitle:      "缩短网址后容易分享，国内用户无法直接访问网址，不过想访问也是有办法的"
+subtitle:      "短链接容易分享，国内用户可以通过其他方法访问短链接"
 author:        "Haauleon"
 header-style:  text
 catalog:       true
