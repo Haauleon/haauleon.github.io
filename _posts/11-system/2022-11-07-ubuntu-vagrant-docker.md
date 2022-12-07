@@ -304,6 +304,11 @@ Last login: Tue Nov  8 04:12:02 2022 from 10.0.2.2
 ```
 
 <br>
+
+相关链接：    
+[vagrant基础篇](https://zhuanlan.zhihu.com/p/379980596)
+
+<br>
 <br>
 
 ### 三、Docker
