@@ -69,7 +69,7 @@ tags:
 <br>
 
 ### 二、Vagrant
-&emsp;&emsp;Vagrant 用来操作 VirtualBox、VMWar、AWS 这些虚拟机系统，可以很快地完成一套开发环境的部署。直接启动就好，不需要了解所有相关环境的知识和细节。可以通过 `> vagrant provision` ，使用 Shell 脚本或者主流的配置管理工具（如 Puppet、Ansible等）对软件进行自动安装、更新和配置管理。  
+&emsp;&emsp;Vagrant 用来操作 VirtualBox、VMWare、AWS 这些虚拟机系统，可以很快地完成一套开发环境的部署。直接启动就好，不需要了解所有相关环境的知识和细节。可以通过 `> vagrant provision` ，使用 Shell 脚本或者主流的配置管理工具（如 Puppet、Ansible等）对软件进行自动安装、更新和配置管理。  
 
 <br>
 
