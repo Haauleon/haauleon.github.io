@@ -10,6 +10,7 @@ tags:
     - Python
     - 操作系统
     - Ubuntu
+    - Web开发
 ---
 
 > 本篇所有操作均在基于 Ubuntu20.04 的环境下完成 
