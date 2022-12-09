@@ -44,7 +44,10 @@ tags:
 > virtualenv venv
 ```
 
-#### 2、配置 .env 文件
+<br>
+<br>
+
+#### 3、配置 .env 文件
 ```
 > cd flask_web
 > touch .env
@@ -54,7 +57,7 @@ tags:
 <br>
 <br>
 
-#### 3、效果演示
+#### 4、效果演示
 ```
 > cd ..
 > cd flask_web
