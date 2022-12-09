@@ -38,7 +38,21 @@ tags:
 <br>
 <br>
 
-#### 2、创建虚拟环境 venv
+#### 2、编辑 shell 配置
+&emsp;&emsp;为了下次登录后可以自动初始化脚本，需要在 shell 的配置文件中加入以下命令行：     
+```
+source /usr/local/bin/activate.sh
+```
+
+&emsp;&emsp;如果是 zsh，则编辑 zprofile 文件。如果是 bash，则编辑 profile 文件。我这里是用 bash，所以使用以下命令行打开配置文件 profile：          
+```
+> vim /home/haauleon/.profile
+```
+
+<br>
+<br>
+
+#### 3、创建虚拟环境 venv
 ```
 > cd flask_web
 > virtualenv venv
@@ -47,7 +61,7 @@ tags:
 <br>
 <br>
 
-#### 3、配置 .env 文件
+#### 4、配置 .env 文件
 ```
 > cd flask_web
 > touch .env
@@ -57,7 +71,7 @@ tags:
 <br>
 <br>
 
-#### 4、效果演示
+#### 5、效果演示
 ```
 > cd ..
 > cd flask_web
