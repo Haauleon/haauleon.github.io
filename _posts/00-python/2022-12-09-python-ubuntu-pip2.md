@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Python2 | Ubuntu20.04 安装 pip2"
+title:         "环境搭建 | Ubuntu20.04 安装 pip2"
 subtitle:      "Ubuntu20.04 安装 python2.7 对应的 pip2 指定版本 9.0.3"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
