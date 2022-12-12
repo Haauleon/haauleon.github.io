@@ -67,17 +67,18 @@ tags:
 ```
 > which python3
 /usr/bin/python3
-> sudo rm /usr/bin/python3
+> sudo rm /usr/bin/python3  # 删除原有链接
 > sudo ln -s -f /usr/local/python36/bin/python3.6 /usr/bin/python3
 > which pip3
 /usr/bin/pip3
-> sudo rm /usr/bin/pip3
+> sudo rm /usr/bin/pip3  # 删除原有链接
 > sudo ln -s -f /usr/local/python36/bin/pip3.6 /usr/bin/pip3
 ```
 
 <br>
+<br>
 
-#### 8.检查安装
+### 二、检查安装
 ```
 > python3 --version
 > pip3 --version
