@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "环境搭建 | Ubuntu20.04 安装 Python3.6.9"
+title:         "环境搭建 | Ubuntu20.04 安装 Python3.6"
 subtitle:      "Linux Ubuntu 20.04 LTS 安装 Python3.6.9 和 对应的 pip3"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
@@ -64,11 +64,16 @@ tags:
 <br>
 
 #### 7、设置软链接
+python3 软链接：     
 ```
 > which python3
 /usr/bin/python3
 > sudo rm /usr/bin/python3  # 删除原有链接
 > sudo ln -s -f /usr/local/python36/bin/python3.6 /usr/bin/python3
+```
+
+pip3 软链接：     
+```
 > which pip3
 /usr/bin/pip3
 > sudo rm /usr/bin/pip3  # 删除原有链接
