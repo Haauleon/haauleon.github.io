@@ -1,11 +1,12 @@
 ---
 layout:        post
-title:         "Ubuntu | 安装python 3.6.9"
-subtitle:      "Linux Ubuntu 20.04 LTS 安装 Python3.6.9 和 pip3"
+title:         "环境搭建 | Ubuntu20.04 安装 Python3.6.9"
+subtitle:      "Linux Ubuntu 20.04 LTS 安装 Python3.6.9 和 对应的 pip3"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-python/bg.jpeg"
 catalog:       true
 tags:
+    - Python
     - 操作系统
     - Ubuntu
 ---
