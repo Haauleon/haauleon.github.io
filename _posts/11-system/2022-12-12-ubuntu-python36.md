@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Ubuntu | 安装python 3.6.9"
-subtitle:      "Linux Ubuntu 20.04 LTS 一键安装 Python3 不同版本的方法"
+subtitle:      "Linux Ubuntu 20.04 LTS 安装 Python3.6.9 和 pip3"
 author:        "Haauleon"
 header-style:  text
 catalog:       true
