@@ -34,30 +34,37 @@ flask==0.11.1
 from flask import Flask, url_for
 
 app = Flask(__name__)
+app.config.from_object('settings')
 
 
-@app.route('/item/1/')
-def item():
-    return 'Item Testing'
+@app.route('/item/888/')
+def item1(id):
+    pass
+
+
+@app.route('/item/<id>/')
+def item2(id):
+    pass
 
 
 with app.test_request_context():
-    print url_for('item')
-    print url_for('item', id='1')
-    print url_for('item', id=2, next='/')
-    print url_for('item', id=3, page=1, size=10)
-
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=9000, debug=True)
+    print url_for('item1')
+    print url_for('item1', id='1')
+    print url_for('item1', id=2, next='/')
+    print url_for('item1', id=3, page=1, size=10)
+    # print url_for('item2')  # 会报错是因为 item2 需要传入id
+    print url_for('item2', id='4')
+    print url_for('item2', id=5, next='/')
 ```
 
 执行结果如下：    
 ```
-/item/1/
-/item/1/?id=1
-/item/1/?id=2&next=%2F
-/item/1/?size=10&page=1&id=3
+/item/888/
+/item/888/?id=1
+/item/888/?id=2&next=%2F
+/item/888/?id=3&page=1&size=10
+/item/4/
+/item/5/?next=%2F
 ```
 
 <br>
