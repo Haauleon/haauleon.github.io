@@ -100,7 +100,7 @@ def item():
 
 @app.route('/home/')
 def home():
-    # 构造带参url,这样不管find_girl的路由怎么变,都可以重定向至该页面
+    # 构造带参url,这样不管index的路由怎么变,都可以重定向至该页面
     return redirect(url_for('index', kw='flask'))
 
 
