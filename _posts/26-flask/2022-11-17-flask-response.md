@@ -51,7 +51,7 @@ if __name__ == '__main__':
 
 转换逻辑说明：     
 1. 如果返回的是一个合法的响应对象，它会从视图直接返回。     
-2. 如果返回的是一个字符串，会用字符串数据和默认参数创建以字符串为主体，状态码为 200，MIME 类型是 text/html 的 werkzeug.wrappers.Response 相应对象。        
+2. 如果返回的是一个字符串，会用字符串数据和默认参数创建以字符串为主体、状态码为 200、MIME 类型是 text/html 的 werkzeug.wrappers.Response 响应对象。        
     ```
     GET http://127.0.0.1:9000/index
     HTTP/1.0 200 OK
