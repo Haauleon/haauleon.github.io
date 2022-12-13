@@ -23,7 +23,7 @@ Python 2.7.11+
 pip==9.0.3     
 flask==0.11.1   
 
-&emsp;&emsp;HTTP 有多个访问 URL 方法，默认情况下，路由只回应 GET 请求，但是通过 app.route 装饰器传递 methods 参数可以改变这个行为。如下使用 `methods=['GET', 'POST']` 可以实现既支持 GET 请求也支持 POST 请求：           
+&emsp;&emsp;HTTP 有多个访问 URL 方法，默认情况下，路由只回应 GET 请求，但是通过 app.route 装饰器传递 methods 参数可以改变这个行为。如下使用 `methods=['GET', 'POST']` 可以实现既支持 GET 请求也支持 POST 请求，但如果请求方法不在 methods 的可选范围内则返回 405 Method Not Allowed。                 
 ```python
 # -*- coding: utf-8 -*-#
 from flask import Flask
@@ -56,6 +56,22 @@ if __name__ == '__main__':
     ![](\img\in-post\post-flask\2022-11-16-flask-http-3.jpg)     
 4. 访问 `DELETE http://127.0.0.1:9000/j/item/9999999`    
     ![](\img\in-post\post-flask\2022-11-16-flask-http-4.jpg) 
+5. 访问 `GET http://127.0.0.1:9000/j/item/3`          
+    ```
+    > http GET http://127.0.0.1:9000/j/item/3  
+    HTTP/1.0 405 METHOD NOT ALLOWED
+    Allow: POST, OPTIONS, DELETE
+    Content-Length: 178
+    Content-Type: text/html; charset=utf-8
+    Date: Tue, 13 Dec 2022 14:40:28 GMT
+    Server: Werkzeug/1.0.1 Python/2.7.18
+
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+    <title>405 Method Not Allowed</title>
+    <h1>Method Not Allowed</h1>
+    <p>The method is not allowed for the requested URL.</p>
+    ```
+
 
 <br>
 <br>
