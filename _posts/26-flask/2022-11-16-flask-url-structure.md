@@ -74,7 +74,7 @@ with app.test_request_context():
 <br>
 
 #### 2、实现页面重定向
-&emsp;&emsp;构造 URL 也叫 URL 反转。一般在页面重定向/模板中会使用 URL 反转，url_for('hello') 可以找到 hello 视图函数对应的路由。         
+&emsp;&emsp;构造 URL 也叫 URL 反转。一般在页面重定向/模板中会使用 URL 反转，`url_for('hello')` 可以找到视图函数 hello 对应的路由。         
 ```python
 # -*- coding: utf-8 -*-#
 from flask import Flask, url_for
