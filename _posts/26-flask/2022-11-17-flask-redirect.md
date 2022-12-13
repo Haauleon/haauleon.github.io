@@ -218,10 +218,10 @@ app.config.from_object('config')
 
 @app.route('/people/')
 def people():
-    name = request.args.get('name')
+    name = request.args.get('name')  # request.args.get() 获取查询参数 name 的值
     if not name:
         return redirect(url_for('login'))
-    user_agent = request.headers.get('User-Agent')
+    user_agent = request.headers.get('User-Agent')  # request.headers.get() 获取消息头 user_agent 的值
     return 'Name: {0}; UA: {1}'.format(name, user_agent)
 
 
@@ -236,7 +236,7 @@ def login():
 
 @app.route('/secret/')
 def secret():
-    abort(401)
+    abort(401)  # 表示禁止访问
     print 'This is never executed'
 
 
