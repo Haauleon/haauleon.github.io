@@ -90,7 +90,7 @@ if __name__ == '__main__':
 |float|同 int，但是接受浮点数|
 |path|和默认的相似，但也接受斜杆 `/`|
 |uuid|只接受 uuid 字符串|
-|any|可以指定多种路径，但是需要传入参数|
+|any|可以指定多种路径，但是需要传入参数。相当于限制了参数的可选范围，不在范围内的参数则返回 404 Not Found|
 
 <br>
 
@@ -103,7 +103,7 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/item/<any(a,b):id>')
+@app.route('/item/<any(a,b,c,d):id>')
 def item(id):
     return 'item: {}'.format(id)
 
@@ -112,7 +112,60 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=9000, debug=True)
 ```
 
-&emsp;&emsp;如上，在浏览器中访问 http://127.0.0.1/item/a 和访问 http://127.0.0.1/item/b 都符合这个规则，访问 http://127.0.0.1/item/a 则返回 `item: a`，访问 http://127.0.0.1/item/b 则返回 `item: b`。    
+&emsp;&emsp;如上，在浏览器中访问 /item/a、/item/b、/item/c、/item/d 都符合这个规则，访问 /item/a 则返回 `item: a`，访问 /item/b 则返回 `item: b`，以此类推。如果访问了 /item/e 则返回 404 Not Found，因为参数 e 不在 any() 的可选范围内。         
+```
+> http GET http://127.0.0.1:9000/item/a
+HTTP/1.0 200 OK
+Content-Length: 7
+Content-Type: text/html; charset=utf-8
+Date: Tue, 13 Dec 2022 07:53:07 GMT
+Server: Werkzeug/1.0.1 Python/2.7.18
+
+item: a
+
+
+> http GET http://127.0.0.1:9000/item/b
+HTTP/1.0 200 OK
+Content-Length: 7
+Content-Type: text/html; charset=utf-8
+Date: Tue, 13 Dec 2022 07:53:11 GMT
+Server: Werkzeug/1.0.1 Python/2.7.18
+
+item: b
+
+
+> http GET http://127.0.0.1:9000/item/c
+HTTP/1.0 200 OK
+Content-Length: 7
+Content-Type: text/html; charset=utf-8
+Date: Tue, 13 Dec 2022 07:53:19 GMT
+Server: Werkzeug/1.0.1 Python/2.7.18
+
+item: c
+
+
+> http GET http://127.0.0.1:9000/item/d
+HTTP/1.0 200 OK
+Content-Length: 7
+Content-Type: text/html; charset=utf-8
+Date: Tue, 13 Dec 2022 07:53:23 GMT
+Server: Werkzeug/1.0.1 Python/2.7.18
+
+item: d
+
+
+> http GET http://127.0.0.1:9000/item/e
+HTTP/1.0 404 NOT FOUND
+Content-Length: 232
+Content-Type: text/html; charset=utf-8
+Date: Tue, 13 Dec 2022 07:53:26 GMT
+Server: Werkzeug/1.0.1 Python/2.7.18
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+```
 
 <br>
 <br>
