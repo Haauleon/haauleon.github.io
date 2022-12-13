@@ -91,7 +91,7 @@ from flask import Flask
 ```python
 app = Flask(__name__)
 ```
-&emsp;&emsp;app 是 Flask 的实例，它接收包或者模块的名字作为参数，但一般都是传递 __name__。是为了让 flask.helpers.get__root_path 函数通过传入这个名字确定程序的根目录，以便获得静态文件和模板文件的目录。       
+&emsp;&emsp;app 是 Flask 的实例，它接收包或者模块的名字作为参数，但一般都是传递 `__name__`。是为了让 flask.helpers.get__root_path 函数通过传入这个名字确定程序的根目录，以便获得静态文件和模板文件的目录。       
 
 （4）          
 ```python
