@@ -53,7 +53,35 @@ if __name__ == '__main__':
 
 <br>
 
-执行结果如下：    
+使用 httpie 命令行工具访问结果如下：     
+```
+> http GET http://127.0.0.1:9000/help2 
+HTTP/1.0 200 OK
+Content-Length: 10
+Content-Type: text/html; charset=utf-8
+Date: Tue, 13 Dec 2022 15:01:02 GMT
+Server: Werkzeug/1.0.1 Python/2.7.18
+
+Help2 Page
+
+
+> http GET http://127.0.0.1:9000/help 
+HTTP/1.0 301 MOVED PERMANENTLY
+Content-Length: 217
+Content-Type: text/html; charset=utf-8
+Date: Tue, 13 Dec 2022 15:01:06 GMT
+Location: http://127.0.0.1:9000/help2
+Server: Werkzeug/1.0.1 Python/2.7.18
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL: <a href="help2">help2</a>.  If not click the link.
+```
+
+<br>
+
+使用 Postman 客户端执行结果如下：    
 &emsp;&emsp;访问 `GET http://127.0.0.1:9000/help` 后页面会自动跳转至新的页面 `GET http://127.0.0.1:9000/help2`。        
 
 ![](\img\in-post\post-flask\2022-11-17-flask-1-url-redirect-1.jpg)
@@ -87,7 +115,33 @@ if __name__ == '__main__':
 
 <br>
 
-执行结果如下：    
+使用 httpie 命令行工具访问结果如下：    
+```
+> http GET http://127.0.0.1:9000/index2/
+HTTP/1.0 200 OK
+Content-Length: 11
+Content-Type: text/html; charset=utf-8
+Date: Tue, 13 Dec 2022 15:00:40 GMT
+Server: Werkzeug/1.0.1 Python/2.7.18
+
+Index2 Page
+
+
+> http GET http://127.0.0.1:9000/index/  
+HTTP/1.0 302 FOUND
+Content-Length: 233
+Content-Type: text/html; charset=utf-8
+Date: Tue, 13 Dec 2022 15:00:48 GMT
+Location: http://127.0.0.1:9000/index2/?id=2
+Server: Werkzeug/1.0.1 Python/2.7.18
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL: <a href="/index2/?id=2">/index2/?id=2</a>.  If not click the link.
+```
+
+使用 Postman 客户端执行结果如下：       
 &emsp;&emsp;访问 `GET http://127.0.0.1:9000/index` 后页面会自动跳转至新的页面 `GET http://127.0.0.1:9000/index2/?id=2`。        
 
 ![](\img\in-post\post-flask\2022-11-17-flask-1-url-redirect-2.jpg)    
