@@ -48,6 +48,9 @@ def item2(id):
 
 
 with app.test_request_context():
+    """
+    url_for() 第一个参数是视图函数名，后面的参数作为查询参数被添加在URL末尾
+    """
     print url_for('item1')
     print url_for('item1', id='1')
     print url_for('item1', id=2, next='/')
