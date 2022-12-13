@@ -52,7 +52,7 @@ class ListConverter(BaseConverter):
 
     def to_url(self, values):
         """把参数转换成符合 URL 的形式"""
-        return self.separator.join(BaseConverter.to_url(self, value) for value in values)
+        return self.separator.join(super(ListConverter, self).to_url(value) for value in values)
 
 
 app.url_map.converters['list'] = ListConverter
