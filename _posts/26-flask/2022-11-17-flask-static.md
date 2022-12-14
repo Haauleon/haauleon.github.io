@@ -32,14 +32,14 @@ flask==0.11.1
 ### 二、静态文件路径
 run.py 为执行文件，static 目录为静态文件目录，目录设计如下：        
 ```
-│   ├── app
-│   │   ├── static
-│   │   │   └── hello.html
-│   │   ├── templates
-│   │   │   └── error.html
-│   │   ├── tmp
-│   │   │   └── hello2.html
-│   │   ├── run.py
+app
+├── static
+│   └── hello.html
+├── templates
+│   └── error.html
+├── tmp
+│   └── hello2.html
+├── run.py
 ```
 
 <br>
