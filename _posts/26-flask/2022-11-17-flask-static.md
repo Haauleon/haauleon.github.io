@@ -70,7 +70,7 @@ with app.test_request_context():
 # -*- coding: utf-8 -*-#
 from flask import Flask, url_for
 
-app = Flask(__name__, static_folder='/tmp')
+app = Flask(__name__, static_folder='tmp')
 
 with app.test_request_context():
     print url_for('static', filename='hello2.html')
