@@ -81,7 +81,7 @@ class UserView(BaseView):
         ]
 
 
-app.add_url_rule('/users', view_func=UserView.as_view('userview'))
+app.add_url_rule('/users', view_func=UserView.as_view('userview'), methods=['GET', 'POST'])
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000, debug=True)
@@ -89,17 +89,29 @@ if __name__ == '__main__':
 
 访问 GET http://127.0.0.1:3000/users 的执行结果如下：          
 ```
+> http POST http://127.0.0.1:9000/users   
 HTTP/1.0 200 OK
-Content-Length: 172
+Content-Length: 11
 Content-Type: text/html; charset=utf-8
-Date: Fri, 18 Nov 2022 08:33:57 GMT
-Server: Werkzeug/0.11.10 Python/2.7.11
+Date: Wed, 14 Dec 2022 13:43:24 GMT
+Server: Werkzeug/0.11.10 Python/2.7.18
+
+UNSUPPORTED
+
+
+> http GET http://127.0.0.1:9000/users  
+HTTP/1.0 200 OK
+Content-Length: 160
+Content-Type: text/html; charset=utf-8
+Date: Wed, 14 Dec 2022 13:43:34 GMT
+Server: Werkzeug/0.11.10 Python/2.7.18
 
 <p>fake</p>
-<img src="https://gfs17.gomein.net.cn/T1ATE5BTJv1RCvBVdK_450.jpg"></img>
+<img src="https://gfs17.gomein.net.cn/T1ATE5BTJv1RCvBVdK_450.jpg">
 
 <p>niko</p>
-<img src="https://gfs17.gomein.net.cn/T1ATE5BTJv1RCvBVdK_450.jpg"></img>
+<img src="https://gfs17.gomein.net.cn/T1ATE5BTJv1RCvBVdK_450.jpg">
+
 ```
 
 
@@ -139,9 +151,9 @@ class BaseView(View):
 
 （5）      
 ```python
-app.add_url_rule('/users', view_func=UserView.as_view('userview'))
+app.add_url_rule('/users', view_func=UserView.as_view('userview'), methods=['GET', 'POST'])
 ```
-&emsp;&emsp;app.add_url_rule 的作用跟 app.route 是一样的，都是用来绑定 URL 和视图函数的路由关系，这里就是将 /users （自定义的 URL）和 userview （自定义的函数名）绑定在一起。    
+&emsp;&emsp;app.add_url_rule 的作用跟 app.route 是一样的，都是用来绑定 URL 和视图函数的路由关系，这里就是将 /users （自定义的 URL）和 userview （自定义的函数名）绑定在一起，还可以通过 methods 指定请求方法。         
 
 <br>
 <br>
