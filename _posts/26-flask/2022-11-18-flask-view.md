@@ -159,7 +159,7 @@ app.add_url_rule('/users', view_func=UserView.as_view('userview'), methods=['GET
 <br>
 
 ### 三、基于调度方法的视图
-&emsp;&emsp;flask.views.MethodView 对每个 HTTP 方法执行不同的函数（映射到对应方法的小写的同名方法上），如实现了 get() 方法，则在发送 GET 请求时将会执行 get() 方法的代码块，这对 RESTful API 尤其有用。这里没有重写 dispatch_request 方法，意味着会调用继承自 MethodView 的 dispatch_request 方法，在请求指定的 HTTP 方法时执行对应的函数。            
+&emsp;&emsp;flask.views.MethodView 对每个 HTTP 方法执行不同的函数（映射到对应方法的小写的同名方法上），如实现了 get() 方法，则在发送 GET 请求时将会执行 get() 方法的代码块，**这对 RESTful API 尤其有用**。这里没有重写 dispatch_request 方法，意味着会调用继承自 MethodView 的 dispatch_request 方法，在请求指定的 HTTP 方法时执行对应的函数。            
 ```python
 # coding=utf-8
 from flask import Flask, jsonify
