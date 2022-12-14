@@ -22,6 +22,7 @@ tags:
 Python 2.7.11+      
 pip==9.0.3     
 flask==0.11.1   
+werkzeug==0.11.10       
 
 &emsp;&emsp;视图函数的返回值会被自动转换为一个响应对象，其转换的逻辑我在这里使用了如以下代码示例：    
 ```python
@@ -108,6 +109,7 @@ from flask import Flask, jsonify, render_template
 from werkzeug.wrappers import Response
 
 app = Flask(__name__)
+app.config.from_object('config')
 
 
 class JSONResponse(Response):
@@ -138,7 +140,7 @@ def headers():
 
 
 @app.route('/custom_new')
-def headers():
+def headers2():
     """视图中也可以直接指定状态字符串，使用 201 CREATED 替代数字的 201"""
     return {'headers': [1, 2, 3]}, '201 CREATED', [('X-Request-Id', '100')]
 
