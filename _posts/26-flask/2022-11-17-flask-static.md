@@ -22,6 +22,7 @@ tags:
 Python 2.7.11+      
 pip==9.0.3     
 flask==0.11.1   
+werkzeug==0.11.10       
 
 &emsp;&emsp;Web 应用大多会提供静态文件服务以便给用户更好的访问体验。         
 &emsp;&emsp;静态文件主要包含 CSS 样式文件(style.css)、JavaScript 脚本文件、图片文件和字体文件等静态资源。Flask 也支持静态文件访问，默认只需要在项目根目录下创建名字为 static 的目录，在应用中使用 `/static` 开头的路径就可以进行访问。        

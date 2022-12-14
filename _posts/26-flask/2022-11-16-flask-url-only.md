@@ -22,6 +22,7 @@ tags:
 Python 2.7.11+      
 pip==9.0.3     
 flask==0.11.1   
+werkzeug==0.11.10       
 
 &emsp;&emsp;Flask 的 URL 规则基于 Werkzeug 的路由模块，这个模块背后的思想是基于 Apache 以及更早的 HTTP 服务器的主张，希望保证优雅且唯一的 URL。    
 

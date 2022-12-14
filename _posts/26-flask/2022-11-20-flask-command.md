@@ -25,6 +25,7 @@ Python 2.7.11+
 pip==9.0.3     
 flask==0.11.1   
 httpie==0.9.4     
+werkzeug==0.11.10       
 
 &emsp;&emsp;在 Flask 0.11 之前，启动的应用的端口（port）、主机地址（host）以及是否开启 DEBUG 模式，都需要在代码中明确指定，如下：       
 ```python

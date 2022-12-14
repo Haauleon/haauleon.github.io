@@ -26,6 +26,7 @@ Python 2.7.11+
 pip==9.0.3     
 flask==0.11.1   
 httpie==0.9.4     
+werkzeug==0.11.10       
 
 &emsp;&emsp;InnoDB 类型的表可以使用外键进行多表关联，保证数据的一致性和实现一些级联操作。         
 ```python

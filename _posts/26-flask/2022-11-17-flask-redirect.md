@@ -22,6 +22,7 @@ tags:
 Python 2.7.11+      
 pip==9.0.3     
 flask==0.11.1   
+werkzeug==0.11.10       
 
 &emsp;&emsp;在 Flask，跳转和重定向是通过 flask.redirect 实现的。      
 

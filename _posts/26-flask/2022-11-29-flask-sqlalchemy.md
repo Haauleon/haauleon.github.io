@@ -26,6 +26,7 @@ Python 2.7.11+
 pip==9.0.3     
 flask==0.11.1   
 httpie==0.9.4     
+werkzeug==0.11.10       
 
 &emsp;&emsp;第三方包 Flask-SQLAlchemy 可以帮助我们在 Flask 中很方便地使用 SQLAlchemy。     
 

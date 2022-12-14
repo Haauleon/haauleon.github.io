@@ -23,6 +23,7 @@ Python 2.7.11+
 pip==9.0.3     
 flask==0.11.1   
 httpie==0.9.4     
+werkzeug==0.11.10       
 
 &emsp;&emsp;Jinja2 是日本寺庙的意思，并且寺庙的英文 temple 和 template 的发音类似。       
 

@@ -23,6 +23,7 @@ Python 2.7.11+
 pip==9.0.3     
 flask==0.11.1   
 httpie==0.9.4     
+werkzeug==0.11.10       
 
 &emsp;&emsp;数据库性能是开发者必须关注的重点之一，在复杂的业务代码逻辑前提下，如果只是通过 **MySQL 的日志** 去看慢查询的日志是很难定位问题的。可以借用 SQLALCHEMY_RECORD_QUERIES 和 DATABASE_QUERY_TIMEOUT 将慢查询及相关上下文信息记录到日志中。     
 

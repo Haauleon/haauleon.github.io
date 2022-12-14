@@ -25,6 +25,7 @@ Python 2.7.11+
 pip==9.0.3     
 flask==0.11.1   
 httpie==0.9.4     
+werkzeug==0.11.10       
 
 &emsp;&emsp;现在许多 SaaS 应用为用户提供一个子域名来访问，可以借助 subdomain 来实现同样的功能。代码如下：      
 ```python
