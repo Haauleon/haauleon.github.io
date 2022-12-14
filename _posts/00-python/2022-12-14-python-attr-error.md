@@ -10,6 +10,8 @@ tags:
     - Python
 ---
 
+
+### AttributeError
 属性异常出现的场景：   
 &emsp;&emsp;通常是自己使用 pip 安装了第三方包，在运行的时候会提示这个属性不存在。     
 
