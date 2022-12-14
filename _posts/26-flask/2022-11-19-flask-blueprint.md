@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Flask Web | 蓝图"
-subtitle:      "蓝图可以实现应用的模块化，让应用层次更清晰，让开发者更容易开发和维护项目"
+subtitle:      "蓝图可以实现应用的模块化，让应用层次更清晰，项目更容易开发和维护"
 author:        "Haauleon"
 header-img:    "img/in-post/post-flask/bg.jpeg"
 header-mask:   0.4
