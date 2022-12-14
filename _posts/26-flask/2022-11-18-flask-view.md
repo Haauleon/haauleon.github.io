@@ -69,10 +69,11 @@ class UserView(BaseView):
         return 'users.html'
 
     def get_users(self):
-        return [{
-            'username': 'fake',
-            'avatar': 'https://gfs17.gomein.net.cn/T1ATE5BTJv1RCvBVdK_450.jpg'
-        },
+        return [
+            {
+                'username': 'fake',
+                'avatar': 'https://gfs17.gomein.net.cn/T1ATE5BTJv1RCvBVdK_450.jpg'
+            },
             {
                 'username': 'niko',
                 'avatar': 'https://gfs17.gomein.net.cn/T1ATE5BTJv1RCvBVdK_450.jpg'
