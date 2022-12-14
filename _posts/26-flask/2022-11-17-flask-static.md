@@ -3,7 +3,8 @@ layout:        post
 title:         "Flask Web | 静态文件管理"
 subtitle:      "为了给用户更好的访问体验，Web 应用大多会提供静态文件服务"
 author:        "Haauleon"
-header-style:  text
+header-img:    "img/in-post/post-flask/bg.jpeg"
+header-mask:   0.4
 catalog:       true
 tags:
     - Flask
