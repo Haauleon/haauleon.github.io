@@ -58,7 +58,8 @@ tags:
 4. 点击 `备份聊天记录至电脑`     
     ![](\img\in-post\post-python\2022-12-15-python-wechat-5.png)      
 5. 在手机微信中点击 `选择聊天记录` 来选取上传     
-    ![](\img\in-post\post-python\2022-12-15-python-wechat-6.jpg)   
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-6.jpg)     
+    ---
     ![](\img\in-post\post-python\2022-12-15-python-wechat-7.jpg)         
 6. 等待备份完成即可
 
@@ -71,14 +72,18 @@ tags:
 1. 在模拟器的微信中使用账号进行登录（由于是新设备，所以需要手机微信进行授权，授权成功后手机微信会自动退登并且电脑微信也会退登）          
     ![](\img\in-post\post-python\2022-12-15-python-wechat-8.jpg)  
 2. 登录电脑微信会提示你需要重新扫码，这里有个小技巧，就是先用手机把二维码拍下来，然后进入模拟器的微信页面点击 `扫一扫`，这时候就将刚拍下来的二维码给它识别就可以登录电脑版微信了      
-    ![](\img\in-post\post-python\2022-12-15-python-wechat-9.jpg)  
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-9.jpg)    
+    ---
     ![](\img\in-post\post-python\2022-12-15-python-wechat-10.jpg)  
 3. 在电脑版微信中点击 `恢复聊天记录至手机`     
-    ![](\img\in-post\post-python\2022-12-15-python-wechat-11.png)    
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-11.png)     
+    ---
     ![](\img\in-post\post-python\2022-12-15-python-wechat-12.png)    
+    ---
     ![](\img\in-post\post-python\2022-12-15-python-wechat-13.png)     
 4. 在模拟器微信弹出的窗口中点击 `开始恢复`    
     ![](\img\in-post\post-python\2022-12-15-python-wechat-14.jpg)    
+    ---
     ![](\img\in-post\post-python\2022-12-15-python-wechat-15.jpg)        
 5. 等待记录上传完成即可
 
@@ -112,21 +117,24 @@ tags:
     ![](\img\in-post\post-python\2022-12-15-python-wechat-19.jpg)  
 3. 进入第一个目录并找到 EnMicroMsg.db 文件      
     ![](\img\in-post\post-python\2022-12-15-python-wechat-20.jpg)   
+    ---
     ![](\img\in-post\post-python\2022-12-15-python-wechat-21.jpg)    
 4. 在模拟器中通过鼠标长按左键对 EnMicroMsg.db 文件进行复制      
     ![](\img\in-post\post-python\2022-12-15-python-wechat-22.jpg)    
 5. 将文件复制后，粘贴到 /sdcard/windows/BstSharedFolder 目录下     
     ![](\img\in-post\post-python\2022-12-15-python-wechat-23.jpg)    
-6. 粘贴成功后就可以在本地电脑路径 D:\Program Files (x86)\BluestacksCN\Engine\ProgramData\Engine\UserData\SharedFolder 中找到此文件     
-    D:\Program Files (x86)\BluestacksCN 是蓝叠的安装目录。     
+6. 粘贴成功后就可以在本地电脑路径 D:\Program Files (x86)\BluestacksCN\Engine\ProgramData\Engine\UserData\SharedFolder 中找到此文件。D:\Program Files (x86)\BluestacksCN 是蓝叠的安装目录           
     ![](\img\in-post\post-python\2022-12-15-python-wechat-24.jpg)    
 7. 如果想在模拟器中快速将 EnMicroMsg.db 文件转存到电脑本地的其他路径中，可以在多媒体管理器中进行转存       
     （1）在模拟器中打开多媒体管理器     
     ![](\img\in-post\post-python\2022-12-15-python-wechat-25.jpg)      
     （2）选择文件并导出到电脑本地    
     ![](\img\in-post\post-python\2022-12-15-python-wechat-26.jpg)      
-    ![](\img\in-post\post-python\2022-12-15-python-wechat-27.jpg)      
+    ---
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-27.jpg)     
+    --- 
     ![](\img\in-post\post-python\2022-12-15-python-wechat-28.jpg)      
+    ---
     ![](\img\in-post\post-python\2022-12-15-python-wechat-29.jpg)      
 
 
@@ -182,8 +190,11 @@ tags:
     **注意：** 如果提示密码不正确，则使用原始的 IMEI 值（1234567890ABCDEF）替换刚获取的 IMEI 值再进行加密。也就是说，将 `1234567890ABCDEF-1578165975` 进行 MD5 加密得 `98274e30f1e31d22500d81d314d4eef2`，再取 MD5 值前七位字符 `98274e3` 即可。    
 3. 导入数据库文件为 csv 文件     
     ![](\img\in-post\post-python\2022-12-15-python-wechat-35.jpg)     
+    ---
     ![](\img\in-post\post-python\2022-12-15-python-wechat-36.jpg)     
+    ---
     ![](\img\in-post\post-python\2022-12-15-python-wechat-37.jpg)     
+    ---
     ![](\img\in-post\post-python\2022-12-15-python-wechat-38.jpg)     
 
 
@@ -237,4 +248,13 @@ tags:
 4. 词云图片生成成功，文件名分别为 color_love_wx.png 和 love_wx.png    
 5. 效果如下     
     ![](\img\in-post\post-python\2022-12-15-python-wechat-39.png)     
+    ---
     ![](\img\in-post\post-python\2022-12-15-python-wechat-40.png)     
+
+
+<br>
+<br>
+
+相关链接：    
+[微信聊天记录统计](https://www.jianshu.com/p/3065087ea1b0)    
+[手机端微信聊天记录数据库解密过程](https://goyasha.com/post/RP8rNF8N/)    
