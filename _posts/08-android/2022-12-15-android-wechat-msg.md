@@ -103,7 +103,37 @@ tags:
 
 <br>
 
-#### 1、
+#### 1、获取数据库文件
+&emsp;&emsp;数据库文件中存储了微信聊天记录，我们需要找到这个文件的存放路径，并复制到模拟器的分享文件夹中。     
+
+1. 打开模拟器的 `R.E.管理器`     
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-18.jpg)  
+2. 点击进入目录 /data/data/com.tencent.mm/MicroMsg      
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-19.jpg)  
+3. 进入第一个目录并找到 EnMicroMsg.db 文件      
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-20.jpg)   
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-21.jpg)    
+4. 在模拟器中通过鼠标长按左键对 EnMicroMsg.db 文件进行复制      
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-22.jpg)    
+5. 将文件复制后，粘贴到 /sdcard/windows/BstSharedFolder 目录下     
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-23.jpg)    
+6. 粘贴成功后就可以在本地电脑路径 D:\Program Files (x86)\BluestacksCN\Engine\ProgramData\Engine\UserData\SharedFolder 中找到此文件     
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-24.jpg)    
+
+<br>
+<br>
+
+#### 2、获取 IMEI 值
+
+
+<br>
+<br>
+
+#### 3、获取 uin 值
+
+
+<br>
+<br>
 
 
 ### 三、生成微信聊天词云
