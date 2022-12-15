@@ -134,6 +134,17 @@ tags:
 <br>
 
 #### 2、获取 IMEI 值
+&emsp;&emsp;需要在模拟器中安装第三方 apk 包进行获取，将以下提供的 apk 包导入进本地共享文件夹 D:\Program Files (x86)\BluestacksCN\Engine\ProgramData\Engine\UserData\SharedFolder 中，然后在模拟器中安装此应用即可获取 IMEI 值。      
+
+1. 离线百度云网盘下载     
+    链接：https://pan.baidu.com/s/1rd4_2SvAUpmqZ4cKvBiBvA?pwd=ih6n     
+    提取码：ih6n   
+2. 将下载的文件复制粘贴到共享文件夹 D:\Program Files (x86)\BluestacksCN\Engine\ProgramData\Engine\UserData\SharedFolder 中     
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-30.jpg)      
+3. 在模拟器中的 `R.E.管理器` 中的 /sdcard/windows/BstSharedFolder 找到此 apk 包并双击进行安装
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-31.jpg)     
+4. 安装成功后点击打开即可获取到 IMEI 值      
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-32.jpg)     
 
 
 <br>
