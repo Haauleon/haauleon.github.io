@@ -118,7 +118,17 @@ tags:
 5. 将文件复制后，粘贴到 /sdcard/windows/BstSharedFolder 目录下     
     ![](\img\in-post\post-python\2022-12-15-python-wechat-23.jpg)    
 6. 粘贴成功后就可以在本地电脑路径 D:\Program Files (x86)\BluestacksCN\Engine\ProgramData\Engine\UserData\SharedFolder 中找到此文件     
+    D:\Program Files (x86)\BluestacksCN 是蓝叠的安装目录。     
     ![](\img\in-post\post-python\2022-12-15-python-wechat-24.jpg)    
+7. 如果想在模拟器中快速将 EnMicroMsg.db 文件转存到电脑本地的其他路径中，可以在多媒体管理器中进行转存       
+    （1）在模拟器中打开多媒体管理器     
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-25.jpg)      
+    （2）选择文件并导出到电脑本地    
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-26.jpg)      
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-27.jpg)      
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-28.jpg)      
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-29.jpg)      
+
 
 <br>
 <br>
