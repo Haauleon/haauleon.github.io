@@ -151,11 +151,44 @@ tags:
 <br>
 
 #### 3、获取 uin 值
+&emsp;&emsp;获取 auth-uin 的值。     
+
+1. 在模拟器中点击进入目录 /data/data/com.tencent.mm/shared_prefs 找到文件 auth_info_key_prefs.xml 并打开         
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-33.jpg)     
+2. 找到 auth-uin 值（这里需要注意的是，有的UIN识别码是带“ – ”减号的，在计算MD5值需要加上！）        
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-34.jpg)      
 
 
 <br>
 <br>
 
+#### 4、生成数据库解密 MD5 值
+&emsp;&emsp;将获取到的 IMEI 值和 uin 值进行拼接然后加密成 MD5，MD5 值取前 7 位字符即数据库文件的解密密码。     
+
+1. 拼接 IMEI+uin 值并使用[工具](https://tool.chinaz.com/tools/md5.aspx) 进行 MD5 加密，`265037350862670-1578165975` 加密后的 MD5 值为 `dcdfe82054172b3640c15fa558c0d80d`     
+2. 取 MD5 前七位字符即为数据库文件解密密码，即 `dcdfe82`
+
+
+<br>
+<br>
+
+#### 5、解密数据库文件
+&emsp;&emsp;使用工具 sqlcipher 打开并查看。       
+
+1. 离线百度云网盘下载 sqlcipher 并安装      
+    链接：https://pan.baidu.com/s/19WkRR1_I949cSGcKfWES5g?pwd=ey8y     
+    提取码：ey8y    
+2. 打开 sqlcipher ，将本地的 EnMicroMsg.db 文件拖拽进来并输入密码 `dcdfe82`    
+    **注意：** 如果提示密码不正确，则使用原始的 IMEI 值（1234567890ABCDEF）替换刚获取的 IMEI 值再进行加密。也就是说，将 `1234567890ABCDEF-1578165975` 进行 MD5 加密得 `98274e30f1e31d22500d81d314d4eef2`，再取 MD5 值前七位字符 `98274e3` 即可。    
+3. 导入数据库文件为 csv 文件     
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-35.jpg)     
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-36.jpg)     
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-37.jpg)     
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-38.jpg)     
+
+
+<br>
+<br>
 
 ### 三、生成微信聊天词云
 &emsp;&emsp;将微信聊天记录文本进行数据分析后生成词云。    
