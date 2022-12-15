@@ -11,4 +11,5 @@ tags:
 ---
 
 相关链接：    
-[答疑《python的CLS》](https://cloud.tencent.com/developer/article/1510534)
+[答疑《python的CLS》](https://cloud.tencent.com/developer/article/1510534)     
+[python类中cls,@classmethod,@staticmethod详解](https://www.cnblogs.com/dsprain/p/14201998.html)
