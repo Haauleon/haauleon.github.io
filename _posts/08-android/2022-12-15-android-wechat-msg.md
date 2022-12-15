@@ -52,11 +52,11 @@ tags:
 
 1. 手机和电脑同时登录且处于同一局域网     
 2. 电脑版微信点击左下角的 `迁移与备份`      
-    ![](\img\in-post\post-python\2022-12-15-python-wechat-3.jpg)      
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-3.png)      
 3. 选择 `备份与恢复`     
-    ![](\img\in-post\post-python\2022-12-15-python-wechat-4.jpg)      
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-4.png)      
 4. 点击 `备份聊天记录至电脑`     
-    ![](\img\in-post\post-python\2022-12-15-python-wechat-5.jpg)      
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-5.png)      
 5. 在手机微信中点击 `选择聊天记录` 来选取上传     
     ![](\img\in-post\post-python\2022-12-15-python-wechat-6.jpg)   
     ![](\img\in-post\post-python\2022-12-15-python-wechat-7.jpg)         
@@ -74,9 +74,9 @@ tags:
     ![](\img\in-post\post-python\2022-12-15-python-wechat-9.jpg)  
     ![](\img\in-post\post-python\2022-12-15-python-wechat-10.jpg)  
 3. 在电脑版微信中点击 `恢复聊天记录至手机`     
-    ![](\img\in-post\post-python\2022-12-15-python-wechat-11.jpg)    
-    ![](\img\in-post\post-python\2022-12-15-python-wechat-12.jpg)    
-    ![](\img\in-post\post-python\2022-12-15-python-wechat-13.jpg)     
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-11.png)    
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-12.png)    
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-13.png)     
 4. 在模拟器微信弹出的窗口中点击 `开始恢复`    
     ![](\img\in-post\post-python\2022-12-15-python-wechat-14.jpg)    
     ![](\img\in-post\post-python\2022-12-15-python-wechat-15.jpg)        
@@ -236,5 +236,5 @@ tags:
     ```
 4. 词云图片生成成功，文件名分别为 color_love_wx.png 和 love_wx.png    
 5. 效果如下     
-    ![](\img\in-post\post-python\2022-12-15-python-wechat-39.jpg)     
-    ![](\img\in-post\post-python\2022-12-15-python-wechat-40.jpg)     
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-39.png)     
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-40.png)     
