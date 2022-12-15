@@ -191,8 +191,45 @@ tags:
 <br>
 
 ### 三、生成微信聊天词云
-&emsp;&emsp;将微信聊天记录文本进行数据分析后生成词云。    
+&emsp;&emsp;将微信聊天记录文本进行数据分析后生成词云。这里用到了的是这个大神的项目：[https://godweiyang.com/2019/07/27/wordcloud/](https://godweiyang.com/2019/07/27/wordcloud/)，项目地址 Github 上：[https://github.com/godweiyang/wordcloud](https://github.com/godweiyang/wordcloud)。        
 
 <br>
 
-#### 1、
+#### 1、处理 wx.csv 文件  
+&emsp;&emsp;打开刚刚导出的 wx.csv 聊天记录文件，选中聊天消息文本这一列，点击复制。再新建一个 wx.txt 文件，将复制的聊天消息列粘贴到此文件中进行保存。    
+
+<br>
+<br>
+
+#### 2、生成微信聊天词云
+&emsp;&emsp;使用大神已经写好的项目跑一遍生成词云图片。      
+
+1. 离线百度云网盘下载大神的项目代码至电脑本地     
+    链接：https://pan.baidu.com/s/1m9_0aAaaiemlWEdEXQTxHg?pwd=royn     
+    提取码：royn    
+2. 项目运行环境如下     
+    Python==3.8.10     
+    pip==22.3.1    
+    jieba==0.42.1    
+    imageio==2.22.4    
+    wordcloud==1.8.1    
+3. 将处理好的 wx.txt 文件粘贴到项目 wordcloud/ 下，然后执行以下命令     
+    ```
+    > cd wordcloud
+    > python3 create_word_cloud.py wx.txt
+    Building prefix dict from the default dictionary ...
+    Dumping model to file cache C:\Users\Haauleon\AppData\Local\Temp\jieba.cache
+    Loading model cost 0.691 seconds.
+    Prefix dict has been built successfully.
+    # of different words = 3961
+    create_word_cloud.py:50: DeprecationWarning: Starting with ImageIO v3 the behavior of this function will switch to that of iio.v3.imread. To keep the current behavior (and make this warning disappear) use `import imageio.v2 as imageio` or call `imageio.v2.imread` directly.
+    bimg = imageio.imread(background_picture_filename)
+    Saving color_love_wx.png
+    create_word_cloud.py:50: DeprecationWarning: Starting with ImageIO v3 the behavior of this function will switch to that of iio.v3.imread. To keep the current behavior (and make this warning disappear) use `import imageio.v2 as imageio` or call `imageio.v2.imread` directly.
+    bimg = imageio.imread(background_picture_filename)
+    Saving love_wx.png
+    ```
+4. 词云图片生成成功，文件名分别为 color_love_wx.png 和 love_wx.png    
+5. 效果如下     
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-39.jpg)     
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-40.jpg)     
