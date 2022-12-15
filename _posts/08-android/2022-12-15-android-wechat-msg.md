@@ -196,7 +196,12 @@ tags:
 <br>
 
 #### 1、处理 wx.csv 文件  
-&emsp;&emsp;打开刚刚导出的 wx.csv 聊天记录文件，选中聊天消息文本这一列，点击复制。再新建一个 wx.txt 文件，将复制的聊天消息列粘贴到此文件中进行保存。    
+&emsp;&emsp;打开刚刚导出的 wx.csv 聊天记录文件，选中聊天消息文本这一列，点击复制。再新建一个 wx.txt 文件，将复制的聊天消息列粘贴到此文件中进行保存。      
+
+1. 选择 wx.csv 文件中的 I 列然后使用 ctrl+c 组合键进行复制    
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-41.jpg)    
+2. 新建一个 wx.txt 文件并打开，将刚刚复制的内容使用 ctrl+v 组合键粘贴到此处并保存      
+    ![](\img\in-post\post-python\2022-12-15-python-wechat-42.jpg)        
 
 <br>
 <br>
