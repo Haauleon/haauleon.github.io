@@ -12,6 +12,7 @@ tags:
     - Python
 ---
 
+> 本篇所有操作均在 64 位的 Windows 11 系统下执行     
 > 注意：启动蓝叠模拟器会自动关闭 Hyper-V 功能，导致 WSL 启动报错，报错解决办法参考 https://haauleon.gitee.io/2022/12/16/ubuntu-wsl-error/
 
 <br>
