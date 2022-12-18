@@ -80,9 +80,9 @@ Requires:
 （1）Jinja2 通过 Template 类创建并渲染模板       
 &emsp;&emsp;以下代码片段可知，Jinja2.Template 和 [string.Template](https://haauleon.gitee.io/2022/11/22/flask-template/) 做的事情很像，都是使用 Template 类创建一个对象然后实例化。      
 ```
-In[1]: from jinja2 import Template
-In[2]: temp = Template('Hello {{ name }}')
-In[3]: temp.render(name='haauleon')
+In [1]: from jinja2 import Template
+In [2]: temp = Template('Hello {{ name }}')
+In [3]: temp.render(name='haauleon')
 Out[3]: 
 u'Hello haauleon'
 ```
@@ -92,10 +92,10 @@ u'Hello haauleon'
 （2）使用 Environment 的实例来存储配置和全局对象   
 &emsp;&emsp;以下代码片段可以解释上述使用 Jinja2.Template 代码片段的背后逻辑，这里使用了 jinja2.Environment 的实例 env 来存储配置和全局对象 temp，最后使用真实值进行替换。           
 ```
-In[4]: from jinja2 import Environment
-In[5]: env = Environment()
-In[6]: temp = env.from_string('Hello {{ name }}')
-In[7]: temp.render(name='Lily')
+In [4]: from jinja2 import Environment
+In [5]: env = Environment()
+In [6]: temp = env.from_string('Hello {{ name }}')
+In [7]: temp.render(name='Lily')
 Out[7]: 
 u'Hello Lily'
 ```
@@ -115,19 +115,19 @@ u'Hello Lily'
 3. 在 app.py 文件中加载指定位置的模板文件 hello.html     
     &emsp;&emsp;以下代码中 Environment 的实例用于存储配置和全局对象，然后从文件系统或其他指定位置加载模板。
     ```
-    In[8]: from jinja2 import Environment, PackageLoader
-    In[9]: env = Environment(loader=PackageLoader('app', 'templates/jinja2'))
-    In[10]: temp = env.get_template('hello.html')
-    In[11]: temp.render(name='haauleon')
+    In [8]: from jinja2 import Environment, PackageLoader
+    In [9]: env = Environment(loader=PackageLoader('app', 'templates/jinja2'))
+    In [10]: temp = env.get_template('hello.html')
+    In [11]: temp.render(name='haauleon')
     Out[11]: 
     u'Hello haauleon'
     ```
     &emsp;&emsp;通过 Environment 创建了一个模板环境，模板加载器（loader）会在 templates 文件夹中寻找对应的模板文件。由于模板文件在模板目录的子目录 jinja2/ 下，所以代码也可以这么写：    
     ```
-    In[12]: from jinja2 import Environment, PackageLoader
-    In[13]: env = Environment(loader=PackageLoader('app', 'templates'))
-    In[14]: temp = env.get_template('jinja2/hello.html')
-    In[15]: temp.render(name='haauleon')
+    In [12]: from jinja2 import Environment, PackageLoader
+    In [13]: env = Environment(loader=PackageLoader('app', 'templates'))
+    In [14]: temp = env.get_template('jinja2/hello.html')
+    In [15]: temp.render(name='haauleon')
     Out[15]: 
     u'Hello haauleon'
     ```
