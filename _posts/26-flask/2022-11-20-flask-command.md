@@ -274,4 +274,6 @@ if __name__ == '__main__':
 
 相关链接：    
 [Flask内置命令行工具—CLI](https://segmentfault.com/a/1190000017436977)        
-[Flask内置命令行工具—CLI 官方文档](https://flask.palletsprojects.com/en/1.0.x/cli/)
+[Flask内置命令行工具—CLI 官方文档](https://flask.palletsprojects.com/en/1.0.x/cli/)     
+[Flask CLI](https://www.cnblogs.com/zwq-/p/15926911.html)    
+[Flask CLI](https://www.jianshu.com/p/dcb4cecb2af7)   
