@@ -52,9 +52,9 @@ werkzeug==0.11.10
     在调用 safe_substitute() 的基础上，增加正则表达式的匹配模式，符合模式的字符串才能被替换。      
     ```
     In [7]: class NewTemplate(Template):
-    ...:     delimiter = '@'  # 使用@作为分隔符
-    ...:     idpattern = '[a-z]+\.[a-z]+'  # 符合的模式才会被替换
-    ...:     
+       ...:     delimiter = '@'  # 使用@作为分隔符
+       ...:     idpattern = '[a-z]+\.[a-z]+'  # 符合的模式才会被替换
+       ...:     
     In [8]: t = NewTemplate('@with.dot @notdoted')
     In [9]: t.safe_substitute({'with.dot': 'replaced', 'notdoted': 'not replaced'})
     Out[9]: 
