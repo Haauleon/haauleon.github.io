@@ -33,30 +33,30 @@ werkzeug==0.11.10
 1. 模板全部求值      
     使用 $ 表示可赋值变量，使用 string.Template 类进行实例化，在调用 substitute() 时可使用关键字传参进行真实值的全部替换。      
     ```
-    In[1]: from string import Template
-    In[2]: x = Template('$name, $age years old')
-    In[3]: x.substitute(name='haauleon', age=18)
+    In [1]: from string import Template
+    In [2]: x = Template('$name, $age years old')
+    In [3]: x.substitute(name='haauleon', age=18)
     Out[3]: 
     'haauleon, 18 years old'
     ```
 2. 模板部分求值     
     跟 substitute() 不同在于，在调用 safe_substitute() 时可进行真实值的部分替换。        
     ```
-    In[4]: from string import Template
-    In[5]: y = Template('$var1 is here but $var2 is not here')
-    In[6]: y.safe_substitute(var1='Lily')
+    In [4]: from string import Template
+    In [5]: y = Template('$var1 is here but $var2 is not here')
+    In [6]: y.safe_substitute(var1='Lily')
     Out[6]: 
     'Lily is here but $var2 is not here'
     ```
 3. 使用正则选择性替换真实值         
     在调用 safe_substitute() 的基础上，增加正则表达式的匹配模式，符合模式的字符串才能被替换。      
     ```
-    In[7]: class NewTemplate(Template):
+    In [7]: class NewTemplate(Template):
     ...:     delimiter = '@'  # 使用@作为分隔符
     ...:     idpattern = '[a-z]+\.[a-z]+'  # 符合的模式才会被替换
     ...:     
-    In[8]: t = NewTemplate('@with.dot @notdoted')
-    In[9]: t.safe_substitute({'with.dot': 'replaced', 'notdoted': 'not replaced'})
+    In [8]: t = NewTemplate('@with.dot @notdoted')
+    In [9]: t.safe_substitute({'with.dot': 'replaced', 'notdoted': 'not replaced'})
     Out[9]: 
     'replaced @notdoted'
     ```
