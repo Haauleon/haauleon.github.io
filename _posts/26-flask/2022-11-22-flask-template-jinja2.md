@@ -144,7 +144,33 @@ u'Hello Lily'
 
 &emsp;&emsp;模板包含 “变量” 或 “表达式”，这两者在模板求值的时候会被替换为真实值。除此之外，模板中还有标签和控制语句。      
 ![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-1.jpg)       
+<br>
 
+在 ipython 控制台输入以下语句执行：     
+```
+In [38]: from jinja2 import Environment, PackageLoader
+In [39]: env = Environment(loader=PackageLoader('app', 'templates'))
+In [40]: temp = env.get_template('/jinja2/simple.html')
+In [41]: print(temp.render(items=[{'href': 'http://happy123.com', 'caption': 'happy123'}], title=' happy 123 456 ', content='This is a test template'))
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Page</title>
+</head>
+<body>
+    <ul id="navigation">
+            <li>
+                <a href="http://happy123.com">happy123</a>
+            </li>
+    </ul>
+    <h1>happy 123 456</h1>
+    <p>This is a test template</p>
+</body>
+</html>
+```
+
+<br>
 <br>
 
 以上模板的解析如下：   
