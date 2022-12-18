@@ -217,7 +217,7 @@ In [41]: print(temp.render(items=[{'href': 'http://happy123.com', 'caption': 'ha
 （2）第二步：接着定义一个子模板 index.html       
 ![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-8.jpg)         
 
-&emsp;&emsp;如果想多次使用同一个快，可以使用特殊的 `self` 变量并调用与块同名的函数：       
+&emsp;&emsp;如果想多次使用同一个块，可以使用特殊的 `self` 变量并调用与块同名的函数：       
 ![](\img\in-post\post-flask\2022-11-22-flask-template-jinja2-9.jpg)       
 
 <br>
