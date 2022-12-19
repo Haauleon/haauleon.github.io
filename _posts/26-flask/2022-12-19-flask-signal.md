@@ -79,3 +79,82 @@ Round 3!
 <br>
 
 #### 2、Flask 中内置的信号
+&emsp;&emsp;Flask 可以发送 9 种信号，第三方的扩展中也可能会有额外的信号。而我们需要做的是 **添加对应的信号订阅**。以下展示常见的 6 种信号的用法：         
+
+（1）flask.template_rendered   
+&emsp;&emsp;模板渲染成功的时候发送，这个信号与模板实例 template 上下文的字典一起调用。      
+```python
+def log_template_renders(sender, template, context, **extra):
+    sender.logger.debug('Rendering template "%s" with context %s',
+                        template.name or 'string template',
+                        context)
+
+from flask import template_rendered
+template_rendered.connect(log_template_renders, app)
+```
+
+<br>
+
+（2）flask.request_started      
+&emsp;&emsp;建立请求上下文后，在请求处理开始前发送，订阅者可以用 request 之类的标准全局代理访问请求。      
+```python
+def log_request(sender, **extra):
+    sender.logger.debug('Request context is set up')
+
+from flask import request_started
+request_started.connect(log_request, app)
+```
+
+<br>
+
+（3）flask.request_finished     
+&emsp;&emsp;在响应发送给客户端之前发送，可以传递 response。     
+```python
+def log_response(sender, response, **extra):
+    sender.logger.debug('Request context is about to close down.'
+                        'Response: %s', response)
+
+from flask import request_finished
+request_finished.connect(log_response, app)
+```
+
+<br>
+
+（4）flask.got_request_exception    
+&emsp;&emsp;在请求处理中抛出异常时发送，异常本身会通过 exception 传递到订阅函数。    
+```python
+def log_exception(sender, exception, **extra):
+    sender.logger.debug('Got exception during processing: %s', exception)
+
+from flask import got_request_exception
+got_request_exception.connect(log_exception, app)
+```
+
+<br>
+
+（5）flask.request_tearing_down    
+&emsp;&emsp;在请求销毁时发送，它总是被调用，即使发生异常。     
+```python
+def close_db_connection(sender, **extra):
+    session.close()
+
+from flask import request_tearing_down
+request_tearing_down.connect(close_db_connection, app)
+```
+
+<br>
+
+（6）flask.appcontext_tearing_down   
+&emsp;&emsp;在应用上下文销毁时发送，它总是被调用，即使发生异常。     
+```python
+def close_db_connection(sender, **extra):
+    session.close()
+
+from flask import appcontext_tearing_down
+appcontext_tearing_down.connect(close_db_connection, app)
+```
+
+<br>
+<br>
+
+#### 3、自定义信号
