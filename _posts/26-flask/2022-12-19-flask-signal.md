@@ -158,3 +158,31 @@ appcontext_tearing_down.connect(close_db_connection, app)
 <br>
 
 #### 3、自定义信号
+&emsp;&emsp;可以在自己的应用中直接使用 Blinker 创建信号，如下创建一个信号对象 large_file_saved，当上传文件大于一个阈值的时候就可以发送这个信号。当编写一个 Flask 扩展并且想优雅地在未安装 Blinker 时退出，可以使用 flask.signal.Namespace —— 在订阅信号的时候，如果发现未安装 Blinker 则抛出异常 RuntimeError。      
+```python
+from blinker import Namespace
+
+web_signals = Namespace()
+large_file_saved = web_signals.signal('large-file-saved')
+
+
+def custom(count):
+    print '信号自定义测试: {}'.format(count)
+
+
+large_file_saved.connect(custom)
+for count in range(3):
+    large_file_saved.send(count)
+```
+
+执行结果如下：    
+```
+信号自定义测试: 0
+信号自定义测试: 1
+信号自定义测试: 2
+```
+
+<br>
+<br>
+
+#### 4、
