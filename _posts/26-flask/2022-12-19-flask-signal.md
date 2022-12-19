@@ -48,6 +48,7 @@ from blinker import signal
 started = signal('test-started')
 
 
+@started.connect
 def each(round):
     print 'Round {}!'.format(round)
 
@@ -57,7 +58,6 @@ def round_two(round):
 
 
 # 将信号接收器连接到信号发送端
-started.connect(each)
 started.connect(round_two, sender=2)  # 值为2的时候才会接收
 
 for round in range(1, 4):
@@ -185,4 +185,26 @@ for count in range(3):
 <br>
 <br>
 
-#### 4、
+#### 4、信号订阅的高级用法
+&emsp;&emsp;从 Blinker 1.1 开始可以用新的 connect_via() 装饰器订阅信号。如下：    
+```python
+@appcontext_tearing_down.connect_via(app)
+def close_db_connection(sender, **extra):
+    session.close()
+```
+
+&emsp;&emsp;还可以通过装饰器来使用信号订阅的方法 connect，如下：     
+```python
+def each(round):
+    print 'Round {}!'.format(round)
+
+
+started.connect(each)
+```
+
+&emsp;&emsp;以上装饰器还可以简写，如下：    
+```python
+@started.connect
+def each(round):
+    print 'Round {}!'.format(round)
+```
