@@ -208,3 +208,8 @@ started.connect(each)
 def each(round):
     print 'Round {}!'.format(round)
 ```
+
+<br>
+<br>
+
+#### 5、Flask-Login 中的信号

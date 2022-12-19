@@ -31,7 +31,7 @@ werkzeug==0.11.10
 
 <br>
 
-&emsp;&emsp;Mako 是除 Jinja2 外另一个知名的模板语言，[性能和 Jinja2 相近](https://jinja.palletsprojects.com/en/2.10.x/faq/#how-fast-is-it)，这点 Jinja2 也承认了。豆瓣几乎全部用户产品都是用 Mako 模板，它还是 Pylons 和 Pyramid 这两个 Web 框架内置的模板模板。Mako 支持在模板中写几乎原生的 Python 语法的代码，还自带了完整的缓存系统。      
+&emsp;&emsp;Mako 是除 Jinja2 外另一个知名的模板语言，[性能和 Jinja2 相近](https://jinja.palletsprojects.com/en/2.10.x/faq/#how-fast-is-it)，这点 Jinja2 也承认了。豆瓣几乎全部用户产品都是用 Mako 模板，它还是 Pylons 和 Pyramid 这两个 Web 框架内置的模板模板。Mako 支持在模板中写几乎原生的 Python 语法的代码，还自带了完整的 **缓存系统**。      
 
 &emsp;&emsp;跟 Jinja2 的设计不同之处在于：Jinja2 认为应该尽可能把逻辑从模板中移除，界面清晰，不允许在模板内写 Python 代码，也不支持全部的 Python 内置函数（只提供了很有限、最常用的一部分）；而 Mako 正好相反，它最后会编译成 Python 代码以达到性能最优，在模板里面可以自由写后端逻辑，不需要传递就可以使用 Python 自带的数据结构和内置类。       
 
