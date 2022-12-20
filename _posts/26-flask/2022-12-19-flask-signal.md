@@ -213,3 +213,180 @@ def each(round):
 <br>
 
 #### 5、Flask-Login 中的信号
+&emsp;&emsp;Flask-Login 插件中带了 6 种信号，可以基于其中的信号做一些额外工作，比如基于 user_logged_in 来记录用户的登录次数和登录 IP 等。使用以下命令安装 Flask-Login 插件：    
+```
+> pip2 install flask-login
+```
+
+&emsp;&emsp;在 Flask-Login 中实现的发送信号代码如下，然后使用 connect_via() 装饰器订阅这个信号就可以了。         
+```python
+user_logged_in.send(current_app._get_current_object(), user=_get_user())
+```
+
+<br>
+<br>
+
+### 二、实现登录信号代码
+```python
+# coding=utf-8
+from flask import Flask, request, redirect, url_for
+import flask_login
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.secret_key = 'super secret string'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://web:web@localhost:3306/r'
+
+db = SQLAlchemy(app)
+
+login_manager = flask_login.LoginManager()
+login_manager.init_app(app)
+
+password = '123'
+
+
+class User(flask_login.UserMixin, db.Model):
+    """
+    flask-login 提供了 UserMixin，其有一些用户相关的属性：
+    - is_authenticated: 是否被验证
+    - is_active: 是否被激活
+    - is_anonymous: 是否是匿名用户
+    - get_id(): 获得用户的 id，并转换为 Unicode 类型
+
+    可以在创建数据库表模型的时候继承 UserMixin
+    """
+    __tablename__ = 'login_users'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128), nullable=False)
+    login_count = db.Column(db.Integer, default=0)
+    last_login_ip = db.Column(db.String(128), default='unknown')
+
+
+db.create_all()
+
+
+"""
+使用 connect_vat() 订阅信号后，已登录就会触发 user_logged_in 信号，增加登录次数，并添加最近登录 IP
+"""
+@flask_login.user_logged_in.connect_via(app)
+def _track_logins(sender, user, **extra):
+    user.login_count += 1
+    user.last_login_ip = request.remote_addr
+    db.session.add(user)
+    db.session.commit()
+
+
+"""
+使用 user_loader 装饰器的回调函数非常重要，它将决定 user 对象是否在登录状态
+"""
+@login_manager.user_loader
+def user_loader(id):
+    """
+    回调函数
+    @param id: 参数值是在 flask_login.login_user(user) 中传入的 user 的 id 属性
+    @return:
+    """
+    user = User.query.filter_by(id=id).first()
+    return user
+
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    """
+    登录视图函数
+    @return:
+    """
+    if request.method == 'GET':
+        """
+        如果是 GET 方法则只返回一个简单的表单
+        """
+        return '''
+<form action='login' method='POST'>
+    <input type='text' name='name' id='name' placeholder='name'></input>
+    <input type='password' name='pw' id='pw' placeholder='password'></input>
+    <input type='submit' name='submit'></input>
+</form>
+               '''
+
+    name = request.form.get('name')
+    if request.form.get('pw') == password:
+        """
+        如果传入参数 name 和 pw 且 pw 的值等于 123，则跳转至视图函数 protected 上
+        """
+        user = User.query.filter_by(name=name).first()
+        if not user:
+            user = User(name=name)
+            db.session.add(user)
+            db.session.commit()
+        flask_login.login_user(user)
+        return redirect(url_for('protected'))
+
+    return 'Bad login'
+
+
+@app.route('/protected')
+@flask_login.login_required
+def protected():
+    """
+    显示登录信息的视图函数
+    @return:
+    """
+    user = flask_login.current_user
+    return 'Logged in as: {}| Login_count: {}|IP: {}'.format(
+        user.name, user.login_count, user.last_login_ip)
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=9000, debug=True)
+```
+
+请求结果如下：    
+1. GET 请求 /login，不传参则返回一个登录表单     
+    ```
+    (venv) ❯ http GET http://127.0.0.1:9000/login
+    HTTP/1.0 200 OK
+    Content-Length: 258
+    Content-Type: text/html; charset=utf-8
+    Date: Tue, 20 Dec 2022 14:44:37 GMT
+    Server: Werkzeug/0.11.10 Python/2.7.11+
+
+    <form action='login' method='POST'>
+        <input type='text' name='name' id='name' placeholder='name'></input>
+        <input type='password' name='pw' id='pw' placeholder='password'></input>
+        <input type='submit' name='submit'></input>
+    </form>
+    ```
+    ![](\img\in-post\post-flask\2022-12-19-flask-signal-1.jpg)    
+2. POST 请求 /login 且通过 --form 传入表单，则跳转至 http://127.0.0.1:9000/protected 并显示登录信息           
+    ```
+    (venv) ❯ http --form POST http://127.0.0.1:9000/login name=XiaoMing pw=123
+    HTTP/1.0 302 FOUND
+    Content-Length: 227
+    Content-Type: text/html; charset=utf-8
+    Date: Tue, 20 Dec 2022 14:47:58 GMT
+    Location: http://127.0.0.1:9000/protected
+    Server: Werkzeug/0.11.10 Python/2.7.11+
+    Set-Cookie: session=.eJwdzsGKwjAQANBfWebsodvWS2EPQpqgkAlKapi5CKvdjWl6qUpjxH9X_IL3HnD4m_qLh-Y63foFHM4naB7w9QsNGNdWRuwH7bYzuf1oRLdkoQt2u6DDMVFY1exwZBtHtBuPaheN7WoOeqaxLSjLgcquoqArzOtEdj0bIQfjqDDCe7aniAoj2WNipTOWMpCT3tj_zEJ6crpm0c460xKtTpR9ZNXe6W2SXSUsNwMqSqi2P_BcwO3ST58_fMPzBWacR7A.FoNcng.uSJ-t1C3ux32O02w9gkxme21zkM; HttpOnly; Path=/
+
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+    <title>Redirecting...</title>
+    <h1>Redirecting...</h1>
+    <p>You should be redirected automatically to target URL: <a href="/protected">/protected</a>.  If not click the link.
+    ```
+    ![](\img\in-post\post-flask\2022-12-19-flask-signal-2.jpg)     
+
+    ![](\img\in-post\post-flask\2022-12-19-flask-signal-3.jpg)    
+3. GET 请求 /protected，则提示接口没有访问权限 401 UNAUTHORIZED      
+    ```
+    (venv) ❯ http GET http://127.0.0.1:9000/protected
+    HTTP/1.0 401 UNAUTHORIZED
+    Content-Length: 339
+    Content-Type: text/html
+    Date: Tue, 20 Dec 2022 14:48:29 GMT
+    Server: Werkzeug/0.11.10 Python/2.7.11+
+
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+    <title>401 Unauthorized</title>
+    <h1>Unauthorized</h1>
+    <p>The server could not verify that you are authorized to access the URL requested.  You either supplied the wrong credentials (e.g. a bad password), or your browser doesn't understand how to supply the credentials required.</p>
+    ```
