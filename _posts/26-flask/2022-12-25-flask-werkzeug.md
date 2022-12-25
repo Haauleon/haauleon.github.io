@@ -587,7 +587,7 @@ True
 <br>
 
 #### 5、中间件
-&emsp;&emsp;中间件（Middleware）会对每次请求添加额外的处理。可以用来记录日志、会话管理、请求验证、性能分析等工作。Werkzeug 中提供了 10 个中间件，之前提到的 werkzeug.debug.DebuggedApplication 也是一个中间件。下面介绍 5 个常用的中间件。     
+&emsp;&emsp;中间件（Middleware）会对每次请求添加额外的处理。可以用来记录日志、会话管理、请求验证、性能分析等工作。Werkzeug 中提供了 10 个中间件，之前提到的 werkzeug.debug.DebuggedApplication 也是一个中间件。下面介绍几个常用的中间件。     
 
 （1）SharedDataMiddleware     
 &emsp;&emsp;一般而言，静态文件都应该使用 Nginx 来服务，但是在测试环境中或者对资源响应要求不高时，也可以使用 SharedDataMiddleware 来提供这样的服务，之前实现的文件托管服务也使用了它。使用示例如下：    
@@ -625,3 +625,145 @@ Server: Werkzeug/0.11.10 Python/2.7.11+
 <br>
 
 （2）ProfilerMiddleware    
+&emsp;&emsp;可以很方便地使用 ProfilerMiddleware 添加性能分析。当请求页面的时候，就可以获得分析的结果。    
+
+1. 以下代码不指定 profile_dir，则会在终端输出分析结果。     
+    ```python
+    # coding=utf-8
+    from flask import Flask
+    from werkzeug.contrib.profiler import ProfilerMiddleware
+
+    app = Flask(__name__)
+    app.wsgi_app = ProfilerMiddleware(app.wsgi_app)
+
+
+    @app.route('/')
+    def hello():
+        return 'Hello'
+
+
+    if __name__ == '__main__':
+        app.run(host='0.0.0.0', port=9000)
+    ```
+
+    访问 http://127.0.0.1:9000/ 后，控制台输出到分析结果部分如下：    
+    ```
+    PATH: '/'
+            322 function calls in 0.001 seconds
+
+    Ordered by: internal time, call count
+
+    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+            1    0.000    0.000    0.000    0.000 /home/ubuntu/.virtualenvs/venv/local/lib/python2.7/site-packages/werkzeug/routing.py:1243(bind_to_environ)
+            1    0.000    0.000    0.000    0.000 /home/ubuntu/.virtualenvs/venv/local/lib/python2.7/site-packages/werkzeug/wrappers.py:756(__init__)
+           10    0.000    0.000    0.000    0.000 /home/ubuntu/.virtualenvs/venv/local/lib/python2.7/site-packages/werkzeug/local.py:68(__getattr__)
+           10    0.000    0.000    0.000    0.000 {method 'decode' of 'str' objects}
+            6    0.000    0.000    0.000    0.000 /home/ubuntu/.virtualenvs/venv/local/lib/python2.7/site-packages/werkzeug/local.py:160(top)
+            1    0.000    0.000    0.000    0.000 /home/ubuntu/.virtualenvs/venv/lib/python2.7/encodings/__init__.py:71(search_function)
+            2    0.000    0.000    0.000    0.000 /home/ubuntu/.virtualenvs/venv/local/lib/python2.7/site-packages/werkzeug/datastructures.py:1145(set)
+            1    0.000    0.000    0.000    0.000 /home/ubuntu/.virtualenvs/venv/local/lib/python2.7/site-packages/werkzeug/routing.py:1425(match)
+            1    0.000    0.000    0.000    0.000 /home/ubuntu/.virtualenvs/venv/local/lib/python2.7/site-packages/werkzeug/wrappers.py:1086(get_wsgi_headers)
+    ```
+2. 指定 profile_dir 后，在访问页面之后，结果会被保存下来。     
+    ```python
+    # coding=utf-8
+    from flask import Flask
+    from werkzeug.contrib.profiler import ProfilerMiddleware
+
+    app = Flask(__name__)
+    app.wsgi_app = ProfilerMiddleware(app.wsgi_app, profile_dir='tmp')
+
+
+    @app.route('/')
+    def hello():
+        return 'Hello'
+
+
+    if __name__ == '__main__':
+        app.run(host='0.0.0.0', port=9000)
+    ```
+    tmp 目录保存到的文件如下：     
+    ```
+    (venv) ❯ ls -al tmp
+    total 56
+    drwxrwxr-x 2 ubuntu ubuntu  4096 Dec 25 15:44 .
+    drwxrwxr-x 4 ubuntu ubuntu  4096 Dec 25 15:44 ..
+    -rw-rw-r-- 1 ubuntu ubuntu 46729 Dec 25 15:44 GET.root.000000ms.1671983054.prof
+    ```
+
+<br>
+
+（3）DispatcherMiddlerware    
+&emsp;&emsp;DispatcherMiddlerware 是可以调度多个应用的中间件，现在利用 JSONResponse 实现如下功能：  
+- 当访问以 /json 开头的地址时都默认自动用 jsonify 格式化。   
+- 访问其他地址不受影响。    
+
+代码实现如下：    
+```python
+# coding=utf-8
+from collections import OrderedDict
+
+from flask import Flask, jsonify
+from werkzeug.wrappers import Response
+from werkzeug.wsgi import DispatcherMiddleware
+
+app = Flask(__name__)
+json_page = Flask(__name__)
+
+
+class JSONResponse(Response):
+    @classmethod
+    def force_type(cls, rv, environ=None):
+        if isinstance(rv, dict):
+            rv = jsonify(rv)
+        return super(JSONResponse, cls).force_type(rv, environ)
+
+json_page.response_class = JSONResponse
+
+
+@json_page.route('/hello/')
+def hello():
+    return {'message': 'Hello World!'}
+
+
+@app.route('/')
+def index():
+    return 'The index page'
+
+
+app.wsgi_app = DispatcherMiddleware(app.wsgi_app, OrderedDict((
+    ('/json', json_page),
+)))
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=9000)
+```
+
+访问结果如下：     
+```
+(venv) ❯ http get http://127.0.0.1:9000/hello/
+HTTP/1.0 404 NOT FOUND
+Content-Length: 233
+Content-Type: text/html
+Date: Sun, 25 Dec 2022 16:02:40 GMT
+Server: Werkzeug/0.11.10 Python/2.7.11+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.</p>
+
+
+(venv) ❯ http get http://127.0.0.1:9000/json/hello/
+HTTP/1.0 200 OK
+Content-Length: 32
+Content-Type: application/json
+Date: Sun, 25 Dec 2022 16:02:47 GMT
+Server: Werkzeug/0.11.10 Python/2.7.11+
+
+{
+    "message": "Hello World!"
+}
+```
+
+&emsp;&emsp;使用这个中间件对访问地址是有副作用的，`@json_page('/')` 等价于 `@app.route('/json/')`，也就是子路径的地址前面是有 /json 前缀的，这一点比较隐晦。
