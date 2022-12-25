@@ -36,7 +36,311 @@ werkzeug==0.11.10
 <br>
 
 #### 1、DebuggedApplication
+&emsp;&emsp;在Tornado 框架中集成 DebuggedApplication 的例子如下。    
 
+（1）安装 Tornado     
+```
+> pip2 install tornado==4.3
+```
+
+<br>
+
+（2）自定义请求处理类      
+```python
+import tornado.web
+from werkzeug.debug import DebuggedApplication
+
+
+class Handler(tornado.web.RequestHandler):
+    """自定义请求处理类"""
+    
+    def initialize(self, debug):
+        if debug:
+            """
+            如果开启 DEBUG 模式，则使用 DebugApplication 的 render_exception 方法生成 HTML
+            """
+            self.write_error = self.write_debugger_error
+
+    def write_debugger_error(self, status_code, **kwargs):
+        assert isinstance(self.application, DebugApplication)
+        html = self.application.render_exception()
+        self.write(html.encode('utf-8', 'replace'))
+```
+
+<br>
+
+（3）创建 BadHandler     
+```python
+class BadHandler(Handler):
+    """基于 Handler 创建一个使用 GET 就会报错的 BadHandler"""
+    def get(self):
+        raise Exception('This is a test')
+        self.write('You will never see this text.')
+```
+
+<br>
+
+（4）创建 DebugApplication 类     
+```python
+import tornado.wsgi
+from tornado.web import Application
+from werkzeug.debug.tbtools import get_current_traceback
+
+
+class RequestDispatcher(tornado.web._RequestDispatcher):
+    def set_request(self, request):
+        super(RequestDispatcher, self).set_request(request)
+        if '__debugger__' in request.uri:
+            return self.application.debug_container(request)
+
+
+class DebugApplication(Application):
+    def __init__(self, *args, **kwargs):
+        super(DebugApplication, self).__init__(*args, **kwargs)
+        self.debug_app = DebuggedApplication(self, evalex=True)
+        self.debug_container = tornado.wsgi.WSGIContainer(self.debug_app)
+
+    def start_request(self, server_conn, request_conn):
+        return RequestDispatcher(self, request_conn)
+
+    def render_exception(self):
+        traceback = get_current_traceback()
+
+        for frame in traceback.frames:
+            self.debug_app.frames[frame.id] = frame
+        self.debug_app.tracebacks[traceback.id] = traceback
+
+        return traceback.render_full(evalex=True,
+                                     secret=self.debug_app.secret)
+```
+
+<br>
+
+（5）创建路由    
+```python
+def create_application(debug=False):
+    """
+    创建的路由统一放在函数中，虽然仅有 /error/ 这一个可用地址，但是更有利于独立管理
+    """
+    handlers = [
+        ('/error/', BadHandler, {'debug': debug}),
+    ]
+    if debug:
+        return DebugApplication(handlers, debug=True)
+    return Application(handlers, debug=debug)
+```
+
+<br>
+
+（6）创建主函数        
+```python
+import tornado.ioloop
+from tornado.options import define, options, parse_command_line
+
+
+def main():
+
+    # 使用 define 可以定义命令行参数的名字、类型和默认值
+    define('debug', default=False, type=bool, help='Run in debug mode.')
+    define('port', default=9000, type=int, help='Port on which to listen.')
+    parse_command_line()
+
+    logger = logging.getLogger()
+    port = options.port
+    application = create_application(debug=options.debug)
+    logger.info('Running tornado on port {}.'.format(port))
+    application.listen(port)
+    tornado.ioloop.IOLoop.instance().start()
+```
+
+&emsp;&emsp;create_application 的逻辑是，当 debug 为 False 时即不指定 debug 参数时，则使用默认的 Application：          
+```
+> python2 app_tornado.py
+```
+&emsp;&emsp;如果开启 debug 模式，则使用 DebugApplication，即可以使用更友好的 werkzeug.debug.DebuggedApplication：    
+```
+> python2 app_tornado.py --debug
+```
+
+<br>
+
+演示效果如下：    
+1. 未开启 debug 模式     
+    ![](\img\in-post\post-flask\2022-12-25-flask-werkzeug-1.jpg)      
+
+    ```
+    (venv) ❯ http get http://127.0.0.1:9000/error
+    HTTP/1.1 404 Not Found
+    Content-Length: 69
+    Content-Type: text/html; charset=UTF-8
+    Date: Sun, 25 Dec 2022 13:23:38 GMT
+    Server: TornadoServer/4.3
+
+    <html><title>404: Not Found</title><body>404: Not Found</body></html>
+
+
+    (venv) ❯ http get http://127.0.0.1:9000/error/
+    HTTP/1.1 500 Internal Server Error
+    Content-Length: 93
+    Content-Type: text/html; charset=UTF-8
+    Date: Sun, 25 Dec 2022 13:23:42 GMT
+    Server: TornadoServer/4.3
+
+    <html><title>500: Internal Server Error</title><body>500: Internal Server Error</body></html>
+    ```
+2. 开启 debug 模式     
+    ![](\img\in-post\post-flask\2022-12-25-flask-werkzeug-2.jpg)      
+
+    ```
+    (venv) ❯ http get http://127.0.0.1:9000/error
+    HTTP/1.1 404 Not Found
+    Content-Length: 358
+    Content-Type: text/plain
+    Date: Sun, 25 Dec 2022 13:25:00 GMT
+    Server: TornadoServer/4.3
+
+    Traceback (most recent call last):
+    File "/home/ubuntu/.virtualenvs/venv/local/lib/python2.7/site-packages/tornado/web.py", line 1422, in _execute
+        result = self.prepare()
+    File "/home/ubuntu/.virtualenvs/venv/local/lib/python2.7/site-packages/tornado/web.py", line 2149, in prepare
+        raise HTTPError(self._status_code)
+    HTTPError: HTTP 404: Not Found
+
+
+    (venv) ❯ http get http://127.0.0.1:9000/error/
+    HTTP/1.1 500 Internal Server Error
+    Content-Length: 6027
+    Content-Type: text/html; charset=UTF-8
+    Date: Sun, 25 Dec 2022 13:26:19 GMT
+    Server: TornadoServer/4.3
+
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+    <html>
+    <head>
+        <title>Exception: This is a test // Werkzeug Debugger</title>
+        <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css"
+            type="text/css">
+        <!-- We need to make sure this has a favicon so that the debugger does
+            not by accident trigger a request to /favicon.ico which might
+            change the application state. -->
+        <link rel="shortcut icon"
+            href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+        <script src="?__debugger__=yes&amp;cmd=resource&amp;f=jquery.js"></script>
+        <script src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+        <script type="text/javascript">
+        var TRACEBACK = 139673206462160,
+            CONSOLE_MODE = false,
+            EVALEX = true,
+            EVALEX_TRUSTED = true,
+            SECRET = "6RQeqh5dQszk1yKv5Fwf";
+        </script>
+    </head>
+    <body>
+        <div class="debugger">
+    <h1>Exception</h1>
+    <div class="detail">
+    <p class="errormsg">Exception: This is a test</p>
+    </div>
+    <h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+    <div class="traceback">
+
+    <ul><li><div class="frame" id="frame-139673206462480">
+    <h4>File <cite class="filename">"/home/ubuntu/.virtualenvs/venv/lib/python2.7/site-packages/tornado/web.py"</cite>,
+        line <em class="line">1443</em>,
+        in <code class="function">_execute</code></h4>
+    <div class="source"><pre class="line before"><span class="ws">
+            </span>yield self.request.body</pre>
+    <pre class="line before"><span class="ws">                </span>except iostream.StreamClosedError:</pre>
+    <pre class="line before"><span class="ws">                    </span>return</pre>
+    <pre class="line before"><span class="ws"></span> </pre>
+    <pre class="line before"><span class="ws">            </span>method = getattr(self, self.request.method.lower())</pre>
+    <pre class="line current"><span class="ws">            </span>result = method(*self.path_args, **self.path_kwargs)</pre>
+    <pre class="line after"><span class="ws">            </span>if result is not None:</pre>
+    <pre class="line after"><span class="ws">                </span>result = yield result</pre>
+    <pre class="line after"><span class="ws">            </span>if self._auto_finish and not self._finished:</pre>
+    <pre class="line after"><span class="ws">                </span>self.finish()</pre>
+    <pre class="line after"><span class="ws">        </span>except Exception as e:</pre></div>
+    </div>
+
+    <li><div class="frame" id="frame-139673206463120">
+    <h4>File <cite class="filename">"/home/ubuntu/web_develop/chapter4/section3/app_tornado.py"</cite>,
+        line <em class="line">26</em>,
+        in <code class="function">get</code></h4>
+    <div class="source"><pre class="line before"><span class="ws">        </span>self.write(html.encode('utf-8', 'replace'))</pre>
+    <pre class="line before"><span class="ws"></span> </pre>
+    <pre class="line before"><span class="ws"></span> </pre>
+    <pre class="line before"><span class="ws"></span>class BadHandler(Handler):</pre>
+    <pre class="line before"><span class="ws">    </span>def get(self):</pre>
+    <pre class="line current"><span class="ws">        </span>raise Exception('This is a test')</pre>
+    <pre class="line after"><span class="ws">        </span>self.write('You will never see this text.')</pre>
+    <pre class="line after"><span class="ws"></span> </pre>
+    <pre class="line after"><span class="ws"></span> </pre>
+    <pre class="line after"><span class="ws"></span>class RequestDispatcher(tornado.web._RequestDispatcher):</pre>
+    <pre class="line after"><span class="ws">    </span>def set_request(self, request):</pre></div>
+    </div>
+    </ul>
+    <blockquote>Exception: This is a test</blockquote>
+    </div>
+
+    <div class="plain">
+    <form action="/?__debugger__=yes&amp;cmd=paste" method="post">
+        <p>
+        <input type="hidden" name="language" value="pytb">
+        This is the Copy/Paste friendly version of the traceback.  <span
+        class="pastemessage">You can also paste this traceback into
+        a <a href="https://gist.github.com/">gist</a>:
+        <input type="submit" value="create paste"></span>
+        </p>
+        <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+    File "/home/ubuntu/.virtualenvs/venv/lib/python2.7/site-packages/tornado/web.py", line 1443, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+    File "/home/ubuntu/web_develop/chapter4/section3/app_tornado.py", line 26, in get
+        raise Exception('This is a test')
+    Exception: This is a test</textarea>
+    </form>
+    </div>
+    <div class="explanation">
+    The debugger caught an exception in your WSGI application.  You can now
+    look at the traceback which led to the error.  <span class="nojavascript">
+    If you enable JavaScript you can also use additional features such as code
+    execution (if the evalex feature is enabled), automatic pasting of the
+    exceptions and much more.</span>
+    </div>
+        <div class="footer">
+            Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+            friendly Werkzeug powered traceback interpreter.
+        </div>
+        </div>
+
+        <div class="pin-prompt">
+        <div class="inner">
+            <h3>Console Locked</h3>
+            <p>
+            The console is locked and needs to be unlocked by entering the PIN.
+            You can find the PIN printed out on the standard output of your
+            shell that runs the server.
+            <form>
+            <p>PIN:
+                <input type=text name=pin size=14>
+                <input type=submit name=btn value="Confirm Pin">
+            </form>
+        </div>
+        </div>
+    </body>
+    </html>
+
+    <!--
+
+    Traceback (most recent call last):
+    File "/home/ubuntu/.virtualenvs/venv/lib/python2.7/site-packages/tornado/web.py", line 1443, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+    File "/home/ubuntu/web_develop/chapter4/section3/app_tornado.py", line 26, in get
+        raise Exception('This is a test')
+    Exception: This is a test
+
+    -->
+    ```
 
 <br>
 <br>
