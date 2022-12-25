@@ -504,7 +504,84 @@ def main():
 <br>
 
 #### 4、密码加密
+&emsp;&emsp;数据库中的重要字段（如密码）不能明文存储，需要加密之后存储。Web 开发常用到的方法是加盐哈希加密，也就是在加密时混入一段随机字符串（盐值， salt）再进行哈希加密（如 MD5、SHA1 等），这样即使密码相同，如果混入的盐值不同，那么哈希值也是不一样的。Werkzeug 中提供了密码加盐的哈希函数：     
+```
+In [1]: from werkzeug.security import generate_password_hash
 
+In [2]: pw_1 = generate_password_hash('haauleon')
+
+In [3]: pw_2 = generate_password_hash('haauleon')
+
+In [4]: pw_1
+Out[4]: 'pbkdf2:sha1:1000$AcopqCqB$50014045342e0c4d920104f9f2757b5c1c828c5d'
+
+In [5]: pw_2
+Out[5]: 'pbkdf2:sha1:1000$FcmmYxAj$4194d910ec59be2a7388b4729d4da3b154dd4401'
+```
+
+&emsp;&emsp;哈希之后的哈希字符串格式是 `method$salt$hash`，其中 1000 表示迭代次数，默认是 1000。由于盐值是随机的，同一个密码生成的哈希值不一样，因为不容易呗暴力破解。      
+
+&emsp;&emsp;经过哈希之后的字符串是不能获取原密码的，只能使用 check_password_hash 来验证：     
+```
+In [6]: from werkzeug.security import check_password_hash
+
+In [7]: check_password_hash(pw_1, 'haauleon')
+Out[7]: True
+
+In [8]: check_password_hash(pw_2, 'haauleon')
+Out[8]: True
+
+In [9]: check_password_hash(pw_2[:-1] + 'a', 'haauleon')
+Out[9]: False
+```
+
+<br>
+
+&emsp;&emsp;SQLAlchemy 记录密码的哈希值的方法如下，其中装饰器 hybrid_property 把 password 变成了一个混合属性，可以通过 user.password 属性来访问哈希的密码，也会在给 user.password 赋值的时候触发 password.setter：          
+```python
+from sqlalchemy.ext.hybrid import hybrid_property
+
+
+class User(db.Model):
+    __tablename__ = 'hashed_users'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128), nullable=False)
+    _password = db.Column(db.String(256), nullable=False)
+
+    def __init__(self, name, password):
+        self.name = name
+        self.password = password
+
+    @hybrid_property
+    def password(self):
+        return self._password
+
+    @password.setter
+    def password(self, plaintext):
+        self._password = generate_password_hash(plaintext)
+
+    def verify_password(self, password):
+        return check_password_hash(self.password, password)
+```
+
+效果如下：    
+```
+In [1]: user = User(name='xiaoming', password='123')
+In [2]: db.session.add(user)
+In [3]: db.session.commit()
+
+In [4]: print user.password
+Out[4]:
+pbkdf2:sha1:1000$HPqbW3Gt$59a167db9d008bdeb9bec1c20e5a0d8d50d01ccf
+
+In [5]: print user.verify_password('223')
+Out[5]:
+False
+
+In [6]: print user.verify_password('123')
+Out[6]:
+True
+```
 
 <br>
 <br>
