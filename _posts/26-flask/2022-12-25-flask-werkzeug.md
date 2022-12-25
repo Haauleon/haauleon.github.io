@@ -587,3 +587,41 @@ True
 <br>
 
 #### 5、中间件
+&emsp;&emsp;中间件（Middleware）会对每次请求添加额外的处理。可以用来记录日志、会话管理、请求验证、性能分析等工作。Werkzeug 中提供了 10 个中间件，之前提到的 werkzeug.debug.DebuggedApplication 也是一个中间件。下面介绍 5 个常用的中间件。     
+
+（1）SharedDataMiddleware     
+&emsp;&emsp;一般而言，静态文件都应该使用 Nginx 来服务，但是在测试环境中或者对资源响应要求不高时，也可以使用 SharedDataMiddleware 来提供这样的服务，之前实现的文件托管服务也使用了它。使用示例如下：    
+```python
+# coding=utf-8
+import os
+
+from flask import Flask
+from werkzeug.wsgi import SharedDataMiddleware
+
+app = Flask(__name__)
+app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
+    '/static/': os.path.join(os.path.dirname(__file__), 'static')
+})
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=9000)
+```
+
+&emsp;&emsp;假设程序所在目录的 static 子目录下有一个叫作 main.js 的文件，可以使用 http://localhost:9000/static/main.js 来访问。    
+```
+(venv) ❯ http get http://127.0.0.1:9000/static/main.js
+HTTP/1.0 200 OK
+Cache-Control: max-age=43200, public
+Content-Length: 0
+Content-Type: application/javascript
+Date: Sun, 25 Dec 2022 15:32:15 GMT
+Etag: "wzsdm-1465692695-0-182321841"
+Expires: Mon, 26 Dec 2022 03:32:15 GMT
+Last-Modified: Sun, 12 Jun 2016 00:51:35 GMT
+Server: Werkzeug/0.11.10 Python/2.7.11+
+```
+
+<br>
+
+（2）ProfilerMiddleware    
