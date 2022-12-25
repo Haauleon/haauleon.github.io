@@ -346,6 +346,101 @@ def main():
 <br>
 
 #### 2、数据结构
+&emsp;&emsp;Werkzeug 中提供了多种定制的数据结构，在工作中有时也会需要这样的数据结构，这里举例说明以下常用的几种数据结构。      
+1. TypeConversionDict   
+    &emsp;&emsp;它继承于 dict，执行 get 方法时可以指定值的类型。
+    ```
+    In [1]: from werkzeug.datastructures import TypeConversionDict
+
+    In [2]: d = TypeConversionDict(foo='42', bar='blub')
+
+    In [3]: d.get('foo', type=int)  # 指定值的类型为 int
+    Out[3]: 42
+
+    In [4]: d.get('bar', -1, type=int)  # 指定值的类型为 int 并更新值为 -1
+    Out[4]: -1
+    ```
+2. ImmutableTypeConversionDict     
+    &emsp;&emsp;不可变的 TypeConversionDict，无法更新键的值。         
+    ```
+    In [1]: from werkzeug.datastructures import ImmutableTypeConversionDict
+
+    In [2]: d = ImmutableTypeConversionDict(name='Lily', age=19)
+
+    In [3]: d.get('name', 'Jimmy', type=str)
+    Out[3]: 'Lily'
+
+    In [4]: d.get('age', 20, type=int)
+    Out[4]: 19
+    ```
+3. MultiDict     
+    &emsp;&emsp;它继承于 TypeConversionDict，可以对相同的键传入多个值，会把这些值都保留下来。      
+    ```
+    In [1]: from werkzeug.datastructures import MultiDict
+
+    In [2]: d = MultiDict([('a', 'b'), ('a', 'c')])
+
+    In [3]: d.getlist('a')
+    Out[3]: ['b', 'c']
+
+    In [4]: list(d.iterlists())
+    Out[4]: [('a', ['b', 'c'])]
+
+    In [5]: d.setlist('d', ['e', 'f'])
+
+    In [6]: d
+    Out[6]: MultiDict([('a', 'b'), ('a', 'c'), ('d', 'e'), ('d', 'f')])
+
+    In [7]: d.poplist('d')
+    Out[7]: ['e', 'f']
+
+    In [8]: d
+    Out[8]: MultiDict([('a', 'b'), ('a', 'c')])
+
+    In [9]: d.get('a')
+    Out[9]: 'b'
+    ```
+4. ImmutableMultiDict  
+    &emsp;&emsp;不可变的 MultiDict。     
+    ```
+    In [1]: from werkzeug.datastructures import ImmutableMultiDict
+
+    In [2]: d = ImmutableMultiDict([('a', 'b'), ('a', 'c')])
+
+    In [3]: d.getlist('a')
+    Out[3]: ['b', 'c']
+
+    In [4]: d.setlist('d', ['e', 'f'])
+    TypeError: 'ImmutableMultiDict' objects are immutable
+    ```
+5. OrderedMultiDict    
+    &emsp;&emsp;它继承于 MultiDict，但是保留了字典的顺序。     
+    ```
+    In [1]: from werkzeug.datastructures import OrderedMultiDict
+
+    In [2]: d = OrderedMultiDict([('a', 'c'), ('a', 'b')])
+
+    In [3]: d.getlist('a')
+    Out[3]: ['c', 'b']
+
+    In [4]: d.setlist('d', ['f', 'e'])
+
+    In [5]: d
+    Out[5]: OrderedMultiDict([('a', 'c'), ('a', 'b'), ('d', 'f'), ('d', 'e')])
+    ```
+6. ImmutableOrderedMultiDict      
+    &emsp;&emsp;不可变的 OrderedMultiDict。    
+    ```
+    In [1]: from werkzeug.datastructures import ImmutableOrderedMultiDict
+
+    In [2]: d = ImmutableOrderedMultiDict([('a', 'c'), ('a', 'b')])
+
+    In [3]: d
+    Out[3]: ImmutableOrderedMultiDict([('a', 'c'), ('a', 'b')])
+
+    In [4]: d.setlist('d', ['f', 'e'])
+    TypeError: 'ImmutableOrderedMultiDict' objects are immutable
+    ```
 
 
 <br>
