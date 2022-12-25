@@ -447,6 +447,57 @@ def main():
 <br>
 
 #### 3、功能函数
+&emsp;&emsp;Werkzeug 中提供了多个有用的函数。      
+1. cached_property     
+    &emsp;&emsp;非常知名的装饰器，它通过描述符把方法执行的结果作为一个属性（property）缓存下来。     
+    ```
+    In [2]: from werkzeug import cached_property
+
+    In [3]: class Foo:
+    ...:
+    ...:     @cached_property
+    ...:     def bar(self):
+    ...:         print 'calculate something'
+    ...:         return 1
+    ...:
+
+    In [4]: foo = Foo()
+
+    In [5]: foo.bar  # 方法只执行一次，此后都直接返回结果
+    calculate something
+    Out[5]: 1
+
+    In [6]: foo.bar
+    Out[6]: 1
+
+    In [7]: foo.bar
+    Out[7]: 1
+    ```
+2. import_string    
+    &emsp;&emsp;一个帮助我们直接通过字符串找到对应模块的功能函数。     
+    ```
+    In [1]: from werkzeug import import_string
+
+    In [2]: import_string('os')
+    Out[2]: <module 'os' from '/home/ubuntu/.virtualenvs/venv/lib/python2.7/os.pyc'>
+
+    In [3]: import_string('werkzeug.utils')
+    Out[3]: <module 'werkzeug.utils' from '/home/ubuntu/.virtualenvs/venv/local/lib/python2.7/site-packages/werkzeug/utils.pyc'>
+    ```
+3. secure_filename    
+    &emsp;&emsp;返回一个安全版本的文件名。    
+    ```
+    In [1]: from werkzeug import secure_filename
+
+    In [2]: secure_filename('My cool movie.mov')
+    Out[2]: 'My_cool_movie.mov'
+
+    In [3]: secure_filename('../../../etc/passwd')
+    Out[3]: 'etc_passwd'
+
+    In [4]: secure_filename(u'i contain cool /xfcml/xe4uts.txt')
+    Out[4]: 'i_contain_cool_xfcml_xe4uts.txt'
+    ```
 
 
 <br>
