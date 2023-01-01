@@ -51,10 +51,25 @@ mysql-server is already the newest version (5.7.13-0ubuntu0.16.04.2).
 0 upgraded, 0 newly installed, 0 to remove and 112 not upgraded.
 
 ~ ubuntu@WEB
-❯ sudo /etc/init.d/mysql start
+❯ sudo /etc/init.d/mysql start  # 启动 mysql
 [ ok ] Starting mysql (via systemctl): mysql.service.
 ```
 
+<br>
+
+以下三种方式可以对 MySQL 进行启动/停止/重启操作：       
+1. 启动 mysql         
+    - 方式一：sudo /etc/init.d/mysql start
+    - 方式二：sudo start mysql
+    - 方式三：sudo service mysql start
+2. 停止 mysql         
+    - 方式一：sudo /etc/init.d/mysql stop
+    - 方式二：sudo stop mysql
+    - 方式san：sudo service mysql stop
+3. 重启 mysql        
+    - 方式一：sudo/etc/init.d/mysql restart
+    - 方式二：sudo restart mysql
+    - 方式三：sudo service mysql restart
 
 <br>
 <br>
