@@ -32,7 +32,9 @@ werkzeug==0.11.10
 
 &emsp;&emsp;MySQL 是一个开源的关系型数据库管理系统。它性能高、免费、配置简单、可靠性好，已经成为最流行的开源数据库。     
 
-&emsp;&emsp;在 Flask 应用中可以自由使用 MySQL、PostgreSQL、SQLite、Redis、MongoDB 来 **写原生的语句** 实现功能，也可以使用更高级别的 **数据库抽象方式**，如 SQLAlchemy 或 MongoEngine 这样的 OR(D)M。这里使用 MySQL 的 Python 驱动（MySQLdb）写原生语句的方法演示 Web 开发中的数据库开发工作。     
+&emsp;&emsp;在 Flask 应用中可以自由使用 MySQL、PostgreSQL、SQLite、Redis、MongoDB 来 **写原生的语句** 实现功能，也可以使用更高级别的 **数据库抽象方式**，如 SQLAlchemy 或 MongoEngine 这样的 OR(D)M。    
+
+&emsp;&emsp;这里使用 MySQL 的 Python 驱动（MySQLdb）写原生语句的方法演示 Web 开发中的数据库开发工作。     
 
 <br>
 
