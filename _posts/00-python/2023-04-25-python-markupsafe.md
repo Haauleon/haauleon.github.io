@@ -11,7 +11,7 @@ tags:
 ---
 
 ### ImportError
-```python
+```
 ImportError: cannot import name 'soft_unicode' from 'markupsafe'
 ```
 
