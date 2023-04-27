@@ -51,7 +51,7 @@ tags:
 
 #### 基于脑图的测试设计和分析 
 
-![](\img\in-post\post-test-base\2018-12-02-TestCaseHowToDesign-6.jpg)          
+![](\img\in-post\post-test-base\2018-12-02-TestCaseHowToDesign-36.jpg)          
 李龙老师：接下来我就和大家谈谈探讨一下脑图的一些好处，就像上面第一个图片给大家贴出来的，就是利用思维导图来做的一些方面的一些工作。因为就在整个测试过程中引入了思维导图之后，能够很大程度的提高测试人员对于需求和产品的学习和理解能力。通过使用脑图也可以进行测试分析和产品的测试分析。分析结果具有很强的条理性，并且在一定程度上，他会增强测试人员对产品理解的深度和整体的一个把控能力。         
 
 ![](\img\in-post\post-test-base\2018-12-02-TestCaseHowToDesign-7.jpg)            
