@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Python3 | python搭建ip池"
-subtitle:      "pyppeteer.errors.PageError: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH at ..."
+subtitle:      "爬取网站有时候会遭受封ip，需要搭建自己的ip池用于爬虫"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
 header-mask:   0.4
