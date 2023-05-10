@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "数据库 |python 怎么捕获 mysql 报错"
+title:         "数据库 | python 怎么捕获 mysql 报错"
 subtitle:      "MySQLdb 到底该如何获取 mysql 错误"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
