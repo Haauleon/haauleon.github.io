@@ -10,6 +10,8 @@ tags:
     - Python
     - 爬虫
     - 数据库
+    - MySQLdb
+    - Mariadb
 ---
 
 ### 一、前言
