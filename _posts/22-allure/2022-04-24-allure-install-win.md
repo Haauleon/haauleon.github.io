@@ -17,8 +17,9 @@ tags:
 
 ### 二、安装配置步骤
 ###### 1、下载 allure 的 zip 压缩包
-[压缩包下载地址](https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/)
+[官网压缩包下载地址](https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/)      
 
+[百度云资源下载地址](https://pan.baidu.com/s/1q5NjRiBEQnxWp7ccEBdSxg?pwd=8nkj)
 <br>
 
 ###### 2、解压 zip 包获取 bin 的路径
