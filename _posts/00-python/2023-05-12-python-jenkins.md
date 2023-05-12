@@ -102,4 +102,6 @@ pip install JPype1-1.4.0-cp38-cp38-win_amd64.whl
 <br>
 
 #### 重新执行 pip install 命令
-
+```
+> pip install jenkins==1.0.2 -U -i https://pypi.douban.com/simple
+```
