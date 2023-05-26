@@ -8,6 +8,7 @@ header-mask:   0.4
 catalog:       true
 tags:
     - Python
+    - Pytest
     - 单元测试框架
 ---
 
