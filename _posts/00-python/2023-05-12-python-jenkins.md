@@ -71,8 +71,9 @@ ERROR: Could not build wheels for jenkins, which is required to install pyprojec
 
 <br>
 
-2、Jpype 版本要注意下载版本和你的 python 版本需要一致。      
-![](https://img-blog.csdnimg.cn/e5ca90a046ef4e92882a7171084e1157.png)      
+2、Jpype 版本要注意下载版本和你的 python 版本需要一致。        
+![](\img\in-post\post-python\2023-05-12-python-jenkins-1.png)      
+<!-- ![](https://img-blog.csdnimg.cn/e5ca90a046ef4e92882a7171084e1157.png)       -->
 
 <br>
 
@@ -80,24 +81,28 @@ ERROR: Could not build wheels for jenkins, which is required to install pyprojec
 ```
 pip install JPype1-1.4.0-cp38-cp38-win_amd64.whl
 ```
-![](https://img-blog.csdnimg.cn/a640b8e3fba7472fb5e6d1c34a54e579.png)
+![](\img\in-post\post-python\2023-05-12-python-jenkins-2.png)      
+<!-- ![](https://img-blog.csdnimg.cn/a640b8e3fba7472fb5e6d1c34a54e579.png) -->
 
 <br>
 
 #### 安装 Visual Studio
 1、安装 Microsoft C++ 生成工具 - Visual Studio      
-下载链接：[https://visualstudio.microsoft.com/zh-hans/visual-cpp-build-tools/](https://visualstudio.microsoft.com/zh-hans/visual-cpp-build-tools/)      
-![](https://img-blog.csdnimg.cn/bc4728f8f3d54d9f9e43aa33e8ad47a9.png)    
+下载链接：[https://visualstudio.microsoft.com/zh-hans/visual-cpp-build-tools/](https://visualstudio.microsoft.com/zh-hans/visual-cpp-build-tools/)       
+![](\img\in-post\post-python\2023-05-12-python-jenkins-3.png)      
+<!-- ![](https://img-blog.csdnimg.cn/bc4728f8f3d54d9f9e43aa33e8ad47a9.png)     -->
 
 <br>
 
-2、勾选使用 c++ 的桌面开发      
-![](https://img-blog.csdnimg.cn/5203fed1f80c41eba257ad1ea7740c54.png)     
+2、勾选使用 c++ 的桌面开发         
+![](\img\in-post\post-python\2023-05-12-python-jenkins-4.png)      
+<!-- ![](https://img-blog.csdnimg.cn/5203fed1f80c41eba257ad1ea7740c54.png)      -->
 
 <br>
 
 3、等待下载安装成功     
-![](https://img-blog.csdnimg.cn/65095b51775e4d7b8c18e89d0353ab3b.png)     
+![](\img\in-post\post-python\2023-05-12-python-jenkins-5.png)      
+<!-- ![](https://img-blog.csdnimg.cn/65095b51775e4d7b8c18e89d0353ab3b.png)      -->
 
 <br>
 
