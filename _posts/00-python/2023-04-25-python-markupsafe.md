@@ -15,7 +15,8 @@ tags:
 ImportError: cannot import name 'soft_unicode' from 'markupsafe'
 ```
 
-![](https://img-blog.csdnimg.cn/1a9ba32efed54f73985945fe98bc0a9f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5byg5a6J6YeR,size_20,color_FFFFFF,t_70,g_se,x_16)
+![](\img\in-post\post-python\2023-04-25-python-markupsafe-1.png)      
+<!-- ![](https://img-blog.csdnimg.cn/1a9ba32efed54f73985945fe98bc0a9f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5byg5a6J6YeR,size_20,color_FFFFFF,t_70,g_se,x_16) -->
 
 
 <br>
@@ -28,7 +29,8 @@ ImportError: cannot import name 'soft_unicode' from 'markupsafe'
 pip show markupsafe
 ```
 
-![](https://img-blog.csdnimg.cn/350cb6dac4454d2ba674351aea28620a.png)     
+![](\img\in-post\post-python\2023-04-25-python-markupsafe-2.png)      
+<!-- ![](https://img-blog.csdnimg.cn/350cb6dac4454d2ba674351aea28620a.png)      -->
 
 
 2、经过查看我们发现这个库是已经安装过的。那我们尝试指定版本号覆盖安装一下这个库。      
@@ -36,7 +38,8 @@ pip show markupsafe
 python -m pip install markupsafe==2.0.1
 ```
 
-![](https://img-blog.csdnimg.cn/75c199fcbe90489890099f595fda8729.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5byg5a6J6YeR,size_20,color_FFFFFF,t_70,g_se,x_16)    
+![](\img\in-post\post-python\2023-04-25-python-markupsafe-3.png)      
+<!-- ![](https://img-blog.csdnimg.cn/75c199fcbe90489890099f595fda8729.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5byg5a6J6YeR,size_20,color_FFFFFF,t_70,g_se,x_16)     -->
 
 
 3、启动成功，问题解决。
