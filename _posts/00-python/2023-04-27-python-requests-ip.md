@@ -22,15 +22,17 @@ tags:
 3、保存首次获取的ip信息并检测其是否可用    
 4、检测完毕将可用ip保存，搭建完成     
 
-![](https://img-blog.csdnimg.cn/082783ed2882434b80540976b8891aff.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5rWpwrc=,size_20,color_FFFFFF,t_70,g_se,x_16)          
+![](\img\in-post\post-python\2023-04-27-python-requests-ip-1.png)      
+<!-- ![](https://img-blog.csdnimg.cn/082783ed2882434b80540976b8891aff.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5rWpwrc=,size_20,color_FFFFFF,t_70,g_se,x_16)           -->
 
 本文是单线程，比较简单但效率可能没有那么快。
 
 <br>
 <br>
 
-下面是搭建完后的ip池展示：      
-![](https://img-blog.csdnimg.cn/a719054604294592b42d249062ef57df.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5rWpwrc=,size_20,color_FFFFFF,t_70,g_se,x_16)         
+下面是搭建完后的ip池展示：        
+![](\img\in-post\post-python\2023-04-27-python-requests-ip-2.png)      
+<!-- ![](https://img-blog.csdnimg.cn/a719054604294592b42d249062ef57df.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5rWpwrc=,size_20,color_FFFFFF,t_70,g_se,x_16)          -->
 
 <br>
 <br>
@@ -148,8 +150,9 @@ from lxml import etree # xpath
 ```
 <br>
 
-随便找到一个免费的ip代理网站。这个网站没什么反爬机制，找到网站的url规律直接request  get他就行。       
-![](https://img-blog.csdnimg.cn/429e16ac76974c4ca606ad543143e949.png)         
+随便找到一个免费的ip代理网站。这个网站没什么反爬机制，找到网站的url规律直接request  get他就行。         
+![](\img\in-post\post-python\2023-04-27-python-requests-ip-3.png)      
+<!-- ![](https://img-blog.csdnimg.cn/429e16ac76974c4ca606ad543143e949.png)          -->
 
 <br>
 
@@ -181,7 +184,8 @@ for i in range(city_num):             # 批量爬取list_ip关键信息并保存
     response = get_list_ip(i)
     print(response)
 ```
-![](https://img-blog.csdnimg.cn/a01c62f03d974c21ba86597fb13ceeca.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5rWpwrc=,size_20,color_FFFFFF,t_70,g_se,x_16)     
+![](\img\in-post\post-python\2023-04-27-python-requests-ip-4.png)      
+<!-- ![](https://img-blog.csdnimg.cn/a01c62f03d974c21ba86597fb13ceeca.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5rWpwrc=,size_20,color_FFFFFF,t_70,g_se,x_16)      -->
 
 <br>
 <br>
@@ -218,7 +222,8 @@ def dispose_list_ip(list_ip):
         content_list += list        # 将每一页获取的列表连接起来
     print(content_list)
 ```
-![](https://img-blog.csdnimg.cn/99cc2480a0ab4cebba5bfadde79261eb.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5rWpwrc=,size_20,color_FFFFFF,t_70,g_se,x_16)    
+![](\img\in-post\post-python\2023-04-27-python-requests-ip-5.png)      
+<!-- ![](https://img-blog.csdnimg.cn/99cc2480a0ab4cebba5bfadde79261eb.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5rWpwrc=,size_20,color_FFFFFF,t_70,g_se,x_16)     -->
 
 <br>
 <br>
