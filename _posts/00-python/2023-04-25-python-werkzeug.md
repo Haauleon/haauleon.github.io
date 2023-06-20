@@ -15,7 +15,8 @@ tags:
 ImportError: cannot import name ‘BaseResponse‘ from ‘werkzeug.wrappers‘
 ```
 
-![](https://img-blog.csdnimg.cn/1a9ba32efed54f73985945fe98bc0a9f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5byg5a6J6YeR,size_20,color_FFFFFF,t_70,g_se,x_16)
+![](\img\in-post\post-python\2023-04-25-python-werkzeug-1.png)      
+<!-- ![](https://img-blog.csdnimg.cn/1a9ba32efed54f73985945fe98bc0a9f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5byg5a6J6YeR,size_20,color_FFFFFF,t_70,g_se,x_16) -->
 
 
 <br>
