@@ -86,8 +86,9 @@ https://blog.csdn.net/weixin_41357300/article/details/97318913
 
 ### 五、pycharm安装第三方包时出现错误    
 
-之前考虑用方法三改了地址后，再调用 pycharm 指令，后来发现根本没必要这么麻烦，在 pycharm 中搜索库时，在安装按钮的右侧，有一个下面的按钮，点进去把镜像网址加入即可。              
-![](https://img-blog.csdnimg.cn/20200301153956394.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pvaG5XZWlp,size_16,color_FFFFFF,t_70)     
+之前考虑用方法三改了地址后，再调用 pycharm 指令，后来发现根本没必要这么麻烦，在 pycharm 中搜索库时，在安装按钮的右侧，有一个下面的按钮，点进去把镜像网址加入即可。               
+![](\img\in-post\post-python\2023-05-12-python-pypi-1.png)      
+<!-- ![](https://img-blog.csdnimg.cn/20200301153956394.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pvaG5XZWlp,size_16,color_FFFFFF,t_70)      -->
 
 <br>
 <br>
