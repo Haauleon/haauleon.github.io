@@ -95,7 +95,7 @@ test_demo.py 解释：
 - test_value_error 随机抛出 ValueError
 
 ```python
-!/usr/bin/env python3
+#!/usr/bin/env python3
 #!coding:utf-8
 import pytest
 import random
@@ -145,15 +145,15 @@ def test_assert_error():
 #这个最多失败重跑五次 
 @pytest.mark.flaky(reruns=5, reruns_delay=2) 
 def test_value_error(): 
-　　r = random.randint(1,2) 
-　　if r == 1: 
-　　　　s = int('nick') 
+    r = random.randint(1,2) 
+    if r == 1: 
+        s = int('nick') 
 #官网的这个例子有问题，如果拿mac或者linux机器跑也会有重试（condition中指定的是win32平台才会触发重跑机制）
 @pytest.mark.flaky(reruns=5, condition=not sys.platform.startswith("win32")) 
 def test_value_error_condition(): 
-　　r = random.randint(1,2) 
-　　　　if r == 1: 
-　　　　　　s = int('nick')
+    r = random.randint(1,2) 
+    if r == 1: 
+        s = int('nick')
 ```
 
 执行：`> pytest -v`      
