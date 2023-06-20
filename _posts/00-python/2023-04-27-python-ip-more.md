@@ -29,17 +29,20 @@ tags:
 2、创建多线程来验证ip是否可用     
 3、保存可用的ip      
 
-![](https://img-blog.csdnimg.cn/8c9857f565124c62be43891c2a5a1eea.png)      
+![](\img\in-post\post-python\2023-04-27-python-ip-more-1.png)      
+<!-- ![](https://img-blog.csdnimg.cn/8c9857f565124c62be43891c2a5a1eea.png)       -->
 
 随便找到一个免费的ip代理网站：http://www.66ip.cn/      
 
 <br>
 <br>
 
-### 定义函数列表
-![](https://img-blog.csdnimg.cn/7b026a8a272b413cbfd25242fec375f6.png)      
+### 定义函数列表  
+![](\img\in-post\post-python\2023-04-27-python-ip-more-2.png)      
+<!-- ![](https://img-blog.csdnimg.cn/7b026a8a272b413cbfd25242fec375f6.png)       -->
 
-![](https://img-blog.csdnimg.cn/b26892082ea442e0aad8ac55ee0f9799.png)      
+![](\img\in-post\post-python\2023-04-27-python-ip-more-3.png)      
+<!-- ![](https://img-blog.csdnimg.cn/b26892082ea442e0aad8ac55ee0f9799.png)       -->
 
 老样子，先附上全部代码（这个代码修改一下保存地址就可以直接使用的），后面再对每个模块进行详解。     
 ```python
@@ -351,8 +354,9 @@ def get_all_ip(url_list):
 ```
 
 dispose_list_ip函数（用来处理一下返回的信息，将一些不必要的信息给筛掉）：    
-让最后的结果变成这种格式：     
-![](https://img-blog.csdnimg.cn/9437698f6f07425a8a17e594353e8aac.png)     
+让最后的结果变成这种格式：       
+![](\img\in-post\post-python\2023-04-27-python-ip-more-4.png)      
+<!-- ![](https://img-blog.csdnimg.cn/9437698f6f07425a8a17e594353e8aac.png)      -->
 
 ```python
 # --------------将爬取的list_ip关键信息进行提取、方便后续保存----------------
@@ -425,7 +429,8 @@ def create_thread_get_ip_list(list,thread_num):
 ```
 
 效果：（我这里启动了100个线程，由于url比较多可能会等二十秒左右）     
-![](https://img-blog.csdnimg.cn/20f5988b16594bd6b6ec317e7fc5a674.png)     
+![](\img\in-post\post-python\2023-04-27-python-ip-more-5.png)      
+<!-- ![](https://img-blog.csdnimg.cn/20f5988b16594bd6b6ec317e7fc5a674.png)      -->
 
 <br>
 
@@ -441,8 +446,9 @@ def save_list_ip(list,file_path):
     print("保存成功")
 ```
 
-到这里第一步已经完成了，我们可以看看保存在本地的数据：     
-![](https://img-blog.csdnimg.cn/92bcee78e62c465aa9e26a97fcafaa5d.png)
+到这里第一步已经完成了，我们可以看看保存在本地的数据：       
+![](\img\in-post\post-python\2023-04-27-python-ip-more-6.png)      
+<!-- ![](https://img-blog.csdnimg.cn/92bcee78e62c465aa9e26a97fcafaa5d.png) -->
 
 <br>
 <br>
