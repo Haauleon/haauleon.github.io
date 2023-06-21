@@ -52,7 +52,7 @@ webdriver中提供的对 iframe/frame 操作 API 常用到有：
 
 例如：   
 ```python
-iframeObj = driver.find_element_by_xpath(’//*[@id=“login_frame”]’)
+iframeObj = driver.find_element_by_xpath('//*[@id="login_frame"]')
 driver.switch_to.frame(iframeObj)
 ```
 
@@ -119,12 +119,12 @@ driver.switch_to.default_content() # 直接从内层 frame 页面切换回到主
 <br><br>
 
 ### 三、driver.switch_to.parent_frame()
-&emsp;&emsp;如果 frame/iframe 有多层，我们可以通过 driver.switch_to.frame() 一层层切入到内层，并可以通过 driver.switch_to.parent_frame() 一层层再退出来，相当于前进、后退。
+&emsp;&emsp;如果 frame/iframe 有多层，我们可以通过 driver.switch_to.frame() 一层层切入到内层，并可以通过 driver.switch_to.parent_frame() 一层层再退出来，相当于前进、后退。            
 &emsp;&emsp;相对 driver.switch_to.default_content() 方法，是一层层退回，而不是直接退回主页面。     
 
 ```python
-driver.switch_to.frame(“frame1”)   # 从主页面切入到 frame1，相当于前进
-driver.switch_to.frame(“frame2”)   # 从 frame1 再切入到 frame2，相当于前进
+driver.switch_to.frame("frame1")   # 从主页面切入到 frame1，相当于前进
+driver.switch_to.frame("frame2")   # 从 frame1 再切入到 frame2，相当于前进
 driver.switch_to.parent_frame()    # 返回到上级 frame1，相当于后退
 driver.switch_to.parent_frame()    # 返回到主页面
 ```
