@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Python3 | SqlServer查询重复数据"
+title:         "Python3 | SqlServer 查询重复数据"
 subtitle:      "SqlServer 中如何向数据库插入带有单引号（'）的字符串"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
