@@ -44,7 +44,7 @@ tags:
 
 ### pytest-assume安装
 ```shell
-# 根据python版本，可选择pip3或者pip
+# 根据 python 版本，可选择 pip3 或者 pip
 > sudo pip3(pip) install git+https://github.com/astraw38/pytest-assume.git
 # 或者
 > sudo pip3(pip) install pytest-assume
@@ -62,13 +62,13 @@ import pytest
 
 @pytest.mark.parametrize(('x', 'y'), [(1, 1), (1, 0), (0, 1)])
 def test_simple_assume(x, y):
-    assert x == y  #如果这个断言失败，则后续都不会执行
+    assert x == y  # 如果这个断言失败，则后续都不会执行
     assert True
     assert False
 
 @pytest.mark.parametrize(('x', 'y'), [(1, 1), (1, 0), (0, 1)])
 def test_pytest_assume(x, y):
-    pytest.assume(x == y) #即使这个断言失败，后续仍旧执行
+    pytest.assume(x == y)  # 即使这个断言失败，后续仍旧执行
     pytest.assume(True)
     pytest.assume(False)
 ```
