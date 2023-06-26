@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Pytest | pytest-assume 插件"
+title:         "Pytest | pytest-assume 导入异常"
 subtitle:      "解决 ImportError: cannot import name assume from pytest 问题"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
