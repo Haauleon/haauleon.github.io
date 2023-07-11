@@ -42,3 +42,11 @@ print(iter.get_next(datetime))  # 2010-01-25 04:50:00
 print(iter.get_next(datetime))  # 2010-01-25 04:55:00
 print(iter.get_next(datetime))  # 2010-01-25 05:00:00
 ```
+
+<br>
+<br>
+
+---
+
+相关链接：   
+[Python：使用croniter实现cron表达式验证和解析执行计划](https://blog.csdn.net/mouday/article/details/131493566)
