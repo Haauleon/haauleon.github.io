@@ -25,10 +25,18 @@ def get_page_count(total, per_page):
     if total % per_page != 0:
         page_count += 1
         return page_count
-        
+
 # 测试代码
 total = 23
 per_page = 5
 page_count = get_page_count(total, per_page)
 print("总数为{}，每页{}条，共分{}页".format(total, per_page, page_count))
 ```
+
+<br>
+<br>
+
+---
+
+相关链接：    
+[python 计算总页数](https://www.yzktw.com.cn/post/1238018.html)
