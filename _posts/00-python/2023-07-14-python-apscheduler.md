@@ -28,7 +28,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 
 # 模拟读取数据库的cron表达式
 # <seconds:秒> <minutes:分> <hours:小时> <day_of_month:天> <month:月> <day_of_week:周> <year:年>
-cron = '0 11 15 ? * MON-FRI'
+cron = '0/2 * * * * ?'
 seconds, minutes, hours, day_of_month, month, day_of_week = tuple(cron.split(' '))
 day_of_month = day_of_month if not day_of_month == '?' else None
 day_of_week = day_of_week if not day_of_week == '?' else None
