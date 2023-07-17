@@ -105,3 +105,16 @@ scheduler.start()
 |0 15 10 ? * 6L|每月的最后一个星期五上午10:15触发|
 |0 15 10 ? * 6L 2002-2005|2002年至2005年的每月的最后一个星期五上午10:15触发|
 |0 15 10 ? * 6#3|每月的第三个星期五上午10:15触发|
+
+
+<br>
+<br>
+
+---
+
+相关链接：    
+[Python 定时调度](https://blog.51cto.com/u_7174760/4014838)     
+[APScheduler 使用指南](http://sinhub.cn/2018/11/apscheduler-user-guide/)      
+[APScheduler如何将作业保存在数据库中？（Python）](https://www.cnpython.com/qa/326581)      
+[APScheduler+MySQL实现定时任务及其持久化存储](https://www.jianshu.com/p/e36236c1df08)      
+[APScheduler的cron触发器支持到秒级的cron表达式](https://blog.csdn.net/m0_47958289/article/details/116940934)   
