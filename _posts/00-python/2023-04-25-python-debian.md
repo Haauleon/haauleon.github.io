@@ -68,13 +68,20 @@ sudo make altinstall
 ```
 python3.8 --version
 ```
+
 输出版本信息     
 ```
 Python 3.8.10
 ```
+
 再补点：     
-查了下，python3.8,这个命令是在 /usr/local/bin/python3.8      
-直接输入python3.8也是可以执行的。但这个格式不方便，我想改成python     
+查了下，python3.8,这个命令是在 /usr/local/bin/python3.8，直接输入 python3.8 也是可以执行的。但这个格式不方便，我想改成 python        
+```
+which python
+which pip
+```
+
+使用以下命令可以替换默认的解释器版本和 pip 版本：      
 ```
 sudo rm /usr/bin/python
 
@@ -84,6 +91,7 @@ sudo rm /usr/bin/python2.7
 
 ln -s /usr/local/bin/python3.8 /usr/bin/python
 ```
+
 以后直接输： python就可以了。pip3.8，也改成pip了       
 ```
 sudo rm /usr/bin/pip
