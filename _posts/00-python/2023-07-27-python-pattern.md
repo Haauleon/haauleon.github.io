@@ -316,3 +316,11 @@ if __name__=='__main__':
     director_fat.draw()
 
 ```
+
+<br>
+<br>
+
+---
+
+相关链接：    
+[python的设计模式](https://www.cnblogs.com/wei0919/p/17360484.html)
