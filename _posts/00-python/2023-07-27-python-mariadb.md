@@ -18,27 +18,56 @@ pip install mariadb==1.1.6
 
 报错信息如下：       
 ```
-Collecting mariadb
-  Using cached mariadb-1.0.0.tar.gz (78 kB)
+Collecting mariadb==1.1.6 (from -r requirements.txt (line 4))
+  Downloading mariadb-1.1.6.tar.gz (83 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 83.7/83.7 kB 786.7 kB/s eta 0:00:00
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... error
+  error: subprocess-exited-with-error
 
-    ERROR: Command errored out with exit status 1:
-     command: /home/niklas/Desktop/Stuff/venv/bin/python -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pycharm-packaging/mariadb/setup.py'"'"'; __file__='"'"'/tmp/pycharm-packaging/mariadb/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' egg_info --egg-base /tmp/pip-pip-egg-info-wfnscxnz
-         cwd: /tmp/pycharm-packaging/mariadb/
-    Complete output (12 lines):
-    /bin/sh: 1: mariadb_config: not found
-    Traceback (most recent call last):
-      File "<string>", line 1, in <module>
-      File "/tmp/pycharm-packaging/mariadb/setup.py", line 26, in <module>
-        cfg = get_config(options)
-      File "/tmp/pycharm-packaging/mariadb/mariadb_posix.py", line 49, in get_config
-        cc_version = mariadb_config(config_prg, "cc_version")
-      File "/tmp/pycharm-packaging/mariadb/mariadb_posix.py", line 27, in mariadb_config
-        "mariadb_config not found.\nPlease make sure, that MariaDB Connector/C is installed on your system, edit the configuration file 'site.cfg' and set the 'mariadb_config'\noption, which should point to the mariadb_config utility.")
-    OSError: mariadb_config not found.
-    Please make sure, that MariaDB Connector/C is installed on your system, edit the configuration file 'site.cfg' and set the 'mariadb_config'
-    option, which should point to the mariadb_config utility.
-    ----------------------------------------
-ERROR: Command errored out with exit status 1: python setup.py egg_info Check the logs for full command output.
+  × Getting requirements to build wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [30 lines of output]
+      /bin/sh: 1: mariadb_config: not found
+      Traceback (most recent call last):
+        File "/home/yzy/Spider/huburpa-openapi-sdk-python/venv/lib/python3.8/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+          main()
+        File "/home/yzy/Spider/huburpa-openapi-sdk-python/venv/lib/python3.8/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+          json_out['return_val'] = hook(**hook_input['kwargs'])
+        File "/home/yzy/Spider/huburpa-openapi-sdk-python/venv/lib/python3.8/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 118, in get_requires_for_build_wheel
+          return hook(config_settings)
+        File "/tmp/pip-build-env-5t7tb8t1/overlay/lib/python3.8/site-packages/setuptools/build_meta.py", line 341, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=['wheel'])
+        File "/tmp/pip-build-env-5t7tb8t1/overlay/lib/python3.8/site-packages/setuptools/build_meta.py", line 323, in _get_build_requires
+          self.run_setup()
+        File "/tmp/pip-build-env-5t7tb8t1/overlay/lib/python3.8/site-packages/setuptools/build_meta.py", line 487, in run_setup
+          super(_BuildMetaLegacyBackend,
+        File "/tmp/pip-build-env-5t7tb8t1/overlay/lib/python3.8/site-packages/setuptools/build_meta.py", line 338, in run_setup
+          exec(code, locals())
+        File "<string>", line 27, in <module>
+        File "/tmp/pip-install-bieap9cp/mariadb_6d036fdf79ee4d468d6984064993b589/mariadb_posix.py", line 62, in get_config
+          cc_version = mariadb_config(config_prg, "cc_version")
+        File "/tmp/pip-install-bieap9cp/mariadb_6d036fdf79ee4d468d6984064993b589/mariadb_posix.py", line 28, in mariadb_config
+          raise EnvironmentError(
+      OSError: mariadb_config not found.
+
+      This error typically indicates that MariaDB Connector/C, a dependency which
+      must be preinstalled, is not found.
+      If MariaDB Connector/C is not installed, see installation instructions
+      If MariaDB Connector/C is installed, either set the environment variable
+      MARIADB_CONFIG or edit the configuration file 'site.cfg' to set the
+       'mariadb_config' option to the file location of the mariadb_config utility.
+
+      [end of output]
+
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+
+× Getting requirements to build wheel did not run successfully.
+│ exit code: 1
+╰─> See above for output.
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
 ```
 
 解决步骤：     
