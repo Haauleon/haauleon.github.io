@@ -13,7 +13,7 @@ tags:
 ### 安装mariadb
 尝试安装：      
 ```
-pip install mariadb==1.1.6
+> pip install mariadb==1.1.6
 ```
 
 报错信息如下：       
@@ -72,13 +72,13 @@ note: This error originates from a subprocess, and is likely not a problem with 
 
 解决步骤：     
 ```
-sudo apt install mariadb-server
-sudo apt-get install libmariadb3 libmariadb-dev
+> sudo apt install mariadb-server  # 可以不用执行这条
+> sudo apt-get install libmariadb3 libmariadb-dev
 ```
 
 再次安装 pip install mariadb==1.1.6 时如果还会提示 Connector/C 的版本不符的问题，可以尝试安装低版本的 mariadb：          
 ```
-pip install mariadb==1.0.11
+> pip install mariadb==1.0.11
 ```
 
 最后安装成功：      
