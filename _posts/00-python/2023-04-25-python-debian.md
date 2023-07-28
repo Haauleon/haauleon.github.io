@@ -81,9 +81,13 @@ Python 3.8.10
 
 再补点：     
 查了下，python3.8,这个命令是在 /usr/local/bin/python3.8，直接输入 python3.8 也是可以执行的。但这个格式不方便，我想改成 python        
-```
-which python
-which pip
+```bash
+> which python3.8
+/usr/local/bin/python3.8
+> which python3
+/usr/bin/python3
+> which python
+> which pip
 ```
 
 使用以下命令可以替换默认的解释器版本和 pip 版本：      
