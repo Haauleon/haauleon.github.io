@@ -81,7 +81,7 @@ Python 3.8.10
 
 再补点：     
 查了下，python3.8,这个命令是在 /usr/local/bin/python3.8，直接输入 python3.8 也是可以执行的。但这个格式不方便，我想改成 python        
-```bash
+```
 > which python3.8
 /usr/local/bin/python3.8
 > which python3
