@@ -26,6 +26,11 @@ sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-
 curl -O https://www.python.org/ftp/python/3.8.10/Python-3.8.10.tgz
 ```
 
+如果因网络问题无法从官网下载，可以从以下网盘链接中进行下载，然后使用工具 FileZilla 传到服务器即可：    
+链接：https://pan.baidu.com/s/1HTxY6viOEBm15-8z3YhV3w?pwd=p5dm        
+提取码：p5dm            
+
+
 <br>
 
 在撰写本文时，最新版本是3.9.3。    
