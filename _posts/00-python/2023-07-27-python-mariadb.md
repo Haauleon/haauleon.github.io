@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Python3 | 安装 MariaDB 报错"
-subtitle:      "Python MariaDB pip 安装失败，缺少 MariaDB 配置"
+subtitle:      "MariaDB 安装失败，缺少配置 OSError: mariadb_config not found"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
 header-mask:   0.4
