@@ -53,8 +53,8 @@ from typing import Any
 from dingtalkchatbot.chatbot import DingtalkChatbot, FeedLink
 
 
-WEBHOOK = 钉钉机器人WEBHOOK
-SECRET = 钉钉机器人价签字符串
+WEBHOOK = '钉钉机器人WEBHOOK'
+SECRET = '钉钉机器人价签字符串'
 
 
 class DingTalkSendMsg(object):
