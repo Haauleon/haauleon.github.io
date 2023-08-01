@@ -301,5 +301,5 @@ if __name__ == '__main__':
 ---
 
 相关链接：   
-[]()     
-[]()
+[Python3 | 获取旧历农历老黄历](2023-08-01-python-cnlunar.md)     
+[Python3 | 统计节假日剩余天数](2023-08-01-python-moyu-msg.md)
