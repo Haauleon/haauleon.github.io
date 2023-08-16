@@ -89,7 +89,7 @@ func()
 ```bash
 name: haauleon
 Traceback (most recent call last):
-  File "C:/Users/EJET/AppData/Roaming/JetBrains/PyCharm2020.1/scratches/scratch_10.py", line 28, in <module>
+  File "C:/Users/Haauleon/AppData/Roaming/JetBrains/PyCharm2020.1/scratches/scratch_10.py", line 28, in <module>
     func()
 NameError: name 'func' is not defined
 ```
@@ -327,5 +327,235 @@ index(username="haauleon", password="123456")  # 实参
 （3）使用函数嵌套进行语法糖传参           
 但是在进行传参时我们需要注意是不能在装饰器函数设置形参的。最好的方法就是再进行函数的嵌套。        
 ```python
+def sugar(username, password):
+    def login(func):
+        def inner():
+            if username == "haauleon" and password == "123456":
+                return func(username, password)
+            else:
+                print("你无权限，请与管理员联系")
+                return 0
+        return inner
+    return login
+
+
+@sugar(username="haauleon", password="123456")
+def index(username, password):
+    print(f"输入的账号:{username}, 密码:{password}")
+    print("账号密码验证成功！")
+
+
+index()
 
 ```
+
+输出：    
+```bash
+输入的账号:haauleon, 密码:123456
+账号密码验证成功！
+```
+
+<br>
+<br>
+
+#### 3.类与装饰器的使用
+（1）装饰类方法          
+```python
+def decorator(func):
+    def inner():  # 1
+        return func()  # 2
+    return inner
+
+
+class A:
+    @decorator
+    def index(self):
+        print("haauleon")
+
+
+a = A()
+a.index()
+
+```
+
+输出：  
+```bash
+Traceback (most recent call last):
+  File "C:/Users/Haauleon/AppData/Roaming/JetBrains/PyCharm2020.1/scratches/scratch_10.py", line 31, in <module>
+    a.index()
+TypeError: inner() takes 0 positional arguments but 1 was given
+```
+
+我们可以看出是类 A 的实例方法 index，那么在 1 和 2 处我们就需要接受一个 self。     
+```python
+def decorator(func):
+    def inner(self):  # 1
+        return func(self)  # 2
+    return inner
+
+
+class A:
+    @decorator
+    def index(self):
+        print("haauleon")
+
+
+a = A()
+a.index()
+
+```
+
+输出：    
+```bash
+haauleon
+```
+
+<br>
+
+（2）装饰类          
+修饰类的话，那么类中的方法对会被修饰。     
+```python
+def decorator(func):
+    def inner(name):
+        if name == "haauleon":
+            print(name)
+            return func(name)
+    return inner
+
+
+@decorator  # 该装饰器装饰的是整个类，而不是一个单独的方法，在对类实例化的时候就会调用装饰器
+class A:
+
+    def __init__(self, name):
+        self.name = name
+
+    def func_1(self):
+        print(f"func_1: {self.name}")
+
+    def func_2(self):
+        print(f"func_2: {self.name}")
+
+
+a = A(name="haauleon")
+a.func_1()
+a.func_2()
+
+```
+
+输出：   
+```bash
+haauleon
+func_1: haauleon
+func_2: haauleon
+```
+
+<br>
+<br>
+
+### 四、实际应用
+#### 1.装饰函数并返回形参给函数
+实现效果：定义一个装饰器 decorator 用来装饰函数 func1，先由装饰器处理一部分逻辑并将处理结果的值返回给函数，而该处理结果的值又将作为函数的形参作用于函数内部。        
+```python
+def decorator(func):
+    name = 'haauleon'
+    name = name + "!!!"
+    def inner():
+        return func(name)
+    return inner
+
+
+@decorator
+def func1(name):
+    print(f"{name}")
+
+
+func1()
+
+```
+
+输出：    
+```bash
+haauleon!!!
+```
+
+处理逻辑放在内层函数 inner 内也可以实现：        
+```python
+def decorator(func):
+    def inner():
+        name = 'haauleon'
+        name = name + "!!!"
+        return func(name)
+    return inner
+
+
+@decorator
+def func1(name):
+    print(f"{name}")
+
+
+func1()
+
+```
+
+<br>
+
+#### 2.装饰函数并处理函数传入的值
+实现效果：定义一个装饰器 decorator 用来装饰函数 func2，装饰器接受函数传入的值并进行处理，处理完成后将处理结果的值返回给函数，而该处理结果的值又将作为函数的形参作用于函数内部。       
+```python
+def decorator(func):
+    def inner(name):
+        name = name + "!!!"
+        return func(name)
+    return inner
+
+
+@decorator
+def func1(name):
+    print(f"{name}")
+
+
+func1(name="haauleon")
+
+```
+
+输出：    
+```bash
+haauleon!!!
+```
+
+<br>
+
+#### 3.装饰类方法
+装饰器的处理逻辑与函数一致，但是在装饰类方法时需要多传入一个 self。      
+```python
+def decorator(func):
+    def inner(self, name):
+        name = name + "!!!"
+        return func(self, name)
+    return inner
+
+
+class Func:
+
+    @decorator
+    def func1(self, name):
+        print(f"{name}")
+
+
+f = Func()
+f.func1(name="haauleon")
+
+```
+
+输出：    
+```bash
+haauleon!!!
+```
+
+<br>
+<br>
+
+---
+
+相关链接：    
+[Python的装饰器](https://blog.csdn.net/m0_72154565/article/details/127936637)
