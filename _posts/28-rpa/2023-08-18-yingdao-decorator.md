@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "影刀RPA | 自定义窗体捕获失败语法糖"
+title:         "影刀RPA | 自定义窗体捕获失败重试装饰器"
 subtitle:      "在桌面软件自动化作业时，遇到应用奔溃或者卡顿时可使用装饰器进行异常重试处理"
 author:        "Haauleon"
 header-img:    "img/in-post/post-rpa/bg.jpg"
