@@ -41,6 +41,8 @@ tags:
 ```bash
 > screen -X -S <自定义的窗口名称> quit
 ```
+或者使用组合键 `ctrl + d`        
+
 
 <br>
 <br>
