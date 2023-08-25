@@ -12,7 +12,10 @@ tags:
 
 
 ### 问题描述
-将 python3.6 升级到 python3.8，各种包安装完成后，运行脚本，报错：`ImportError: cannot import name evalcontextfilter, Markup, escape from 'jinja2'`                   
+将 python3.6 升级到 python3.8，各种包安装完成后，运行脚本，报错：            
+```bash
+ImportError: cannot import name evalcontextfilter, Markup, escape from 'jinja2'                  
+```
 
 <br>
 <br>
