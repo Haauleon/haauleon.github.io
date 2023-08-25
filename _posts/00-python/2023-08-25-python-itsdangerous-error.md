@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Python3 | jinja2 相关模块导入异常"
+title:         "Python3 | itsdangerous 相关模块导入异常"
 subtitle:      "ImportError: cannot import name 'json' from itsdangerous"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
