@@ -50,13 +50,13 @@ drwxr-xr-x 17 root root     4096  8月 28 15:17 ..
 -rw-r--r--  1 root root 96799808  8月 28 15:13 google-chrome-stable_current_x86_64.rpm
 ```
 
-（3）使用以下命令行进行安装      
+（4）使用以下命令行进行安装      
 ```bash
 > sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb
 > apt --fix-broken install
 ```
 
-（4）检查 chrome 浏览器版本      
+（5）检查 chrome 浏览器版本      
 ```bash
 > google-chrome --version
 Google Chrome 107.0.5304.121
