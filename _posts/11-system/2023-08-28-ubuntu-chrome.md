@@ -36,8 +36,19 @@ tags:
 链接：https://pan.baidu.com/s/1KpWuS-l57pBIwguic57lTQ?pwd=x4ez                
 提取码：x4ez            
 
-（2）解压文件并上传至服务器         
-解压后将文件 google-chrome-stable_current_amd64.deb 使用 FileZilla 上传到服务器的项目目录下                  
+（2）解压文件并上传至服务器            
+解压后将整个目录 google-chrome-stable_deb_rpm_107.0.5304.122 使用 FileZilla 上传到服务器                                 
+
+（3）进入 google-chrome-stable_deb_rpm_107.0.5304.122 目录            
+```bash
+> cd google-chrome-stable_deb_rpm_107.0.5304.122     
+> ls -al 
+总用量 185692
+drwxr-xr-x  2 root root     4096  8月 28 15:13 .
+drwxr-xr-x 17 root root     4096  8月 28 15:17 ..
+-rw-r--r--  1 root root 93329504  8月 28 15:13 google-chrome-stable_current_amd64.deb
+-rw-r--r--  1 root root 96799808  8月 28 15:13 google-chrome-stable_current_x86_64.rpm
+```
 
 （3）使用以下命令行进行安装      
 ```bash
@@ -79,7 +90,7 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-# 消除 Chrome正受到自动测试软件的控制 提示
+# 消除 Chrome 正受到自动测试软件的控制提示
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])
 # 设置无头浏览器隐式访问
@@ -152,6 +163,14 @@ ValueError: Timeout value connect was <object object at 0x7fecd4755090>, but it 
 > pip install urllib3==1.26.2
 ```
 
+<br>
+<br>
+
+#### 5、卸载chrome浏览器
+```bash
+> apt-get purge google-chrome-stable
+> apt-get autoremove
+```
 
 <br>
 <br>
