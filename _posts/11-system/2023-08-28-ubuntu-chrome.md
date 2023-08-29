@@ -1,7 +1,7 @@
 ---
 layout:        post
-title:         "Debian | Ubuntu/Debian Server 系统安装/升级/删除Google Chrome"
-subtitle:      "下载、安装旧版的 chrome 浏览器和 chromedriver 用于无头模式下运行爬虫程序"
+title:         "Debian | Ubuntu/Debian Server 系统安装/升级/删除 Google Chrome"
+subtitle:      "下载、安装旧版的 chrome 浏览器和 chromedriver 用于无头模式下运行 selenium 爬虫程序"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
 header-mask:   0.4
