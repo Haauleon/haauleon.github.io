@@ -535,6 +535,18 @@ def decorator(func):
     return inner
 
 
+def check_element(func):
+    def inner(self):
+        is_exist = True
+        try:
+            func(self)
+        except selenium.common.exceptions.NoSuchElementException as e:
+            Logger.warn(e)
+            is_exist = False
+        return is_exist
+    return inner
+
+
 class Func:
 
     @decorator
@@ -542,8 +554,19 @@ class Func:
         print(f"{name}")
 
 
+class Func2:
+
+    @check_element
+    def is_exist_title_comment(self):
+        """判断页面是否存在用户评论标题"""
+        self.driver_get_text('//*[@id="cr-customer-review"]')
+
+
 f = Func()
 f.func1(name="haauleon")
+
+f2 = Func2()
+f2.is_exist_title_comment()
 
 ```
 
