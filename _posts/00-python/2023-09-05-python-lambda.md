@@ -186,3 +186,95 @@ print(reduce(lambda x, y: x if x>y else y, lst))  # 8
 # 找到最小元素
 print(reduce(lambda x, y: x if x<y else y, lst))  # 2
 ```
+
+<br>
+<br>
+
+### 六、高阶函数的替代方法
+#### 1、列表推导式
+&emsp;&emsp;其实列表推导式只是一个 for 循环，用于添加新列表中的每一项，以从现有索引或一组元素创建一个新列表。之前使用 map、filter 和 reduce 完成的工作也可以使用列表推导式完成。然而，相比于使用 Map 和 filter 函数，很多人更喜欢使用列表推导式，也许是因为它更容易应用和记忆。            
+
+&emsp;&emsp;同样使用列表推导式将数组中每个元素进行平方运算，水果的例子也可以使用列表推导式来解决。              
+```python
+arr = [2,4,6,8]
+arr = [i**2 for i in arr]
+print(arr)  # [4, 16, 36, 64]
+
+fruits = ['mango', 'apple', 'orange', 'cherry', 'grapes']
+fruit_result = [fruit for fruit in fruits if 'g' in fruit]
+print(fruit_result)  # ['mango', 'orange', 'grapes']
+```
+
+<br>
+<br>
+
+#### 2、字典推导式
+&emsp;&emsp;与列表推导式一样，使用字典推导式从现有的字典创建一个新字典。还可以从列表创建字典。           
+
+&emsp;&emsp;假设有一个整数列表，需要创建一个字典，其中键是列表中的每个元素，值是列表中的每个元素的平方。                
+```python
+lst = [2,4,6,8]
+D1 = {item:item**2 for item in lst}
+print(D1)  # {2: 4, 4: 16, 6: 36, 8: 64}
+
+# 创建一个只包含奇数元素的字典
+arr = [1,2,3,4,5,6,7,8]
+D2 = {item: item**2 for item in arr if item %2 != 0}
+print(D2)  # {1: 1, 3: 9, 5: 25, 7: 49}
+```
+
+<br>
+<br>
+
+### 七、一个简单应用
+#### 如何快速找到多个字典的公共键
+（1）方法一           
+```python
+dl = [d1, d2, d3] # d1, d2, d3为字典，目标找到所有字典的公共键
+[k for k in dl[0] if all(map(lambda d: k in d, dl[1:]))]
+```
+
+例           
+```python
+dl = [{1:'life', 2: 'is'}, 
+      {1:'short', 3: 'i'}, 
+      {1: 'use', 4: 'python'}]
+[k for k in dl[0] if all(map(lambda d: k in d, dl[1:]))]
+# 1
+```
+
+解析         
+```python
+# 列表表达式遍历dl中第一个字典中的键
+[k for k in dl[0]]
+# [1, 2]
+
+# lambda 匿名函数判断字典中的键，即k值是否在其余字典中
+list(map(lambda d: 1 in d, dl[1:]))
+# [True, True]
+list(map(lambda d: 2 in d, dl[1:]))
+#[False, False]
+
+# 列表表达式条件为上述结果([True, True])全为True,则输出对应的k值
+#1
+```
+
+<br>
+<br>
+
+（2）方法二             
+```python
+# 利用集合（set）的交集操作
+from functools import reduce
+# reduce(lambda a, b: a*b, range(1,11)) # 10!
+reduce(lambda a, b: a & b, map(dict.keys, dl))
+```
+
+<br>
+<br>
+
+---
+
+相关链接：    
+[Python 最频繁使用的4个函数：lambda、 map、filter 和 reduce](https://blog.51cto.com/u_11215354/5220481)                
+[lambda的应用：做加法计算，做判断功能，做字典排序](https://blog.csdn.net/qq_56680511/article/details/125463220)
