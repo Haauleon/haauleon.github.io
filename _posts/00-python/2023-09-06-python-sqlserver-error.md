@@ -1,6 +1,6 @@
 ---
 layout:        post
-title:         "Python3 | SQL Server 连接池连接失败"
+title:         "Python3 | SQL Server 连接失败"
 subtitle:      "(20047, b'DB-Lib error message 20047, severity 9:\nDBPROCESS is dead or not enabled\n')"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
@@ -12,7 +12,7 @@ tags:
 ---
 
 ### 报错信息
-sqlserver 连接池链接失败，报错：                
+sqlserver 连接失败，报错：                
 ```bash
 (20047, b'DB-Lib error message 20047, severity 9:\nDBPROCESS is dead or not enabled\n')
 ```
