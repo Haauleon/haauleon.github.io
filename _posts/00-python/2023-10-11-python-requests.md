@@ -128,3 +128,11 @@ if __name__ == '__main__':
     keepa_captcha_download.keepa_captcha_download('D:\\code\\yizhiyin-keepa\\files\\captcha\\', 'https://images-na.ssl-images-amazon.com/captcha/tinytuux/Captcha_pzdfuwjkyv.jpg')
 
 ```
+
+<br>
+<br>
+
+---
+
+相关链接：    
+[解决HTTPSConnectionPool(host=‘‘, port=443): Max retries exceeded with url: /api/container/ge](https://blog.csdn.net/m0_37772653/article/details/119874338)
