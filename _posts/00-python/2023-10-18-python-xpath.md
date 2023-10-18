@@ -23,7 +23,7 @@ tags:
 driver.find_element_by_xpath('//input[@id="kw"]') 
 ```
 
-[](\img\in-post\post-python\2023-10-18-python-xpath-1.png)
+![](\img\in-post\post-python\2023-10-18-python-xpath-1.png)
 
 <br>
 
@@ -32,7 +32,7 @@ driver.find_element_by_xpath('//input[@id="kw"]')
 driver.find_element_by_xpath('//input[@class="s_ipt"]')
 ```
 
-[](\img\in-post\post-python\2023-10-18-python-xpath-2.png)
+![](\img\in-post\post-python\2023-10-18-python-xpath-2.png)
 
 <br>
 
@@ -49,7 +49,7 @@ driver.find_element_by_xpath('//input[@class="s_ipt"]')
 //form//input[@name="phone"]
 ```
 
-[](\img\in-post\post-python\2023-10-18-python-xpath-3.png)
+![](\img\in-post\post-python\2023-10-18-python-xpath-3.png)
 
 <br>
 
@@ -59,7 +59,7 @@ driver.find_element_by_xpath('//input[@class="s_ipt"]')
 /html/body/div/a
 ```
 
-[](\img\in-post\post-python\2023-10-18-python-xpath-4.png)
+![](\img\in-post\post-python\2023-10-18-python-xpath-4.png)
 
 
 <br>
@@ -72,7 +72,7 @@ driver.find_element_by_xpath('//input[@class="s_ipt"]')
 //button[text()="登录"]
 ```
 
-[](\img\in-post\post-python\2023-10-18-python-xpath-5.png)          
+![](\img\in-post\post-python\2023-10-18-python-xpath-5.png)          
 
 <br>
 
@@ -83,7 +83,7 @@ driver.find_element_by_xpath('//input[@class="s_ipt"]')
 //button[contains(@class,"btn")]
 ``` 
 
-[](\img\in-post\post-python\2023-10-18-python-xpath-6.png)          
+![](\img\in-post\post-python\2023-10-18-python-xpath-6.png)          
 
 
 <br>
@@ -119,9 +119,9 @@ following：当前元素节点标签之后的所有节点
 使用较多场景：页面显示为一个表格样式的数据列             
 
 如：            
-[](\img\in-post\post-python\2023-10-18-python-xpath-7.png)          
+![](\img\in-post\post-python\2023-10-18-python-xpath-7.png)          
 
-[](\img\in-post\post-python\2023-10-18-python-xpath-8.png)          
+![](\img\in-post\post-python\2023-10-18-python-xpath-8.png)          
 
 注意：             
 （1）定位 找到元素 -- 做到唯一识别            
