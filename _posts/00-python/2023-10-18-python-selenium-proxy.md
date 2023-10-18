@@ -104,6 +104,27 @@ input_tag.send_keys('钱包')
 <br>
 <br>
 
+#### 3、等待页面完全加载
+```python
+for retry_time in range(1, 21):
+    try:
+        self.driver.get(url)
+        WebDriverWait(driver=self.driver, timeout=100).until(
+            lambda d: d.execute_script('return document.readyState') == 'complete')
+    
+        break
+    except Exception as e:
+        Logger.error(f'网页加载异常 {e}')
+        if retry_time == 20:
+            raise
+    
+        Logger.warn(f'正在尝试第 {retry_time} 次刷新当前网页链接...')
+        self.driver.refresh()
+        time.sleep(1)
+        WebDriverWait(driver=self.driver, timeout=100).until(
+        lambda d: d.execute_script('return document.readyState') == 'complete')
+```
+
 ---
 
 相关链接：    
