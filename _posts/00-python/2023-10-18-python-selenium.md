@@ -52,12 +52,6 @@ all_page_num = re.search("\d+$",text).group()
 print("当前贴吧贴子总页数为:%s"%all_page_num)
 ```
 
-
-
-
-
-
-
 <br>
 <br>
 
