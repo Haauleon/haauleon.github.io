@@ -58,4 +58,7 @@ print("当前贴吧贴子总页数为:%s"%all_page_num)
 ---
 
 相关链接：    
-[如何解决Python selenium get页面很慢时的问题](https://www.fengnayun.com/news/content/239521.html)
+[如何解决Python selenium get页面很慢时的问题](https://www.fengnayun.com/news/content/239521.html)             
+[WebDriverWait等设置等待时间和超时时间](https://www.cnblogs.com/BigFishFly/p/6337153.html)               
+[webdriver 的三种等待方式（强制等待、隐式等待、显示等待）](https://blog.csdn.net/qdPython/article/details/131492086)                 
+[What is the correct syntax checking the .readyState of a website in Selenium Python?](https://stackoverflow.com/questions/56728656/what-is-the-correct-syntax-checking-the-readystate-of-a-website-in-selenium-pyt)
