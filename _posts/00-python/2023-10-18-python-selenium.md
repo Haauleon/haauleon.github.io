@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "爬虫 | driver.get() 方法加载页面缓慢"
-subtitle:      "如何解决 Python selenium get 页面很慢时的问题"
+subtitle:      "如何解决 Python selenium driver.get(url) 页面很慢时的问题"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
 header-mask:   0.4
