@@ -179,7 +179,10 @@ driver.quit()
 ### FAQ
 脚本结束如果没有调用 `quit()` 方法，chromedriver 进程会在后台继续运行。大概占用 4M 空间。如果创建多了不关，会导致电脑卡。            
 ```python
+# windows系统
 __import__('os').system("taskkill /f /t /im chromedriver.exe")
+# linux系统
+__import__('os').system("pidof chrome | xargs kill -9")
 ```
 
 
