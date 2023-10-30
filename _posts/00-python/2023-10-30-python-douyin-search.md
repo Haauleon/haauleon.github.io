@@ -20,6 +20,13 @@ tags:
 
 ### 代码实现
 #### 1.安装第三方包
+```bash
+$ pip install DingtalkChatbot==1.5.3
+```
+
+<br>
+
+#### 2.完整代码实现
 ```python
 # -*- coding: utf-8 -*-#
 """
