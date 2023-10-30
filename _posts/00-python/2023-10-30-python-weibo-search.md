@@ -1,7 +1,7 @@
 ---
 layout:        post
-title:         "Python3 | 懂车帝价格监控钉钉推送"
-subtitle:      "实现爬取懂车帝珠海地区指定车型价格监控并进行钉钉消息推送"
+title:         "Python3 | 微博热搜钉钉推送"
+subtitle:      "实现爬取微博热搜并进行钉钉消息推送"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
 header-mask:   0.4
@@ -13,20 +13,13 @@ tags:
 
 
 ### 实现效果
-![](\img\in-post\post-python\2023-10-30-python-dongchedi-search-1.jpg)     
+![](\img\in-post\post-python\2023-10-30-python-weibo-search-1.jpg)     
 
 <br>
 <br>
 
 ### 代码实现
 #### 1.安装第三方包
-```bash
-$ pip install DingtalkChatbot==1.5.3
-```
-
-<br>
-
-#### 2.完整代码实现
 ```python
 # -*- coding: utf-8 -*-#
 """
@@ -40,7 +33,6 @@ import hashlib
 import hmac
 import time
 import urllib.parse
-from enum import Enum
 from typing import Any
 from dingtalkchatbot.chatbot import DingtalkChatbot, FeedLink
 
@@ -130,19 +122,12 @@ class DingTalkSendMsg(object):
     @staticmethod
     def send_ding_notification(msg):
         # 发送钉钉通知
-        text = f"<strong>【摸鱼办】</strong>今日懂车帝珠海地区价格监控结果如下\n" \
+        text = f"<strong>【摸鱼办】</strong>提醒您：今日的微博热搜词条如下\n" \
                f"{msg}"
         DingTalkSendMsg().send_markdown(
-            title="【懂车帝价格监控】",
+            title="【微博热搜通知】",
             msg=text
         )
-
-
-class PageEle(Enum):
-    ai_8_price = '//div[contains(@data-log-click, "艾瑞泽8")]/div[4]/text()'
-    ai_5_price = '//div[contains(@data-log-click, "艾瑞泽5")]/div[4]/text()'
-    ai_5_gt_price = '//div[contains(@data-log-click, "艾瑞泽5 GT")]/div[4]/text()'
-    ai_5_plus_price = '//div[contains(@data-log-click, "艾瑞泽5 PLUS")]/div[4]/text()'
 
 
 def run():
@@ -151,24 +136,25 @@ def run():
     import requests
     from lxml import etree
 
-    page = requests.get("https://www.dongchedi.com/search?keyword=%E8%89%BE%E7%91%9E%E6%B3%BD&currTab=6&city_name=%E7%8F%A0%E6%B5%B7&search_mode=common")
+    header = {
+        'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Mobile Safari/537.36',
+        'Host': 's.weibo.com',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'zh-CN,zh-Hans;q=0.9',
+        'Accept-Encoding': 'gzip, deflate, br',
+        # 定期更换Cookie
+        'Cookie': 'SUB=_2AkMSaqJif8NxqwFRmfoVymzhb4RxygjEieKkNlO5JRMxHRl-yT9kqkcbtRB6OeqMjZWZRi_Kn6F1Hg8hd2V0vcCPgV5n; SUBP=0033WrSXqPxfM72-Ws9jqgMF55529P9D9WF607o5PxcXkfJpiouHgC_S; _s_tentry=weibo.com; Apache=1301129469781.255.1698049558631; SINAGLOBAL=1301129469781.255.1698049558631; ULV=1698049558632:1:1:1:1301129469781.255.1698049558631:; UOR=,,www.baidu.com'
+    }
+    page = requests.get("https://s.weibo.com/top/summary?cate=realtimehot", headers=header)
+    # print(page.text)
     root = etree.HTML(page.text)
     title_msg = list()
-
-    ai_8_price = root.xpath(PageEle.ai_8_price.value)
-    title_msg.append(f"- [艾瑞泽8](https://www.dongchedi.com/auto/series/5852) > {ai_8_price[0]}")
-
-    ai_5_price = root.xpath(PageEle.ai_5_price.value)
-    title_msg.append(f"- [艾瑞泽5](https://www.dongchedi.com/auto/series/1081) > {ai_5_price[0]}")
-
-    ai_5_gt_price = root.xpath(PageEle.ai_5_gt_price.value)
-    title_msg.append(f"- [艾瑞泽5 GT](https://www.dongchedi.com/auto/series/6033) > {ai_5_gt_price[0]}")
-
-    ai_5_plus_price = root.xpath(PageEle.ai_5_plus_price.value)
-    title_msg.append(f"- [艾瑞泽5 PLUS](https://www.dongchedi.com/auto/series/4803) > {ai_5_plus_price[0]}")
-
+    for index in range(2, 16):
+        title = root.xpath(f'//section//li[{index}]/a/span/text()')
+        link = root.xpath(f'//section//li[{index}]/a/@href')
+        title_msg.append(f"- [{title[0].replace(' ', '')}](https://s.weibo.com{link[0]})")
     msg = '\n'.join(title_msg)
-
+    # print(msg)
     dingtalk.send_ding_notification(msg=msg)
 
 
