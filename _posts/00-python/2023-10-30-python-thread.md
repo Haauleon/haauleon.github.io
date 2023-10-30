@@ -618,4 +618,6 @@ if __name__ == '__main__':
 ---
 
 相关链接：    
-[Python requests+selenium多线程爬取王者荣耀全部1080P壁纸(共450M，用时57S)并按英雄进行分类](https://www.cnblogs.com/james-wangx/p/16106291.html)
+[Python requests+selenium多线程爬取王者荣耀全部1080P壁纸(共450M，用时57S)并按英雄进行分类](https://www.cnblogs.com/james-wangx/p/16106291.html)       
+[【计算机架构】python并发编程：多线程和线程池](https://blog.csdn.net/weixin_39589455/article/details/126808815)             
+[使用selenium 多线程爬取爱奇艺电影信息](https://www.cnblogs.com/shitou6/p/9063233.html)
