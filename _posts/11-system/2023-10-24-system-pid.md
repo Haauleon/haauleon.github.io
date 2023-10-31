@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Linux | taskkill 和 pidof 的用法"
-subtitle:      "纯代码方式杀死指定进程名的进程（Linux&Windows）"
+subtitle:      "纯代码方式杀死指定进程名的进程（Linux&Windows）如 chromedriver.exe"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
 header-mask:   0.4
