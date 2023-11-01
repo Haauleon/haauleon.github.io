@@ -1,7 +1,7 @@
 ---
 layout:        post
-title:         "Python3 | 懂车帝价格监控钉钉推送"
-subtitle:      "实现爬取懂车帝珠海地区指定车型价格监控并进行钉钉消息推送"
+title:         "Python3 | webdriver清除浏览器缓存"
+subtitle:      "python + selenium + chrome 如何清理浏览器缓存和 /tmp 目录下的临时文件"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
 header-mask:   0.4
