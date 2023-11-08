@@ -27,7 +27,84 @@ https://chromedriver.storage.googleapis.com/LATEST_RELEASE_107.0.5304
 <br>
 
 ### 异常处理
-&emsp;&emsp;考虑到被驱动的 Chrome 浏览器版本是固定的不需要更新，所以驱动也不需要更新，解决方法就是在使用 `ChromeDriverManager(version="107.0.5304.62").install()` 来检查和安装最新驱动时，直接指定版本即可：    
+&emsp;&emsp;考虑到被驱动的 Chrome 浏览器版本是固定的不需要更新，所以驱动也不需要更新，解决方法就是在使用 `ChromeDriverManager(version="107.0.5304.62").install()` 方法来检查和安装最新驱动时，直接指定本地已有的驱动版本和驱动存在的目录即可。以下是 107.0.5304.62 版本的驱动 `chromedriver_linux64.zip` 存放的路径 `src/driver/107.0.5304.62`：    
+```bash
+.
+|-- Dockerfile
+|-- README.md
+|-- cache
+|-- chatgpt_t.py
+|-- common
+|-- config
+|   |-- __init__.py
+|   `-- setting.ini
+|-- db_model
+|-- deploy.yaml
+|-- files
+|-- job
+|-- logs
+|-- model
+|-- request
+|-- requirements.txt
+|-- response
+|-- run_amazan_dog_spider.py
+|-- run_amazon_product_spider.py
+|-- run_keepa_spider.py
+|-- sources.list
+|-- src
+|   |-- driver
+|   |   |-- 107.0.5304.62
+|   |   |   |-- chromedriver
+|   |   |   |-- chromedriver_linux64.zip
+|   |   |   |-- drivers
+|   |   |   |   `-- chromedriver
+|   |   |   |       `-- linux64
+|   |   |   |           `-- 107.0.5304.62
+|   |   |   |               |-- chromedriver
+|   |   |   |               `-- driver.zip
+|   |   |   `-- drivers.json
+|   |   |-- 114.0.5735.90
+|   |   |   `-- chromedriver_linux64.zip
+|   |   |-- drivers
+|   |   |   `-- chromedriver
+|   |   |       `-- linux64
+|   |   |           |-- 107.0.5304.62
+|   |   |           |   |-- chromedriver
+|   |   |           |   `-- driver.zip
+|   |   |           `-- 114.0.5735.90
+|   |   |               |-- LICENSE.chromedriver
+|   |   |               |-- chromedriver
+|   |   |               `-- driver.zip
+|   |   `-- drivers.json
+|   `-- google-chrome-stable_deb_rpm_107.0.5304.122
+|       |-- google-chrome-stable_current_amd64.deb
+|       `-- google-chrome-stable_current_x86_64.rpm
+|-- task
+|   |-- __init__.py
+|   `-- keepa_comment_get.py
+|-- url_t.py
+`-- utils
+
+43 directories, 228 files
+
+```
+
+<br>
+实现方法：            
+（1）将文件 `chromedriver_linux64.zip` 放在目录 `src/driver/107.0.5304.62` 下      
+（2）进入该目录：            
+```bash
+> cd src/driver/107.0.5304.62
+```
+（3）解压该文件：    
+```bash
+> unzip chromedriver_linux64.zip
+```
+（4）拷贝到 bin 目录下：            
+```bash
+> cp chromedriver /usr/bin/
+```
+（5）在代码中指定该驱动的版本号和存放的路径：              
 ```python
 def start_driver():
     chrome_options = webdriver.ChromeOptions()
@@ -37,11 +114,34 @@ def start_driver():
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--no-sandbox')
-    # ChromeDriverManager(version="107.0.5304.62") 增加版本号，解决网络问题
-    driver = webdriver.Chrome(ChromeDriverManager(version="107.0.5304.62").install(), options=chrome_options)
+    # ChromeDriverManager(version="107.0.5304.62", path='src/driver/107.0.5304.62') 增加版本号和已有驱动的路径，解决网络问题
+    driver = webdriver.Chrome(ChromeDriverManager(version="107.0.5304.62", path='src/driver/107.0.5304.62').install(), options=chrome_options)
     return driver
 
 ```
+
+<br>
+
+&emsp;&emsp;最后执行就会提示从缓存中加载已有的驱动：      
+```bash
+[WDM] - Current google-chrome version is 107.0.5304
+[WDM] - Driver [/home/xxx/Spider/keepa-test/src/driver//drivers/chromedriver/linux64/107.0.5304.62/chromedriver] found in cache
+
+[WDM] - Current google-chrome version is 107.0.5304
+[WDM] - Driver [/home/xxx/Spider/keepa-test/src/driver//drivers/chromedriver/linux64/107.0.5304.62/chromedriver] found in cache
+
+[WDM] - Current google-chrome version is 107.0.5304
+[WDM] - Driver [/home/xxx/Spider/keepa-test/src/driver//drivers/chromedriver/linux64/107.0.5304.62/chromedriver] found in cache
+
+[WDM] - Current google-chrome version is 107.0.5304
+[WDM] - Driver [/home/xxx/Spider/keepa-test/src/driver//drivers/chromedriver/linux64/107.0.5304.62/chromedriver] found in cache
+
+[WDM] - Current google-chrome version is 107.0.5304
+[WDM] - Driver [/home/xxx/Spider/keepa-test/src/driver//drivers/chromedriver/linux64/107.0.5304.62/chromedriver] found in cache
+
+.......
+```
+
 
 <br>
 <br>
