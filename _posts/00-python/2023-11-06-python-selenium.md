@@ -27,7 +27,7 @@ https://chromedriver.storage.googleapis.com/LATEST_RELEASE_107.0.5304
 <br>
 
 ### 异常处理
-&emsp;&emsp;考虑到被驱动的 Chrome 浏览器版本是固定的不需要更新，所以驱动也不需要更新，解决方法就是在使用 `ChromeDriverManager(version="107.0.5304.62").install()` 方法来检查和安装最新驱动时，直接指定本地已有的驱动版本和驱动存在的目录即可。以下是 107.0.5304.62 版本的驱动 `chromedriver_linux64.zip` 存放的绝对路径 `src/driver/107.0.5304.62`：    
+&emsp;&emsp;考虑到被驱动的 Chrome 浏览器版本是固定的不需要更新，所以驱动也不需要更新，解决方法就是在使用 `ChromeDriverManager(version="107.0.5304.62").install()` 方法来检查和安装最新驱动时，直接指定本地已有的驱动版本和驱动存放的目录即可。以下是 107.0.5304.62 版本的驱动 `chromedriver_linux64.zip` 存放的绝对路径 `src/driver/107.0.5304.62`：    
 ```bash
 .
 |-- Dockerfile
@@ -120,7 +120,7 @@ def start_driver():
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--no-sandbox')
-    # ChromeDriverManager(version="107.0.5304.62", path=driver_path) 增加版本号和已有驱动的绝对路径，解决网络问题
+    # ChromeDriverManager(version="107.0.5304.62", path=driver_path) 增加驱动版本号和驱动存放的绝对路径，解决网络问题
     driver = webdriver.Chrome(ChromeDriverManager(version="107.0.5304.62", path=driver_path).install(), options=chrome_options)
     return driver
 
