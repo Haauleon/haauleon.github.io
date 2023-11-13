@@ -204,3 +204,31 @@ on a.id = 358 and a.id = b.coupon_id
 
 SELECT * FROM user where phone LIKE "%1397606%"
 ```
+
+<br>
+
+###### 11.关联表查询（NOT IN）
+```sql
+/*表 amazonshopinfoext 中 ProdSellerId、areas 分别等于表 rpareport_fbainventory 中的 SellerId、SiteName。
+查询表 amazonshopinfoext 中的记录，而这些记录的 SellerId 和 SiteName 在表 rpareport_fbainventory 中对应记录的 status 不为 1。
+即剔除表 rpareport_fbainventory 中 status 不为 1 的 SellerId 和 SiteName 的记录，
+最终的结果 = 表 amazonshopinfoext 中的记录总和 - 表 rpareport_fbainventory 中 status 不为 1 的记录总和
+*/
+
+SELECT shop.ProdSellerId, shop.areas
+FROM `datacenteranalysis`.`amazonshopinfoext` shop
+WHERE (shop.ProdSellerId, shop.areas) NOT IN (
+	SELECT rpa.SellerId, rpa.SiteName
+	FROM `datacentersp`.`rpareport_fbainventory` rpa
+	WHERE rpa.BaseCreateTime > '2023-11-12 09:00:00'
+	    AND rpa.Remark !='【下载文件】'
+        AND rpa.status != 1
+)
+    AND shop.ProdApiState NOT IN ('', 'Normal')
+    AND shop.ProdSellerId <> ''
+    AND shop.areas <> ''
+	AND shop.ProdSellerId IS NOT NULL
+	AND shop.areas IS NOT NULL
+	AND shop.ProdApiState IS NOT NULL
+	AND shop.areas NOT IN ('', 'NL', 'PL', 'SE', 'TR', 'BE', 'BR')
+```
