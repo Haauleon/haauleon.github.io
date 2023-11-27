@@ -19,4 +19,13 @@ tags:
 <br>
 
 ### 二、指定本地的驱动版本运行
+（1）下载版本为107.0.5304.62的驱动至本地          
+下载地址：[https://chromedriver.storage.googleapis.com/107.0.5304.62/chromedriver_linux64.zip](https://chromedriver.storage.googleapis.com/107.0.5304.62/chromedriver_linux64.zip)          
+
+若无法下载，可使用以下离线资源：        
+链接：https://pan.baidu.com/s/1hpIWFM3dlEO74EFaKnCn5w?pwd=rkjt         
+提取码：rkjt 
+
+
+（2）剩余操作步骤如下         
 详见：[使用本地的驱动版本](https://haauleon.gitee.io/2023/11/06/python-selenium/#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86)
