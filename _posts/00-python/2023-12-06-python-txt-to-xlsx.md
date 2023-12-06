@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Python3 | 实现txt文本文件转换为Excel文件"
-subtitle:      "使用该代码片段需了解txt文本文件内容的分隔符是什么，本文示例的txt文件内容是以\t隔开的"
+subtitle:      "使用该代码片段需了解txt文本文件内容的分隔符是什么，本文示例的txt文件内容是以'\t'隔开的"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
 header-mask:   0.4
