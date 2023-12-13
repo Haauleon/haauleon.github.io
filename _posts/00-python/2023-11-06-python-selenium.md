@@ -90,6 +90,8 @@ https://chromedriver.storage.googleapis.com/LATEST_RELEASE_107.0.5304
 ```
 
 <br>
+
+#### Linux系统
 实现方法：            
 （1）将文件 `chromedriver_linux64.zip` 放在目录 `src/driver/107.0.5304.62` 下      
 （2）进入该目录：            
@@ -109,7 +111,9 @@ https://chromedriver.storage.googleapis.com/LATEST_RELEASE_107.0.5304
 import os
 
 
-driver_path = os.path.join(root_path, 'src' + _SLASH + 'driver' + _SLASH + '107.0.5304.62')
+_SLASH = os.sep
+# chromedriver存放的绝对路径（在项目中存放的位置）
+driver_path = os.path.join(root_path, 'src' + _SLASH + 'driver' + _SLASH + '107.0.5304.62' + _SLASH + 'chromedriver')
 
 
 def start_driver():
@@ -120,8 +124,10 @@ def start_driver():
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--no-sandbox')
-    # ChromeDriverManager(version="107.0.5304.62", path=driver_path) 增加驱动版本号和驱动存放的绝对路径，解决网络问题
-    driver = webdriver.Chrome(ChromeDriverManager(version="107.0.5304.62", path=driver_path).install(), options=chrome_options)
+    # 服务器运行方式一：将chromedriver拷贝到/usr/bin下
+    # driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver', options=chrome_options)
+    # 服务器运行方式二：指定chromedriver在项目中存放的位置
+    driver = webdriver.Chrome(executable_path=driver_path, options=chrome_options)
     return driver
 
 ```
@@ -148,6 +154,35 @@ def start_driver():
 .......
 ```
 
+<br>
+<br>
+
+#### windows系统
+在代码中指定该驱动的版本号和存放的绝对路径：               
+```python
+import os
+
+
+_SLASH = os.sep
+# chromedriver.exe存放的绝对路径（在项目中存放的位置）
+driver_path = os.path.join(root_path, 'src' + _SLASH + 'driver' + _SLASH + '107.0.5304.62' + _SLASH + 'chromedriver.exe')
+
+
+def start_driver():
+    chrome_options = webdriver.ChromeOptions()
+    # 禁止浏览器加载图片，提高运算速度
+    chrome_options.add_argument('blink-settings=imagesEnabled=false')
+    chrome_options.add_experimental_option("excludeSwitches", ['enable-automation'])
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--no-sandbox')
+    # windows系统运行方式一：如果能正常访问网络，就直接使用ChromeDriverManager进行安装
+    # driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+    # windows系统运行方式二：指定chromedriver在项目中存放的位置（公司网络垃圾就使用以下代码）
+    driver = webdriver.Chrome(executable_path=driver_path, options=chrome_options)
+    return driver
+
+```
 
 <br>
 <br>
@@ -155,4 +190,5 @@ def start_driver():
 ---
 
 相关链接：   
-[我无法使用ChromeDriverManager().install()安装ChromeDriverManager](https://www.5axxw.com/questions/content/25zj8m)
+[我无法使用ChromeDriverManager().install()安装ChromeDriverManager](https://www.5axxw.com/questions/content/25zj8m)            
+[当webdriver遇到“' executable may have wrong permissions. ”](https://www.jianshu.com/p/109aa204f58d)
