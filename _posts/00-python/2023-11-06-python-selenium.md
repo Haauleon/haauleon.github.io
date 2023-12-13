@@ -189,6 +189,7 @@ def start_driver():
 
 ---
 
-相关链接：   
+相关链接：            
+[“Webdrivers”可执行文件可能具有错误的权限。请看https://sites.google.com/a/chromium.org/chromedriver/home](https://www.cnpython.com/qa/1283323)                
 [我无法使用ChromeDriverManager().install()安装ChromeDriverManager](https://www.5axxw.com/questions/content/25zj8m)            
 [当webdriver遇到“' executable may have wrong permissions. ”](https://www.jianshu.com/p/109aa204f58d)
