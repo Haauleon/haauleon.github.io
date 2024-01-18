@@ -1,7 +1,7 @@
 ---
 layout:        post
-title:         "影刀RPA | 文件下载"
-subtitle:      "操作 workbook 模块实现在 excel 文件中指定单元格填充图片"
+title:         "影刀RPA | 获取两张图片的相似度"
+subtitle:      "需要本机有足够的内存空间，否则会抛出异常"
 author:        "Haauleon"
 header-img:    "img/in-post/post-rpa/bg.jpg"
 header-mask:   0.4
@@ -11,4 +11,65 @@ tags:
     - Python
 ---
 
-### 需求描述
+### 代码实现
+```python
+# 使用提醒:
+# 1. xbot包提供软件自动化、数据表格、Excel、日志、AI等功能
+# 2. package包提供访问当前应用数据的功能，如获取元素、访问全局变量、获取资源文件等功能
+# 3. 当此模块作为流程独立运行时执行main函数
+# 4. 可视化流程中可以通过"调用模块"的指令使用此模块
+
+import xbot
+import xbot_visual
+from xbot import print, sleep
+from .import package
+from .package import variables as glv
+
+
+# 全局变量
+SAVE_PATH = glv['IMAGE_FOLDER']
+
+
+def image_download(image_url):
+    """网络图片下载至本地并返回图片存放的绝对路径"""
+    image_path = xbot_visual.web_service.download(url=image_url, save_folder=SAVE_PATH, custom_filename=False, save_filename=None, wait_complete_timeout="3000", connect_timeout_seconds="3000", send_by_web=False, browser=None)
+    # xbot_visual.programing.log(type="info", text=f"图片已成功下载至 >>> {image_path}")
+    return image_path
+
+
+def get_image_similarity(img1_path, img2_path):
+    """获取两张图片的相似度"""
+    for _ in range(20):
+        try:
+            similarity = xbot_visual.process.run(process="xbot_extensions.shadowbot_picture.process18", package=__name__, inputs={
+                "img1_path": img1_path,
+                "img2_path": img2_path,
+                }, outputs=[
+                "similarity",
+            ])
+            xbot_visual.programing.log(type="info", text=f"相似度：{similarity}")
+            return similarity
+        except: 
+            sleep(10)
+            pass
+
+
+def is_same_image(img1_path, img2_path):
+    """判断是否是同一张图片
+    如果相似度 >=0.50 则视为相同图片
+    如果相似度 <0.50  则视为不同图片
+    """
+    is_same_image = False
+    if get_image_similarity(img1_path, img2_path) >= 0.50:
+        is_same_image = True
+    return is_same_image
+
+
+def main(args):
+    if is_same_image(image_download('https://m.media-amazon.com/images/I/71oYTB6NM0L.jpg'), 
+                     image_download('https://m.media-amazon.com/images/I/71oYTB6NM0L.jpg')):
+        print('相同的图片')
+    else:
+        print('不同的图片')
+
+```
