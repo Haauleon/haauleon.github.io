@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Python3 | SQLAlchemy组装SQL增删改查语句"
-subtitle:      "使用SQLAlchemy连接Mysql数据库实现SQL增删改查语句"
+subtitle:      "使用SQLAlchemy连接Mysql数据库实现SQL增删改查"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
 header-mask:   0.4
