@@ -176,6 +176,9 @@ class JD(Base):
 #### 5、使用SQL查询语句
 创建完表模型，如无误，可使用以下 SQL 查询语句：    
 ```python
+# 条件查询
+# result = session.query(JD).filter(JD.settleTime > '2023-12-11 00:00:00').all()
+
 # 查询所有记录
 result = session.query(JD).all()
 for res in result:
