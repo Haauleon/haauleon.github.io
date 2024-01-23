@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Python3 | SQLAlchemy组装SQL增删改查语句"
-subtitle:      "使用 SQLAlchemy 连接 Mysql 数据实现 SQL 增删改查"
+subtitle:      "使用SQLAlchemy连接Mysql数据库实现SQL增删改查语句"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
 header-mask:   0.4
@@ -324,7 +324,7 @@ for _ in range(10):
 相关链接：    
 [SQLAlchemy常用数据类型](https://www.cnblogs.com/LeYu/p/10176060.html)              
 [No module named 'MySQLdb'](https://blog.csdn.net/m0_37886429/article/details/83540314)         
-[__init__() got an unexpected keyword argument 'bind'](https://stackoverflow.com/questions/42955172/typeerror-init-got-an-unexpected-keyword-argument-username/52129426)             
+[init() got an unexpected keyword argument 'bind'](https://stackoverflow.com/questions/42955172/typeerror-init-got-an-unexpected-keyword-argument-username/52129426)             
 > I had a similar problem: __init__() got an unexpected keyword argument 'bind'        
 > I wasn't able to retrieve MetaData() and my connection wouldn't let me perform queries.         
 > The workaround/solution was to use an older version of SQLAlchemy (1.4.4):             
