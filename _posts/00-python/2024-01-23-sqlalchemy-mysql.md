@@ -216,5 +216,10 @@ for res in result:
 
 相关链接：    
 [SQLAlchemy常用数据类型](https://www.cnblogs.com/LeYu/p/10176060.html)              
-[__init__() got an unexpected keyword argument 'bind'](https://stackoverflow.com/questions/42955172/typeerror-init-got-an-unexpected-keyword-argument-username/52129426)      
-[No module named 'MySQLdb'](https://blog.csdn.net/m0_37886429/article/details/83540314)       
+[No module named 'MySQLdb'](https://blog.csdn.net/m0_37886429/article/details/83540314)         
+[__init__() got an unexpected keyword argument 'bind'](https://stackoverflow.com/questions/42955172/typeerror-init-got-an-unexpected-keyword-argument-username/52129426)             
+> I had a similar problem: __init__() got an unexpected keyword argument 'bind'        
+> I wasn't able to retrieve MetaData() and my connection wouldn't let me perform queries.         
+> The workaround/solution was to use an older version of SQLAlchemy (1.4.4):             
+> pip install SQLAlchemy==1.4.4             
+> Hope this helps anyone.            
