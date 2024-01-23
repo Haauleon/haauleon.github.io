@@ -102,7 +102,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 #### 3、连接数据库
 安装完开发环境后，尝试使用以下语句连接 MySQL 数据库，目前已知 MariaDB 和 MySQL 使用的是同一个数据库引擎。       
 ```python
-from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy import create_engine, Column, Integer, String, DateTime
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import pymysql
@@ -142,7 +142,7 @@ class JD(Base):
 	__tablename__ = 'rpa_report_jd_dailybill'
 
 	ID = Column(String, primary_key=True)
-    Base_ShopInfoID = 
+    Base_ShopInfoID = Column(String)
 	BatchNO = Column(String)
     CheckStatus = Column(String)
     CheckUserID = Column(String)
@@ -153,9 +153,9 @@ class JD(Base):
     merchantOrderNO = Column(String)
     productName = Column(String)
     settleState = Column(String)
-    costTime = Column(Datetime)
-    billTime = Column(Datetime)
-    settleTime = Column(Datetime)
+    costTime = Column(DateTime)
+    billTime = Column(DateTime)
+    settleTime = Column(DateTime)
     costItem = Column(String)
     amount = Column(String)
     currency = Column(String)
