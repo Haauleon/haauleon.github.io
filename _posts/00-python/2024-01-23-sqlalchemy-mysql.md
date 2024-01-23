@@ -100,7 +100,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 <br>
 
 #### 3、连接数据库
-安装完开发环境后，尝试使用以下语句连接 MySQL 数据库，目前已知 MariaDB 和 MySQL 使用的是同一个数据库引擎。       
+安装完开发环境后，尝试使用以下语句连接 MySQL 数据库，目前已知 MariaDB 和 MySQL 使用的是同一个数据库驱动。       
 ```python
 from sqlalchemy import create_engine, Column, Integer, String, DateTime
 from sqlalchemy.orm import sessionmaker
@@ -218,17 +218,102 @@ for res in result:
 
 #### 2、新增语句
 ```python
-class JDReport:
-
-    def __init__(self):
-        self.ID = '1c7497e8-fee5-4e34-8f83-35374014235556'
-        self.BatchNO = '京东——日账单——测试'
-
-
 # 创建新记录
-new_jd = JD(name='John', age=25)
+new_jd = JD()
+new_jd.ID = '1c7497e8-fee5-4e34-8f83-35374014235556'
+new_jd.BatchNO = '京东_日账单_测试'
 session.add(new_jd)
 session.commit()
+```
+
+<br>
+
+#### 3、修改语句
+```python
+# 查询需要更新的记录
+jd = session.query(JD).filter(JD.BatchNO == '京东_日账单_测试').first()
+if jd is not None:
+    # 修改 BatchNO 字段为 "京东_日账单_测试2"
+    jd.BatchNO = "京东_日账单_测试2"
+    # 提交事务
+    session.commit()
+else:
+    print("未找到指定ID的记录")
+```
+
+<br>
+
+#### 4、删除语句
+```python
+# 查询需要删除的记录
+jd = session.query(JD).filter(JD.BatchNO == '京东_日账单_测试2').first()
+if jd is not None:
+    # 删除符合条件的记录
+    session.delete(jd)
+    session.commit()
+else:
+    print("未找到符合条件的记录")
+```
+
+<br>
+
+#### 4、执行SQL异常回滚
+```python
+try:
+    session = Session()
+    # 开始事务
+    session.begin()
+    # 执行 SQL 查询或其他数据库操作
+    jd = session.query(JD).filter(JD.BatchNO == '京东_日账单_测试2').first()
+    if jd is not None:
+        # 删除符合条件的记录
+        session.delete(jd)
+        # 提交事务（若没有异常）
+        session.commit()
+    else:
+        print("未找到符合条件的记录")
+except Exception as e:
+    print("捕获到异常：", str(e))
+    traceback.print_exc()
+
+    # 回滚事务
+    session.rollback()
+finally:
+    # 关闭会话连接
+    session.close()
+```
+
+<br>
+
+#### 5、执行SQL异常重试
+```python
+for _ in range(10):
+    try:
+        session = Session()
+        # 开始事务
+        session.begin()
+        # 执行 SQL 查询或其他数据库操作
+        jd = session.query(JD).filter(JD.BatchNO == '京东_日账单_测试2').first()
+        if jd is not None:
+            # 删除符合条件的记录
+            session.delete(jd)
+            # 提交事务（若没有异常）
+            session.commit()
+        else:
+            print("未找到符合条件的记录")
+        break
+    except Exception as e:
+        print("捕获到异常：", str(e))
+        traceback.print_exc()
+
+        # 回滚事务
+        session.rollback()
+
+        print('3秒后重试任务')
+        time.sleep(3)
+    finally:
+        # 关闭会话连接
+        session.close()
 ```
 
 <br>
