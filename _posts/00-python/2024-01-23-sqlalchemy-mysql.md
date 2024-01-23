@@ -129,7 +129,7 @@ session = Session()
 - Decimal：定点类型，是专门为了解决浮点类型精度丢失的问题的，一般作用于金钱类型               
 - Enum：枚举类型，指定某个字段只能是枚举中指定的几个值，不能为其他值            
 - Date：存储时间，只能存储年月日，映射到数据库中是 <mark>date</mark> 类型           
-- Datetime：存储时间，可以存储年月日时分秒              
+- DateTime：存储时间，可以存储年月日时分秒              
 - Time：存储时间，存储时分秒             
 - Text：存储长字符串，映射到数据库是 <mark>text</mark> 类型              
 - Longtext：长文本类型，映射到数据库中是 <mark>longtext</mark> 类型                
