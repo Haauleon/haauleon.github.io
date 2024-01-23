@@ -1,7 +1,7 @@
 ---
 layout:        post
-title:         "Python3 | SQLAlchemy组装SQL查询语句"
-subtitle:      "使用 SQLAlchemy 连接 Mysql 数据进行 SQL 查询"
+title:         "Python3 | SQLAlchemy组装SQL增删改查语句"
+subtitle:      "使用 SQLAlchemy 连接 Mysql 数据实现 SQL 增删改查"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
 header-mask:   0.4
@@ -139,11 +139,11 @@ session = Session()
 根据以上字段映射关系，创建以下表模型：      
 ```python
 class JD(Base):
-	__tablename__ = 'rpa_report_jd_dailybill'
+    __tablename__ = 'rpa_report_jd_dailybill'
 
-	ID = Column(String, primary_key=True)
+    ID = Column(String, primary_key=True)
     Base_ShopInfoID = Column(String)
-	BatchNO = Column(String)
+    BatchNO = Column(String)
     CheckStatus = Column(String)
     CheckUserID = Column(String)
     orderNO = Column(String)
@@ -218,7 +218,17 @@ for res in result:
 
 #### 2、新增语句
 ```python
+class JDReport:
 
+    def __init__(self):
+        self.ID = '1c7497e8-fee5-4e34-8f83-35374014235556'
+        self.BatchNO = '京东——日账单——测试'
+
+
+# 创建新记录
+new_jd = JD(name='John', age=25)
+session.add(new_jd)
+session.commit()
 ```
 
 <br>
