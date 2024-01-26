@@ -232,3 +232,33 @@ WHERE (shop.ProdSellerId, shop.areas) NOT IN (
 	AND shop.ProdApiState IS NOT NULL
 	AND shop.areas NOT IN ('', 'NL', 'PL', 'SE', 'TR', 'BE', 'BR')
 ```
+
+<br>
+
+###### 12.复杂查询（CASE WHEN）
+```sql
+/*查询发起人，批次号，计算相同批次号的记录总数，计算相同批次号中未查询变狗的记录总数*/
+SELECT 
+    DISTINCT BaseCreatorId as creator, 
+    batch, 
+		COUNT(*) as duplicate_count, 
+		SUM(CASE WHEN isDog=0 THEN 1 ELSE 0 END) as unspider_count
+FROM 
+    keepa_asin_dog 
+WHERE 
+    asinUrl <> '' 
+		AND DATE(BaseCreateTime) = CURDATE()
+GROUP BY batch
+HAVING COUNT(*) > 1
+```
+ 
+查询结果如下：            
+
+|creator|batch|duplicate_count|unspider_count|
+|---|---|---|---|
+|1675767484688367616|	1144887039	|5007	|0|
+|1701803699602456576|	1769694714	|8370	|0|
+|1701803699602456576|	352624743	|56	    |0|
+|1675767484688367616|	460867063	|5503	|0|
+|1675767484688367616|	590301904	|6895	|0|
+|1701803699602456576|	733118411	|8586	|0|
