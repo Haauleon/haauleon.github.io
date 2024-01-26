@@ -241,13 +241,13 @@ WHERE (shop.ProdSellerId, shop.areas) NOT IN (
 SELECT 
     DISTINCT BaseCreatorId as creator, 
     batch, 
-		COUNT(*) as duplicate_count, 
-		SUM(CASE WHEN isDog=0 THEN 1 ELSE 0 END) as unspider_count
+	COUNT(*) as duplicate_count, 
+	SUM(CASE WHEN isDog=0 THEN 1 ELSE 0 END) as unspider_count
 FROM 
     keepa_asin_dog 
 WHERE 
     asinUrl <> '' 
-		AND DATE(BaseCreateTime) = CURDATE()
+	AND DATE(BaseCreateTime) = CURDATE()
 GROUP BY batch
 HAVING COUNT(*) > 1
 ```
