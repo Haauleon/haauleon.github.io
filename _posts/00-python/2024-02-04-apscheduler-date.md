@@ -73,3 +73,11 @@ if __name__ == '__main__':
         scheduler.shutdown()
 
 ```
+
+<br>
+<br>
+
+---
+
+相关链接：    
+[一文详解Python定时任务触发](https://www.jb51.net/article/279789.htm)
