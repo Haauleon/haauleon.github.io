@@ -46,10 +46,16 @@ ValueError: Timeout value connect was <object object at 0x0000019A00694540>, but
 > pip install urllib3==1.26.2
 ```
 
+或者：       
+```bash
+> pip install urllib3==1.26.16 (兼容的Python版本更高)
+```
+
 <br>
 <br>
 
 ---
 
 相关链接：   
-[python selenium报错ValueError: Timeout value connect was ＜...＞, but it must be an int, float or None.](https://blog.csdn.net/liu_liu_123/article/details/131146119)
+[python selenium报错ValueError: Timeout value connect was ＜...＞, but it must be an int, float or None.](https://blog.csdn.net/liu_liu_123/article/details/131146119)       
+[python selenium 爬虫遇到的一个问题](https://zhuanlan.zhihu.com/p/635235364)      
