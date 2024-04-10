@@ -20,6 +20,7 @@ tags:
 1、安装pyecharts库（如果你还没有安装的话）：           
 ```bash
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pyecharts==1.9.0
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple Django==4.2.11
 ```
 
 <br>
