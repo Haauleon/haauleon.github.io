@@ -1,7 +1,7 @@
 ---
 layout:        post
 title:         "Python3 | urllib3 运行报错连接错误443问题"
-subtitle:      "HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443)"
+subtitle:      "HTTPSConnectionPool(host=nominatim.openstreetmap.org, port=443)"
 author:        "Haauleon"
 header-img:    "img/in-post/post-python/bg.jpeg"
 header-mask:   0.4
